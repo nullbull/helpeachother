@@ -58,11 +58,11 @@ spring:
     testOnReturn: false
     poolPreparedStatements: true
     maxOpenPreparedStatements: 20
-
+  thymeleaf:
+    prefix: classpath:/templates/
+    suffix: .html
 mybatis:
-  # 搜索指定包别名
-  typeAliasesPackage: com.heo.dao
-  # 配置mapper的扫描，找到所有的mapper.xml映射文件
-  mapperLocations: com.heo.entity.xm.*Mapper.xml
-  # 加载全局的配置文件
-  configLocation: mybatis-config.xml
+  #实体类所做包
+  type-aliases-package: com.heo.entity.mapper
+  #mapper.xml所在位置
+  mapper-locations: classpath:mappers/*.xml

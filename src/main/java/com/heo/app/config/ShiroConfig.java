@@ -219,43 +219,43 @@ public class ShiroConfig
         // Shiro连接约束配置，即过滤链的定义
         LinkedHashMap<String, String> filterChainDefinitionMap = new LinkedHashMap<>();
         // 对静态资源设置匿名访问
-        filterChainDefinitionMap.put("/favicon.ico**", "anon");
-        filterChainDefinitionMap.put("/ruoyi.png**", "anon");
-        filterChainDefinitionMap.put("/css/**", "anon");
-        filterChainDefinitionMap.put("/docs/**", "anon");
-        filterChainDefinitionMap.put("/fonts/**", "anon");
-        filterChainDefinitionMap.put("/img/**", "anon");
-        filterChainDefinitionMap.put("/ajax/**", "anon");
-        filterChainDefinitionMap.put("/js/**", "anon");
-        filterChainDefinitionMap.put("/ruoyi/**", "anon");
-        filterChainDefinitionMap.put("/druid/**", "anon");
-        filterChainDefinitionMap.put("/captcha/captchaImage**", "anon");
-        // 退出 logout地址，shiro去清除session
-        filterChainDefinitionMap.put("/logout", "logout");
-        //强制退出时, 退出logout地址，shiro去清除session，防止出现shiro报没有权限错误。
-        filterChainDefinitionMap.put("/monitor/online/batchForceLogout", "logout");
-        filterChainDefinitionMap.put("/monitor/online/forceLogout/**", "logout");
-        // 不需要拦截的访问
-        filterChainDefinitionMap.put("/login", "anon,captchaValidate");
-        filterChainDefinitionMap.put("/register", "anon,captchaValidate");
+//        filterChainDefinitionMap.put("/favicon.ico**", "anon");
+//        filterChainDefinitionMap.put("/ruoyi.png**", "anon");
+//        filterChainDefinitionMap.put("/css/**", "anon");
+//        filterChainDefinitionMap.put("/docs/**", "anon");
+//        filterChainDefinitionMap.put("/fonts/**", "anon");
+//        filterChainDefinitionMap.put("/img/**", "anon");
+//        filterChainDefinitionMap.put("/ajax/**", "anon");
+//        filterChainDefinitionMap.put("/js/**", "anon");
+//        filterChainDefinitionMap.put("/ruoyi/**", "anon");
+//        filterChainDefinitionMap.put("/druid/**", "anon");
+//        filterChainDefinitionMap.put("/captcha/captchaImage**", "anon");
+//        // 退出 logout地址，shiro去清除session
+//        filterChainDefinitionMap.put("/logout", "logout");
+//        //强制退出时, 退出logout地址，shiro去清除session，防止出现shiro报没有权限错误。
+//        filterChainDefinitionMap.put("/monitor/online/batchForceLogout", "logout");
+//        filterChainDefinitionMap.put("/monitor/online/forceLogout/**", "logout");
+//        // 不需要拦截的访问
+//        filterChainDefinitionMap.put("/login", "anon,captchaValidate");
+//        filterChainDefinitionMap.put("/register", "anon,captchaValidate");
         // 系统权限列表
         // filterChainDefinitionMap.putAll(SpringUtils.getBean(IMenuService.class).selectPermsAll());
 
-        Map<String, Filter> filters = new LinkedHashMap<>();
-        filters.put("onlineSession", onlineSessionFilter());
-        filters.put("syncOnlineSession", syncOnlineSessionFilter());
-        filters.put("captchaValidate", captchaValidateFilter());
-        // 注销成功，则跳转到指定页面
-        filters.put("logout", logoutFilter());
-        shiroFilterFactoryBean.setFilters(filters);
-
-        // 所有请求需要认证
-        filterChainDefinitionMap.put("/**", "user");
-        // 系统请求记录当前会话
-        filterChainDefinitionMap.put("/main", "onlineSession,syncOnlineSession");
-        filterChainDefinitionMap.put("/system/**", "onlineSession,syncOnlineSession");
-        filterChainDefinitionMap.put("/monitor/**", "onlineSession,syncOnlineSession");
-        filterChainDefinitionMap.put("/tool/**", "onlineSession,syncOnlineSession");
+//        Map<String, Filter> filters = new LinkedHashMap<>();
+//        filters.put("onlineSession", onlineSessionFilter());
+//        filters.put("syncOnlineSession", syncOnlineSessionFilter());
+//        filters.put("captchaValidate", captchaValidateFilter());
+//        // 注销成功，则跳转到指定页面
+//        filters.put("logout", logoutFilter());
+//        shiroFilterFactoryBean.setFilters(filters);
+//
+//        // 所有请求需要认证
+//        filterChainDefinitionMap.put("/**", "user");
+//        // 系统请求记录当前会话
+//        filterChainDefinitionMap.put("/main", "onlineSession,syncOnlineSession");
+//        filterChainDefinitionMap.put("/system/**", "onlineSession,syncOnlineSession");
+//        filterChainDefinitionMap.put("/monitor/**", "onlineSession,syncOnlineSession");
+//        filterChainDefinitionMap.put("/tool/**", "onlineSession,syncOnlineSession");
         shiroFilterFactoryBean.setFilterChainDefinitionMap(filterChainDefinitionMap);
 
         return shiroFilterFactoryBean;

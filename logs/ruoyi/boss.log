@@ -2753,3 +2753,1748 @@ Action:
 
 Consider defining a bean of type 'com.heo.dao.UserOnlineMapper' in your configuration.
 
+17:15:08.590 [main] INFO  com.heo.HelpeachotherApplication - Starting HelpeachotherApplication on LAPTOP-1M5RA4JD with PID 32812 (D:\Niuban\helpeachother\target\classes started by 11291 in D:\Niuban\helpeachother)
+17:15:08.594 [main] DEBUG com.heo.HelpeachotherApplication - Running with Spring Boot v1.5.10.RELEASE, Spring v4.3.14.RELEASE
+17:15:08.594 [main] INFO  com.heo.HelpeachotherApplication - No active profile set, falling back to default profiles: default
+17:15:08.790 [background-preinit] INFO  org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 5.3.6.Final
+17:15:09.563 [main] INFO  org.apache.shiro.cache.ehcache.EhCacheManager - Cache with name 'com.heo.app.shiro.realm.UserRealm.authorizationCache' does not yet exist.  Creating now.
+17:15:09.564 [main] INFO  org.apache.shiro.cache.ehcache.EhCacheManager - Added EhCache named [com.heo.app.shiro.realm.UserRealm.authorizationCache]
+17:15:09.588 [main] INFO  org.apache.shiro.cache.ehcache.EhCacheManager - Using existing EHCache named [loginRecordCache]
+17:15:10.934 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+17:15:10.936 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/8.5.27
+17:15:11.050 [localhost-startStop-1] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+17:15:12.169 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+17:15:12.179 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+17:15:12.196 [main] INFO  org.apache.tomcat.util.net.NioSelectorPool - Using a shared selector for servlet write/read
+17:15:12.228 [main] INFO  com.heo.HelpeachotherApplication - Started HelpeachotherApplication in 3.994 seconds (JVM running for 5.145)
+17:15:24.201 [http-nio-8080-exec-1] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring FrameworkServlet 'dispatcherServlet'
+17:15:24.255 [http-nio-8080-exec-1] INFO  org.apache.shiro.session.mgt.AbstractValidatingSessionManager - Enabling session validation scheduler...
+17:15:24.255 [http-nio-8080-exec-1] DEBUG com.heo.app.shiro.web.session.SpringSessionValidationScheduler - Scheduling session validation job using Spring Scheduler with session validation interval of [600000]ms...
+17:15:24.256 [http-nio-8080-exec-1] DEBUG com.heo.app.shiro.web.session.SpringSessionValidationScheduler - Session validation job successfully scheduled with Spring Scheduler.
+17:15:24.282 [http-nio-8080-exec-1] INFO  org.apache.shiro.cache.ehcache.EhCacheManager - Using existing EHCache named [shiro-activeSessionCache]
+17:15:24.345 [http-nio-8080-exec-2] ERROR o.a.catalina.core.ContainerBase.[Tomcat].[localhost].[/].[dispatcherServlet] - Servlet.service() for servlet [dispatcherServlet] threw exception
+javax.servlet.ServletException: Circular view path [login]: would dispatch back to the current handler URL [/login] again. Check your ViewResolver setup! (Hint: This may be the result of an unspecified view, due to default view name generation.)
+	at org.springframework.web.servlet.view.InternalResourceView.prepareForRendering(InternalResourceView.java:205)
+	at org.springframework.web.servlet.view.InternalResourceView.renderMergedOutputModel(InternalResourceView.java:145)
+	at org.springframework.web.servlet.view.AbstractView.render(AbstractView.java:303)
+	at org.springframework.web.servlet.DispatcherServlet.render(DispatcherServlet.java:1286)
+	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1041)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:984)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:901)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:970)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:861)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:635)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:846)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:742)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.shiro.web.servlet.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:112)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.shiro.web.servlet.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:112)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.shiro.web.servlet.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:112)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.shiro.web.servlet.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:112)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:101)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:101)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:101)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:101)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.ApplicationDispatcher.invoke(ApplicationDispatcher.java:728)
+	at org.apache.catalina.core.ApplicationDispatcher.processRequest(ApplicationDispatcher.java:470)
+	at org.apache.catalina.core.ApplicationDispatcher.doForward(ApplicationDispatcher.java:395)
+	at org.apache.catalina.core.ApplicationDispatcher.forward(ApplicationDispatcher.java:316)
+	at org.springframework.web.servlet.view.InternalResourceView.renderMergedOutputModel(InternalResourceView.java:168)
+	at org.springframework.web.servlet.view.AbstractView.render(AbstractView.java:303)
+	at org.springframework.web.servlet.DispatcherServlet.render(DispatcherServlet.java:1286)
+	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1041)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:984)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:901)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:970)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:861)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:635)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:846)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:742)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.shiro.web.servlet.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:112)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.shiro.web.servlet.AdviceFilter.executeChain(AdviceFilter.java:108)
+	at org.apache.shiro.web.servlet.AdviceFilter.doFilterInternal(AdviceFilter.java:137)
+	at org.apache.shiro.web.servlet.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:125)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.shiro.web.servlet.AdviceFilter.executeChain(AdviceFilter.java:108)
+	at org.apache.shiro.web.servlet.AdviceFilter.doFilterInternal(AdviceFilter.java:137)
+	at org.apache.shiro.web.servlet.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:125)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.shiro.web.servlet.ProxiedFilterChain.doFilter(ProxiedFilterChain.java:61)
+	at org.apache.shiro.web.servlet.AdviceFilter.executeChain(AdviceFilter.java:108)
+	at org.apache.shiro.web.servlet.AdviceFilter.doFilterInternal(AdviceFilter.java:137)
+	at org.apache.shiro.web.servlet.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:125)
+	at org.apache.shiro.web.servlet.ProxiedFilterChain.doFilter(ProxiedFilterChain.java:66)
+	at org.apache.shiro.web.servlet.AdviceFilter.executeChain(AdviceFilter.java:108)
+	at org.apache.shiro.web.servlet.AdviceFilter.doFilterInternal(AdviceFilter.java:137)
+	at org.apache.shiro.web.servlet.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:125)
+	at org.apache.shiro.web.servlet.ProxiedFilterChain.doFilter(ProxiedFilterChain.java:66)
+	at org.apache.shiro.web.servlet.AbstractShiroFilter.executeChain(AbstractShiroFilter.java:449)
+	at org.apache.shiro.web.servlet.AbstractShiroFilter$1.call(AbstractShiroFilter.java:365)
+	at org.apache.shiro.subject.support.SubjectCallable.doCall(SubjectCallable.java:90)
+	at org.apache.shiro.subject.support.SubjectCallable.call(SubjectCallable.java:83)
+	at org.apache.shiro.subject.support.DelegatingSubject.execute(DelegatingSubject.java:383)
+	at org.apache.shiro.web.servlet.AbstractShiroFilter.doFilterInternal(AbstractShiroFilter.java:362)
+	at org.apache.shiro.web.servlet.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:125)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:99)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.HttpPutFormContentFilter.doFilterInternal(HttpPutFormContentFilter.java:108)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:81)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:197)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:199)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:504)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:140)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:81)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:87)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:342)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:803)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:790)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1459)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+17:15:24.352 [http-nio-8080-exec-2] ERROR o.a.catalina.core.ContainerBase.[Tomcat].[localhost].[/].[dispatcherServlet] - Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Circular view path [login]: would dispatch back to the current handler URL [/login] again. Check your ViewResolver setup! (Hint: This may be the result of an unspecified view, due to default view name generation.)] with root cause
+javax.servlet.ServletException: Circular view path [login]: would dispatch back to the current handler URL [/login] again. Check your ViewResolver setup! (Hint: This may be the result of an unspecified view, due to default view name generation.)
+	at org.springframework.web.servlet.view.InternalResourceView.prepareForRendering(InternalResourceView.java:205)
+	at org.springframework.web.servlet.view.InternalResourceView.renderMergedOutputModel(InternalResourceView.java:145)
+	at org.springframework.web.servlet.view.AbstractView.render(AbstractView.java:303)
+	at org.springframework.web.servlet.DispatcherServlet.render(DispatcherServlet.java:1286)
+	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1041)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:984)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:901)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:970)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:861)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:635)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:846)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:742)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.shiro.web.servlet.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:112)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.shiro.web.servlet.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:112)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.shiro.web.servlet.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:112)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.shiro.web.servlet.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:112)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:101)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:101)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:101)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:101)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.ApplicationDispatcher.invoke(ApplicationDispatcher.java:728)
+	at org.apache.catalina.core.ApplicationDispatcher.processRequest(ApplicationDispatcher.java:470)
+	at org.apache.catalina.core.ApplicationDispatcher.doForward(ApplicationDispatcher.java:395)
+	at org.apache.catalina.core.ApplicationDispatcher.forward(ApplicationDispatcher.java:316)
+	at org.springframework.web.servlet.view.InternalResourceView.renderMergedOutputModel(InternalResourceView.java:168)
+	at org.springframework.web.servlet.view.AbstractView.render(AbstractView.java:303)
+	at org.springframework.web.servlet.DispatcherServlet.render(DispatcherServlet.java:1286)
+	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1041)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:984)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:901)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:970)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:861)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:635)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:846)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:742)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.shiro.web.servlet.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:112)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.shiro.web.servlet.AdviceFilter.executeChain(AdviceFilter.java:108)
+	at org.apache.shiro.web.servlet.AdviceFilter.doFilterInternal(AdviceFilter.java:137)
+	at org.apache.shiro.web.servlet.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:125)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.shiro.web.servlet.AdviceFilter.executeChain(AdviceFilter.java:108)
+	at org.apache.shiro.web.servlet.AdviceFilter.doFilterInternal(AdviceFilter.java:137)
+	at org.apache.shiro.web.servlet.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:125)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.shiro.web.servlet.ProxiedFilterChain.doFilter(ProxiedFilterChain.java:61)
+	at org.apache.shiro.web.servlet.AdviceFilter.executeChain(AdviceFilter.java:108)
+	at org.apache.shiro.web.servlet.AdviceFilter.doFilterInternal(AdviceFilter.java:137)
+	at org.apache.shiro.web.servlet.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:125)
+	at org.apache.shiro.web.servlet.ProxiedFilterChain.doFilter(ProxiedFilterChain.java:66)
+	at org.apache.shiro.web.servlet.AdviceFilter.executeChain(AdviceFilter.java:108)
+	at org.apache.shiro.web.servlet.AdviceFilter.doFilterInternal(AdviceFilter.java:137)
+	at org.apache.shiro.web.servlet.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:125)
+	at org.apache.shiro.web.servlet.ProxiedFilterChain.doFilter(ProxiedFilterChain.java:66)
+	at org.apache.shiro.web.servlet.AbstractShiroFilter.executeChain(AbstractShiroFilter.java:449)
+	at org.apache.shiro.web.servlet.AbstractShiroFilter$1.call(AbstractShiroFilter.java:365)
+	at org.apache.shiro.subject.support.SubjectCallable.doCall(SubjectCallable.java:90)
+	at org.apache.shiro.subject.support.SubjectCallable.call(SubjectCallable.java:83)
+	at org.apache.shiro.subject.support.DelegatingSubject.execute(DelegatingSubject.java:383)
+	at org.apache.shiro.web.servlet.AbstractShiroFilter.doFilterInternal(AbstractShiroFilter.java:362)
+	at org.apache.shiro.web.servlet.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:125)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:99)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.HttpPutFormContentFilter.doFilterInternal(HttpPutFormContentFilter.java:108)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:81)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:197)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:199)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:504)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:140)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:81)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:87)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:342)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:803)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:790)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1459)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+17:15:25.257 [pool-1-thread-1] INFO  com.heo.app.shiro.web.session.OnlineWebSessionManager - invalidation sessions...
+17:15:33.470 [http-nio-8080-exec-3] ERROR o.a.catalina.core.ContainerBase.[Tomcat].[localhost].[/].[dispatcherServlet] - Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Circular view path [login]: would dispatch back to the current handler URL [/login] again. Check your ViewResolver setup! (Hint: This may be the result of an unspecified view, due to default view name generation.)] with root cause
+javax.servlet.ServletException: Circular view path [login]: would dispatch back to the current handler URL [/login] again. Check your ViewResolver setup! (Hint: This may be the result of an unspecified view, due to default view name generation.)
+	at org.springframework.web.servlet.view.InternalResourceView.prepareForRendering(InternalResourceView.java:205)
+	at org.springframework.web.servlet.view.InternalResourceView.renderMergedOutputModel(InternalResourceView.java:145)
+	at org.springframework.web.servlet.view.AbstractView.render(AbstractView.java:303)
+	at org.springframework.web.servlet.DispatcherServlet.render(DispatcherServlet.java:1286)
+	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1041)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:984)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:901)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:970)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:861)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:635)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:846)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:742)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.shiro.web.servlet.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:112)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.shiro.web.servlet.AdviceFilter.executeChain(AdviceFilter.java:108)
+	at org.apache.shiro.web.servlet.AdviceFilter.doFilterInternal(AdviceFilter.java:137)
+	at org.apache.shiro.web.servlet.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:125)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.shiro.web.servlet.AdviceFilter.executeChain(AdviceFilter.java:108)
+	at org.apache.shiro.web.servlet.AdviceFilter.doFilterInternal(AdviceFilter.java:137)
+	at org.apache.shiro.web.servlet.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:125)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.shiro.web.servlet.ProxiedFilterChain.doFilter(ProxiedFilterChain.java:61)
+	at org.apache.shiro.web.servlet.AdviceFilter.executeChain(AdviceFilter.java:108)
+	at org.apache.shiro.web.servlet.AdviceFilter.doFilterInternal(AdviceFilter.java:137)
+	at org.apache.shiro.web.servlet.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:125)
+	at org.apache.shiro.web.servlet.ProxiedFilterChain.doFilter(ProxiedFilterChain.java:66)
+	at org.apache.shiro.web.servlet.AdviceFilter.executeChain(AdviceFilter.java:108)
+	at org.apache.shiro.web.servlet.AdviceFilter.doFilterInternal(AdviceFilter.java:137)
+	at org.apache.shiro.web.servlet.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:125)
+	at org.apache.shiro.web.servlet.ProxiedFilterChain.doFilter(ProxiedFilterChain.java:66)
+	at org.apache.shiro.web.servlet.AbstractShiroFilter.executeChain(AbstractShiroFilter.java:449)
+	at org.apache.shiro.web.servlet.AbstractShiroFilter$1.call(AbstractShiroFilter.java:365)
+	at org.apache.shiro.subject.support.SubjectCallable.doCall(SubjectCallable.java:90)
+	at org.apache.shiro.subject.support.SubjectCallable.call(SubjectCallable.java:83)
+	at org.apache.shiro.subject.support.DelegatingSubject.execute(DelegatingSubject.java:383)
+	at org.apache.shiro.web.servlet.AbstractShiroFilter.doFilterInternal(AbstractShiroFilter.java:362)
+	at org.apache.shiro.web.servlet.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:125)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:99)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.HttpPutFormContentFilter.doFilterInternal(HttpPutFormContentFilter.java:108)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:81)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:197)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:199)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:504)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:140)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:81)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:87)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:342)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:803)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:790)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1459)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+17:17:16.542 [http-nio-8080-exec-7] ERROR o.a.catalina.core.ContainerBase.[Tomcat].[localhost].[/].[dispatcherServlet] - Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Circular view path [login]: would dispatch back to the current handler URL [/login] again. Check your ViewResolver setup! (Hint: This may be the result of an unspecified view, due to default view name generation.)] with root cause
+javax.servlet.ServletException: Circular view path [login]: would dispatch back to the current handler URL [/login] again. Check your ViewResolver setup! (Hint: This may be the result of an unspecified view, due to default view name generation.)
+	at org.springframework.web.servlet.view.InternalResourceView.prepareForRendering(InternalResourceView.java:205)
+	at org.springframework.web.servlet.view.InternalResourceView.renderMergedOutputModel(InternalResourceView.java:145)
+	at org.springframework.web.servlet.view.AbstractView.render(AbstractView.java:303)
+	at org.springframework.web.servlet.DispatcherServlet.render(DispatcherServlet.java:1286)
+	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1041)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:984)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:901)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:970)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:861)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:635)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:846)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:742)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.shiro.web.servlet.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:112)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.shiro.web.servlet.AdviceFilter.executeChain(AdviceFilter.java:108)
+	at org.apache.shiro.web.servlet.AdviceFilter.doFilterInternal(AdviceFilter.java:137)
+	at org.apache.shiro.web.servlet.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:125)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.shiro.web.servlet.AdviceFilter.executeChain(AdviceFilter.java:108)
+	at org.apache.shiro.web.servlet.AdviceFilter.doFilterInternal(AdviceFilter.java:137)
+	at org.apache.shiro.web.servlet.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:125)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.shiro.web.servlet.ProxiedFilterChain.doFilter(ProxiedFilterChain.java:61)
+	at org.apache.shiro.web.servlet.AdviceFilter.executeChain(AdviceFilter.java:108)
+	at org.apache.shiro.web.servlet.AdviceFilter.doFilterInternal(AdviceFilter.java:137)
+	at org.apache.shiro.web.servlet.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:125)
+	at org.apache.shiro.web.servlet.ProxiedFilterChain.doFilter(ProxiedFilterChain.java:66)
+	at org.apache.shiro.web.servlet.AdviceFilter.executeChain(AdviceFilter.java:108)
+	at org.apache.shiro.web.servlet.AdviceFilter.doFilterInternal(AdviceFilter.java:137)
+	at org.apache.shiro.web.servlet.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:125)
+	at org.apache.shiro.web.servlet.ProxiedFilterChain.doFilter(ProxiedFilterChain.java:66)
+	at org.apache.shiro.web.servlet.AbstractShiroFilter.executeChain(AbstractShiroFilter.java:449)
+	at org.apache.shiro.web.servlet.AbstractShiroFilter$1.call(AbstractShiroFilter.java:365)
+	at org.apache.shiro.subject.support.SubjectCallable.doCall(SubjectCallable.java:90)
+	at org.apache.shiro.subject.support.SubjectCallable.call(SubjectCallable.java:83)
+	at org.apache.shiro.subject.support.DelegatingSubject.execute(DelegatingSubject.java:383)
+	at org.apache.shiro.web.servlet.AbstractShiroFilter.doFilterInternal(AbstractShiroFilter.java:362)
+	at org.apache.shiro.web.servlet.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:125)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:99)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.HttpPutFormContentFilter.doFilterInternal(HttpPutFormContentFilter.java:108)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:81)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:197)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:199)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:504)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:140)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:81)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:87)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:342)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:803)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:790)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1459)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+17:19:07.520 [main] INFO  com.heo.HelpeachotherApplication - Starting HelpeachotherApplication on LAPTOP-1M5RA4JD with PID 14212 (D:\Niuban\helpeachother\target\classes started by 11291 in D:\Niuban\helpeachother)
+17:19:07.524 [main] DEBUG com.heo.HelpeachotherApplication - Running with Spring Boot v1.5.10.RELEASE, Spring v4.3.14.RELEASE
+17:19:07.525 [main] INFO  com.heo.HelpeachotherApplication - No active profile set, falling back to default profiles: default
+17:19:07.763 [background-preinit] INFO  org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 5.3.6.Final
+17:19:08.691 [main] INFO  org.apache.shiro.cache.ehcache.EhCacheManager - Cache with name 'com.heo.app.shiro.realm.UserRealm.authorizationCache' does not yet exist.  Creating now.
+17:19:08.692 [main] INFO  org.apache.shiro.cache.ehcache.EhCacheManager - Added EhCache named [com.heo.app.shiro.realm.UserRealm.authorizationCache]
+17:19:08.712 [main] INFO  org.apache.shiro.cache.ehcache.EhCacheManager - Using existing EHCache named [loginRecordCache]
+17:19:09.842 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+17:19:09.843 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/8.5.27
+17:19:09.933 [localhost-startStop-1] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+17:19:10.944 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+17:19:10.956 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+17:19:10.970 [main] INFO  org.apache.tomcat.util.net.NioSelectorPool - Using a shared selector for servlet write/read
+17:19:10.996 [main] INFO  com.heo.HelpeachotherApplication - Started HelpeachotherApplication in 3.901 seconds (JVM running for 5.21)
+17:19:16.677 [http-nio-8080-exec-1] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring FrameworkServlet 'dispatcherServlet'
+17:19:16.715 [http-nio-8080-exec-1] INFO  org.apache.shiro.session.mgt.AbstractValidatingSessionManager - Enabling session validation scheduler...
+17:19:16.715 [http-nio-8080-exec-1] DEBUG com.heo.app.shiro.web.session.SpringSessionValidationScheduler - Scheduling session validation job using Spring Scheduler with session validation interval of [600000]ms...
+17:19:16.717 [http-nio-8080-exec-1] DEBUG com.heo.app.shiro.web.session.SpringSessionValidationScheduler - Session validation job successfully scheduled with Spring Scheduler.
+17:19:16.719 [http-nio-8080-exec-1] INFO  org.apache.shiro.cache.ehcache.EhCacheManager - Using existing EHCache named [shiro-activeSessionCache]
+17:19:16.724 [http-nio-8080-exec-1] ERROR o.a.catalina.core.ContainerBase.[Tomcat].[localhost].[/].[dispatcherServlet] - Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Filtered request failed.] with root cause
+org.apache.ibatis.binding.BindingException: Invalid bound statement (not found): com.heo.dao.UserOnlineMapper.selectByPrimaryKey
+	at org.apache.ibatis.binding.MapperMethod$SqlCommand.<init>(MapperMethod.java:227)
+	at org.apache.ibatis.binding.MapperMethod.<init>(MapperMethod.java:49)
+	at org.apache.ibatis.binding.MapperProxy.cachedMapperMethod(MapperProxy.java:65)
+	at org.apache.ibatis.binding.MapperProxy.invoke(MapperProxy.java:58)
+	at com.sun.proxy.$Proxy56.selectByPrimaryKey(Unknown Source)
+	at com.heo.service.impl.UserOnlineServiceImpl.selectOnlineById(UserOnlineServiceImpl.java:38)
+	at com.heo.app.shiro.session.OnlineSessionDAO.doReadSession(OnlineSessionDAO.java:57)
+	at org.apache.shiro.session.mgt.eis.AbstractSessionDAO.readSession(AbstractSessionDAO.java:168)
+	at org.apache.shiro.session.mgt.eis.CachingSessionDAO.readSession(CachingSessionDAO.java:261)
+	at org.apache.shiro.session.mgt.DefaultSessionManager.retrieveSessionFromDataSource(DefaultSessionManager.java:236)
+	at org.apache.shiro.session.mgt.DefaultSessionManager.retrieveSession(DefaultSessionManager.java:222)
+	at org.apache.shiro.session.mgt.AbstractValidatingSessionManager.doGetSession(AbstractValidatingSessionManager.java:118)
+	at org.apache.shiro.session.mgt.AbstractNativeSessionManager.lookupSession(AbstractNativeSessionManager.java:148)
+	at org.apache.shiro.session.mgt.AbstractNativeSessionManager.getSession(AbstractNativeSessionManager.java:140)
+	at org.apache.shiro.mgt.SessionsSecurityManager.getSession(SessionsSecurityManager.java:156)
+	at org.apache.shiro.mgt.DefaultSecurityManager.resolveContextSession(DefaultSecurityManager.java:456)
+	at org.apache.shiro.mgt.DefaultSecurityManager.resolveSession(DefaultSecurityManager.java:442)
+	at org.apache.shiro.mgt.DefaultSecurityManager.createSubject(DefaultSecurityManager.java:338)
+	at org.apache.shiro.subject.Subject$Builder.buildSubject(Subject.java:846)
+	at org.apache.shiro.web.subject.WebSubject$Builder.buildWebSubject(WebSubject.java:148)
+	at org.apache.shiro.web.servlet.AbstractShiroFilter.createSubject(AbstractShiroFilter.java:292)
+	at org.apache.shiro.web.servlet.AbstractShiroFilter.doFilterInternal(AbstractShiroFilter.java:359)
+	at org.apache.shiro.web.servlet.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:125)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:99)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.HttpPutFormContentFilter.doFilterInternal(HttpPutFormContentFilter.java:108)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:81)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:197)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:199)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:504)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:140)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:81)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:87)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:342)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:803)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:790)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1459)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+17:19:17.718 [pool-1-thread-1] INFO  com.heo.app.shiro.web.session.OnlineWebSessionManager - invalidation sessions...
+17:19:33.143 [http-nio-8080-exec-2] ERROR o.a.catalina.core.ContainerBase.[Tomcat].[localhost].[/].[dispatcherServlet] - Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Filtered request failed.] with root cause
+org.apache.ibatis.binding.BindingException: Invalid bound statement (not found): com.heo.dao.UserOnlineMapper.selectByPrimaryKey
+	at org.apache.ibatis.binding.MapperMethod$SqlCommand.<init>(MapperMethod.java:227)
+	at org.apache.ibatis.binding.MapperMethod.<init>(MapperMethod.java:49)
+	at org.apache.ibatis.binding.MapperProxy.cachedMapperMethod(MapperProxy.java:65)
+	at org.apache.ibatis.binding.MapperProxy.invoke(MapperProxy.java:58)
+	at com.sun.proxy.$Proxy56.selectByPrimaryKey(Unknown Source)
+	at com.heo.service.impl.UserOnlineServiceImpl.selectOnlineById(UserOnlineServiceImpl.java:38)
+	at com.heo.app.shiro.session.OnlineSessionDAO.doReadSession(OnlineSessionDAO.java:57)
+	at org.apache.shiro.session.mgt.eis.AbstractSessionDAO.readSession(AbstractSessionDAO.java:168)
+	at org.apache.shiro.session.mgt.eis.CachingSessionDAO.readSession(CachingSessionDAO.java:261)
+	at org.apache.shiro.session.mgt.DefaultSessionManager.retrieveSessionFromDataSource(DefaultSessionManager.java:236)
+	at org.apache.shiro.session.mgt.DefaultSessionManager.retrieveSession(DefaultSessionManager.java:222)
+	at org.apache.shiro.session.mgt.AbstractValidatingSessionManager.doGetSession(AbstractValidatingSessionManager.java:118)
+	at org.apache.shiro.session.mgt.AbstractNativeSessionManager.lookupSession(AbstractNativeSessionManager.java:148)
+	at org.apache.shiro.session.mgt.AbstractNativeSessionManager.getSession(AbstractNativeSessionManager.java:140)
+	at org.apache.shiro.mgt.SessionsSecurityManager.getSession(SessionsSecurityManager.java:156)
+	at org.apache.shiro.mgt.DefaultSecurityManager.resolveContextSession(DefaultSecurityManager.java:456)
+	at org.apache.shiro.mgt.DefaultSecurityManager.resolveSession(DefaultSecurityManager.java:442)
+	at org.apache.shiro.mgt.DefaultSecurityManager.createSubject(DefaultSecurityManager.java:338)
+	at org.apache.shiro.subject.Subject$Builder.buildSubject(Subject.java:846)
+	at org.apache.shiro.web.subject.WebSubject$Builder.buildWebSubject(WebSubject.java:148)
+	at org.apache.shiro.web.servlet.AbstractShiroFilter.createSubject(AbstractShiroFilter.java:292)
+	at org.apache.shiro.web.servlet.AbstractShiroFilter.doFilterInternal(AbstractShiroFilter.java:359)
+	at org.apache.shiro.web.servlet.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:125)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:99)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.HttpPutFormContentFilter.doFilterInternal(HttpPutFormContentFilter.java:108)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:81)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:197)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:199)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:504)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:140)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:81)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:87)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:342)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:803)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:790)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1459)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+17:21:26.815 [main] INFO  com.heo.HelpeachotherApplication - Starting HelpeachotherApplication on LAPTOP-1M5RA4JD with PID 26652 (D:\Niuban\helpeachother\target\classes started by 11291 in D:\Niuban\helpeachother)
+17:21:26.820 [main] DEBUG com.heo.HelpeachotherApplication - Running with Spring Boot v1.5.10.RELEASE, Spring v4.3.14.RELEASE
+17:21:26.821 [main] INFO  com.heo.HelpeachotherApplication - No active profile set, falling back to default profiles: default
+17:21:27.020 [background-preinit] INFO  org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 5.3.6.Final
+17:21:30.407 [main] INFO  org.apache.shiro.cache.ehcache.EhCacheManager - Cache with name 'com.heo.app.shiro.realm.UserRealm.authorizationCache' does not yet exist.  Creating now.
+17:21:30.411 [main] INFO  org.apache.shiro.cache.ehcache.EhCacheManager - Added EhCache named [com.heo.app.shiro.realm.UserRealm.authorizationCache]
+17:21:30.571 [main] INFO  org.apache.shiro.cache.ehcache.EhCacheManager - Using existing EHCache named [loginRecordCache]
+17:21:40.141 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+17:21:40.147 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/8.5.27
+17:21:40.834 [localhost-startStop-1] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+17:21:53.805 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+17:21:53.893 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+17:21:53.961 [main] INFO  org.apache.tomcat.util.net.NioSelectorPool - Using a shared selector for servlet write/read
+17:21:54.114 [main] INFO  com.heo.HelpeachotherApplication - Started HelpeachotherApplication in 27.8 seconds (JVM running for 29.342)
+17:22:13.106 [http-nio-8080-exec-1] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring FrameworkServlet 'dispatcherServlet'
+17:22:13.374 [http-nio-8080-exec-1] INFO  org.apache.shiro.session.mgt.AbstractValidatingSessionManager - Enabling session validation scheduler...
+17:22:13.375 [http-nio-8080-exec-1] DEBUG com.heo.app.shiro.web.session.SpringSessionValidationScheduler - Scheduling session validation job using Spring Scheduler with session validation interval of [600000]ms...
+17:22:13.378 [http-nio-8080-exec-1] DEBUG com.heo.app.shiro.web.session.SpringSessionValidationScheduler - Session validation job successfully scheduled with Spring Scheduler.
+17:22:13.385 [http-nio-8080-exec-1] INFO  org.apache.shiro.cache.ehcache.EhCacheManager - Using existing EHCache named [shiro-activeSessionCache]
+17:22:24.534 [pool-1-thread-1] INFO  com.heo.app.shiro.web.session.OnlineWebSessionManager - invalidation sessions...
+17:22:28.688 [http-nio-8080-exec-1] ERROR o.a.catalina.core.ContainerBase.[Tomcat].[localhost].[/].[dispatcherServlet] - Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Filtered request failed.] with root cause
+org.apache.ibatis.binding.BindingException: Invalid bound statement (not found): com.heo.dao.UserOnlineMapper.selectByPrimaryKey
+	at org.apache.ibatis.binding.MapperMethod$SqlCommand.<init>(MapperMethod.java:227)
+	at org.apache.ibatis.binding.MapperMethod.<init>(MapperMethod.java:49)
+	at org.apache.ibatis.binding.MapperProxy.cachedMapperMethod(MapperProxy.java:65)
+	at org.apache.ibatis.binding.MapperProxy.invoke(MapperProxy.java:58)
+	at com.sun.proxy.$Proxy56.selectByPrimaryKey(Unknown Source)
+	at com.heo.service.impl.UserOnlineServiceImpl.selectOnlineById(UserOnlineServiceImpl.java:38)
+	at com.heo.app.shiro.session.OnlineSessionDAO.doReadSession(OnlineSessionDAO.java:57)
+	at org.apache.shiro.session.mgt.eis.AbstractSessionDAO.readSession(AbstractSessionDAO.java:168)
+	at org.apache.shiro.session.mgt.eis.CachingSessionDAO.readSession(CachingSessionDAO.java:261)
+	at org.apache.shiro.session.mgt.DefaultSessionManager.retrieveSessionFromDataSource(DefaultSessionManager.java:236)
+	at org.apache.shiro.session.mgt.DefaultSessionManager.retrieveSession(DefaultSessionManager.java:222)
+	at org.apache.shiro.session.mgt.AbstractValidatingSessionManager.doGetSession(AbstractValidatingSessionManager.java:118)
+	at org.apache.shiro.session.mgt.AbstractNativeSessionManager.lookupSession(AbstractNativeSessionManager.java:148)
+	at org.apache.shiro.session.mgt.AbstractNativeSessionManager.getSession(AbstractNativeSessionManager.java:140)
+	at org.apache.shiro.mgt.SessionsSecurityManager.getSession(SessionsSecurityManager.java:156)
+	at org.apache.shiro.mgt.DefaultSecurityManager.resolveContextSession(DefaultSecurityManager.java:456)
+	at org.apache.shiro.mgt.DefaultSecurityManager.resolveSession(DefaultSecurityManager.java:442)
+	at org.apache.shiro.mgt.DefaultSecurityManager.createSubject(DefaultSecurityManager.java:338)
+	at org.apache.shiro.subject.Subject$Builder.buildSubject(Subject.java:846)
+	at org.apache.shiro.web.subject.WebSubject$Builder.buildWebSubject(WebSubject.java:148)
+	at org.apache.shiro.web.servlet.AbstractShiroFilter.createSubject(AbstractShiroFilter.java:292)
+	at org.apache.shiro.web.servlet.AbstractShiroFilter.doFilterInternal(AbstractShiroFilter.java:359)
+	at org.apache.shiro.web.servlet.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:125)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:99)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.HttpPutFormContentFilter.doFilterInternal(HttpPutFormContentFilter.java:108)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:81)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:197)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:199)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:504)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:140)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:81)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:87)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:342)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:803)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:790)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1459)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+17:24:57.328 [main] INFO  com.heo.HelpeachotherApplication - Starting HelpeachotherApplication on LAPTOP-1M5RA4JD with PID 14500 (D:\Niuban\helpeachother\target\classes started by 11291 in D:\Niuban\helpeachother)
+17:24:57.332 [main] DEBUG com.heo.HelpeachotherApplication - Running with Spring Boot v1.5.10.RELEASE, Spring v4.3.14.RELEASE
+17:24:57.333 [main] INFO  com.heo.HelpeachotherApplication - No active profile set, falling back to default profiles: default
+17:24:57.523 [background-preinit] INFO  org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 5.3.6.Final
+17:24:58.458 [main] INFO  org.apache.shiro.cache.ehcache.EhCacheManager - Cache with name 'com.heo.app.shiro.realm.UserRealm.authorizationCache' does not yet exist.  Creating now.
+17:24:58.459 [main] INFO  org.apache.shiro.cache.ehcache.EhCacheManager - Added EhCache named [com.heo.app.shiro.realm.UserRealm.authorizationCache]
+17:24:58.484 [main] INFO  org.apache.shiro.cache.ehcache.EhCacheManager - Using existing EHCache named [loginRecordCache]
+17:24:59.588 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+17:24:59.589 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/8.5.27
+17:24:59.673 [localhost-startStop-1] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+17:25:00.637 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+17:25:00.647 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+17:25:00.660 [main] INFO  org.apache.tomcat.util.net.NioSelectorPool - Using a shared selector for servlet write/read
+17:25:00.693 [main] INFO  com.heo.HelpeachotherApplication - Started HelpeachotherApplication in 3.7 seconds (JVM running for 4.715)
+17:25:05.288 [http-nio-8080-exec-1] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring FrameworkServlet 'dispatcherServlet'
+17:25:05.334 [http-nio-8080-exec-1] INFO  org.apache.shiro.session.mgt.AbstractValidatingSessionManager - Enabling session validation scheduler...
+17:25:05.334 [http-nio-8080-exec-1] DEBUG com.heo.app.shiro.web.session.SpringSessionValidationScheduler - Scheduling session validation job using Spring Scheduler with session validation interval of [600000]ms...
+17:25:05.335 [http-nio-8080-exec-1] DEBUG com.heo.app.shiro.web.session.SpringSessionValidationScheduler - Session validation job successfully scheduled with Spring Scheduler.
+17:25:05.337 [http-nio-8080-exec-1] INFO  org.apache.shiro.cache.ehcache.EhCacheManager - Using existing EHCache named [shiro-activeSessionCache]
+17:25:05.343 [http-nio-8080-exec-1] ERROR o.a.catalina.core.ContainerBase.[Tomcat].[localhost].[/].[dispatcherServlet] - Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Filtered request failed.] with root cause
+org.apache.ibatis.binding.BindingException: Invalid bound statement (not found): com.heo.dao.UserOnlineMapper.selectByPrimaryKey
+	at org.apache.ibatis.binding.MapperMethod$SqlCommand.<init>(MapperMethod.java:227)
+	at org.apache.ibatis.binding.MapperMethod.<init>(MapperMethod.java:49)
+	at org.apache.ibatis.binding.MapperProxy.cachedMapperMethod(MapperProxy.java:65)
+	at org.apache.ibatis.binding.MapperProxy.invoke(MapperProxy.java:58)
+	at com.sun.proxy.$Proxy56.selectByPrimaryKey(Unknown Source)
+	at com.heo.service.impl.UserOnlineServiceImpl.selectOnlineById(UserOnlineServiceImpl.java:38)
+	at com.heo.app.shiro.session.OnlineSessionDAO.doReadSession(OnlineSessionDAO.java:57)
+	at org.apache.shiro.session.mgt.eis.AbstractSessionDAO.readSession(AbstractSessionDAO.java:168)
+	at org.apache.shiro.session.mgt.eis.CachingSessionDAO.readSession(CachingSessionDAO.java:261)
+	at org.apache.shiro.session.mgt.DefaultSessionManager.retrieveSessionFromDataSource(DefaultSessionManager.java:236)
+	at org.apache.shiro.session.mgt.DefaultSessionManager.retrieveSession(DefaultSessionManager.java:222)
+	at org.apache.shiro.session.mgt.AbstractValidatingSessionManager.doGetSession(AbstractValidatingSessionManager.java:118)
+	at org.apache.shiro.session.mgt.AbstractNativeSessionManager.lookupSession(AbstractNativeSessionManager.java:148)
+	at org.apache.shiro.session.mgt.AbstractNativeSessionManager.getSession(AbstractNativeSessionManager.java:140)
+	at org.apache.shiro.mgt.SessionsSecurityManager.getSession(SessionsSecurityManager.java:156)
+	at org.apache.shiro.mgt.DefaultSecurityManager.resolveContextSession(DefaultSecurityManager.java:456)
+	at org.apache.shiro.mgt.DefaultSecurityManager.resolveSession(DefaultSecurityManager.java:442)
+	at org.apache.shiro.mgt.DefaultSecurityManager.createSubject(DefaultSecurityManager.java:338)
+	at org.apache.shiro.subject.Subject$Builder.buildSubject(Subject.java:846)
+	at org.apache.shiro.web.subject.WebSubject$Builder.buildWebSubject(WebSubject.java:148)
+	at org.apache.shiro.web.servlet.AbstractShiroFilter.createSubject(AbstractShiroFilter.java:292)
+	at org.apache.shiro.web.servlet.AbstractShiroFilter.doFilterInternal(AbstractShiroFilter.java:359)
+	at org.apache.shiro.web.servlet.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:125)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:99)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.HttpPutFormContentFilter.doFilterInternal(HttpPutFormContentFilter.java:108)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:81)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:197)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:199)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:504)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:140)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:81)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:87)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:342)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:803)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:790)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1459)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+17:25:06.337 [pool-1-thread-1] INFO  com.heo.app.shiro.web.session.OnlineWebSessionManager - invalidation sessions...
+17:28:39.207 [main] INFO  com.heo.HelpeachotherApplication - Starting HelpeachotherApplication on LAPTOP-1M5RA4JD with PID 22668 (D:\Niuban\helpeachother\target\classes started by 11291 in D:\Niuban\helpeachother)
+17:28:39.210 [main] DEBUG com.heo.HelpeachotherApplication - Running with Spring Boot v1.5.10.RELEASE, Spring v4.3.14.RELEASE
+17:28:39.210 [main] INFO  com.heo.HelpeachotherApplication - No active profile set, falling back to default profiles: default
+17:28:39.430 [background-preinit] INFO  org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 5.3.6.Final
+17:28:40.524 [main] INFO  org.apache.shiro.cache.ehcache.EhCacheManager - Cache with name 'com.heo.app.shiro.realm.UserRealm.authorizationCache' does not yet exist.  Creating now.
+17:28:40.526 [main] INFO  org.apache.shiro.cache.ehcache.EhCacheManager - Added EhCache named [com.heo.app.shiro.realm.UserRealm.authorizationCache]
+17:28:40.548 [main] INFO  org.apache.shiro.cache.ehcache.EhCacheManager - Using existing EHCache named [loginRecordCache]
+17:28:41.912 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+17:28:41.913 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/8.5.27
+17:28:42.014 [localhost-startStop-1] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+17:28:43.156 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+17:28:43.167 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+17:28:43.187 [main] INFO  org.apache.tomcat.util.net.NioSelectorPool - Using a shared selector for servlet write/read
+17:28:43.218 [main] INFO  com.heo.HelpeachotherApplication - Started HelpeachotherApplication in 4.327 seconds (JVM running for 5.431)
+17:28:47.035 [http-nio-8080-exec-1] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring FrameworkServlet 'dispatcherServlet'
+17:28:47.073 [http-nio-8080-exec-1] INFO  org.apache.shiro.session.mgt.AbstractValidatingSessionManager - Enabling session validation scheduler...
+17:28:47.074 [http-nio-8080-exec-1] DEBUG com.heo.app.shiro.web.session.SpringSessionValidationScheduler - Scheduling session validation job using Spring Scheduler with session validation interval of [600000]ms...
+17:28:47.075 [http-nio-8080-exec-1] DEBUG com.heo.app.shiro.web.session.SpringSessionValidationScheduler - Session validation job successfully scheduled with Spring Scheduler.
+17:28:47.076 [http-nio-8080-exec-1] INFO  org.apache.shiro.cache.ehcache.EhCacheManager - Using existing EHCache named [shiro-activeSessionCache]
+17:28:47.082 [http-nio-8080-exec-1] ERROR o.a.catalina.core.ContainerBase.[Tomcat].[localhost].[/].[dispatcherServlet] - Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Filtered request failed.] with root cause
+org.apache.ibatis.binding.BindingException: Invalid bound statement (not found): com.heo.dao.UserOnlineMapper.selectByPrimaryKey
+	at org.apache.ibatis.binding.MapperMethod$SqlCommand.<init>(MapperMethod.java:227)
+	at org.apache.ibatis.binding.MapperMethod.<init>(MapperMethod.java:49)
+	at org.apache.ibatis.binding.MapperProxy.cachedMapperMethod(MapperProxy.java:65)
+	at org.apache.ibatis.binding.MapperProxy.invoke(MapperProxy.java:58)
+	at com.sun.proxy.$Proxy56.selectByPrimaryKey(Unknown Source)
+	at com.heo.service.impl.UserOnlineServiceImpl.selectOnlineById(UserOnlineServiceImpl.java:38)
+	at com.heo.app.shiro.session.OnlineSessionDAO.doReadSession(OnlineSessionDAO.java:57)
+	at org.apache.shiro.session.mgt.eis.AbstractSessionDAO.readSession(AbstractSessionDAO.java:168)
+	at org.apache.shiro.session.mgt.eis.CachingSessionDAO.readSession(CachingSessionDAO.java:261)
+	at org.apache.shiro.session.mgt.DefaultSessionManager.retrieveSessionFromDataSource(DefaultSessionManager.java:236)
+	at org.apache.shiro.session.mgt.DefaultSessionManager.retrieveSession(DefaultSessionManager.java:222)
+	at org.apache.shiro.session.mgt.AbstractValidatingSessionManager.doGetSession(AbstractValidatingSessionManager.java:118)
+	at org.apache.shiro.session.mgt.AbstractNativeSessionManager.lookupSession(AbstractNativeSessionManager.java:148)
+	at org.apache.shiro.session.mgt.AbstractNativeSessionManager.getSession(AbstractNativeSessionManager.java:140)
+	at org.apache.shiro.mgt.SessionsSecurityManager.getSession(SessionsSecurityManager.java:156)
+	at org.apache.shiro.mgt.DefaultSecurityManager.resolveContextSession(DefaultSecurityManager.java:456)
+	at org.apache.shiro.mgt.DefaultSecurityManager.resolveSession(DefaultSecurityManager.java:442)
+	at org.apache.shiro.mgt.DefaultSecurityManager.createSubject(DefaultSecurityManager.java:338)
+	at org.apache.shiro.subject.Subject$Builder.buildSubject(Subject.java:846)
+	at org.apache.shiro.web.subject.WebSubject$Builder.buildWebSubject(WebSubject.java:148)
+	at org.apache.shiro.web.servlet.AbstractShiroFilter.createSubject(AbstractShiroFilter.java:292)
+	at org.apache.shiro.web.servlet.AbstractShiroFilter.doFilterInternal(AbstractShiroFilter.java:359)
+	at org.apache.shiro.web.servlet.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:125)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:99)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.HttpPutFormContentFilter.doFilterInternal(HttpPutFormContentFilter.java:108)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:81)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:197)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:199)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:504)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:140)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:81)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:87)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:342)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:803)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:790)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1459)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+17:28:48.076 [pool-1-thread-1] INFO  com.heo.app.shiro.web.session.OnlineWebSessionManager - invalidation sessions...
+17:36:35.991 [main] INFO  com.heo.HelpeachotherApplication - Starting HelpeachotherApplication on LAPTOP-1M5RA4JD with PID 23416 (D:\Niuban\helpeachother\target\classes started by 11291 in D:\Niuban\helpeachother)
+17:36:35.995 [main] DEBUG com.heo.HelpeachotherApplication - Running with Spring Boot v1.5.10.RELEASE, Spring v4.3.14.RELEASE
+17:36:35.996 [main] INFO  com.heo.HelpeachotherApplication - No active profile set, falling back to default profiles: default
+17:36:36.173 [background-preinit] INFO  org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 5.3.6.Final
+17:36:37.019 [main] INFO  org.apache.shiro.cache.ehcache.EhCacheManager - Cache with name 'com.heo.app.shiro.realm.UserRealm.authorizationCache' does not yet exist.  Creating now.
+17:36:37.020 [main] INFO  org.apache.shiro.cache.ehcache.EhCacheManager - Added EhCache named [com.heo.app.shiro.realm.UserRealm.authorizationCache]
+17:36:37.040 [main] INFO  org.apache.shiro.cache.ehcache.EhCacheManager - Using existing EHCache named [loginRecordCache]
+17:36:38.232 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+17:36:38.233 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/8.5.27
+17:36:38.317 [localhost-startStop-1] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+17:36:39.272 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+17:36:39.280 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+17:36:39.292 [main] INFO  org.apache.tomcat.util.net.NioSelectorPool - Using a shared selector for servlet write/read
+17:36:39.319 [main] INFO  com.heo.HelpeachotherApplication - Started HelpeachotherApplication in 3.665 seconds (JVM running for 4.71)
+17:36:46.251 [http-nio-8080-exec-1] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring FrameworkServlet 'dispatcherServlet'
+17:36:46.291 [http-nio-8080-exec-1] INFO  org.apache.shiro.session.mgt.AbstractValidatingSessionManager - Enabling session validation scheduler...
+17:36:46.292 [http-nio-8080-exec-1] DEBUG com.heo.app.shiro.web.session.SpringSessionValidationScheduler - Scheduling session validation job using Spring Scheduler with session validation interval of [600000]ms...
+17:36:46.292 [http-nio-8080-exec-1] DEBUG com.heo.app.shiro.web.session.SpringSessionValidationScheduler - Session validation job successfully scheduled with Spring Scheduler.
+17:36:46.294 [http-nio-8080-exec-1] INFO  org.apache.shiro.cache.ehcache.EhCacheManager - Using existing EHCache named [shiro-activeSessionCache]
+17:36:46.367 [http-nio-8080-exec-1] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+17:36:46.531 [http-nio-8080-exec-1] DEBUG com.heo.dao.UserOnlineMapper.selectByPrimaryKey - ==>  Preparing: select sessionId, user_name, ipaddr, login_location, browser, os, status, start_timestsamp, last_access_time, expire_time from user_online where sessionId = ? 
+17:36:46.554 [http-nio-8080-exec-1] DEBUG com.heo.dao.UserOnlineMapper.selectByPrimaryKey - ==> Parameters: 87f0873b-a419-4efe-b6a0-5b107dde6387(String)
+17:36:46.572 [http-nio-8080-exec-1] DEBUG com.heo.dao.UserOnlineMapper.selectByPrimaryKey - <==      Total: 0
+17:36:46.652 [http-nio-8080-exec-5] ERROR o.a.catalina.core.ContainerBase.[Tomcat].[localhost].[/].[dispatcherServlet] - Servlet.service() for servlet [dispatcherServlet] threw exception
+javax.servlet.ServletException: Circular view path [login]: would dispatch back to the current handler URL [/login] again. Check your ViewResolver setup! (Hint: This may be the result of an unspecified view, due to default view name generation.)
+	at org.springframework.web.servlet.view.InternalResourceView.prepareForRendering(InternalResourceView.java:205)
+	at org.springframework.web.servlet.view.InternalResourceView.renderMergedOutputModel(InternalResourceView.java:145)
+	at org.springframework.web.servlet.view.AbstractView.render(AbstractView.java:303)
+	at org.springframework.web.servlet.DispatcherServlet.render(DispatcherServlet.java:1286)
+	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1041)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:984)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:901)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:970)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:861)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:635)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:846)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:742)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.shiro.web.servlet.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:112)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.shiro.web.servlet.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:112)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.shiro.web.servlet.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:112)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.shiro.web.servlet.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:112)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:101)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:101)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:101)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:101)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.ApplicationDispatcher.invoke(ApplicationDispatcher.java:728)
+	at org.apache.catalina.core.ApplicationDispatcher.processRequest(ApplicationDispatcher.java:470)
+	at org.apache.catalina.core.ApplicationDispatcher.doForward(ApplicationDispatcher.java:395)
+	at org.apache.catalina.core.ApplicationDispatcher.forward(ApplicationDispatcher.java:316)
+	at org.springframework.web.servlet.view.InternalResourceView.renderMergedOutputModel(InternalResourceView.java:168)
+	at org.springframework.web.servlet.view.AbstractView.render(AbstractView.java:303)
+	at org.springframework.web.servlet.DispatcherServlet.render(DispatcherServlet.java:1286)
+	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1041)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:984)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:901)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:970)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:861)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:635)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:846)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:742)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.shiro.web.servlet.AdviceFilter.executeChain(AdviceFilter.java:108)
+	at org.apache.shiro.web.servlet.AdviceFilter.doFilterInternal(AdviceFilter.java:137)
+	at org.apache.shiro.web.servlet.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:125)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.shiro.web.servlet.AdviceFilter.executeChain(AdviceFilter.java:108)
+	at org.apache.shiro.web.servlet.AdviceFilter.doFilterInternal(AdviceFilter.java:137)
+	at org.apache.shiro.web.servlet.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:125)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.shiro.web.servlet.AdviceFilter.executeChain(AdviceFilter.java:108)
+	at org.apache.shiro.web.servlet.AdviceFilter.doFilterInternal(AdviceFilter.java:137)
+	at org.apache.shiro.web.servlet.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:125)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.shiro.web.servlet.ProxiedFilterChain.doFilter(ProxiedFilterChain.java:61)
+	at org.apache.shiro.web.servlet.AdviceFilter.executeChain(AdviceFilter.java:108)
+	at org.apache.shiro.web.servlet.AdviceFilter.doFilterInternal(AdviceFilter.java:137)
+	at org.apache.shiro.web.servlet.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:125)
+	at org.apache.shiro.web.servlet.ProxiedFilterChain.doFilter(ProxiedFilterChain.java:66)
+	at org.apache.shiro.web.servlet.AbstractShiroFilter.executeChain(AbstractShiroFilter.java:449)
+	at org.apache.shiro.web.servlet.AbstractShiroFilter$1.call(AbstractShiroFilter.java:365)
+	at org.apache.shiro.subject.support.SubjectCallable.doCall(SubjectCallable.java:90)
+	at org.apache.shiro.subject.support.SubjectCallable.call(SubjectCallable.java:83)
+	at org.apache.shiro.subject.support.DelegatingSubject.execute(DelegatingSubject.java:383)
+	at org.apache.shiro.web.servlet.AbstractShiroFilter.doFilterInternal(AbstractShiroFilter.java:362)
+	at org.apache.shiro.web.servlet.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:125)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:99)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.HttpPutFormContentFilter.doFilterInternal(HttpPutFormContentFilter.java:108)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:81)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:197)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:199)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:504)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:140)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:81)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:87)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:342)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:803)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:790)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1459)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+17:36:46.655 [http-nio-8080-exec-5] ERROR o.a.catalina.core.ContainerBase.[Tomcat].[localhost].[/].[dispatcherServlet] - Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Circular view path [login]: would dispatch back to the current handler URL [/login] again. Check your ViewResolver setup! (Hint: This may be the result of an unspecified view, due to default view name generation.)] with root cause
+javax.servlet.ServletException: Circular view path [login]: would dispatch back to the current handler URL [/login] again. Check your ViewResolver setup! (Hint: This may be the result of an unspecified view, due to default view name generation.)
+	at org.springframework.web.servlet.view.InternalResourceView.prepareForRendering(InternalResourceView.java:205)
+	at org.springframework.web.servlet.view.InternalResourceView.renderMergedOutputModel(InternalResourceView.java:145)
+	at org.springframework.web.servlet.view.AbstractView.render(AbstractView.java:303)
+	at org.springframework.web.servlet.DispatcherServlet.render(DispatcherServlet.java:1286)
+	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1041)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:984)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:901)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:970)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:861)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:635)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:846)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:742)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.shiro.web.servlet.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:112)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.shiro.web.servlet.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:112)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.shiro.web.servlet.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:112)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.shiro.web.servlet.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:112)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:101)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:101)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:101)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:101)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.ApplicationDispatcher.invoke(ApplicationDispatcher.java:728)
+	at org.apache.catalina.core.ApplicationDispatcher.processRequest(ApplicationDispatcher.java:470)
+	at org.apache.catalina.core.ApplicationDispatcher.doForward(ApplicationDispatcher.java:395)
+	at org.apache.catalina.core.ApplicationDispatcher.forward(ApplicationDispatcher.java:316)
+	at org.springframework.web.servlet.view.InternalResourceView.renderMergedOutputModel(InternalResourceView.java:168)
+	at org.springframework.web.servlet.view.AbstractView.render(AbstractView.java:303)
+	at org.springframework.web.servlet.DispatcherServlet.render(DispatcherServlet.java:1286)
+	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1041)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:984)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:901)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:970)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:861)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:635)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:846)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:742)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.shiro.web.servlet.AdviceFilter.executeChain(AdviceFilter.java:108)
+	at org.apache.shiro.web.servlet.AdviceFilter.doFilterInternal(AdviceFilter.java:137)
+	at org.apache.shiro.web.servlet.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:125)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.shiro.web.servlet.AdviceFilter.executeChain(AdviceFilter.java:108)
+	at org.apache.shiro.web.servlet.AdviceFilter.doFilterInternal(AdviceFilter.java:137)
+	at org.apache.shiro.web.servlet.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:125)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.shiro.web.servlet.AdviceFilter.executeChain(AdviceFilter.java:108)
+	at org.apache.shiro.web.servlet.AdviceFilter.doFilterInternal(AdviceFilter.java:137)
+	at org.apache.shiro.web.servlet.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:125)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.shiro.web.servlet.ProxiedFilterChain.doFilter(ProxiedFilterChain.java:61)
+	at org.apache.shiro.web.servlet.AdviceFilter.executeChain(AdviceFilter.java:108)
+	at org.apache.shiro.web.servlet.AdviceFilter.doFilterInternal(AdviceFilter.java:137)
+	at org.apache.shiro.web.servlet.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:125)
+	at org.apache.shiro.web.servlet.ProxiedFilterChain.doFilter(ProxiedFilterChain.java:66)
+	at org.apache.shiro.web.servlet.AbstractShiroFilter.executeChain(AbstractShiroFilter.java:449)
+	at org.apache.shiro.web.servlet.AbstractShiroFilter$1.call(AbstractShiroFilter.java:365)
+	at org.apache.shiro.subject.support.SubjectCallable.doCall(SubjectCallable.java:90)
+	at org.apache.shiro.subject.support.SubjectCallable.call(SubjectCallable.java:83)
+	at org.apache.shiro.subject.support.DelegatingSubject.execute(DelegatingSubject.java:383)
+	at org.apache.shiro.web.servlet.AbstractShiroFilter.doFilterInternal(AbstractShiroFilter.java:362)
+	at org.apache.shiro.web.servlet.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:125)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:99)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.HttpPutFormContentFilter.doFilterInternal(HttpPutFormContentFilter.java:108)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:81)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:197)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:199)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:504)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:140)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:81)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:87)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:342)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:803)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:790)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1459)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+17:36:47.295 [pool-1-thread-1] INFO  com.heo.app.shiro.web.session.OnlineWebSessionManager - invalidation sessions...
+17:36:47.299 [pool-1-thread-1] DEBUG com.heo.dao.UserOnlineMapper.selectOnlineByExpired - ==>  Preparing: SELECT * FROM user_online o WHERE o.last_access_time <= ? ORDER BY o.last_access_time ASC 
+17:36:47.299 [pool-1-thread-1] DEBUG com.heo.dao.UserOnlineMapper.selectOnlineByExpired - ==> Parameters: 2018-09-12 17:06:47(String)
+17:38:46.080 [main] INFO  com.heo.HelpeachotherApplication - Starting HelpeachotherApplication on LAPTOP-1M5RA4JD with PID 29000 (D:\Niuban\helpeachother\target\classes started by 11291 in D:\Niuban\helpeachother)
+17:38:46.084 [main] DEBUG com.heo.HelpeachotherApplication - Running with Spring Boot v1.5.10.RELEASE, Spring v4.3.14.RELEASE
+17:38:46.085 [main] INFO  com.heo.HelpeachotherApplication - No active profile set, falling back to default profiles: default
+17:38:46.302 [background-preinit] INFO  org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 5.3.6.Final
+17:38:47.233 [main] INFO  org.apache.shiro.cache.ehcache.EhCacheManager - Cache with name 'com.heo.app.shiro.realm.UserRealm.authorizationCache' does not yet exist.  Creating now.
+17:38:47.234 [main] INFO  org.apache.shiro.cache.ehcache.EhCacheManager - Added EhCache named [com.heo.app.shiro.realm.UserRealm.authorizationCache]
+17:38:47.263 [main] INFO  org.apache.shiro.cache.ehcache.EhCacheManager - Using existing EHCache named [loginRecordCache]
+17:38:48.740 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+17:38:48.741 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/8.5.27
+17:38:48.829 [localhost-startStop-1] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+17:38:49.902 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+17:38:49.912 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+17:38:49.938 [main] INFO  org.apache.tomcat.util.net.NioSelectorPool - Using a shared selector for servlet write/read
+17:38:49.970 [main] INFO  com.heo.HelpeachotherApplication - Started HelpeachotherApplication in 4.29 seconds (JVM running for 5.538)
+17:38:52.733 [http-nio-8080-exec-1] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring FrameworkServlet 'dispatcherServlet'
+17:38:52.769 [http-nio-8080-exec-1] INFO  org.apache.shiro.session.mgt.AbstractValidatingSessionManager - Enabling session validation scheduler...
+17:38:52.769 [http-nio-8080-exec-1] DEBUG com.heo.app.shiro.web.session.SpringSessionValidationScheduler - Scheduling session validation job using Spring Scheduler with session validation interval of [600000]ms...
+17:38:52.770 [http-nio-8080-exec-1] DEBUG com.heo.app.shiro.web.session.SpringSessionValidationScheduler - Session validation job successfully scheduled with Spring Scheduler.
+17:38:52.773 [http-nio-8080-exec-1] INFO  org.apache.shiro.cache.ehcache.EhCacheManager - Using existing EHCache named [shiro-activeSessionCache]
+17:38:52.822 [http-nio-8080-exec-1] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+17:38:52.977 [http-nio-8080-exec-1] DEBUG com.heo.dao.UserOnlineMapper.selectByPrimaryKey - ==>  Preparing: select sessionId, user_name, ipaddr, login_location, browser, os, status, start_timestsamp, last_access_time, expire_time from user_online where sessionId = ? 
+17:38:52.994 [http-nio-8080-exec-1] DEBUG com.heo.dao.UserOnlineMapper.selectByPrimaryKey - ==> Parameters: b8998bed-d6ca-44dd-92b3-f4d27fd27b0c(String)
+17:38:53.015 [http-nio-8080-exec-1] DEBUG com.heo.dao.UserOnlineMapper.selectByPrimaryKey - <==      Total: 0
+17:38:53.103 [http-nio-8080-exec-2] ERROR o.a.catalina.core.ContainerBase.[Tomcat].[localhost].[/].[dispatcherServlet] - Servlet.service() for servlet [dispatcherServlet] threw exception
+javax.servlet.ServletException: Circular view path [login]: would dispatch back to the current handler URL [/login] again. Check your ViewResolver setup! (Hint: This may be the result of an unspecified view, due to default view name generation.)
+	at org.springframework.web.servlet.view.InternalResourceView.prepareForRendering(InternalResourceView.java:205)
+	at org.springframework.web.servlet.view.InternalResourceView.renderMergedOutputModel(InternalResourceView.java:145)
+	at org.springframework.web.servlet.view.AbstractView.render(AbstractView.java:303)
+	at org.springframework.web.servlet.DispatcherServlet.render(DispatcherServlet.java:1286)
+	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1041)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:984)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:901)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:970)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:861)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:635)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:846)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:742)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.shiro.web.servlet.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:112)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.shiro.web.servlet.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:112)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.shiro.web.servlet.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:112)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.shiro.web.servlet.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:112)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:101)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:101)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:101)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:101)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.ApplicationDispatcher.invoke(ApplicationDispatcher.java:728)
+	at org.apache.catalina.core.ApplicationDispatcher.processRequest(ApplicationDispatcher.java:470)
+	at org.apache.catalina.core.ApplicationDispatcher.doForward(ApplicationDispatcher.java:395)
+	at org.apache.catalina.core.ApplicationDispatcher.forward(ApplicationDispatcher.java:316)
+	at org.springframework.web.servlet.view.InternalResourceView.renderMergedOutputModel(InternalResourceView.java:168)
+	at org.springframework.web.servlet.view.AbstractView.render(AbstractView.java:303)
+	at org.springframework.web.servlet.DispatcherServlet.render(DispatcherServlet.java:1286)
+	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1041)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:984)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:901)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:970)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:861)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:635)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:846)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:742)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.shiro.web.servlet.AdviceFilter.executeChain(AdviceFilter.java:108)
+	at org.apache.shiro.web.servlet.AdviceFilter.doFilterInternal(AdviceFilter.java:137)
+	at org.apache.shiro.web.servlet.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:125)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.shiro.web.servlet.AdviceFilter.executeChain(AdviceFilter.java:108)
+	at org.apache.shiro.web.servlet.AdviceFilter.doFilterInternal(AdviceFilter.java:137)
+	at org.apache.shiro.web.servlet.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:125)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.shiro.web.servlet.AdviceFilter.executeChain(AdviceFilter.java:108)
+	at org.apache.shiro.web.servlet.AdviceFilter.doFilterInternal(AdviceFilter.java:137)
+	at org.apache.shiro.web.servlet.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:125)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.shiro.web.servlet.ProxiedFilterChain.doFilter(ProxiedFilterChain.java:61)
+	at org.apache.shiro.web.servlet.AdviceFilter.executeChain(AdviceFilter.java:108)
+	at org.apache.shiro.web.servlet.AdviceFilter.doFilterInternal(AdviceFilter.java:137)
+	at org.apache.shiro.web.servlet.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:125)
+	at org.apache.shiro.web.servlet.ProxiedFilterChain.doFilter(ProxiedFilterChain.java:66)
+	at org.apache.shiro.web.servlet.AbstractShiroFilter.executeChain(AbstractShiroFilter.java:449)
+	at org.apache.shiro.web.servlet.AbstractShiroFilter$1.call(AbstractShiroFilter.java:365)
+	at org.apache.shiro.subject.support.SubjectCallable.doCall(SubjectCallable.java:90)
+	at org.apache.shiro.subject.support.SubjectCallable.call(SubjectCallable.java:83)
+	at org.apache.shiro.subject.support.DelegatingSubject.execute(DelegatingSubject.java:383)
+	at org.apache.shiro.web.servlet.AbstractShiroFilter.doFilterInternal(AbstractShiroFilter.java:362)
+	at org.apache.shiro.web.servlet.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:125)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:99)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.HttpPutFormContentFilter.doFilterInternal(HttpPutFormContentFilter.java:108)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:81)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:197)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:199)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:504)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:140)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:81)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:87)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:342)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:803)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:790)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1459)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+17:38:53.106 [http-nio-8080-exec-2] ERROR o.a.catalina.core.ContainerBase.[Tomcat].[localhost].[/].[dispatcherServlet] - Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Circular view path [login]: would dispatch back to the current handler URL [/login] again. Check your ViewResolver setup! (Hint: This may be the result of an unspecified view, due to default view name generation.)] with root cause
+javax.servlet.ServletException: Circular view path [login]: would dispatch back to the current handler URL [/login] again. Check your ViewResolver setup! (Hint: This may be the result of an unspecified view, due to default view name generation.)
+	at org.springframework.web.servlet.view.InternalResourceView.prepareForRendering(InternalResourceView.java:205)
+	at org.springframework.web.servlet.view.InternalResourceView.renderMergedOutputModel(InternalResourceView.java:145)
+	at org.springframework.web.servlet.view.AbstractView.render(AbstractView.java:303)
+	at org.springframework.web.servlet.DispatcherServlet.render(DispatcherServlet.java:1286)
+	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1041)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:984)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:901)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:970)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:861)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:635)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:846)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:742)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.shiro.web.servlet.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:112)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.shiro.web.servlet.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:112)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.shiro.web.servlet.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:112)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.shiro.web.servlet.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:112)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:101)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:101)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:101)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:101)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.ApplicationDispatcher.invoke(ApplicationDispatcher.java:728)
+	at org.apache.catalina.core.ApplicationDispatcher.processRequest(ApplicationDispatcher.java:470)
+	at org.apache.catalina.core.ApplicationDispatcher.doForward(ApplicationDispatcher.java:395)
+	at org.apache.catalina.core.ApplicationDispatcher.forward(ApplicationDispatcher.java:316)
+	at org.springframework.web.servlet.view.InternalResourceView.renderMergedOutputModel(InternalResourceView.java:168)
+	at org.springframework.web.servlet.view.AbstractView.render(AbstractView.java:303)
+	at org.springframework.web.servlet.DispatcherServlet.render(DispatcherServlet.java:1286)
+	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1041)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:984)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:901)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:970)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:861)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:635)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:846)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:742)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.shiro.web.servlet.AdviceFilter.executeChain(AdviceFilter.java:108)
+	at org.apache.shiro.web.servlet.AdviceFilter.doFilterInternal(AdviceFilter.java:137)
+	at org.apache.shiro.web.servlet.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:125)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.shiro.web.servlet.AdviceFilter.executeChain(AdviceFilter.java:108)
+	at org.apache.shiro.web.servlet.AdviceFilter.doFilterInternal(AdviceFilter.java:137)
+	at org.apache.shiro.web.servlet.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:125)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.shiro.web.servlet.AdviceFilter.executeChain(AdviceFilter.java:108)
+	at org.apache.shiro.web.servlet.AdviceFilter.doFilterInternal(AdviceFilter.java:137)
+	at org.apache.shiro.web.servlet.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:125)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.shiro.web.servlet.ProxiedFilterChain.doFilter(ProxiedFilterChain.java:61)
+	at org.apache.shiro.web.servlet.AdviceFilter.executeChain(AdviceFilter.java:108)
+	at org.apache.shiro.web.servlet.AdviceFilter.doFilterInternal(AdviceFilter.java:137)
+	at org.apache.shiro.web.servlet.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:125)
+	at org.apache.shiro.web.servlet.ProxiedFilterChain.doFilter(ProxiedFilterChain.java:66)
+	at org.apache.shiro.web.servlet.AbstractShiroFilter.executeChain(AbstractShiroFilter.java:449)
+	at org.apache.shiro.web.servlet.AbstractShiroFilter$1.call(AbstractShiroFilter.java:365)
+	at org.apache.shiro.subject.support.SubjectCallable.doCall(SubjectCallable.java:90)
+	at org.apache.shiro.subject.support.SubjectCallable.call(SubjectCallable.java:83)
+	at org.apache.shiro.subject.support.DelegatingSubject.execute(DelegatingSubject.java:383)
+	at org.apache.shiro.web.servlet.AbstractShiroFilter.doFilterInternal(AbstractShiroFilter.java:362)
+	at org.apache.shiro.web.servlet.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:125)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:99)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.HttpPutFormContentFilter.doFilterInternal(HttpPutFormContentFilter.java:108)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:81)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:197)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:199)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:504)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:140)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:81)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:87)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:342)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:803)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:790)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1459)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+17:38:53.771 [pool-1-thread-1] INFO  com.heo.app.shiro.web.session.OnlineWebSessionManager - invalidation sessions...
+17:38:53.774 [pool-1-thread-1] DEBUG com.heo.dao.UserOnlineMapper.selectOnlineByExpired - ==>  Preparing: SELECT * FROM user_online o WHERE o.last_access_time <= ? ORDER BY o.last_access_time ASC 
+17:38:53.775 [pool-1-thread-1] DEBUG com.heo.dao.UserOnlineMapper.selectOnlineByExpired - ==> Parameters: 2018-09-12 17:08:53(String)
+17:43:19.557 [main] INFO  com.heo.HelpeachotherApplication - Starting HelpeachotherApplication on LAPTOP-1M5RA4JD with PID 24056 (D:\Niuban\helpeachother\target\classes started by 11291 in D:\Niuban\helpeachother)
+17:43:19.560 [main] DEBUG com.heo.HelpeachotherApplication - Running with Spring Boot v1.5.10.RELEASE, Spring v4.3.14.RELEASE
+17:43:19.560 [main] INFO  com.heo.HelpeachotherApplication - No active profile set, falling back to default profiles: default
+17:43:19.732 [background-preinit] INFO  org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 5.3.6.Final
+17:43:20.454 [main] INFO  org.apache.shiro.cache.ehcache.EhCacheManager - Cache with name 'com.heo.app.shiro.realm.UserRealm.authorizationCache' does not yet exist.  Creating now.
+17:43:20.470 [main] INFO  org.apache.shiro.cache.ehcache.EhCacheManager - Added EhCache named [com.heo.app.shiro.realm.UserRealm.authorizationCache]
+17:43:20.473 [main] INFO  org.apache.shiro.cache.ehcache.EhCacheManager - Using existing EHCache named [loginRecordCache]
+17:43:21.613 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+17:43:21.614 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/8.5.27
+17:43:21.704 [localhost-startStop-1] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+17:43:22.749 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+17:43:22.758 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+17:43:22.772 [main] INFO  org.apache.tomcat.util.net.NioSelectorPool - Using a shared selector for servlet write/read
+17:43:22.799 [main] INFO  com.heo.HelpeachotherApplication - Started HelpeachotherApplication in 3.569 seconds (JVM running for 4.554)
+17:43:22.842 [http-nio-8080-exec-1] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring FrameworkServlet 'dispatcherServlet'
+17:43:22.873 [http-nio-8080-exec-1] INFO  org.apache.shiro.session.mgt.AbstractValidatingSessionManager - Enabling session validation scheduler...
+17:43:22.874 [http-nio-8080-exec-1] DEBUG com.heo.app.shiro.web.session.SpringSessionValidationScheduler - Scheduling session validation job using Spring Scheduler with session validation interval of [600000]ms...
+17:43:22.875 [http-nio-8080-exec-1] DEBUG com.heo.app.shiro.web.session.SpringSessionValidationScheduler - Session validation job successfully scheduled with Spring Scheduler.
+17:43:22.876 [http-nio-8080-exec-1] INFO  org.apache.shiro.cache.ehcache.EhCacheManager - Using existing EHCache named [shiro-activeSessionCache]
+17:43:22.949 [http-nio-8080-exec-1] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+17:43:23.140 [http-nio-8080-exec-1] DEBUG com.heo.dao.UserOnlineMapper.selectByPrimaryKey - ==>  Preparing: select sessionId, user_name, ipaddr, login_location, browser, os, status, start_timestsamp, last_access_time, expire_time from user_online where sessionId = ? 
+17:43:23.155 [http-nio-8080-exec-1] DEBUG com.heo.dao.UserOnlineMapper.selectByPrimaryKey - ==> Parameters: 72aec8e0-3e1c-46d4-83cd-2ddc24484a67(String)
+17:43:23.179 [http-nio-8080-exec-1] DEBUG com.heo.dao.UserOnlineMapper.selectByPrimaryKey - <==      Total: 0
+17:43:23.232 [http-nio-8080-exec-1] ERROR o.a.catalina.core.ContainerBase.[Tomcat].[localhost].[/].[dispatcherServlet] - Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Circular view path [login]: would dispatch back to the current handler URL [/login] again. Check your ViewResolver setup! (Hint: This may be the result of an unspecified view, due to default view name generation.)] with root cause
+javax.servlet.ServletException: Circular view path [login]: would dispatch back to the current handler URL [/login] again. Check your ViewResolver setup! (Hint: This may be the result of an unspecified view, due to default view name generation.)
+	at org.springframework.web.servlet.view.InternalResourceView.prepareForRendering(InternalResourceView.java:205)
+	at org.springframework.web.servlet.view.InternalResourceView.renderMergedOutputModel(InternalResourceView.java:145)
+	at org.springframework.web.servlet.view.AbstractView.render(AbstractView.java:303)
+	at org.springframework.web.servlet.DispatcherServlet.render(DispatcherServlet.java:1286)
+	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1041)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:984)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:901)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:970)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:861)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:635)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:846)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:742)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.shiro.web.servlet.AdviceFilter.executeChain(AdviceFilter.java:108)
+	at org.apache.shiro.web.servlet.AdviceFilter.doFilterInternal(AdviceFilter.java:137)
+	at org.apache.shiro.web.servlet.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:125)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.shiro.web.servlet.AdviceFilter.executeChain(AdviceFilter.java:108)
+	at org.apache.shiro.web.servlet.AdviceFilter.doFilterInternal(AdviceFilter.java:137)
+	at org.apache.shiro.web.servlet.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:125)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.shiro.web.servlet.AdviceFilter.executeChain(AdviceFilter.java:108)
+	at org.apache.shiro.web.servlet.AdviceFilter.doFilterInternal(AdviceFilter.java:137)
+	at org.apache.shiro.web.servlet.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:125)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.shiro.web.servlet.AbstractShiroFilter.executeChain(AbstractShiroFilter.java:449)
+	at org.apache.shiro.web.servlet.AbstractShiroFilter$1.call(AbstractShiroFilter.java:365)
+	at org.apache.shiro.subject.support.SubjectCallable.doCall(SubjectCallable.java:90)
+	at org.apache.shiro.subject.support.SubjectCallable.call(SubjectCallable.java:83)
+	at org.apache.shiro.subject.support.DelegatingSubject.execute(DelegatingSubject.java:383)
+	at org.apache.shiro.web.servlet.AbstractShiroFilter.doFilterInternal(AbstractShiroFilter.java:362)
+	at org.apache.shiro.web.servlet.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:125)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:99)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.HttpPutFormContentFilter.doFilterInternal(HttpPutFormContentFilter.java:108)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:81)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:197)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:199)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:504)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:140)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:81)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:87)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:342)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:803)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:790)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1459)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+17:43:23.876 [pool-1-thread-1] INFO  com.heo.app.shiro.web.session.OnlineWebSessionManager - invalidation sessions...
+17:43:23.885 [pool-1-thread-1] DEBUG com.heo.dao.UserOnlineMapper.selectOnlineByExpired - ==>  Preparing: SELECT * FROM user_online o WHERE o.last_access_time <= ? ORDER BY o.last_access_time ASC 
+17:43:23.886 [pool-1-thread-1] DEBUG com.heo.dao.UserOnlineMapper.selectOnlineByExpired - ==> Parameters: 2018-09-12 17:13:23(String)
+17:43:44.454 [main] INFO  com.heo.HelpeachotherApplication - Starting HelpeachotherApplication on LAPTOP-1M5RA4JD with PID 26016 (D:\Niuban\helpeachother\target\classes started by 11291 in D:\Niuban\helpeachother)
+17:43:44.458 [main] DEBUG com.heo.HelpeachotherApplication - Running with Spring Boot v1.5.10.RELEASE, Spring v4.3.14.RELEASE
+17:43:44.459 [main] INFO  com.heo.HelpeachotherApplication - No active profile set, falling back to default profiles: default
+17:43:44.637 [background-preinit] INFO  org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 5.3.6.Final
+17:43:45.390 [main] INFO  org.apache.shiro.cache.ehcache.EhCacheManager - Cache with name 'com.heo.app.shiro.realm.UserRealm.authorizationCache' does not yet exist.  Creating now.
+17:43:45.392 [main] INFO  org.apache.shiro.cache.ehcache.EhCacheManager - Added EhCache named [com.heo.app.shiro.realm.UserRealm.authorizationCache]
+17:43:45.410 [main] INFO  org.apache.shiro.cache.ehcache.EhCacheManager - Using existing EHCache named [loginRecordCache]
+17:43:46.465 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+17:43:46.467 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/8.5.27
+17:43:46.534 [localhost-startStop-1] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+17:43:47.572 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+17:43:47.582 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+17:43:47.597 [main] INFO  org.apache.tomcat.util.net.NioSelectorPool - Using a shared selector for servlet write/read
+17:43:47.635 [main] INFO  com.heo.HelpeachotherApplication - Started HelpeachotherApplication in 3.526 seconds (JVM running for 4.495)
+17:43:55.381 [http-nio-8080-exec-1] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring FrameworkServlet 'dispatcherServlet'
+17:43:55.414 [http-nio-8080-exec-1] INFO  org.apache.shiro.session.mgt.AbstractValidatingSessionManager - Enabling session validation scheduler...
+17:43:55.415 [http-nio-8080-exec-1] DEBUG com.heo.app.shiro.web.session.SpringSessionValidationScheduler - Scheduling session validation job using Spring Scheduler with session validation interval of [600000]ms...
+17:43:55.415 [http-nio-8080-exec-1] DEBUG com.heo.app.shiro.web.session.SpringSessionValidationScheduler - Session validation job successfully scheduled with Spring Scheduler.
+17:43:55.417 [http-nio-8080-exec-1] INFO  org.apache.shiro.cache.ehcache.EhCacheManager - Using existing EHCache named [shiro-activeSessionCache]
+17:43:55.460 [http-nio-8080-exec-1] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+17:43:55.607 [http-nio-8080-exec-1] DEBUG com.heo.dao.UserOnlineMapper.selectByPrimaryKey - ==>  Preparing: select sessionId, user_name, ipaddr, login_location, browser, os, status, start_timestsamp, last_access_time, expire_time from user_online where sessionId = ? 
+17:43:55.625 [http-nio-8080-exec-1] DEBUG com.heo.dao.UserOnlineMapper.selectByPrimaryKey - ==> Parameters: 72aec8e0-3e1c-46d4-83cd-2ddc24484a67(String)
+17:43:55.635 [http-nio-8080-exec-1] DEBUG com.heo.dao.UserOnlineMapper.selectByPrimaryKey - <==      Total: 0
+17:43:56.417 [pool-1-thread-1] INFO  com.heo.app.shiro.web.session.OnlineWebSessionManager - invalidation sessions...
+17:43:56.423 [pool-1-thread-1] DEBUG com.heo.dao.UserOnlineMapper.selectOnlineByExpired - ==>  Preparing: SELECT * FROM user_online o WHERE o.last_access_time <= ? ORDER BY o.last_access_time ASC 
+17:43:56.424 [pool-1-thread-1] DEBUG com.heo.dao.UserOnlineMapper.selectOnlineByExpired - ==> Parameters: 2018-09-12 17:13:56(String)
+17:44:51.972 [http-nio-8080-exec-3] DEBUG com.heo.dao.UserOnlineMapper.selectByPrimaryKey - ==>  Preparing: select sessionId, user_name, ipaddr, login_location, browser, os, status, start_timestsamp, last_access_time, expire_time from user_online where sessionId = ? 
+17:44:51.974 [http-nio-8080-exec-3] DEBUG com.heo.dao.UserOnlineMapper.selectByPrimaryKey - ==> Parameters: 72aec8e0-3e1c-46d4-83cd-2ddc24484a67(String)
+17:44:51.975 [http-nio-8080-exec-3] DEBUG com.heo.dao.UserOnlineMapper.selectByPrimaryKey - <==      Total: 0
+17:45:21.358 [http-nio-8080-exec-5] DEBUG com.heo.dao.UserOnlineMapper.selectByPrimaryKey - ==>  Preparing: select sessionId, user_name, ipaddr, login_location, browser, os, status, start_timestsamp, last_access_time, expire_time from user_online where sessionId = ? 
+17:45:21.359 [http-nio-8080-exec-5] DEBUG com.heo.dao.UserOnlineMapper.selectByPrimaryKey - ==> Parameters: 72aec8e0-3e1c-46d4-83cd-2ddc24484a67(String)
+17:45:21.361 [http-nio-8080-exec-5] DEBUG com.heo.dao.UserOnlineMapper.selectByPrimaryKey - <==      Total: 0
+17:45:23.824 [http-nio-8080-exec-6] DEBUG com.heo.dao.UserOnlineMapper.selectByPrimaryKey - ==>  Preparing: select sessionId, user_name, ipaddr, login_location, browser, os, status, start_timestsamp, last_access_time, expire_time from user_online where sessionId = ? 
+17:45:23.825 [http-nio-8080-exec-6] DEBUG com.heo.dao.UserOnlineMapper.selectByPrimaryKey - ==> Parameters: 72aec8e0-3e1c-46d4-83cd-2ddc24484a67(String)
+17:45:23.826 [http-nio-8080-exec-6] DEBUG com.heo.dao.UserOnlineMapper.selectByPrimaryKey - <==      Total: 0
+17:45:24.116 [http-nio-8080-exec-10] DEBUG com.heo.dao.UserOnlineMapper.selectByPrimaryKey - ==>  Preparing: select sessionId, user_name, ipaddr, login_location, browser, os, status, start_timestsamp, last_access_time, expire_time from user_online where sessionId = ? 
+17:45:24.117 [http-nio-8080-exec-10] DEBUG com.heo.dao.UserOnlineMapper.selectByPrimaryKey - ==> Parameters: 72aec8e0-3e1c-46d4-83cd-2ddc24484a67(String)
+17:45:24.119 [http-nio-8080-exec-10] DEBUG com.heo.dao.UserOnlineMapper.selectByPrimaryKey - <==      Total: 0
+17:45:24.159 [http-nio-8080-exec-8] DEBUG com.heo.dao.UserOnlineMapper.selectByPrimaryKey - ==>  Preparing: select sessionId, user_name, ipaddr, login_location, browser, os, status, start_timestsamp, last_access_time, expire_time from user_online where sessionId = ? 
+17:45:24.160 [http-nio-8080-exec-8] DEBUG com.heo.dao.UserOnlineMapper.selectByPrimaryKey - ==> Parameters: 72aec8e0-3e1c-46d4-83cd-2ddc24484a67(String)
+17:45:24.162 [http-nio-8080-exec-8] DEBUG com.heo.dao.UserOnlineMapper.selectByPrimaryKey - <==      Total: 0
+17:45:24.346 [http-nio-8080-exec-9] DEBUG com.heo.dao.UserOnlineMapper.selectByPrimaryKey - ==>  Preparing: select sessionId, user_name, ipaddr, login_location, browser, os, status, start_timestsamp, last_access_time, expire_time from user_online where sessionId = ? 
+17:45:24.347 [http-nio-8080-exec-9] DEBUG com.heo.dao.UserOnlineMapper.selectByPrimaryKey - ==> Parameters: 72aec8e0-3e1c-46d4-83cd-2ddc24484a67(String)
+17:45:24.347 [http-nio-8080-exec-9] DEBUG com.heo.dao.UserOnlineMapper.selectByPrimaryKey - <==      Total: 0
+17:45:24.530 [http-nio-8080-exec-7] DEBUG com.heo.dao.UserOnlineMapper.selectByPrimaryKey - ==>  Preparing: select sessionId, user_name, ipaddr, login_location, browser, os, status, start_timestsamp, last_access_time, expire_time from user_online where sessionId = ? 
+17:45:24.531 [http-nio-8080-exec-7] DEBUG com.heo.dao.UserOnlineMapper.selectByPrimaryKey - ==> Parameters: 72aec8e0-3e1c-46d4-83cd-2ddc24484a67(String)
+17:45:24.532 [http-nio-8080-exec-7] DEBUG com.heo.dao.UserOnlineMapper.selectByPrimaryKey - <==      Total: 0
+17:45:24.812 [http-nio-8080-exec-1] DEBUG com.heo.dao.UserOnlineMapper.selectByPrimaryKey - ==>  Preparing: select sessionId, user_name, ipaddr, login_location, browser, os, status, start_timestsamp, last_access_time, expire_time from user_online where sessionId = ? 
+17:45:24.812 [http-nio-8080-exec-1] DEBUG com.heo.dao.UserOnlineMapper.selectByPrimaryKey - ==> Parameters: 72aec8e0-3e1c-46d4-83cd-2ddc24484a67(String)
+17:45:24.813 [http-nio-8080-exec-1] DEBUG com.heo.dao.UserOnlineMapper.selectByPrimaryKey - <==      Total: 0
+17:46:54.631 [main] INFO  com.heo.HelpeachotherApplication - Starting HelpeachotherApplication on LAPTOP-1M5RA4JD with PID 7736 (D:\Niuban\helpeachother\target\classes started by 11291 in D:\Niuban\helpeachother)
+17:46:54.634 [main] DEBUG com.heo.HelpeachotherApplication - Running with Spring Boot v1.5.10.RELEASE, Spring v4.3.14.RELEASE
+17:46:54.634 [main] INFO  com.heo.HelpeachotherApplication - No active profile set, falling back to default profiles: default
+17:46:54.823 [background-preinit] INFO  org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 5.3.6.Final
+17:46:55.548 [main] INFO  org.apache.shiro.cache.ehcache.EhCacheManager - Cache with name 'com.heo.app.shiro.realm.UserRealm.authorizationCache' does not yet exist.  Creating now.
+17:46:55.548 [main] INFO  org.apache.shiro.cache.ehcache.EhCacheManager - Added EhCache named [com.heo.app.shiro.realm.UserRealm.authorizationCache]
+17:46:55.567 [main] INFO  org.apache.shiro.cache.ehcache.EhCacheManager - Using existing EHCache named [loginRecordCache]
+17:46:56.628 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+17:46:56.628 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/8.5.27
+17:46:56.710 [localhost-startStop-1] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+17:46:57.680 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+17:46:57.688 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+17:46:57.702 [main] INFO  org.apache.tomcat.util.net.NioSelectorPool - Using a shared selector for servlet write/read
+17:46:57.725 [main] INFO  com.heo.HelpeachotherApplication - Started HelpeachotherApplication in 3.452 seconds (JVM running for 4.519)
+17:47:04.187 [http-nio-8080-exec-1] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring FrameworkServlet 'dispatcherServlet'
+17:47:04.218 [http-nio-8080-exec-1] INFO  org.apache.shiro.session.mgt.AbstractValidatingSessionManager - Enabling session validation scheduler...
+17:47:04.218 [http-nio-8080-exec-1] DEBUG com.heo.app.shiro.web.session.SpringSessionValidationScheduler - Scheduling session validation job using Spring Scheduler with session validation interval of [600000]ms...
+17:47:04.219 [http-nio-8080-exec-1] DEBUG com.heo.app.shiro.web.session.SpringSessionValidationScheduler - Session validation job successfully scheduled with Spring Scheduler.
+17:47:04.221 [http-nio-8080-exec-1] INFO  org.apache.shiro.cache.ehcache.EhCacheManager - Using existing EHCache named [shiro-activeSessionCache]
+17:47:04.269 [http-nio-8080-exec-1] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+17:47:04.422 [http-nio-8080-exec-1] DEBUG com.heo.dao.UserOnlineMapper.selectByPrimaryKey - ==>  Preparing: select sessionId, user_name, ipaddr, login_location, browser, os, status, start_timestsamp, last_access_time, expire_time from user_online where sessionId = ? 
+17:47:04.438 [http-nio-8080-exec-1] DEBUG com.heo.dao.UserOnlineMapper.selectByPrimaryKey - ==> Parameters: 72aec8e0-3e1c-46d4-83cd-2ddc24484a67(String)
+17:47:04.449 [http-nio-8080-exec-1] DEBUG com.heo.dao.UserOnlineMapper.selectByPrimaryKey - <==      Total: 0
+17:47:05.221 [pool-1-thread-1] INFO  com.heo.app.shiro.web.session.OnlineWebSessionManager - invalidation sessions...
+17:47:05.225 [pool-1-thread-1] DEBUG com.heo.dao.UserOnlineMapper.selectOnlineByExpired - ==>  Preparing: SELECT * FROM user_online o WHERE o.last_access_time <= ? ORDER BY o.last_access_time ASC 
+17:47:05.226 [pool-1-thread-1] DEBUG com.heo.dao.UserOnlineMapper.selectOnlineByExpired - ==> Parameters: 2018-09-12 17:17:05(String)
+17:48:01.075 [main] INFO  com.heo.HelpeachotherApplication - Starting HelpeachotherApplication on LAPTOP-1M5RA4JD with PID 13892 (D:\Niuban\helpeachother\target\classes started by 11291 in D:\Niuban\helpeachother)
+17:48:01.075 [main] DEBUG com.heo.HelpeachotherApplication - Running with Spring Boot v1.5.10.RELEASE, Spring v4.3.14.RELEASE
+17:48:01.075 [main] INFO  com.heo.HelpeachotherApplication - No active profile set, falling back to default profiles: default
+17:48:01.273 [background-preinit] INFO  org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 5.3.6.Final
+17:48:02.066 [main] INFO  org.apache.shiro.cache.ehcache.EhCacheManager - Cache with name 'com.heo.app.shiro.realm.UserRealm.authorizationCache' does not yet exist.  Creating now.
+17:48:02.067 [main] INFO  org.apache.shiro.cache.ehcache.EhCacheManager - Added EhCache named [com.heo.app.shiro.realm.UserRealm.authorizationCache]
+17:48:02.087 [main] INFO  org.apache.shiro.cache.ehcache.EhCacheManager - Using existing EHCache named [loginRecordCache]
+17:48:03.247 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+17:48:03.248 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/8.5.27
+17:48:03.329 [localhost-startStop-1] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+17:48:04.360 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+17:48:04.369 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+17:48:04.385 [main] INFO  org.apache.tomcat.util.net.NioSelectorPool - Using a shared selector for servlet write/read
+17:48:04.410 [main] INFO  com.heo.HelpeachotherApplication - Started HelpeachotherApplication in 3.673 seconds (JVM running for 4.855)
+17:48:04.507 [http-nio-8080-exec-1] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring FrameworkServlet 'dispatcherServlet'
+17:48:04.538 [http-nio-8080-exec-1] INFO  org.apache.shiro.session.mgt.AbstractValidatingSessionManager - Enabling session validation scheduler...
+17:48:04.539 [http-nio-8080-exec-1] DEBUG com.heo.app.shiro.web.session.SpringSessionValidationScheduler - Scheduling session validation job using Spring Scheduler with session validation interval of [600000]ms...
+17:48:04.539 [http-nio-8080-exec-1] DEBUG com.heo.app.shiro.web.session.SpringSessionValidationScheduler - Session validation job successfully scheduled with Spring Scheduler.
+17:48:04.541 [http-nio-8080-exec-1] INFO  org.apache.shiro.cache.ehcache.EhCacheManager - Using existing EHCache named [shiro-activeSessionCache]
+17:48:04.589 [http-nio-8080-exec-1] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+17:48:04.764 [http-nio-8080-exec-1] DEBUG com.heo.dao.UserOnlineMapper.selectByPrimaryKey - ==>  Preparing: select sessionId, user_name, ipaddr, login_location, browser, os, status, start_timestsamp, last_access_time, expire_time from user_online where sessionId = ? 
+17:48:04.786 [http-nio-8080-exec-1] DEBUG com.heo.dao.UserOnlineMapper.selectByPrimaryKey - ==> Parameters: 72aec8e0-3e1c-46d4-83cd-2ddc24484a67(String)
+17:48:04.803 [http-nio-8080-exec-1] DEBUG com.heo.dao.UserOnlineMapper.selectByPrimaryKey - <==      Total: 0
+17:48:05.548 [pool-1-thread-1] INFO  com.heo.app.shiro.web.session.OnlineWebSessionManager - invalidation sessions...
+17:48:05.548 [pool-1-thread-1] DEBUG com.heo.dao.UserOnlineMapper.selectOnlineByExpired - ==>  Preparing: SELECT * FROM user_online o WHERE o.last_access_time <= ? ORDER BY o.last_access_time ASC 
+17:48:05.548 [pool-1-thread-1] DEBUG com.heo.dao.UserOnlineMapper.selectOnlineByExpired - ==> Parameters: 2018-09-12 17:18:05(String)
+17:51:56.265 [main] INFO  com.heo.HelpeachotherApplication - Starting HelpeachotherApplication on LAPTOP-1M5RA4JD with PID 28848 (D:\Niuban\helpeachother\target\classes started by 11291 in D:\Niuban\helpeachother)
+17:51:56.268 [main] DEBUG com.heo.HelpeachotherApplication - Running with Spring Boot v1.5.10.RELEASE, Spring v4.3.14.RELEASE
+17:51:56.268 [main] INFO  com.heo.HelpeachotherApplication - No active profile set, falling back to default profiles: default
+17:51:56.521 [background-preinit] INFO  org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 5.3.6.Final
+17:51:57.803 [main] INFO  org.apache.shiro.cache.ehcache.EhCacheManager - Cache with name 'com.heo.app.shiro.realm.UserRealm.authorizationCache' does not yet exist.  Creating now.
+17:51:57.805 [main] INFO  org.apache.shiro.cache.ehcache.EhCacheManager - Added EhCache named [com.heo.app.shiro.realm.UserRealm.authorizationCache]
+17:51:57.830 [main] INFO  org.apache.shiro.cache.ehcache.EhCacheManager - Using existing EHCache named [loginRecordCache]
+17:51:59.103 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+17:51:59.103 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/8.5.27
+17:51:59.204 [localhost-startStop-1] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+17:52:00.214 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+17:52:00.222 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+17:52:00.238 [main] INFO  org.apache.tomcat.util.net.NioSelectorPool - Using a shared selector for servlet write/read
+17:52:00.271 [main] INFO  com.heo.HelpeachotherApplication - Started HelpeachotherApplication in 4.438 seconds (JVM running for 5.679)
+17:52:29.223 [http-nio-8080-exec-1] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring FrameworkServlet 'dispatcherServlet'
+17:52:29.255 [http-nio-8080-exec-1] INFO  org.apache.shiro.session.mgt.AbstractValidatingSessionManager - Enabling session validation scheduler...
+17:52:29.256 [http-nio-8080-exec-1] DEBUG com.heo.app.shiro.web.session.SpringSessionValidationScheduler - Scheduling session validation job using Spring Scheduler with session validation interval of [600000]ms...
+17:52:29.257 [http-nio-8080-exec-1] DEBUG com.heo.app.shiro.web.session.SpringSessionValidationScheduler - Session validation job successfully scheduled with Spring Scheduler.
+17:52:29.258 [http-nio-8080-exec-1] INFO  org.apache.shiro.cache.ehcache.EhCacheManager - Using existing EHCache named [shiro-activeSessionCache]
+17:52:29.304 [http-nio-8080-exec-1] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+17:52:29.455 [http-nio-8080-exec-1] DEBUG com.heo.dao.UserOnlineMapper.selectByPrimaryKey - ==>  Preparing: select sessionId, user_name, ipaddr, login_location, browser, os, status, start_timestsamp, last_access_time, expire_time from user_online where sessionId = ? 
+17:52:29.471 [http-nio-8080-exec-1] DEBUG com.heo.dao.UserOnlineMapper.selectByPrimaryKey - ==> Parameters: 72aec8e0-3e1c-46d4-83cd-2ddc24484a67(String)
+17:52:29.482 [http-nio-8080-exec-1] DEBUG com.heo.dao.UserOnlineMapper.selectByPrimaryKey - <==      Total: 0
+17:52:30.259 [pool-1-thread-1] INFO  com.heo.app.shiro.web.session.OnlineWebSessionManager - invalidation sessions...
+17:52:30.266 [pool-1-thread-1] DEBUG com.heo.dao.UserOnlineMapper.selectOnlineByExpired - ==>  Preparing: SELECT * FROM user_online o WHERE o.last_access_time <= ? ORDER BY o.last_access_time ASC 
+17:52:30.267 [pool-1-thread-1] DEBUG com.heo.dao.UserOnlineMapper.selectOnlineByExpired - ==> Parameters: 2018-09-12 17:22:30(String)
+17:52:35.609 [http-nio-8080-exec-4] DEBUG com.heo.dao.UserOnlineMapper.selectByPrimaryKey - ==>  Preparing: select sessionId, user_name, ipaddr, login_location, browser, os, status, start_timestsamp, last_access_time, expire_time from user_online where sessionId = ? 
+17:52:35.610 [http-nio-8080-exec-4] DEBUG com.heo.dao.UserOnlineMapper.selectByPrimaryKey - ==> Parameters: 72aec8e0-3e1c-46d4-83cd-2ddc24484a67(String)
+17:52:35.612 [http-nio-8080-exec-4] DEBUG com.heo.dao.UserOnlineMapper.selectByPrimaryKey - <==      Total: 0
+17:52:40.284 [http-nio-8080-exec-3] DEBUG com.heo.dao.UserOnlineMapper.selectByPrimaryKey - ==>  Preparing: select sessionId, user_name, ipaddr, login_location, browser, os, status, start_timestsamp, last_access_time, expire_time from user_online where sessionId = ? 
+17:52:40.285 [http-nio-8080-exec-3] DEBUG com.heo.dao.UserOnlineMapper.selectByPrimaryKey - ==> Parameters: 72aec8e0-3e1c-46d4-83cd-2ddc24484a67(String)
+17:52:40.288 [http-nio-8080-exec-3] DEBUG com.heo.dao.UserOnlineMapper.selectByPrimaryKey - <==      Total: 0
+17:53:40.711 [main] INFO  com.heo.HelpeachotherApplication - Starting HelpeachotherApplication on LAPTOP-1M5RA4JD with PID 14068 (D:\Niuban\helpeachother\target\classes started by 11291 in D:\Niuban\helpeachother)
+17:53:40.715 [main] DEBUG com.heo.HelpeachotherApplication - Running with Spring Boot v1.5.10.RELEASE, Spring v4.3.14.RELEASE
+17:53:40.715 [main] INFO  com.heo.HelpeachotherApplication - No active profile set, falling back to default profiles: default
+17:53:40.930 [background-preinit] INFO  org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 5.3.6.Final
+17:53:41.845 [main] INFO  org.apache.shiro.cache.ehcache.EhCacheManager - Cache with name 'com.heo.app.shiro.realm.UserRealm.authorizationCache' does not yet exist.  Creating now.
+17:53:41.846 [main] INFO  org.apache.shiro.cache.ehcache.EhCacheManager - Added EhCache named [com.heo.app.shiro.realm.UserRealm.authorizationCache]
+17:53:41.867 [main] INFO  org.apache.shiro.cache.ehcache.EhCacheManager - Using existing EHCache named [loginRecordCache]
+17:53:43.094 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+17:53:43.095 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/8.5.27
+17:53:43.199 [localhost-startStop-1] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+17:53:44.206 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+17:53:44.221 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+17:53:44.237 [main] INFO  org.apache.tomcat.util.net.NioSelectorPool - Using a shared selector for servlet write/read
+17:53:44.253 [main] INFO  com.heo.HelpeachotherApplication - Started HelpeachotherApplication in 3.899 seconds (JVM running for 4.967)
+17:55:07.593 [main] INFO  com.heo.HelpeachotherApplication - Starting HelpeachotherApplication on LAPTOP-1M5RA4JD with PID 11356 (D:\Niuban\helpeachother\target\classes started by 11291 in D:\Niuban\helpeachother)
+17:55:07.598 [main] DEBUG com.heo.HelpeachotherApplication - Running with Spring Boot v1.5.10.RELEASE, Spring v4.3.14.RELEASE
+17:55:07.598 [main] INFO  com.heo.HelpeachotherApplication - No active profile set, falling back to default profiles: default
+17:55:07.797 [background-preinit] INFO  org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 5.3.6.Final
+17:55:08.659 [main] INFO  org.apache.shiro.cache.ehcache.EhCacheManager - Cache with name 'com.heo.app.shiro.realm.UserRealm.authorizationCache' does not yet exist.  Creating now.
+17:55:08.660 [main] INFO  org.apache.shiro.cache.ehcache.EhCacheManager - Added EhCache named [com.heo.app.shiro.realm.UserRealm.authorizationCache]
+17:55:08.683 [main] INFO  org.apache.shiro.cache.ehcache.EhCacheManager - Using existing EHCache named [loginRecordCache]
+17:55:09.809 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+17:55:09.810 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/8.5.27
+17:55:09.892 [localhost-startStop-1] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+17:55:11.080 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+17:55:11.093 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+17:55:11.110 [main] INFO  org.apache.tomcat.util.net.NioSelectorPool - Using a shared selector for servlet write/read
+17:55:11.142 [main] INFO  com.heo.HelpeachotherApplication - Started HelpeachotherApplication in 3.94 seconds (JVM running for 5.099)
+17:55:21.027 [http-nio-8080-exec-1] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring FrameworkServlet 'dispatcherServlet'
+17:55:21.058 [http-nio-8080-exec-1] INFO  org.apache.shiro.session.mgt.AbstractValidatingSessionManager - Enabling session validation scheduler...
+17:55:21.058 [http-nio-8080-exec-1] DEBUG com.heo.app.shiro.web.session.SpringSessionValidationScheduler - Scheduling session validation job using Spring Scheduler with session validation interval of [600000]ms...
+17:55:21.059 [http-nio-8080-exec-1] DEBUG com.heo.app.shiro.web.session.SpringSessionValidationScheduler - Session validation job successfully scheduled with Spring Scheduler.
+17:55:21.060 [http-nio-8080-exec-1] INFO  org.apache.shiro.cache.ehcache.EhCacheManager - Using existing EHCache named [shiro-activeSessionCache]
+17:55:21.108 [http-nio-8080-exec-1] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+17:55:21.256 [http-nio-8080-exec-1] DEBUG com.heo.dao.UserOnlineMapper.selectByPrimaryKey - ==>  Preparing: select sessionId, user_name, ipaddr, login_location, browser, os, status, start_timestsamp, last_access_time, expire_time from user_online where sessionId = ? 
+17:55:21.274 [http-nio-8080-exec-1] DEBUG com.heo.dao.UserOnlineMapper.selectByPrimaryKey - ==> Parameters: 72aec8e0-3e1c-46d4-83cd-2ddc24484a67(String)
+17:55:21.286 [http-nio-8080-exec-1] DEBUG com.heo.dao.UserOnlineMapper.selectByPrimaryKey - <==      Total: 0
+17:55:22.059 [pool-1-thread-1] INFO  com.heo.app.shiro.web.session.OnlineWebSessionManager - invalidation sessions...
+17:55:22.065 [pool-1-thread-1] DEBUG com.heo.dao.UserOnlineMapper.selectOnlineByExpired - ==>  Preparing: SELECT * FROM user_online o WHERE o.last_access_time <= ? ORDER BY o.last_access_time ASC 
+17:55:22.066 [pool-1-thread-1] DEBUG com.heo.dao.UserOnlineMapper.selectOnlineByExpired - ==> Parameters: 2018-09-12 17:25:22(String)
+17:56:19.974 [main] INFO  com.heo.HelpeachotherApplication - Starting HelpeachotherApplication on LAPTOP-1M5RA4JD with PID 1992 (D:\Niuban\helpeachother\target\classes started by 11291 in D:\Niuban\helpeachother)
+17:56:19.980 [main] DEBUG com.heo.HelpeachotherApplication - Running with Spring Boot v1.5.10.RELEASE, Spring v4.3.14.RELEASE
+17:56:19.981 [main] INFO  com.heo.HelpeachotherApplication - No active profile set, falling back to default profiles: default
+17:56:20.234 [background-preinit] INFO  org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 5.3.6.Final
+17:56:24.169 [main] INFO  org.apache.shiro.cache.ehcache.EhCacheManager - Cache with name 'com.heo.app.shiro.realm.UserRealm.authorizationCache' does not yet exist.  Creating now.
+17:56:24.172 [main] INFO  org.apache.shiro.cache.ehcache.EhCacheManager - Added EhCache named [com.heo.app.shiro.realm.UserRealm.authorizationCache]
+17:56:24.359 [main] INFO  org.apache.shiro.cache.ehcache.EhCacheManager - Using existing EHCache named [loginRecordCache]
+17:56:34.758 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+17:56:34.765 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/8.5.27
+17:56:35.548 [localhost-startStop-1] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+17:56:53.499 [main] INFO  com.heo.HelpeachotherApplication - Starting HelpeachotherApplication on LAPTOP-1M5RA4JD with PID 19364 (D:\Niuban\helpeachother\target\classes started by 11291 in D:\Niuban\helpeachother)
+17:56:53.501 [main] DEBUG com.heo.HelpeachotherApplication - Running with Spring Boot v1.5.10.RELEASE, Spring v4.3.14.RELEASE
+17:56:53.502 [main] INFO  com.heo.HelpeachotherApplication - No active profile set, falling back to default profiles: default
+17:56:53.740 [background-preinit] INFO  org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 5.3.6.Final
+17:56:54.621 [main] INFO  org.apache.shiro.cache.ehcache.EhCacheManager - Cache with name 'com.heo.app.shiro.realm.UserRealm.authorizationCache' does not yet exist.  Creating now.
+17:56:54.622 [main] INFO  org.apache.shiro.cache.ehcache.EhCacheManager - Added EhCache named [com.heo.app.shiro.realm.UserRealm.authorizationCache]
+17:56:54.647 [main] INFO  org.apache.shiro.cache.ehcache.EhCacheManager - Using existing EHCache named [loginRecordCache]
+17:56:56.023 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+17:56:56.024 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/8.5.27
+17:56:56.110 [localhost-startStop-1] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+17:56:57.097 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+17:56:57.104 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+17:56:57.118 [main] INFO  org.apache.tomcat.util.net.NioSelectorPool - Using a shared selector for servlet write/read
+17:56:57.141 [main] INFO  com.heo.HelpeachotherApplication - Started HelpeachotherApplication in 3.954 seconds (JVM running for 4.986)
+17:56:59.319 [http-nio-8080-exec-1] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring FrameworkServlet 'dispatcherServlet'
+17:56:59.352 [http-nio-8080-exec-1] INFO  org.apache.shiro.session.mgt.AbstractValidatingSessionManager - Enabling session validation scheduler...
+17:56:59.353 [http-nio-8080-exec-1] DEBUG com.heo.app.shiro.web.session.SpringSessionValidationScheduler - Scheduling session validation job using Spring Scheduler with session validation interval of [600000]ms...
+17:56:59.353 [http-nio-8080-exec-1] DEBUG com.heo.app.shiro.web.session.SpringSessionValidationScheduler - Session validation job successfully scheduled with Spring Scheduler.
+17:56:59.355 [http-nio-8080-exec-1] INFO  org.apache.shiro.cache.ehcache.EhCacheManager - Using existing EHCache named [shiro-activeSessionCache]
+17:56:59.402 [http-nio-8080-exec-1] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+17:56:59.557 [http-nio-8080-exec-1] DEBUG com.heo.dao.UserOnlineMapper.selectByPrimaryKey - ==>  Preparing: select sessionId, user_name, ipaddr, login_location, browser, os, status, start_timestsamp, last_access_time, expire_time from user_online where sessionId = ? 
+17:56:59.572 [http-nio-8080-exec-1] DEBUG com.heo.dao.UserOnlineMapper.selectByPrimaryKey - ==> Parameters: 72aec8e0-3e1c-46d4-83cd-2ddc24484a67(String)
+17:56:59.586 [http-nio-8080-exec-1] DEBUG com.heo.dao.UserOnlineMapper.selectByPrimaryKey - <==      Total: 0
+17:57:00.355 [pool-1-thread-1] INFO  com.heo.app.shiro.web.session.OnlineWebSessionManager - invalidation sessions...
+17:57:00.363 [pool-1-thread-1] DEBUG com.heo.dao.UserOnlineMapper.selectOnlineByExpired - ==>  Preparing: SELECT * FROM user_online o WHERE o.last_access_time <= ? ORDER BY o.last_access_time ASC 
+17:57:00.364 [pool-1-thread-1] DEBUG com.heo.dao.UserOnlineMapper.selectOnlineByExpired - ==> Parameters: 2018-09-12 17:27:00(String)
+17:58:36.241 [main] INFO  com.heo.HelpeachotherApplication - Starting HelpeachotherApplication on LAPTOP-1M5RA4JD with PID 26868 (D:\Niuban\helpeachother\target\classes started by 11291 in D:\Niuban\helpeachother)
+17:58:36.245 [main] DEBUG com.heo.HelpeachotherApplication - Running with Spring Boot v1.5.10.RELEASE, Spring v4.3.14.RELEASE
+17:58:36.245 [main] INFO  com.heo.HelpeachotherApplication - No active profile set, falling back to default profiles: default
+17:58:36.426 [background-preinit] INFO  org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 5.3.6.Final
+17:58:39.879 [main] INFO  org.apache.shiro.cache.ehcache.EhCacheManager - Cache with name 'com.heo.app.shiro.realm.UserRealm.authorizationCache' does not yet exist.  Creating now.
+17:58:39.882 [main] INFO  org.apache.shiro.cache.ehcache.EhCacheManager - Added EhCache named [com.heo.app.shiro.realm.UserRealm.authorizationCache]
+17:58:40.033 [main] INFO  org.apache.shiro.cache.ehcache.EhCacheManager - Using existing EHCache named [loginRecordCache]
+17:58:49.833 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+17:58:49.839 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/8.5.27
+17:58:50.536 [localhost-startStop-1] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+17:59:03.323 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+17:59:03.405 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+17:59:03.468 [main] INFO  org.apache.tomcat.util.net.NioSelectorPool - Using a shared selector for servlet write/read
+17:59:03.610 [main] INFO  com.heo.HelpeachotherApplication - Started HelpeachotherApplication in 27.832 seconds (JVM running for 30.066)
+17:59:12.386 [main] INFO  com.heo.HelpeachotherApplication - Starting HelpeachotherApplication on LAPTOP-1M5RA4JD with PID 9124 (D:\Niuban\helpeachother\target\classes started by 11291 in D:\Niuban\helpeachother)
+17:59:12.389 [main] DEBUG com.heo.HelpeachotherApplication - Running with Spring Boot v1.5.10.RELEASE, Spring v4.3.14.RELEASE
+17:59:12.390 [main] INFO  com.heo.HelpeachotherApplication - No active profile set, falling back to default profiles: default
+17:59:12.585 [background-preinit] INFO  org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 5.3.6.Final
+17:59:13.338 [main] INFO  org.apache.shiro.cache.ehcache.EhCacheManager - Cache with name 'com.heo.app.shiro.realm.UserRealm.authorizationCache' does not yet exist.  Creating now.
+17:59:13.339 [main] INFO  org.apache.shiro.cache.ehcache.EhCacheManager - Added EhCache named [com.heo.app.shiro.realm.UserRealm.authorizationCache]
+17:59:13.358 [main] INFO  org.apache.shiro.cache.ehcache.EhCacheManager - Using existing EHCache named [loginRecordCache]
+17:59:14.494 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+17:59:14.495 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/8.5.27
+17:59:14.585 [localhost-startStop-1] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+17:59:15.674 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+17:59:15.684 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+17:59:15.699 [main] INFO  org.apache.tomcat.util.net.NioSelectorPool - Using a shared selector for servlet write/read
+17:59:15.727 [main] INFO  com.heo.HelpeachotherApplication - Started HelpeachotherApplication in 3.677 seconds (JVM running for 4.735)
+17:59:24.954 [http-nio-8080-exec-1] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring FrameworkServlet 'dispatcherServlet'
+17:59:24.988 [http-nio-8080-exec-1] INFO  org.apache.shiro.session.mgt.AbstractValidatingSessionManager - Enabling session validation scheduler...
+17:59:24.988 [http-nio-8080-exec-1] DEBUG com.heo.app.shiro.web.session.SpringSessionValidationScheduler - Scheduling session validation job using Spring Scheduler with session validation interval of [600000]ms...
+17:59:24.990 [http-nio-8080-exec-1] DEBUG com.heo.app.shiro.web.session.SpringSessionValidationScheduler - Session validation job successfully scheduled with Spring Scheduler.
+17:59:24.992 [http-nio-8080-exec-1] INFO  org.apache.shiro.cache.ehcache.EhCacheManager - Using existing EHCache named [shiro-activeSessionCache]
+17:59:25.041 [http-nio-8080-exec-1] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+17:59:25.199 [http-nio-8080-exec-1] DEBUG com.heo.dao.UserOnlineMapper.selectByPrimaryKey - ==>  Preparing: select sessionId, user_name, ipaddr, login_location, browser, os, status, start_timestsamp, last_access_time, expire_time from user_online where sessionId = ? 
+17:59:25.216 [http-nio-8080-exec-1] DEBUG com.heo.dao.UserOnlineMapper.selectByPrimaryKey - ==> Parameters: 72aec8e0-3e1c-46d4-83cd-2ddc24484a67(String)
+17:59:25.228 [http-nio-8080-exec-1] DEBUG com.heo.dao.UserOnlineMapper.selectByPrimaryKey - <==      Total: 0
+17:59:25.990 [pool-1-thread-1] INFO  com.heo.app.shiro.web.session.OnlineWebSessionManager - invalidation sessions...
+17:59:25.997 [pool-1-thread-1] DEBUG com.heo.dao.UserOnlineMapper.selectOnlineByExpired - ==>  Preparing: SELECT * FROM user_online o WHERE o.last_access_time <= ? ORDER BY o.last_access_time ASC 
+17:59:25.998 [pool-1-thread-1] DEBUG com.heo.dao.UserOnlineMapper.selectOnlineByExpired - ==> Parameters: 2018-09-12 17:29:25(String)
+17:59:28.484 [http-nio-8080-exec-3] DEBUG com.heo.dao.UserOnlineMapper.selectByPrimaryKey - ==>  Preparing: select sessionId, user_name, ipaddr, login_location, browser, os, status, start_timestsamp, last_access_time, expire_time from user_online where sessionId = ? 
+17:59:28.486 [http-nio-8080-exec-3] DEBUG com.heo.dao.UserOnlineMapper.selectByPrimaryKey - ==> Parameters: 72aec8e0-3e1c-46d4-83cd-2ddc24484a67(String)
+17:59:28.488 [http-nio-8080-exec-3] DEBUG com.heo.dao.UserOnlineMapper.selectByPrimaryKey - <==      Total: 0
+17:59:30.618 [http-nio-8080-exec-5] DEBUG com.heo.dao.UserOnlineMapper.selectByPrimaryKey - ==>  Preparing: select sessionId, user_name, ipaddr, login_location, browser, os, status, start_timestsamp, last_access_time, expire_time from user_online where sessionId = ? 
+17:59:30.619 [http-nio-8080-exec-5] DEBUG com.heo.dao.UserOnlineMapper.selectByPrimaryKey - ==> Parameters: 72aec8e0-3e1c-46d4-83cd-2ddc24484a67(String)
+17:59:30.622 [http-nio-8080-exec-5] DEBUG com.heo.dao.UserOnlineMapper.selectByPrimaryKey - <==      Total: 0
+17:59:56.446 [http-nio-8080-exec-2] DEBUG com.heo.dao.UserOnlineMapper.selectByPrimaryKey - ==>  Preparing: select sessionId, user_name, ipaddr, login_location, browser, os, status, start_timestsamp, last_access_time, expire_time from user_online where sessionId = ? 
+17:59:56.447 [http-nio-8080-exec-2] DEBUG com.heo.dao.UserOnlineMapper.selectByPrimaryKey - ==> Parameters: 72aec8e0-3e1c-46d4-83cd-2ddc24484a67(String)
+17:59:56.449 [http-nio-8080-exec-2] DEBUG com.heo.dao.UserOnlineMapper.selectByPrimaryKey - <==      Total: 0
+18:02:48.970 [main] INFO  com.heo.HelpeachotherApplication - Starting HelpeachotherApplication on LAPTOP-1M5RA4JD with PID 15100 (D:\Niuban\helpeachother\target\classes started by 11291 in D:\Niuban\helpeachother)
+18:02:48.975 [main] DEBUG com.heo.HelpeachotherApplication - Running with Spring Boot v1.5.10.RELEASE, Spring v4.3.14.RELEASE
+18:02:48.976 [main] INFO  com.heo.HelpeachotherApplication - No active profile set, falling back to default profiles: default
+18:02:49.217 [background-preinit] INFO  org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 5.3.6.Final
+18:02:50.334 [main] INFO  org.apache.shiro.cache.ehcache.EhCacheManager - Cache with name 'com.heo.app.shiro.realm.UserRealm.authorizationCache' does not yet exist.  Creating now.
+18:02:50.335 [main] INFO  org.apache.shiro.cache.ehcache.EhCacheManager - Added EhCache named [com.heo.app.shiro.realm.UserRealm.authorizationCache]
+18:02:50.358 [main] INFO  org.apache.shiro.cache.ehcache.EhCacheManager - Using existing EHCache named [loginRecordCache]
+18:02:51.493 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+18:02:51.495 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/8.5.27
+18:02:51.582 [localhost-startStop-1] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+18:02:52.611 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+18:02:52.619 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+18:02:52.633 [main] INFO  org.apache.tomcat.util.net.NioSelectorPool - Using a shared selector for servlet write/read
+18:02:52.658 [main] INFO  com.heo.HelpeachotherApplication - Started HelpeachotherApplication in 4.126 seconds (JVM running for 5.294)
+18:03:13.119 [http-nio-8080-exec-1] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring FrameworkServlet 'dispatcherServlet'
+18:03:13.152 [http-nio-8080-exec-1] INFO  org.apache.shiro.session.mgt.AbstractValidatingSessionManager - Enabling session validation scheduler...
+18:03:13.153 [http-nio-8080-exec-1] DEBUG com.heo.app.shiro.web.session.SpringSessionValidationScheduler - Scheduling session validation job using Spring Scheduler with session validation interval of [600000]ms...
+18:03:13.154 [http-nio-8080-exec-1] DEBUG com.heo.app.shiro.web.session.SpringSessionValidationScheduler - Session validation job successfully scheduled with Spring Scheduler.
+18:03:13.155 [http-nio-8080-exec-1] INFO  org.apache.shiro.cache.ehcache.EhCacheManager - Using existing EHCache named [shiro-activeSessionCache]
+18:03:13.205 [http-nio-8080-exec-1] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+18:03:13.346 [http-nio-8080-exec-1] DEBUG com.heo.dao.UserOnlineMapper.selectByPrimaryKey - ==>  Preparing: select sessionId, user_name, ipaddr, login_location, browser, os, status, start_timestsamp, last_access_time, expire_time from user_online where sessionId = ? 
+18:03:13.363 [http-nio-8080-exec-1] DEBUG com.heo.dao.UserOnlineMapper.selectByPrimaryKey - ==> Parameters: 72aec8e0-3e1c-46d4-83cd-2ddc24484a67(String)
+18:03:13.376 [http-nio-8080-exec-1] DEBUG com.heo.dao.UserOnlineMapper.selectByPrimaryKey - <==      Total: 0
+18:03:14.155 [pool-1-thread-1] INFO  com.heo.app.shiro.web.session.OnlineWebSessionManager - invalidation sessions...
+18:03:14.163 [pool-1-thread-1] DEBUG com.heo.dao.UserOnlineMapper.selectOnlineByExpired - ==>  Preparing: SELECT * FROM user_online o WHERE o.last_access_time <= ? ORDER BY o.last_access_time ASC 
+18:03:14.164 [pool-1-thread-1] DEBUG com.heo.dao.UserOnlineMapper.selectOnlineByExpired - ==> Parameters: 2018-09-12 17:33:14(String)
