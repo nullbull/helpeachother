@@ -1,8 +1,13 @@
 package com.heo.app.config;
 
+import at.pollux.thymeleaf.shiro.dialect.ShiroDialect;
 import com.heo.app.shiro.realm.UserRealm;
 import com.heo.app.shiro.session.OnlineSessionDAO;
 import com.heo.app.shiro.session.OnlineSessionFactory;
+import com.heo.app.shiro.web.filter.LogoutFilter;
+import com.heo.app.shiro.web.filter.captcha.CaptchaValidateFilter;
+import com.heo.app.shiro.web.filter.online.OnlineSessionFilter;
+import com.heo.app.shiro.web.filter.sync.SyncOnlineSessionFilter;
 import com.heo.app.shiro.web.session.OnlineWebSessionManager;
 import com.heo.app.shiro.web.session.SpringSessionValidationScheduler;
 import org.apache.shiro.cache.ehcache.EhCacheManager;
@@ -23,11 +28,6 @@ import javax.servlet.Filter;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
-/**
- * 权限配置加载
- * 
- * @author ruoyi
- */
 @Configuration
 public class ShiroConfig
 {
@@ -80,7 +80,7 @@ public class ShiroConfig
     public EhCacheManager getEhCacheManager()
     {
         EhCacheManager em = new EhCacheManager();
-        em.setCacheManagerConfigFile("classpath:ehcache/ehcache-shiro.xml");
+        em.setCacheManagerConfigFile("classpath:ehcache-shiro.xml");
         return em;
     }
 
