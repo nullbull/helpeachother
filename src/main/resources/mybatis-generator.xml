@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration
+        PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN" "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+
+<generatorConfiguration>
+    <classPathEntry location="${classPathEntry.mysql.location}" />
+
+    <context id="mysqlTables" targetRuntime="MyBatis3">
+        <jdbcConnection driverClass="com.mysql.jdbc.Driver"
+                        connectionURL="jdbc:mysql://127.0.0.1:3306/helpeachother?characterEncoding=utf8"
+                        userId="root" password="root">
+        </jdbcConnection>
+
+        <javaTypeResolver>
+            <property name="forceBigDecimals" value="false" />
+        </javaTypeResolver>
+
+        <javaModelGenerator targetPackage="com.heo.entity.mapper"
+                            targetProject="${javaModelGenerator.targetProject}">
+            <property name="enableSubPackages" value="true" />
+            <property name="trimStrings" value="true" />
+        </javaModelGenerator>
+
+        <sqlMapGenerator targetPackage="com.heo.entity.xml"
+                         targetProject="${sqlMapGenerator.targetProject}">
+            <property name="enableSubPackages" value="true" />
+        </sqlMapGenerator>
+
+        <javaClientGenerator type="XMLMAPPER"
+                             targetPackage="com.heo.dao" targetProject="${javaClientGenerator.targetProject}">
+            <property name="enableSubPackages" value="false" />
+        </javaClientGenerator>
+
+        <!--
+        <table tableName="live_course_channel" domainObjectName="LiveCourseChannel"></table>
+        -->
+        <table tableName="user" domainObjectName="User"></table>
+        <table tableName="user_online" domainObjectName="UserOnline"></table>
+
+
+    </context>
+</generatorConfiguration>
