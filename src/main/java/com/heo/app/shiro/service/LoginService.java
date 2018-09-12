@@ -35,75 +35,75 @@ public class LoginService
     /**
      * 登录
      */
-    public User login(String username, String password)
+    public User login(String userName, String passWord)
     {
         // 验证码校验
         if (!StringUtils.isEmpty(ServletUtils.getStrAttribute(ShiroConstants.CURRENT_CAPTCHA)))
         {
-            SystemLogUtils.log(username, Constants.LOGIN_FAIL, MessageUtils.message("user.jcaptcha.error"));
+            SystemLogUtils.log(userName, Constants.LOGIN_FAIL, MessageUtils.message("user.jcaptcha.error"));
             throw new CaptchaException();
         }
         // 用户名或密码为空 错误
-        if (StringUtils.isEmpty(username) || StringUtils.isEmpty(password))
+        if (StringUtils.isEmpty(userName) || StringUtils.isEmpty(passWord))
         {
-            SystemLogUtils.log(username, Constants.LOGIN_FAIL, MessageUtils.message("not.null"));
+            SystemLogUtils.log(userName, Constants.LOGIN_FAIL, MessageUtils.message("not.null"));
             throw new UserNotExistsException();
         }
         // 密码如果不在指定范围内 错误
-        if (password.length() < UserConstants.PASSWORD_MIN_LENGTH
-                || password.length() > UserConstants.PASSWORD_MAX_LENGTH)
+        if (passWord.length() < UserConstants.PASSWORD_MIN_LENGTH
+                || passWord.length() > UserConstants.PASSWORD_MAX_LENGTH)
         {
-            SystemLogUtils.log(username, Constants.LOGIN_FAIL, MessageUtils.message("user.password.not.match"));
+            SystemLogUtils.log(userName, Constants.LOGIN_FAIL, MessageUtils.message("user.password.not.match"));
             throw new UserPasswordNotMatchException();
         }
 
         // 用户名不在指定范围内 错误
-        if (username.length() < UserConstants.USERNAME_MIN_LENGTH
-                || username.length() > UserConstants.USERNAME_MAX_LENGTH)
+        if (userName.length() < UserConstants.USERNAME_MIN_LENGTH
+                || userName.length() > UserConstants.USERNAME_MAX_LENGTH)
         {
-            SystemLogUtils.log(username, Constants.LOGIN_FAIL, MessageUtils.message("user.password.not.match"));
+            SystemLogUtils.log(userName, Constants.LOGIN_FAIL, MessageUtils.message("user.password.not.match"));
             throw new UserPasswordNotMatchException();
         }
 
         // 查询用户信息
 
-        User user = userService.selectUserByUserName(username);
+        User user = userService.selectUserByUserName(userName);
 
-        if (user == null && maybeMobilePhoneNumber(username))
+        if (user == null && maybeMobilePhoneNumber(userName))
         {
-            user = userService.selectUserByPhoneNumber(username);
+            user = userService.selectUserByPhoneNumber(userName);
         }
 
-        if (user == null && maybeEmail(username))
+        if (user == null && maybeEmail(userName))
         {
-            user = userService.selectUserByEmail(username);
+            user = userService.selectUserByEmail(userName);
         }
 
         if (user == null)
         {
-            SystemLogUtils.log(username, Constants.LOGIN_FAIL, MessageUtils.message("user.not.exists"));
+            SystemLogUtils.log(userName, Constants.LOGIN_FAIL, MessageUtils.message("user.not.exists"));
             throw new UserNotExistsException();
         }
 
-        passwordService.validate(user, password);
+        passwordService.validate(user, passWord);
 
-        SystemLogUtils.log(username, Constants.LOGIN_SUCCESS, MessageUtils.message("user.login.success"));
+        SystemLogUtils.log(userName, Constants.LOGIN_SUCCESS, MessageUtils.message("user.login.success"));
         recordLoginInfo(user);
         return user;
     }
 
-    private boolean maybeEmail(String username)
+    private boolean maybeEmail(String userName)
     {
-        if (!username.matches(UserConstants.EMAIL_PATTERN))
+        if (!userName.matches(UserConstants.EMAIL_PATTERN))
         {
             return false;
         }
         return true;
     }
 
-    private boolean maybeMobilePhoneNumber(String username)
+    private boolean maybeMobilePhoneNumber(String userName)
     {
-        if (!username.matches(UserConstants.MOBILE_PHONE_NUMBER_PATTERN))
+        if (!userName.matches(UserConstants.MOBILE_PHONE_NUMBER_PATTERN))
         {
             return false;
         }

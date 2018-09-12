@@ -97,6 +97,7 @@ public class PasswordService
         System.out.println(new PasswordService().encryptPassword("zb", "admin123", "123456"));
         System.out.println(new PasswordService().encryptPassword("wj", "admin123", "123456"));
         System.out.println(new PasswordService().encryptPassword("ys", "admin123", "123456"));
+        System.out.println(new PasswordService().encryptPassword("zwt", "123456", "11111"));
         System.out.println(new PasswordService().encryptPassword("123", "123", "9258"));
     }
 }

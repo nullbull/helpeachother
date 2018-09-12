@@ -29,23 +29,21 @@ public class loginController {
     public String login(Model model) {
 
         model.addAttribute("hhh" , "123");
-        return "test";
+        return "login";
     }
 
     @ResponseBody
     @RequestMapping("/hello")
     public String hello() { return "hello";}
 
-//    @PostMapping("/login")
-//    @ResponseBody
-//    public String ajaxLogin(String username, String password, Boolean rememberMe)
-//    {
-//        UsernamePasswordToken token = new UsernamePasswordToken(username, password, rememberMe);
-//        Subject subject = SecurityUtils.getSubject();
-//        subject.login(token);
-//        return username;
-//
-//
-//    }
+    @PostMapping("/login")
+    @ResponseBody
+    public String ajaxLogin(String userName, String passWord, Boolean rememberMe)
+    {
+        UsernamePasswordToken token = new UsernamePasswordToken(userName, passWord, rememberMe);
+        Subject subject = SecurityUtils.getSubject();
+        subject.login(token);
+        return passWord;
+    }
 
 }
