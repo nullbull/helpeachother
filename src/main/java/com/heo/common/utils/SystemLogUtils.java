@@ -1,10 +1,11 @@
 package com.heo.common.utils;
 
-import com.ruoyi.common.constant.Constants;
-import com.ruoyi.common.utils.security.ShiroUtils;
-import com.ruoyi.common.utils.spring.SpringUtils;
-import com.ruoyi.project.monitor.logininfor.domain.Logininfor;
-import com.ruoyi.project.monitor.logininfor.service.LogininforServiceImpl;
+
+import com.heo.common.constant.Constants;
+import com.heo.common.utils.security.ShiroUtils;
+import com.heo.common.utils.spring.SpringUtils;
+import com.heo.entity.mapper.LoginInformation;
+import com.heo.service.impl.LogininforServiceImpl;
 import eu.bitwalker.useragentutils.UserAgent;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -58,9 +59,9 @@ public class SystemLogUtils
         // 获取客户端浏览器
         String browser = userAgent.getBrowser().getName();
         LogininforServiceImpl logininforService = SpringUtils.getBean(LogininforServiceImpl.class);
-        Logininfor logininfor = new Logininfor();
-        logininfor.setLoginName(username);
-        logininfor.setStatus(status);
+        LoginInformation logininfor = new LoginInformation();
+        logininfor.setUserName(username);
+        logininfor.setStatus(Integer.valueOf(status));
         logininfor.setIpaddr(ShiroUtils.getIp());
         logininfor.setLoginLocation(AddressUtils.getRealAddressByIP(ShiroUtils.getIp()));
         logininfor.setBrowser(browser);

@@ -4,7 +4,7 @@ import com.heo.common.constant.ShiroConstants;
 import org.apache.commons.lang3.time.DateUtils;
 
 import com.heo.common.utils.spring.SpringUtils;
-import com.heo.dao.OnlineSession;
+import com.heo.entity.mapper.OnlineSession;
 import com.heo.entity.mapper.UserOnline;
 import com.heo.service.impl.UserOnlineServiceImpl;
 import org.apache.shiro.session.ExpiredSessionException;

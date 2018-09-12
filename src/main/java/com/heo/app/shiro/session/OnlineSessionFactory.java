@@ -3,7 +3,7 @@ package com.heo.app.shiro.session;
 import com.heo.common.utils.IpUtils;
 import com.heo.common.utils.ServletUtils;
 import com.heo.common.utils.StringUtils;
-import com.heo.dao.OnlineSession;
+import com.heo.entity.mapper.OnlineSession;
 import com.heo.entity.mapper.UserOnline;
 import eu.bitwalker.useragentutils.UserAgent;
 import org.apache.shiro.session.Session;

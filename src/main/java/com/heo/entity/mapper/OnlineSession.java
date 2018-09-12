@@ -1,4 +1,4 @@
-package com.heo.dao;
+package com.heo.entity.mapper;
 
 import org.apache.shiro.session.mgt.SimpleSession;
 

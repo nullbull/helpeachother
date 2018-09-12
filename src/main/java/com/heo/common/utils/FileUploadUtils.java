@@ -1,7 +1,7 @@
 package com.heo.common.utils;
 
-import com.ruoyi.common.exception.file.FileNameLengthLimitExceededException;
-import com.ruoyi.framework.config.RuoYiConfig;
+
+import com.heo.common.exception.file.FileNameLengthLimitExceededException;
 import org.apache.shiro.crypto.hash.Md5Hash;
 import org.apache.tomcat.util.http.fileupload.FileUploadBase.FileSizeLimitExceededException;
 import org.springframework.web.multipart.MultipartFile;
@@ -21,7 +21,7 @@ public class FileUploadUtils
     public static final long DEFAULT_MAX_SIZE = 52428800;
 
     // 默认上传的地址
-    private static String defaultBaseDir = RuoYiConfig.getProfile();
+    private static String defaultBaseDir = "";
 
     // 默认的文件名最大长度
     public static final int DEFAULT_FILE_NAME_LENGTH = 200;

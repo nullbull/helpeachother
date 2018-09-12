@@ -4,7 +4,7 @@ package com.heo.app.shiro.web.filter.online;
 import com.heo.app.shiro.session.OnlineSessionDAO;
 import com.heo.common.constant.ShiroConstants;
 import com.heo.common.utils.security.ShiroUtils;
-import com.heo.dao.OnlineSession;
+import com.heo.entity.mapper.OnlineSession;
 import com.heo.entity.mapper.User;
 import org.apache.shiro.session.Session;
 import org.apache.shiro.subject.Subject;

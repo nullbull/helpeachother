@@ -2,8 +2,14 @@ package com.heo.service.impl;
 
 
 import com.heo.app.shiro.service.PasswordService;
+import com.heo.common.constant.Constants;
+import com.heo.common.constant.UserConstants;
+import com.heo.common.utils.StringUtils;
+import com.heo.common.utils.security.ShiroUtils;
 import com.heo.dao.UserMapper;
 import com.heo.entity.mapper.User;
+import com.heo.entity.mapper.UserExample;
+import com.heo.entity.vo.ReturnData;
 import com.heo.service.IUserService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -42,7 +48,7 @@ public class UserServiceImpl implements IUserService
     @Override
     public List<User> selectUserList(User user)
     {
-        return userMapper.selectByPrimaryKey(user.getId());
+        return userMapper.selectUserList(user);
     }
 
     /**
@@ -52,21 +58,25 @@ public class UserServiceImpl implements IUserService
      * @return 用户对象信息
      */
     @Override
-    public User selectUserByLoginName(String userName)
+    public User selectUserByUserName(String userName)
     {
-        return userMapper.(userName);
+        UserExample example = new UserExample();
+        UserExample.Criteria  criteria = example.createCriteria().andUserNameEqualTo(userName);
+        return userMapper.selectByExample(example).get(0);
     }
 
     /**
      * 通过手机号码查询用户
      * 
-     * @param userName 用户名
+     * @param phone 用户名
      * @return 用户对象信息
      */
     @Override
-    public User selectUserByPhoneNumber(String phoneNumber)
+    public User selectUserByPhoneNumber(String phone)
     {
-        return userMapper.selectUserByPhoneNumber(phoneNumber);
+        UserExample example = new UserExample();
+        UserExample.Criteria  criteria = example.createCriteria().andPhoneEqualTo(phone);
+        return userMapper.selectByExample(example).get(0);
     }
 
     /**
@@ -78,19 +88,14 @@ public class UserServiceImpl implements IUserService
     @Override
     public User selectUserByEmail(String email)
     {
-        return userMapper.selectUserByEmail(email);
+        UserExample example = new UserExample();
+        UserExample.Criteria  criteria = example.createCriteria().andEmailEqualTo(email);
+        return userMapper.selectByExample(example).get(0);
     }
 
-    /**
-     * 通过用户ID查询用户
-     * 
-     * @param userId 用户ID
-     * @return 用户对象信息
-     */
     @Override
-    public User selectUserById(Long userId)
-    {
-        return userMapper.selectUserById(userId);
+    public User selectUserById(Long userId) {
+        return userMapper.selectByPrimaryKey(userId);
     }
 
     /**
@@ -102,11 +107,8 @@ public class UserServiceImpl implements IUserService
     @Override
     public int deleteUserById(Long userId)
     {
-        // 删除用户与角色关联
-        userRoleMapper.deleteUserRoleByUserId(userId);
-        // 删除用户与岗位表
-        userPostMapper.deleteUserPostByUserId(userId);
-        return userMapper.deleteUserById(userId);
+
+        return userMapper.deleteByPrimaryKey(userId);
     }
 
     /**
@@ -118,9 +120,9 @@ public class UserServiceImpl implements IUserService
     @Override
     public int batchDeleteUser(Long[] ids)
     {
-        userRoleMapper.deleteUserRole(ids);
-        userPostMapper.deleteUserPost(ids);
-        return userMapper.batchDeleteUser(ids);
+        for (Long id : ids)
+            userMapper.deleteByPrimaryKey(id);
+        return 1;
     }
 
     /**
@@ -129,40 +131,6 @@ public class UserServiceImpl implements IUserService
      * @param user 用户信息
      * @return 结果
      */
-    @Override
-    public int saveUser(User user)
-    {
-        int count = 0;
-        Long userId = user.getUserId();
-        if (StringUtils.isNotNull(userId))
-        {
-            user.setUpdateBy(ShiroUtils.getLoginName());
-            // 修改用户信息
-            count = updateUser(user);
-            // 删除用户与角色关联
-            userRoleMapper.deleteUserRoleByUserId(userId);
-            // 新增用户与角色管理
-            insertUserRole(user);
-            // 删除用户与岗位关联
-            userPostMapper.deleteUserPostByUserId(userId);
-            // 新增用户与岗位管理
-            insertUserPost(user);
-
-        }
-        else
-        {
-            user.randomSalt();
-            user.setPassword(passwordService.encryptPassword(user.getLoginName(), user.getPassword(), user.getSalt()));
-            user.setCreateBy(ShiroUtils.getLoginName());
-            // 新增用户信息
-            count = userMapper.insertUser(user);
-            // 新增用户岗位关联
-            insertUserPost(user);
-            // 新增用户与角色管理
-            insertUserRole(user);
-        }
-        return count;
-    }
 
     /**
      * 修改用户信息
@@ -173,7 +141,7 @@ public class UserServiceImpl implements IUserService
     @Override
     public int updateUser(User user)
     {
-        return userMapper.updateUser(user);
+        return userMapper.updateByPrimaryKeySelective(user);
     }
 
     /**
@@ -185,66 +153,22 @@ public class UserServiceImpl implements IUserService
     @Override
     public int resetUserPwd(User user)
     {
-        user.randomSalt();
-        user.setPassword(passwordService.encryptPassword(user.getLoginName(), user.getPassword(), user.getSalt()));
+        user.setSalt(randomSalt());
+        user.setPassWord(passwordService.encryptPassword(user.getUserName(), user.getPassWord(), user.getSalt().toString()));
         return updateUser(user);
     }
 
-    /**
-     * 新增用户角色信息
-     * 
-     * @param user 用户对象
-     */
-    public void insertUserRole(User user)
-    {
-        // 新增用户与角色管理
-        List<UserRole> list = new ArrayList<UserRole>();
-        for (Long roleId : user.getRoleIds())
-        {
-            UserRole ur = new UserRole();
-            ur.setUserId(user.getUserId());
-            ur.setRoleId(roleId);
-            list.add(ur);
-        }
-        if (list.size() > 0)
-        {
-            userRoleMapper.batchUserRole(list);
-        }
-    }
-
-    /**
-     * 新增用户岗位信息
-     * 
-     * @param user 用户对象
-     */
-    public void insertUserPost(User user)
-    {
-        // 新增用户与岗位管理
-        List<UserPost> list = new ArrayList<UserPost>();
-        for (Long postId : user.getPostIds())
-        {
-            UserPost up = new UserPost();
-            up.setUserId(user.getUserId());
-            up.setPostId(postId);
-            list.add(up);
-        }
-        if (list.size() > 0)
-        {
-            userPostMapper.batchUserPost(list);
-        }
-    }
 
     /**
      * 校验用户名称是否唯一
      * 
-     * @param loginName 用户名
+     * @param userName 用户名
      * @return
      */
-    @Override
-    public String checkLoginNameUnique(String loginName)
+    public String checkLoginNameUnique(String userName)
     {
-        int count = userMapper.checkLoginNameUnique(loginName);
-        if (count > 0)
+
+        if (selectUserByUserName(userName) != null)
         {
             return UserConstants.USER_NAME_NOT_UNIQUE;
         }
@@ -254,22 +178,14 @@ public class UserServiceImpl implements IUserService
     /**
      * 校验用户名称是否唯一
      *
-     * @param phonenumber 用户名
+     * @param phone 用户名
      * @return
      */
-    @Override
-    public String checkPhoneUnique(User user)
+    public String checkPhoneUnique(String phone)
     {
-        if (user.getUserId() == null)
+        if (selectUserByPhoneNumber(phone) != null)
         {
-            user.setUserId(-1L);
-        }
-        Long userId = user.getUserId();
-        User info = userMapper.checkPhoneUnique(user.getPhonenumber());
-        if (StringUtils.isNotNull(info) && StringUtils.isNotNull(info.getUserId())
-                && info.getUserId().longValue() != userId.longValue())
-        {
-            return UserConstants.USER_PHONE_NOT_UNIQUE;
+            return UserConstants.USER_NAME_NOT_UNIQUE;
         }
         return UserConstants.USER_PHONE_UNIQUE;
     }
@@ -280,81 +196,56 @@ public class UserServiceImpl implements IUserService
      * @param email 用户名
      * @return
      */
-    @Override
-    public String checkEmailUnique(User user)
+    public String checkEmailUnique(String email)
     {
-        if (user.getUserId() == null)
+        if (selectUserByEmail(email) != null)
         {
-            user.setUserId(-1L);
+            return UserConstants.USER_NAME_NOT_UNIQUE;
         }
-        Long userId = user.getUserId();
-        User info = userMapper.checkEmailUnique(user.getEmail());
-        if (StringUtils.isNotNull(info) && StringUtils.isNotNull(info.getUserId())
-                && info.getUserId().longValue() != userId.longValue())
-        {
-            return UserConstants.USER_EMAIL_NOT_UNIQUE;
-        }
-        return UserConstants.USER_EMAIL_UNIQUE;
-    }
-
-    /**
-     * 查询用户所属角色组
-     * 
-     * @param userId 用户ID
-     * @return 结果
-     */
-    @Override
-    public String selectUserRoleGroup(Long userId)
-    {
-        List<Role> list = roleMapper.selectRolesByUserId(userId);
-        StringBuffer idsStr = new StringBuffer();
-        for (Role role : list)
-        {
-            idsStr.append(role.getRoleName()).append(",");
-        }
-        if (StringUtils.isNotEmpty(idsStr.toString()))
-        {
-            return idsStr.substring(0, idsStr.length() - 1);
-        }
-        return idsStr.toString();
-    }
-
-    /**
-     * 查询用户所属岗位组
-     * 
-     * @param userId 用户ID
-     * @return 结果
-     */
-    @Override
-    public String selectUserPostGroup(Long userId)
-    {
-        List<Post> list = postMapper.selectPostsByUserId(userId);
-        StringBuffer idsStr = new StringBuffer();
-        for (Post post : list)
-        {
-            idsStr.append(post.getPostName()).append(",");
-        }
-        if (StringUtils.isNotEmpty(idsStr.toString()))
-        {
-            return idsStr.substring(0, idsStr.length() - 1);
-        }
-        return idsStr.toString();
+        return UserConstants.USER_PHONE_UNIQUE;
     }
 
     @Override
-    public String registerUser(User user) {
+    public ReturnData registerUser(User user) {
         String userName = "";
         String methodDesc = "用户注册";
+        ReturnData rd = getReturnData();
         logger.info(methodDesc + "开始" + "user: {}", user);
         try {
-            user.setSalt(String.valueOf(random.nextInt(10000)));
-            user.setPassword(passwordService.encryptPassword(user.getLoginName(), user.getPassword(), user.getSalt()));
-            userMapper.insertUser(user);
-            userName = user.getUserName();
-
+            if (checkEmailUnique(user.getEmail()) == "1" ) {
+                rd.setMsg("邮箱已注册");
+                logger.info(methodDesc + "邮箱已注册");
+                return rd;
+            }
+            if (checkLoginNameUnique(user.getUserName()) == "1") {
+                rd.setMsg("用户名已注册");
+                logger.info(methodDesc + "用户名已注册");
+                return rd;
+            }
+            if (checkPhoneUnique(user.getPhone()) == "1") {
+                rd.setMsg("手机号已注册");
+                logger.info(methodDesc + "手机号已注册");
+                return rd;
+            }
+            user.setSalt(randomSalt());
+            user.setPassWord(passwordService.encryptPassword(user.getUserName(), user.getPassWord(), user.getSalt().toString()));
+            userMapper.insertSelective(user);
+            rd.setCode(Constants.SUCCESS_CODE);
+            rd.setMsg("完成");
+            logger.info(methodDesc + "完成");
         } catch (Exception e) {
            logger.info(methodDesc + "失败, 位置系统异常 e:{}", e.getMessage());
         }
-        return userName;
+        return rd;
+
+    }
+    private int randomSalt() {
+          return random.nextInt(10000);
+    }
+
+    public ReturnData getReturnData() {
+        ReturnData rd = new ReturnData();
+        rd.setCode(Constants.FAIL_CODE);
+        return rd;
     }
 }

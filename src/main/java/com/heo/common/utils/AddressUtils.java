@@ -1,7 +1,7 @@
 package com.heo.common.utils;
 
 import com.alibaba.fastjson.JSONObject;
-import com.ruoyi.common.constant.Constants;
+import com.heo.common.constant.Constants;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

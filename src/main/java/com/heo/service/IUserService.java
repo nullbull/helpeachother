@@ -2,6 +2,7 @@ package com.heo.service;
 
 
 import com.heo.entity.mapper.User;
+import com.heo.entity.vo.ReturnData;
 
 import java.util.List;
 
@@ -27,7 +28,7 @@ public interface IUserService
      * @param userName 用户名
      * @return 用户对象信息
      */
-    public User selectUserByLoginName(String userName);
+    public User selectUserByUserName(String userName);
     
     /**
      * 通过手机号码查询用户
@@ -70,14 +71,6 @@ public interface IUserService
     public int batchDeleteUser(Long[] ids);
 
     /**
-     * 保存用户信息
-     * 
-     * @param user 用户信息
-     * @return 结果
-     */
-    public int saveUser(User user);
-
-    /**
      * 修改用户信息
      * 
      * @param user 用户信息
@@ -93,49 +86,8 @@ public interface IUserService
      */
     public int resetUserPwd(User user);
 
-    /**
-     * 校验用户名称是否唯一
-     * 
-     * @param loginName 登录名称
-     * @return 结果
-     */
-    public String checkLoginNameUnique(String loginName);
 
 
-    /**
-     * 校验手机号码是否唯一
-     *
-     * @param user 用户信息
-     * @return 结果
-     */
-    public String checkPhoneUnique(User user);
-
-
-    /**
-     * 校验email是否唯一
-     *
-     * @param user 用户信息
-     * @return 结果
-     */
-    public String checkEmailUnique(User user);
-
-    /**
-     * 根据用户ID查询用户所属角色组
-     * 
-     * @param userId 用户ID
-     * @return 结果
-     */
-    public String selectUserRoleGroup(Long userId);
-
-    /**
-     * 根据用户ID查询用户所属岗位组
-     * 
-     * @param userId 用户ID
-     * @return 结果
-     */
-    public String selectUserPostGroup(Long userId);
-
-
-    public String registerUser(User user);
+    public ReturnData registerUser(User user);
 
 }

@@ -1,6 +1,6 @@
 package com.heo.common.utils;
 
-import com.ruoyi.common.utils.spring.SpringUtils;
+import com.heo.common.utils.spring.SpringUtils;
 import org.springframework.context.MessageSource;
 
 /**

@@ -34,8 +34,9 @@
         <!--
         <table tableName="live_course_channel" domainObjectName="LiveCourseChannel"></table>
         -->
-        <table tableName="user" domainObjectName="User"></table>
-        <table tableName="user_online" domainObjectName="UserOnline"></table>
+        <!--<table tableName="user" domainObjectName="User"></table>-->
+        <!--<table tableName="user_online" domainObjectName="UserOnline"></table>-->
+        <table tableName="login_information" domainObjectName="LoginInformation"></table>
 
 
     </context>

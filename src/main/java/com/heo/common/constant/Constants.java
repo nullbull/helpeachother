@@ -62,4 +62,8 @@ public class Constants
      */
     public static String ISASC = "isAsc";
 
+    public static Byte SUCCESS_CODE = 1;
+
+    public static Byte FAIL_CODE = 0;
+
 }

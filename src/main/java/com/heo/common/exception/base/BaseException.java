@@ -1,6 +1,6 @@
 package com.heo.common.exception.base;
 
-import com.ruoyi.common.utils.MessageUtils;
+import com.heo.common.utils.MessageUtils;
 import org.springframework.util.StringUtils;
 
 /**

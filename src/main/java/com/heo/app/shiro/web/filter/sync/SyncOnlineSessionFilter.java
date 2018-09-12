@@ -2,7 +2,7 @@ package com.heo.app.shiro.web.filter.sync;
 
 import com.heo.app.shiro.session.OnlineSessionDAO;
 import com.heo.common.constant.ShiroConstants;
-import com.heo.dao.OnlineSession;
+import com.heo.entity.mapper.OnlineSession;
 import org.apache.shiro.web.filter.PathMatchingFilter;
 import org.springframework.beans.factory.annotation.Autowired;
 

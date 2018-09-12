@@ -12,6 +12,7 @@ import com.heo.common.utils.ServletUtils;
 import com.heo.common.utils.SystemLogUtils;
 import com.heo.common.utils.security.ShiroUtils;
 import com.heo.entity.mapper.User;
+import com.heo.entity.mapper.UserExample;
 import com.heo.service.IUserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -65,7 +66,8 @@ public class LoginService
         }
 
         // 查询用户信息
-        User user = userService.selectUserByLoginName(username);
+
+        User user = userService.selectUserByUserName(username);
 
         if (user == null && maybeMobilePhoneNumber(username))
         {

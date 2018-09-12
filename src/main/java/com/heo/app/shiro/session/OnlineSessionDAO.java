@@ -1,6 +1,6 @@
 package com.heo.app.shiro.session;
 
-import com.heo.dao.OnlineSession;
+import com.heo.entity.mapper.OnlineSession;
 import com.heo.entity.mapper.UserOnline;
 import com.heo.service.IUserOnlineService;
 import org.apache.shiro.session.Session;
