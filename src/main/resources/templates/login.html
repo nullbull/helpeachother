@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <title>一款很漂亮的CSS3登录界面</title>
     <link href="/static/css/register.css" th:href="@{/css/register.css}" rel="stylesheet">
-    <script type="text/javascript" href="/static/js/login.js" th:href="@{/js/login.js}"></script>
 </head>
 
 <body class="wrap">
@@ -17,8 +16,8 @@
             <!--<input type="email" name="email" placeholder="邮箱"/>-->
             <!--<input type="text" name="phone" placeholder="手机号"/>-->
             <input type="checkbox" id="rememberMe" name="rememberMe" placeholder="请记住我">
-            <input type="submit" value="Login" id="login_btn"/>
         </form>
+        <button value ="Login" id="loin_btn"/>
     </div>
     <ul>
         <li></li>
@@ -33,6 +32,8 @@
         <li></li>
     </ul>
 </div>
+<script src="../static/js/jquery-3.3.1.js" th:src="@{/js/jquery-3.3.1.js}"></script>
+<script src="../static/js/login.js" th:src="@{/js/login.js}"></script>
 
 </body>
 </html>

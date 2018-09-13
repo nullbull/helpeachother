@@ -2241,3 +2241,147 @@ java.lang.NullPointerException: null
 11:16:53.849 [pool-1-thread-1] INFO  com.heo.app.shiro.web.session.OnlineWebSessionManager - invalidation sessions...
 11:16:53.855 [pool-1-thread-1] DEBUG com.heo.dao.UserOnlineMapper.selectOnlineByExpired - ==>  Preparing: SELECT * FROM user_online o WHERE o.last_access_time <= ? ORDER BY o.last_access_time ASC 
 11:16:53.855 [pool-1-thread-1] DEBUG com.heo.dao.UserOnlineMapper.selectOnlineByExpired - ==> Parameters: 2018-09-13 10:46:53(String)
+11:19:32.692 [main] INFO  com.heo.HelpeachotherApplication - Starting HelpeachotherApplication on LAPTOP-1M5RA4JD with PID 33936 (C:\Users\11291\Desktop\helpeachother\target\classes started by 11291 in C:\Users\11291\Desktop\helpeachother)
+11:19:32.695 [main] DEBUG com.heo.HelpeachotherApplication - Running with Spring Boot v1.5.10.RELEASE, Spring v4.3.14.RELEASE
+11:19:32.695 [main] INFO  com.heo.HelpeachotherApplication - The following profiles are active: druid
+11:19:32.890 [background-preinit] INFO  org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 5.3.6.Final
+11:19:33.940 [main] INFO  org.apache.shiro.cache.ehcache.EhCacheManager - Cache with name 'com.heo.app.shiro.realm.UserRealm.authorizationCache' does not yet exist.  Creating now.
+11:19:33.941 [main] INFO  org.apache.shiro.cache.ehcache.EhCacheManager - Added EhCache named [com.heo.app.shiro.realm.UserRealm.authorizationCache]
+11:19:33.966 [main] INFO  org.apache.shiro.cache.ehcache.EhCacheManager - Using existing EHCache named [loginRecordCache]
+11:19:35.415 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+11:19:35.416 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/8.5.27
+11:19:35.535 [localhost-startStop-1] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+11:19:37.387 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+11:19:37.397 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+11:19:37.412 [main] INFO  org.apache.tomcat.util.net.NioSelectorPool - Using a shared selector for servlet write/read
+11:19:37.442 [main] INFO  com.heo.HelpeachotherApplication - Started HelpeachotherApplication in 5.217 seconds (JVM running for 7.39)
+11:19:40.110 [http-nio-8080-exec-2] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring FrameworkServlet 'dispatcherServlet'
+11:19:40.154 [http-nio-8080-exec-2] INFO  org.apache.shiro.session.mgt.AbstractValidatingSessionManager - Enabling session validation scheduler...
+11:19:40.155 [http-nio-8080-exec-2] DEBUG com.heo.app.shiro.web.session.SpringSessionValidationScheduler - Scheduling session validation job using Spring Scheduler with session validation interval of [600000]ms...
+11:19:40.156 [http-nio-8080-exec-2] DEBUG com.heo.app.shiro.web.session.SpringSessionValidationScheduler - Session validation job successfully scheduled with Spring Scheduler.
+11:19:40.158 [http-nio-8080-exec-2] INFO  org.apache.shiro.cache.ehcache.EhCacheManager - Using existing EHCache named [shiro-activeSessionCache]
+11:19:40.212 [http-nio-8080-exec-2] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+11:19:40.391 [http-nio-8080-exec-2] DEBUG com.heo.dao.UserOnlineMapper.selectByPrimaryKey - ==>  Preparing: select sessionId, user_name, ipaddr, login_location, browser, os, status, start_timestsamp, last_access_time, expire_time from user_online where sessionId = ? 
+11:19:40.411 [http-nio-8080-exec-2] DEBUG com.heo.dao.UserOnlineMapper.selectByPrimaryKey - ==> Parameters: 66d4cf07-138b-4a53-a9f9-10cdca9de173(String)
+11:19:40.423 [http-nio-8080-exec-2] DEBUG com.heo.dao.UserOnlineMapper.selectByPrimaryKey - <==      Total: 0
+11:19:41.158 [pool-1-thread-1] INFO  com.heo.app.shiro.web.session.OnlineWebSessionManager - invalidation sessions...
+11:19:41.165 [pool-1-thread-1] DEBUG com.heo.dao.UserOnlineMapper.selectOnlineByExpired - ==>  Preparing: SELECT * FROM user_online o WHERE o.last_access_time <= ? ORDER BY o.last_access_time ASC 
+11:19:41.166 [pool-1-thread-1] DEBUG com.heo.dao.UserOnlineMapper.selectOnlineByExpired - ==> Parameters: 2018-09-13 10:49:41(String)
+11:21:01.917 [main] INFO  com.heo.HelpeachotherApplication - Starting HelpeachotherApplication on LAPTOP-1M5RA4JD with PID 27076 (C:\Users\11291\Desktop\helpeachother\target\classes started by 11291 in C:\Users\11291\Desktop\helpeachother)
+11:21:01.922 [main] DEBUG com.heo.HelpeachotherApplication - Running with Spring Boot v1.5.10.RELEASE, Spring v4.3.14.RELEASE
+11:21:01.922 [main] INFO  com.heo.HelpeachotherApplication - The following profiles are active: druid
+11:21:02.156 [background-preinit] INFO  org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 5.3.6.Final
+11:21:03.767 [main] INFO  org.apache.shiro.cache.ehcache.EhCacheManager - Cache with name 'com.heo.app.shiro.realm.UserRealm.authorizationCache' does not yet exist.  Creating now.
+11:21:03.767 [main] INFO  org.apache.shiro.cache.ehcache.EhCacheManager - Added EhCache named [com.heo.app.shiro.realm.UserRealm.authorizationCache]
+11:21:03.796 [main] INFO  org.apache.shiro.cache.ehcache.EhCacheManager - Using existing EHCache named [loginRecordCache]
+11:21:05.490 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+11:21:05.491 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/8.5.27
+11:21:05.648 [localhost-startStop-1] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+11:21:07.581 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+11:21:07.590 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+11:21:07.605 [main] INFO  org.apache.tomcat.util.net.NioSelectorPool - Using a shared selector for servlet write/read
+11:21:07.645 [main] INFO  com.heo.HelpeachotherApplication - Started HelpeachotherApplication in 6.33 seconds (JVM running for 7.603)
+11:21:27.546 [http-nio-8080-exec-1] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring FrameworkServlet 'dispatcherServlet'
+11:21:27.590 [http-nio-8080-exec-1] INFO  org.apache.shiro.session.mgt.AbstractValidatingSessionManager - Enabling session validation scheduler...
+11:21:27.591 [http-nio-8080-exec-1] DEBUG com.heo.app.shiro.web.session.SpringSessionValidationScheduler - Scheduling session validation job using Spring Scheduler with session validation interval of [600000]ms...
+11:21:27.593 [http-nio-8080-exec-1] DEBUG com.heo.app.shiro.web.session.SpringSessionValidationScheduler - Session validation job successfully scheduled with Spring Scheduler.
+11:21:27.595 [http-nio-8080-exec-1] INFO  org.apache.shiro.cache.ehcache.EhCacheManager - Using existing EHCache named [shiro-activeSessionCache]
+11:21:27.653 [http-nio-8080-exec-1] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+11:21:27.821 [http-nio-8080-exec-1] DEBUG com.heo.dao.UserOnlineMapper.selectByPrimaryKey - ==>  Preparing: select sessionId, user_name, ipaddr, login_location, browser, os, status, start_timestsamp, last_access_time, expire_time from user_online where sessionId = ? 
+11:21:27.839 [http-nio-8080-exec-1] DEBUG com.heo.dao.UserOnlineMapper.selectByPrimaryKey - ==> Parameters: 266a4569-329f-4300-b01e-c2f8b284e90e(String)
+11:21:27.851 [http-nio-8080-exec-1] DEBUG com.heo.dao.UserOnlineMapper.selectByPrimaryKey - <==      Total: 0
+11:21:28.595 [pool-1-thread-1] INFO  com.heo.app.shiro.web.session.OnlineWebSessionManager - invalidation sessions...
+11:21:28.602 [pool-1-thread-1] DEBUG com.heo.dao.UserOnlineMapper.selectOnlineByExpired - ==>  Preparing: SELECT * FROM user_online o WHERE o.last_access_time <= ? ORDER BY o.last_access_time ASC 
+11:21:28.603 [pool-1-thread-1] DEBUG com.heo.dao.UserOnlineMapper.selectOnlineByExpired - ==> Parameters: 2018-09-13 10:51:28(String)
+11:22:15.926 [main] INFO  com.heo.HelpeachotherApplication - Starting HelpeachotherApplication on LAPTOP-1M5RA4JD with PID 34752 (C:\Users\11291\Desktop\helpeachother\target\classes started by 11291 in C:\Users\11291\Desktop\helpeachother)
+11:22:15.931 [main] DEBUG com.heo.HelpeachotherApplication - Running with Spring Boot v1.5.10.RELEASE, Spring v4.3.14.RELEASE
+11:22:15.931 [main] INFO  com.heo.HelpeachotherApplication - The following profiles are active: druid
+11:22:16.156 [background-preinit] INFO  org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 5.3.6.Final
+11:22:17.676 [main] INFO  org.apache.shiro.cache.ehcache.EhCacheManager - Cache with name 'com.heo.app.shiro.realm.UserRealm.authorizationCache' does not yet exist.  Creating now.
+11:22:17.676 [main] INFO  org.apache.shiro.cache.ehcache.EhCacheManager - Added EhCache named [com.heo.app.shiro.realm.UserRealm.authorizationCache]
+11:22:17.705 [main] INFO  org.apache.shiro.cache.ehcache.EhCacheManager - Using existing EHCache named [loginRecordCache]
+11:22:19.386 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+11:22:19.388 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/8.5.27
+11:22:19.520 [localhost-startStop-1] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+11:22:21.106 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+11:22:21.118 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+11:22:21.132 [main] INFO  org.apache.tomcat.util.net.NioSelectorPool - Using a shared selector for servlet write/read
+11:22:21.161 [main] INFO  com.heo.HelpeachotherApplication - Started HelpeachotherApplication in 5.799 seconds (JVM running for 7.233)
+11:27:58.346 [main] INFO  com.heo.HelpeachotherApplication - Starting HelpeachotherApplication on LAPTOP-1M5RA4JD with PID 3628 (C:\Users\11291\Desktop\helpeachother\target\classes started by 11291 in C:\Users\11291\Desktop\helpeachother)
+11:27:58.352 [main] DEBUG com.heo.HelpeachotherApplication - Running with Spring Boot v1.5.10.RELEASE, Spring v4.3.14.RELEASE
+11:27:58.353 [main] INFO  com.heo.HelpeachotherApplication - The following profiles are active: druid
+11:27:58.593 [background-preinit] INFO  org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 5.3.6.Final
+11:27:59.781 [main] INFO  org.apache.shiro.cache.ehcache.EhCacheManager - Cache with name 'com.heo.app.shiro.realm.UserRealm.authorizationCache' does not yet exist.  Creating now.
+11:27:59.781 [main] INFO  org.apache.shiro.cache.ehcache.EhCacheManager - Added EhCache named [com.heo.app.shiro.realm.UserRealm.authorizationCache]
+11:27:59.806 [main] INFO  org.apache.shiro.cache.ehcache.EhCacheManager - Using existing EHCache named [loginRecordCache]
+11:28:01.283 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+11:28:01.285 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/8.5.27
+11:28:01.410 [localhost-startStop-1] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+11:28:02.929 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+11:28:02.942 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+11:28:02.956 [main] INFO  org.apache.tomcat.util.net.NioSelectorPool - Using a shared selector for servlet write/read
+11:28:02.993 [main] INFO  com.heo.HelpeachotherApplication - Started HelpeachotherApplication in 5.277 seconds (JVM running for 6.873)
+11:28:04.710 [http-nio-8080-exec-1] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring FrameworkServlet 'dispatcherServlet'
+11:28:04.752 [http-nio-8080-exec-1] INFO  org.apache.shiro.session.mgt.AbstractValidatingSessionManager - Enabling session validation scheduler...
+11:28:04.752 [http-nio-8080-exec-1] DEBUG com.heo.app.shiro.web.session.SpringSessionValidationScheduler - Scheduling session validation job using Spring Scheduler with session validation interval of [600000]ms...
+11:28:04.754 [http-nio-8080-exec-1] DEBUG com.heo.app.shiro.web.session.SpringSessionValidationScheduler - Session validation job successfully scheduled with Spring Scheduler.
+11:28:04.755 [http-nio-8080-exec-1] INFO  org.apache.shiro.cache.ehcache.EhCacheManager - Using existing EHCache named [shiro-activeSessionCache]
+11:28:04.813 [http-nio-8080-exec-1] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+11:28:04.982 [http-nio-8080-exec-1] DEBUG com.heo.dao.UserOnlineMapper.selectByPrimaryKey - ==>  Preparing: select sessionId, user_name, ipaddr, login_location, browser, os, status, start_timestsamp, last_access_time, expire_time from user_online where sessionId = ? 
+11:28:05.006 [http-nio-8080-exec-1] DEBUG com.heo.dao.UserOnlineMapper.selectByPrimaryKey - ==> Parameters: a6cbd12b-17c5-41d9-8d3f-b3a0f353ae7d(String)
+11:28:05.019 [http-nio-8080-exec-1] DEBUG com.heo.dao.UserOnlineMapper.selectByPrimaryKey - <==      Total: 0
+11:28:05.755 [pool-1-thread-1] INFO  com.heo.app.shiro.web.session.OnlineWebSessionManager - invalidation sessions...
+11:28:05.765 [pool-1-thread-1] DEBUG com.heo.dao.UserOnlineMapper.selectOnlineByExpired - ==>  Preparing: SELECT * FROM user_online o WHERE o.last_access_time <= ? ORDER BY o.last_access_time ASC 
+11:28:05.766 [pool-1-thread-1] DEBUG com.heo.dao.UserOnlineMapper.selectOnlineByExpired - ==> Parameters: 2018-09-13 10:58:05(String)
+11:28:45.407 [main] INFO  com.heo.HelpeachotherApplication - Starting HelpeachotherApplication on LAPTOP-1M5RA4JD with PID 15412 (C:\Users\11291\Desktop\helpeachother\target\classes started by 11291 in C:\Users\11291\Desktop\helpeachother)
+11:28:45.411 [main] DEBUG com.heo.HelpeachotherApplication - Running with Spring Boot v1.5.10.RELEASE, Spring v4.3.14.RELEASE
+11:28:45.413 [main] INFO  com.heo.HelpeachotherApplication - The following profiles are active: druid
+11:28:45.620 [background-preinit] INFO  org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 5.3.6.Final
+11:28:47.020 [main] INFO  org.apache.shiro.cache.ehcache.EhCacheManager - Cache with name 'com.heo.app.shiro.realm.UserRealm.authorizationCache' does not yet exist.  Creating now.
+11:28:47.021 [main] INFO  org.apache.shiro.cache.ehcache.EhCacheManager - Added EhCache named [com.heo.app.shiro.realm.UserRealm.authorizationCache]
+11:28:47.042 [main] INFO  org.apache.shiro.cache.ehcache.EhCacheManager - Using existing EHCache named [loginRecordCache]
+11:28:48.643 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+11:28:48.646 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/8.5.27
+11:28:48.783 [localhost-startStop-1] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+11:28:50.362 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+11:28:50.373 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+11:28:50.389 [main] INFO  org.apache.tomcat.util.net.NioSelectorPool - Using a shared selector for servlet write/read
+11:28:50.422 [main] INFO  com.heo.HelpeachotherApplication - Started HelpeachotherApplication in 5.533 seconds (JVM running for 6.889)
+11:28:52.487 [http-nio-8080-exec-1] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring FrameworkServlet 'dispatcherServlet'
+11:28:52.555 [http-nio-8080-exec-1] INFO  org.apache.shiro.session.mgt.AbstractValidatingSessionManager - Enabling session validation scheduler...
+11:28:52.556 [http-nio-8080-exec-1] DEBUG com.heo.app.shiro.web.session.SpringSessionValidationScheduler - Scheduling session validation job using Spring Scheduler with session validation interval of [600000]ms...
+11:28:52.557 [http-nio-8080-exec-1] DEBUG com.heo.app.shiro.web.session.SpringSessionValidationScheduler - Session validation job successfully scheduled with Spring Scheduler.
+11:28:52.559 [http-nio-8080-exec-1] INFO  org.apache.shiro.cache.ehcache.EhCacheManager - Using existing EHCache named [shiro-activeSessionCache]
+11:28:52.636 [http-nio-8080-exec-1] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+11:28:52.818 [http-nio-8080-exec-1] DEBUG com.heo.dao.UserOnlineMapper.selectByPrimaryKey - ==>  Preparing: select sessionId, user_name, ipaddr, login_location, browser, os, status, start_timestsamp, last_access_time, expire_time from user_online where sessionId = ? 
+11:28:52.835 [http-nio-8080-exec-1] DEBUG com.heo.dao.UserOnlineMapper.selectByPrimaryKey - ==> Parameters: fd937090-d22e-43ef-8b80-380a06de071f(String)
+11:28:52.847 [http-nio-8080-exec-1] DEBUG com.heo.dao.UserOnlineMapper.selectByPrimaryKey - <==      Total: 0
+11:28:53.559 [pool-1-thread-1] INFO  com.heo.app.shiro.web.session.OnlineWebSessionManager - invalidation sessions...
+11:28:53.569 [pool-1-thread-1] DEBUG com.heo.dao.UserOnlineMapper.selectOnlineByExpired - ==>  Preparing: SELECT * FROM user_online o WHERE o.last_access_time <= ? ORDER BY o.last_access_time ASC 
+11:28:53.570 [pool-1-thread-1] DEBUG com.heo.dao.UserOnlineMapper.selectOnlineByExpired - ==> Parameters: 2018-09-13 10:58:53(String)
+11:29:57.278 [main] INFO  com.heo.HelpeachotherApplication - Starting HelpeachotherApplication on LAPTOP-1M5RA4JD with PID 12440 (C:\Users\11291\Desktop\helpeachother\target\classes started by 11291 in C:\Users\11291\Desktop\helpeachother)
+11:29:57.281 [main] DEBUG com.heo.HelpeachotherApplication - Running with Spring Boot v1.5.10.RELEASE, Spring v4.3.14.RELEASE
+11:29:57.281 [main] INFO  com.heo.HelpeachotherApplication - The following profiles are active: druid
+11:29:57.526 [background-preinit] INFO  org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 5.3.6.Final
+11:29:58.891 [main] INFO  org.apache.shiro.cache.ehcache.EhCacheManager - Cache with name 'com.heo.app.shiro.realm.UserRealm.authorizationCache' does not yet exist.  Creating now.
+11:29:58.892 [main] INFO  org.apache.shiro.cache.ehcache.EhCacheManager - Added EhCache named [com.heo.app.shiro.realm.UserRealm.authorizationCache]
+11:29:58.927 [main] INFO  org.apache.shiro.cache.ehcache.EhCacheManager - Using existing EHCache named [loginRecordCache]
+11:30:00.673 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+11:30:00.675 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/8.5.27
+11:30:00.837 [localhost-startStop-1] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+11:30:03.031 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+11:30:03.044 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+11:30:03.062 [main] INFO  org.apache.tomcat.util.net.NioSelectorPool - Using a shared selector for servlet write/read
+11:30:03.099 [main] INFO  com.heo.HelpeachotherApplication - Started HelpeachotherApplication in 6.438 seconds (JVM running for 8.335)
+11:30:09.360 [http-nio-8080-exec-1] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring FrameworkServlet 'dispatcherServlet'
+11:30:09.404 [http-nio-8080-exec-1] INFO  org.apache.shiro.session.mgt.AbstractValidatingSessionManager - Enabling session validation scheduler...
+11:30:09.405 [http-nio-8080-exec-1] DEBUG com.heo.app.shiro.web.session.SpringSessionValidationScheduler - Scheduling session validation job using Spring Scheduler with session validation interval of [600000]ms...
+11:30:09.407 [http-nio-8080-exec-1] DEBUG com.heo.app.shiro.web.session.SpringSessionValidationScheduler - Session validation job successfully scheduled with Spring Scheduler.
+11:30:09.408 [http-nio-8080-exec-1] INFO  org.apache.shiro.cache.ehcache.EhCacheManager - Using existing EHCache named [shiro-activeSessionCache]
+11:30:09.477 [http-nio-8080-exec-1] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+11:30:09.664 [http-nio-8080-exec-1] DEBUG com.heo.dao.UserOnlineMapper.selectByPrimaryKey - ==>  Preparing: select sessionId, user_name, ipaddr, login_location, browser, os, status, start_timestsamp, last_access_time, expire_time from user_online where sessionId = ? 
+11:30:09.681 [http-nio-8080-exec-1] DEBUG com.heo.dao.UserOnlineMapper.selectByPrimaryKey - ==> Parameters: b0b0e362-bf10-448e-b142-7d8ce61f2a1d(String)
+11:30:09.695 [http-nio-8080-exec-1] DEBUG com.heo.dao.UserOnlineMapper.selectByPrimaryKey - <==      Total: 0
+11:30:10.408 [pool-1-thread-1] INFO  com.heo.app.shiro.web.session.OnlineWebSessionManager - invalidation sessions...
+11:30:10.418 [pool-1-thread-1] DEBUG com.heo.dao.UserOnlineMapper.selectOnlineByExpired - ==>  Preparing: SELECT * FROM user_online o WHERE o.last_access_time <= ? ORDER BY o.last_access_time ASC 
+11:30:10.419 [pool-1-thread-1] DEBUG com.heo.dao.UserOnlineMapper.selectOnlineByExpired - ==> Parameters: 2018-09-13 11:00:10(String)
