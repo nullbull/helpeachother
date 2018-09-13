@@ -3,19 +3,21 @@
 <head lang="en">
     <meta charset="UTF-8">
     <title>一款很漂亮的CSS3登录界面</title>
+    <link href="/static/css/register.css" th:href="@{/css/register.css}" rel="stylesheet">
+    <script type="text/javascript" href="/static/js/login.js" th:href="@{/js/login.js}"></script>
 </head>
-<link href="/static/css/register.css" th:href="@{/css/register.css}" rel="stylesheet">
+
 <body class="wrap">
 <div>
     <div class="container">
         <h1>Welcome</h1>
-        <form id="loginForm" th:action="@{/login}" method="post">
-            <input type="text" name="userName" placeholder="用户名" />
-            <input type="password" name="passWord" placeholder="密码"/>
+        <form id="loginForm">
+            <input type="text" id="userName" name="userName" placeholder="用户名" /><p id="mess"></p>
+            <input type="password" id="passWord" name="passWord" placeholder="密码"/>
             <!--<input type="email" name="email" placeholder="邮箱"/>-->
             <!--<input type="text" name="phone" placeholder="手机号"/>-->
-            <input type="checkbox" name="rememberMe" placeholder="请记住我">
-            <input type="submit" value="Login"/>
+            <input type="checkbox" id="rememberMe" name="rememberMe" placeholder="请记住我">
+            <input type="submit" value="Login" id="login_btn"/>
         </form>
     </div>
     <ul>
@@ -31,9 +33,6 @@
         <li></li>
     </ul>
 </div>
-<script>
-
-</script>
 
 </body>
 </html>

@@ -1,5 +1,7 @@
 package com.heo.controller;
 
+import com.heo.common.constant.Constants;
+import com.heo.common.utils.security.ShiroUtils;
 import com.heo.entity.vo.ReturnData;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.shiro.SecurityUtils;
@@ -34,16 +36,26 @@ public class loginController {
 
     @ResponseBody
     @RequestMapping("/hello")
-    public String hello() { return "hello";}
+    public String hello(Model model) {
+        model.addAttribute("hhh" , "123");
+        return "test";
+    }
 
     @PostMapping("/login")
-    @ResponseBody
-    public String ajaxLogin(String userName, String passWord, Boolean rememberMe)
+    public ReturnData ajaxLogin(String userName, String passWord, Boolean rememberMe)
     {
+        ReturnData rd = new ReturnData();
+        rd.setCode(Constants.FAIL_CODE);
         UsernamePasswordToken token = new UsernamePasswordToken(userName, passWord, rememberMe);
         Subject subject = SecurityUtils.getSubject();
         subject.login(token);
-        return passWord;
+        if (ShiroUtils.getUser() != null) {
+            rd.setCode(Constants.SUCCESS_CODE);
+            rd.setMsg("登陆成功");
+        }else {
+            rd.setMsg("密码不正确");
+        }
+        return rd;
     }
 
 }

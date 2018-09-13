@@ -236,20 +236,21 @@ public class ShiroConfig
 //        filterChainDefinitionMap.put("/monitor/online/batchForceLogout", "logout");
 //        filterChainDefinitionMap.put("/monitor/online/forceLogout/**", "logout");
 //        // 不需要拦截的访问
-//        filterChainDefinitionMap.put("/login", "anon,captchaValidate");
+        filterChainDefinitionMap.put("/login", "anon,captchaValidate");
+        filterChainDefinitionMap.put("/dologin", "anon,captchaValidate");
 //        filterChainDefinitionMap.put("/register", "anon,captchaValidate");
         // 系统权限列表
         // filterChainDefinitionMap.putAll(SpringUtils.getBean(IMenuService.class).selectPermsAll());
 
-//        Map<String, Filter> filters = new LinkedHashMap<>();
-//        filters.put("onlineSession", onlineSessionFilter());
-//        filters.put("syncOnlineSession", syncOnlineSessionFilter());
-//        filters.put("captchaValidate", captchaValidateFilter());
-//        // 注销成功，则跳转到指定页面
-//        filters.put("logout", logoutFilter());
-//        shiroFilterFactoryBean.setFilters(filters);
+        Map<String, Filter> filters = new LinkedHashMap<>();
+        filters.put("onlineSession", onlineSessionFilter());
+        filters.put("syncOnlineSession", syncOnlineSessionFilter());
+        filters.put("captchaValidate", captchaValidateFilter());
+        // 注销成功，则跳转到指定页面
+        filters.put("logout", logoutFilter());
+        shiroFilterFactoryBean.setFilters(filters);
 //
-//        // 所有请求需要认证
+        // 所有请求需要认证
 //        filterChainDefinitionMap.put("/**", "user");
 //        // 系统请求记录当前会话
 //        filterChainDefinitionMap.put("/main", "onlineSession,syncOnlineSession");

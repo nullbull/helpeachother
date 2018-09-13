@@ -81,7 +81,7 @@ public class UserOnlineServiceImpl implements IUserOnlineService
     @Override
     public void saveOnline(UserOnline online)
     {
-        userOnlineDao.saveOnline(online);
+        userOnlineDao.insertSelective(online);
     }
 
     /**
