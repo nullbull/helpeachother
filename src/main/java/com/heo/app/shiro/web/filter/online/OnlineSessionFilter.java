@@ -1,6 +1,5 @@
 package com.heo.app.shiro.web.filter.online;
 
-
 import com.heo.app.shiro.session.OnlineSessionDAO;
 import com.heo.common.constant.ShiroConstants;
 import com.heo.common.utils.security.ShiroUtils;
@@ -41,6 +40,8 @@ public class OnlineSessionFilter extends AccessControlFilter
     protected boolean isAccessAllowed(ServletRequest request, ServletResponse response, Object mappedValue)
             throws Exception
     {
+        System.out.println("zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz");
+
         Subject subject = getSubject(request, response);
         if (subject == null || subject.getSession() == null)
         {
@@ -91,6 +92,7 @@ public class OnlineSessionFilter extends AccessControlFilter
     @Override
     protected void redirectToLogin(ServletRequest request, ServletResponse response) throws IOException
     {
+        System.out.println("hhhhhhhhhhhhhhhhhhhhhhh");
         WebUtils.issueRedirect(request, response, loginUrl);
     }
 

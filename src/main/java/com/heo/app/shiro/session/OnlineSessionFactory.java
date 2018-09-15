@@ -1,5 +1,6 @@
 package com.heo.app.shiro.session;
 
+
 import com.heo.common.utils.IpUtils;
 import com.heo.common.utils.ServletUtils;
 import com.heo.common.utils.StringUtils;
@@ -28,6 +29,7 @@ public class OnlineSessionFactory implements SessionFactory
         if (StringUtils.isNotNull(onlineSession) && onlineSession.getId() == null)
         {
             onlineSession.setId(userOnline.getSessionid());
+            userOnline.setOnlineSession(onlineSession);
         }
         return userOnline.getOnlineSession();
     }

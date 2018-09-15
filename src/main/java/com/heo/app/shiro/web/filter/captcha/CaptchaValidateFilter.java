@@ -1,6 +1,5 @@
 package com.heo.app.shiro.web.filter.captcha;
 
-
 import com.google.code.kaptcha.Constants;
 import com.heo.common.constant.ShiroConstants;
 import com.heo.common.utils.StringUtils;

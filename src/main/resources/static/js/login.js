@@ -1,7 +1,7 @@
 $("#login_btn").click(function () {
     var userName = $.trim($("#userName").val());
     var passWord = $.trim($("#passWord").val());
-    var rememeberMe = $.trim($("#rememeberMe").val());
+    var rememeberMe = $("#rememeberMe").is(':checked');
     if (userName === "") {
         $("#mess").innerText =  "用户名不能为空";
         return;
@@ -19,13 +19,15 @@ $("#login_btn").click(function () {
         type : "POST",
         url : "/login",
         data : data,
-        success:function (r) {
-            if (r.code == 1) {
-                $("#mess").innerText("登陆成功");
-                window.location.href = "/test";
+
+
+        success : function (rd) {
+            alert(rd);
+            if (rd.code == 1) {
+                window.location.href = "/hello";
             }else {
                 $("#mess").innerText("用户名或密码不正确");
             }
         }
-    })
+    });
 })

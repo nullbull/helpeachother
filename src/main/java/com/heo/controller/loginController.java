@@ -34,13 +34,13 @@ public class loginController {
         return "login";
     }
 
-    @ResponseBody
     @RequestMapping("/hello")
     public String hello(Model model) {
         model.addAttribute("hhh" , "123");
         return "test";
     }
 
+    @ResponseBody
     @PostMapping("/login")
     public ReturnData ajaxLogin(String userName, String passWord, Boolean rememberMe)
     {

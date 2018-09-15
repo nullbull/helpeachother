@@ -13,7 +13,7 @@ import org.apache.shiro.subject.PrincipalCollection;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import com.heo.common.exception.user.*;
+
 /**
  * 自定义Realm 处理登录 权限
  * 
@@ -35,6 +35,8 @@ public class UserRealm extends AuthorizingRealm
     {
         Long userId = ShiroUtils.getUserId();
         SimpleAuthorizationInfo info = new SimpleAuthorizationInfo();
+        // 角色加入AuthorizationInfo认证对象
+        // 权限加入AuthorizationInfo认证对象
         return info;
     }
 
@@ -52,7 +54,7 @@ public class UserRealm extends AuthorizingRealm
             password = new String(upToken.getPassword());
         }
 
-        User user = null;
+        User user = new User();
         try
         {
             user = loginService.login(username, password);
