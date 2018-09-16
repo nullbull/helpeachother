@@ -21,7 +21,7 @@
             <property name="trimStrings" value="true" />
         </javaModelGenerator>
 
-        <sqlMapGenerator targetPackage="com.heo.entity.xml"
+        <sqlMapGenerator targetPackage="mappers"
                          targetProject="${sqlMapGenerator.targetProject}">
             <property name="enableSubPackages" value="true" />
         </sqlMapGenerator>
@@ -34,9 +34,10 @@
         <!--
         <table tableName="live_course_channel" domainObjectName="LiveCourseChannel"></table>
         -->
-        <!--<table tableName="user" domainObjectName="User"></table>-->
+        <table tableName="user" domainObjectName="User"></table>
+        <table tableName="express" domainObjectName="Express"></table>
         <!--<table tableName="user_online" domainObjectName="UserOnline"></table>-->
-        <table tableName="login_information" domainObjectName="LoginInformation"></table>
+        <!--<table tableName="login_information" domainObjectName="LoginInformation"></table>-->
 
 
     </context>

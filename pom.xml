@@ -22,9 +22,9 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <java.version>1.8</java.version>
-        <classPathEntry.mysql.location>/Maven/repo/m2/mysql/mysql-connector-java/5.1.46/mysql-connector-java-5.1.46.jar</classPathEntry.mysql.location>
+        <classPathEntry.mysql.location>D:/Maven/repo/m2/mysql/mysql-connector-java/5.1.46/mysql-connector-java-5.1.46.jar</classPathEntry.mysql.location>
         <javaModelGenerator.targetProject>${basedir}/src/main/java</javaModelGenerator.targetProject>
-        <sqlMapGenerator.targetProject>${basedir}/src/main/java</sqlMapGenerator.targetProject>
+        <sqlMapGenerator.targetProject>${basedir}/src/main/resources</sqlMapGenerator.targetProject>
         <javaClientGenerator.targetProject>${basedir}/src/main/java</javaClientGenerator.targetProject>
         <mybatis.generator.configurationFile>${basedir}/src/main/resources/mybatis-generator.xml</mybatis.generator.configurationFile>
         <mybatis.generator.overwrite>true</mybatis.generator.overwrite>

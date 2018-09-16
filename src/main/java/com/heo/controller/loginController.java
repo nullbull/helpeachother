@@ -1,8 +1,11 @@
 package com.heo.controller;
 
+import com.alibaba.fastjson.JSON;
 import com.heo.common.constant.Constants;
 import com.heo.common.utils.security.ShiroUtils;
+import com.heo.entity.mapper.User;
 import com.heo.entity.vo.ReturnData;
+import com.heo.service.IUserService;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authc.AuthenticationException;
@@ -10,6 +13,7 @@ import org.apache.shiro.authc.UsernamePasswordToken;
 import org.apache.shiro.subject.Subject;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -26,14 +30,18 @@ import org.springframework.web.servlet.ModelAndView;
 @Controller
 public class loginController {
     private Logger logger = LoggerFactory.getLogger(this.getClass());
-
+    @Autowired
+    IUserService userService;
     @RequestMapping("/dologin")
     public String login(Model model) {
 
         model.addAttribute("hhh" , "123");
         return "login";
     }
-
+    @RequestMapping("/register")
+    public String register() {
+        return "register";
+    }
     @RequestMapping("/hello")
     public String hello(Model model) {
         model.addAttribute("hhh" , "123");
@@ -55,6 +63,26 @@ public class loginController {
         }else {
             rd.setMsg("密码不正确");
         }
+        return rd;
+    }
+
+    @RequestMapping
+    public ReturnData doRegister(String params) {
+        ReturnData rd = getReturnData();
+        String methodDisc = "用户注册";
+        logger.info(methodDisc + "开始 >>>>>>>>>>>>>>>>>>> params:{}", params);
+        if (StringUtils.isEmpty(params) || null == params) {
+            logger.info(methodDisc + "失败，参数为空");
+            rd.setMsg("注册失败");
+        }
+        User user = JSON.parseObject(params, User.class);
+        rd = userService.registerUser(user);
+        return rd;
+    }
+
+    private ReturnData getReturnData() {
+        ReturnData rd = new ReturnData();
+        rd.setCode(Constants.FAIL_CODE);
         return rd;
     }
 

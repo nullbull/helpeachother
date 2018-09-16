@@ -44,7 +44,7 @@ body {
     font-size: 16px;
     color: #50a3a2;
 }
-.container input[type='submit'] {
+.container input[type='button'] {
     font-size: 16px;
     letter-spacing: 2px;
     color: #666666;
@@ -53,7 +53,7 @@ body {
 .container input:focus {
     width: 400px;
 }
-.container input[type='submit']:hover {
+.container input[type='button']:hover {
     cursor: pointer;
     width: 400px;
 }
