@@ -3,7 +3,7 @@
 <head lang="en">
     <meta charset="UTF-8">
     <title>一款很漂亮的CSS3登录界面</title>
-    <link href="/static/css/register.css" th:href="@{/css/register.css}" rel="stylesheet">
+    <!--<link href="/static/css/register.css" th:href="@{/css/register.css}" rel="stylesheet">-->
 </head>
 
 <body class="wrap">
@@ -11,7 +11,8 @@
     <div class="container">
         <h1>Welcome</h1>
         <form id="loginForm">
-            <input type="text" id="userName" name="userName" placeholder="用户名" /><p id="mess"></p>
+            <input id="mess" >
+            <input type="text" id="userName" name="userName" placeholder="用户名" />
             <input type="password" id="passWord" name="passWord" placeholder="密码"/>
             <input type="email" id="email" name="email" placeholder="邮箱"/>
             <input type="text" id="phone" name="phone" placeholder="手机号"/>
@@ -25,7 +26,7 @@
             </select>
             <input hidden type="text" id="studentId" name="studentId" placeholder="学号">
             <input hidden type="file" id="picture" name="picture" placeholder="学号">
-            <input type="button" id="login_btn"/>
+            <input type="button" id="register_btn"/>
         </form>
     </div>
     <ul>
