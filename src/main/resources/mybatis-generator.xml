@@ -26,7 +26,7 @@
             <property name="enableSubPackages" value="true" />
         </sqlMapGenerator>
 
-        <javaClientGenerator type="XMLMAPPER"
+            <javaClientGenerator type="XMLMAPPER"
                              targetPackage="com.heo.dao" targetProject="${javaClientGenerator.targetProject}">
             <property name="enableSubPackages" value="false" />
         </javaClientGenerator>
@@ -34,8 +34,10 @@
         <!--
         <table tableName="live_course_channel" domainObjectName="LiveCourseChannel"></table>
         -->
-        <table tableName="user" domainObjectName="User"></table>
+        <!--<table tableName="user" domainObjectName="User"></table>-->
         <table tableName="express" domainObjectName="Express"></table>
+        <!--<table tableName="express_info" domainObjectName="ExpressInfo"></table>-->
+        <!--<table tableName="location_info" domainObjectName="LocationInfo"></table>-->
         <!--<table tableName="user_online" domainObjectName="UserOnline"></table>-->
         <!--<table tableName="login_information" domainObjectName="LoginInformation"></table>-->
 

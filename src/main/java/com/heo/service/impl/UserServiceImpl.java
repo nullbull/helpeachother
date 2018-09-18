@@ -10,6 +10,7 @@ import com.heo.dao.UserMapper;
 import com.heo.entity.mapper.User;
 import com.heo.entity.mapper.UserExample;
 import com.heo.entity.vo.ReturnData;
+import com.heo.service.BaseService;
 import com.heo.service.IUserService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -26,7 +27,7 @@ import java.util.Random;
  * @author ruoyi
  */
 @Service("userService")
-public class UserServiceImpl implements IUserService
+public class UserServiceImpl extends BaseService implements IUserService
 {
 
     @Autowired
