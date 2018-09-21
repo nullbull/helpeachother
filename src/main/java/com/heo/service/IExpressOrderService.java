@@ -11,6 +11,6 @@ import com.heo.service.impl.ExpressOrderService;
  */
 public interface IExpressOrderService {
     ReturnData createExpressOrder(ExpressOrder expressOrder);
-    ReturnData modifyExpressOrder(ExpressOrder expressOrder);
+    ReturnData getExpressOrderDetail(Long id);
     ReturnData deleteExpressOrder(Long id);
 }
