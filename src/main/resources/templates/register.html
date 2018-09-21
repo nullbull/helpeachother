@@ -11,7 +11,6 @@
     <div class="container">
         <h1>Welcome</h1>
         <form id="loginForm">
-            <input id="mess" >
             <input type="text" id="userName" name="userName" placeholder="用户名" />
             <input type="password" id="passWord" name="passWord" placeholder="密码"/>
             <input type="email" id="email" name="email" placeholder="邮箱"/>
@@ -20,13 +19,13 @@
             <input type="text" id="alipayId" name="alipayId" placeholder="支付宝账号"/>
             <input type="text" id="wechatId" name="wechatId" placeholder="微信号"/>
             <input type="text" id="qqNumber" name="qqNumeber" placeholder="QQ号"/>
-            <select id="s1">
+            <select id="s1" onchange="fun()">
                 <option id="p1" value="1">学生</option>
                 <option id="p2" value="2">服务者</option>
             </select>
             <input hidden type="text" id="studentId" name="studentId" placeholder="学号">
             <input hidden type="file" id="picture" name="picture" placeholder="学号">
-            <input type="button" id="register_btn"/>
+            <input type="submit" id="register_btn" value="注册"/>
         </form>
     </div>
     <ul>
@@ -42,6 +41,23 @@
         <li></li>
     </ul>
 </div>
+
+<script>
+    function fun() {
+        var a = $("#s1").val();
+        if(a=="2")
+        {
+            $("#studentId").show();
+            $("#picture").show();
+        }
+        if(a=="1")
+        {
+            $("#studentId").hide();
+            $("#picture").hide()
+        }
+    }
+</script>
+
 <script src="../static/js/jquery-3.3.1.js" th:src="@{/js/jquery-3.3.1.js}"></script>
 <script src="../static/js/login.js" th:src="@{/js/register.js}"></script>
 
