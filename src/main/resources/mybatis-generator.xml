@@ -36,6 +36,7 @@
         -->
         <!--<table tableName="user" domainObjectName="User"></table>-->
         <table tableName="express" domainObjectName="Express"></table>
+        <!--<table tableName="express_order" domainObjectName="ExpressOrder"></table>-->
         <!--<table tableName="express_info" domainObjectName="ExpressInfo"></table>-->
         <!--<table tableName="location_info" domainObjectName="LocationInfo"></table>-->
         <!--<table tableName="user_online" domainObjectName="UserOnline"></table>-->

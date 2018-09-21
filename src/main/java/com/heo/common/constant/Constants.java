@@ -66,4 +66,10 @@ public class Constants
 
     public static Byte FAIL_CODE = 0;
 
+    public static Byte ORDER_NEW = 1;
+    public static Byte ORDER_PICK_UP = 2;
+    public static Byte ORDER_FINISH = 3;
+    public static Byte ORDER_DELETE = 4;
+
+
 }

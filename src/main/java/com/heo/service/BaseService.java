@@ -2,6 +2,7 @@ package com.heo.service;
 
 import com.heo.dao.ExpressInfoMapper;
 import com.heo.dao.ExpressMapper;
+import com.heo.dao.ExpressOrderMapper;
 import com.heo.dao.LocationInfoMapper;
 import com.heo.entity.mapper.ExpressInfo;
 import com.heo.entity.mapper.LocationInfo;
@@ -40,6 +41,9 @@ public class BaseService {
 
     @Autowired
     public ExpressMapper expressMapper;
+
+    @Autowired
+    public ExpressOrderMapper  expressOrderMapper;
 
 
     public List<LocationInfo> getLocationByPart(Byte part) {

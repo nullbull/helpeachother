@@ -5,6 +5,7 @@ import com.heo.common.utils.NiuUtils;
 import com.heo.common.utils.StringUtils;
 import com.heo.entity.mapper.Express;
 import com.heo.entity.mapper.ExpressExample;
+import com.heo.entity.mapper.ExpressOrder;
 import com.heo.entity.vo.ReturnData;
 import com.heo.service.BaseService;
 import com.heo.service.IExpressService;
@@ -55,24 +56,57 @@ public class ExpressService extends BaseService implements IExpressService {
     @Override
     public ReturnData modifyExpress(Express express) {
         ReturnData rd = getReturnData();
-        String methoDesc = "修改代送快递信息";
+        String methodDesc = "修改代送快递信息";
         try {
             if (StringUtils.isEmpty(express.getPhone()) || null == express.getLocationId() || null == express.getUserId() || null == express.getPrice() || null == express.getExpressType() || null == express.getGetCode()) {
                 rd.setMsg("关键信息不能为空");
-                logger.info(methoDesc + "失败 关键信息不能为空 Express:{}", express);
+                logger.info(methodDesc + "失败 关键信息不能为空 Express:{}", express);
                 return rd;
             }
             //todo 有人接单，需要双方打电话修改
+            if (null != expressOrderMapper.selectByExpressId(express.getId())) {
+                rd.setMsg("操作失败，需要双方电话沟通");
+                logger.info(methodDesc + "失败， 已生成订单，需要双方电话修改 Express：{}", express);
+                return rd;
+            }
+            expressMapper.updateByPrimaryKeySelective(express);
+            rd.setCode(Constants.SUCCESS_CODE);
+            rd.setMsg("修改成功");
+            logger.info(methodDesc + "成功");
+
         }catch (Exception e) {
             rd.setMsg("未知错误");
-            logger.error(methoDesc + "未知异常， e:{}", e);
+            logger.error(methodDesc + "未知异常， e:{}", e);
         }
-        return null;
+        return rd;
     }
 
     @Override
     public ReturnData deleteExpress(Express express) {
-        return null;
+        ReturnData rd = getReturnData();
+        String methodDesc = "删除订单";
+        ExpressOrder expressOrder = expressOrderMapper.selectByExpressId(express.getId());
+        try {
+            if (null != expressOrder) {
+                if (expressOrder.getStatus() == Constants.ORDER_PICK_UP) {
+                    rd.setMsg("订单正在进行中，不能删除");
+                    logger.info(methodDesc + "失败， 订单正在进行中，不能删除");
+                    return rd;
+                }
+                expressOrder.setStatus(Constants.ORDER_DELETE);
+                expressOrderMapper.updateByPrimaryKeySelective(expressOrder);
+            }
+            express.setStatus(Constants.ORDER_DELETE);
+            expressMapper.updateByPrimaryKeySelective(express);
+            rd.setCode(Constants.SUCCESS_CODE);
+            rd.setMsg("订单删除完成");
+            logger.info(methodDesc + "完成");
+        } catch (Exception e) {
+            rd.setMsg("未知错误");
+            logger.error(methodDesc + "未知异常， e:{}", e);
+        }
+
+        return rd;
     }
 
     private ReturnData getReturnData() {
