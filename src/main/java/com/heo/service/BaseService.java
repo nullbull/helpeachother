@@ -1,5 +1,6 @@
 package com.heo.service;
 
+import com.heo.common.constant.Constants;
 import com.heo.dao.ExpressInfoMapper;
 import com.heo.dao.ExpressMapper;
 import com.heo.dao.ExpressOrderMapper;
@@ -7,6 +8,7 @@ import com.heo.dao.LocationInfoMapper;
 import com.heo.entity.mapper.ExpressInfo;
 import com.heo.entity.mapper.LocationInfo;
 import com.heo.entity.mapper.LocationInfoExample;
+import com.heo.entity.vo.ReturnData;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -61,6 +63,12 @@ public class BaseService {
 
     public static Date parse(String textDate) throws ParseException {
         return getDateFormat().parse(textDate);
+    }
+
+    public ReturnData getReturnData() {
+        ReturnData rd = new ReturnData();
+        rd.setCode(Constants.FAIL_CODE);
+        return rd;
     }
 
 

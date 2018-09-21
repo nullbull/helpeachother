@@ -82,9 +82,15 @@ public class ExpressService extends BaseService implements IExpressService {
     }
 
     @Override
-    public ReturnData deleteExpress(Express express) {
+    public ReturnData deleteExpress(Long id) {
         ReturnData rd = getReturnData();
         String methodDesc = "删除订单";
+        Express express = expressMapper.selectByPrimaryKey(id);
+        if (express == null) {
+            rd.setMsg("记录不存在");
+            logger.info(methodDesc + "失败 ExpressId : {}", id);
+            return rd;
+        }
         ExpressOrder expressOrder = expressOrderMapper.selectByExpressId(express.getId());
         try {
             if (null != expressOrder) {
@@ -109,11 +115,6 @@ public class ExpressService extends BaseService implements IExpressService {
         return rd;
     }
 
-    private ReturnData getReturnData() {
-        ReturnData rd = new ReturnData();
-        rd.setCode(Constants.FAIL_CODE);
-        return rd;
-    }
     private boolean valid(Express express) {
         ExpressExample example = new ExpressExample();
         example.createCriteria().andExpressTypeEqualTo(express.getExpressType()).andGetCodeEqualTo(express.getGetCode());

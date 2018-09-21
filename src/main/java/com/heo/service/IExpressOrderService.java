@@ -1,6 +1,8 @@
 package com.heo.service;
 
+import com.heo.entity.mapper.ExpressOrder;
 import com.heo.entity.vo.ReturnData;
+import com.heo.service.impl.ExpressOrderService;
 
 /**
  * @Auth justinniu
@@ -8,7 +10,7 @@ import com.heo.entity.vo.ReturnData;
  * @Desc
  */
 public interface IExpressOrderService {
-    ReturnData createExpressOrder();
-    ReturnData modifyExpressOrder();
-    ReturnData deleteExpressOrder();
+    ReturnData createExpressOrder(ExpressOrder expressOrder);
+    ReturnData modifyExpressOrder(ExpressOrder expressOrder);
+    ReturnData deleteExpressOrder(Long id);
 }
