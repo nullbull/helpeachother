@@ -3,6 +3,8 @@ package com.heo.dao;
 import com.heo.entity.mapper.ExpressOrder;
 import com.heo.entity.mapper.ExpressOrderExample;
 import java.util.List;
+
+import com.heo.entity.vo.ExpressOrderVO;
 import org.apache.ibatis.annotations.Param;
 
 public interface ExpressOrderMapper {
@@ -93,5 +95,13 @@ public interface ExpressOrderMapper {
      * @mbg.generated Fri Sep 21 15:30:28 GMT+08:00 2018
      */
     int updateByPrimaryKey(ExpressOrder record);
+
+    /*
+       根据Express id 获取ExpressOrder
+     */
     ExpressOrder selectByExpressId(Long id);
+    /*
+     * 封装一些 订单双方信息
+     */
+    ExpressOrderVO selectExpressOrderAndUserName(Long id);
 }

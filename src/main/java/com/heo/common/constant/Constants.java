@@ -1,5 +1,7 @@
 package com.heo.common.constant;
 
+import java.util.HashMap;
+
 /**
  * 通用常量信息
  * 
@@ -70,6 +72,18 @@ public class Constants
     public static Byte ORDER_PICK_UP = 2;
     public static Byte ORDER_FINISH = 3;
     public static Byte ORDER_DELETE = 4;
+
+    public static HashMap<Byte, String> EXPRESS_INFO;
+    static {
+        EXPRESS_INFO.put((byte) 1, "圆通快递");
+        EXPRESS_INFO.put((byte) 2, "京东快递");
+        EXPRESS_INFO.put((byte) 3, "顺丰快递");
+        EXPRESS_INFO.put((byte) 4, "中通快递");
+        EXPRESS_INFO.put((byte) 5, "申通快递");
+        EXPRESS_INFO.put((byte) 6, "百世快递");
+        EXPRESS_INFO.put((byte) 7, "天天快递");
+        EXPRESS_INFO.put((byte) 8, "天猫快递");
+    }
 
 
 }
