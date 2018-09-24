@@ -51,6 +51,10 @@ public class ExpressOrderService extends BaseService implements IExpressOrderSer
         String methodDesc = "获取代送单详情";
         try {
             ExpressOrder expressOrder =  expressOrderMapper.selectByExpressId(id);
+            if (expressOrder == null) {
+                rd.setMsg("该订单不存在");
+                logger.info(methodDesc + "订单不存在");
+            }
 
         } catch (Exception e) {
             rd.setMsg("未知错误");

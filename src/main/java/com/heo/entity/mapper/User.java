@@ -629,4 +629,29 @@ public class User {
     public void setLastLogin(Date lastLogin) {
         this.lastLogin = lastLogin;
     }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "id=" + id +
+                ", userName='" + userName + '\'' +
+                ", passWord='" + passWord + '\'' +
+                ", salt=" + salt +
+                ", email='" + email + '\'' +
+                ", majorId='" + majorId + '\'' +
+                ", phone='" + phone + '\'' +
+                ", locationId=" + locationId +
+                ", type=" + type +
+                ", alipayId='" + alipayId + '\'' +
+                ", wechatId='" + wechatId + '\'' +
+                ", qqNumber='" + qqNumber + '\'' +
+                ", picture='" + picture + '\'' +
+                ", studentId='" + studentId + '\'' +
+                ", createdAt=" + createdAt +
+                ", updatedAt=" + updatedAt +
+                ", modifyBy=" + modifyBy +
+                ", loginIp='" + loginIp + '\'' +
+                ", lastLogin=" + lastLogin +
+                '}';
+    }
 }

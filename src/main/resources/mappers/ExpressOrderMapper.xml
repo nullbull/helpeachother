@@ -333,4 +333,11 @@
     <select id="selectByExpressId" resultMap="BaseResultMap">
         select * from express_order where express_id = #{id}
     </select>
+    <select id="getExpressOrderDetail" resultType="com.heo.entity.vo.ExpressOrderVO">
+        select a.id, a.needer_id, a.provider_id, a.express_id, a.price, a.status, a.created_at, a.updated_at,
+        b.user_name as neederName , c.user_name as providerName
+        from express_order a
+          left join user b on a.needer_id = b.id
+          left join user c on a.provider_id = c.id
+    </select>
 </mapper>

@@ -11,6 +11,7 @@ $("#register_btn").click(function () {
     var passWord = $.trim($("#passWord").val());
     var email = $.trim($("#email").val());
     var phone = $.trim($("#phone").val());
+    var location_id = $.trim($("#locaiton_id").val());
     var alipayId = $.trim($("#alipayId").val());
     var wechatId = $.trim($("#wechatId").val());
     var qqNumber = $.trim($("#qqNumber").val());

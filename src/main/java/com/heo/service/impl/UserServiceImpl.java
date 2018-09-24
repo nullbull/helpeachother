@@ -63,7 +63,10 @@ public class UserServiceImpl extends BaseService implements IUserService
     {
         UserExample example = new UserExample();
         UserExample.Criteria  criteria = example.createCriteria().andUserNameEqualTo(userName);
-        return userMapper.selectByExample(example).get(0);
+        List<User> temp = userMapper.selectByExample(example);
+        if (temp.isEmpty())
+            return null;
+        return temp.get(0);
     }
 
     /**
@@ -77,7 +80,10 @@ public class UserServiceImpl extends BaseService implements IUserService
     {
         UserExample example = new UserExample();
         UserExample.Criteria  criteria = example.createCriteria().andPhoneEqualTo(phone);
-        return userMapper.selectByExample(example).get(0);
+        List<User> temp = userMapper.selectByExample(example);
+        if (temp.isEmpty())
+            return null;
+        return temp.get(0);
     }
 
     /**
@@ -90,8 +96,11 @@ public class UserServiceImpl extends BaseService implements IUserService
     public User selectUserByEmail(String email)
     {
         UserExample example = new UserExample();
-        UserExample.Criteria  criteria = example.createCriteria().andEmailEqualTo(email);
-        return userMapper.selectByExample(example).get(0);
+        UserExample.Criteria criteria = example.createCriteria().andEmailEqualTo(email);
+        List<User> temp = userMapper.selectByExample(example);
+        if (temp.isEmpty())
+            return null;
+        return temp.get(0);
     }
 
     @Override
@@ -199,7 +208,7 @@ public class UserServiceImpl extends BaseService implements IUserService
      */
     public String checkEmailUnique(String email)
     {
-        if (selectUserByEmail(email) != null)
+        if (null != selectUserByEmail(email))
         {
             return UserConstants.USER_NAME_NOT_UNIQUE;
         }
@@ -235,7 +244,7 @@ public class UserServiceImpl extends BaseService implements IUserService
             rd.setMsg("完成");
             logger.info(methodDesc + "完成");
         } catch (Exception e) {
-           logger.info(methodDesc + "失败, 位置系统异常 e:{}", e.getMessage());
+           logger.info(methodDesc + "失败, 未知系统异常 e:{}", e);
         }
         return rd;
 

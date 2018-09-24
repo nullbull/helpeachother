@@ -3,6 +3,8 @@ package com.heo.dao;
 import com.heo.entity.mapper.ExpressInfo;
 import com.heo.entity.mapper.ExpressInfoExample;
 import java.util.List;
+
+import com.heo.entity.vo.ExpressOrderVO;
 import org.apache.ibatis.annotations.Param;
 
 public interface ExpressInfoMapper {
@@ -95,5 +97,7 @@ public interface ExpressInfoMapper {
     int updateByPrimaryKey(ExpressInfo record);
 
     List<ExpressInfo> getAllExpressInfo();
+
+    ExpressOrderVO getExpressOrderDetail(Long id);
 
 }

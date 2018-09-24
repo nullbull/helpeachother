@@ -5,6 +5,7 @@ import com.heo.common.constant.Constants;
 import com.heo.common.utils.security.ShiroUtils;
 import com.heo.entity.mapper.User;
 import com.heo.entity.vo.ReturnData;
+import com.heo.service.ILocationInfoService;
 import com.heo.service.IUserService;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.shiro.SecurityUtils;
@@ -29,7 +30,10 @@ public class loginController {
     private Logger logger = LoggerFactory.getLogger(this.getClass());
     @Autowired
     IUserService userService;
-    @RequestMapping("/dologin")
+    @Autowired
+    ILocationInfoService infoService;
+
+    @RequestMapping("/login")
     public String login(Model model) {
         model.addAttribute("hhh" , "123");
         return "login";
@@ -50,29 +54,63 @@ public class loginController {
     {
         ReturnData rd = new ReturnData();
         rd.setCode(Constants.FAIL_CODE);
-        UsernamePasswordToken token = new UsernamePasswordToken(userName, passWord, rememberMe);
-        Subject subject = SecurityUtils.getSubject();
-        subject.login(token);
-        if (ShiroUtils.getUser() != null) {
-            rd.setCode(Constants.SUCCESS_CODE);
-            rd.setMsg("登陆成功");
-        }else {
-            rd.setMsg("密码不正确");
+        String methodDesc = "用户登陆";
+        try {
+            UsernamePasswordToken token = new UsernamePasswordToken(userName, passWord, rememberMe);
+            Subject subject = SecurityUtils.getSubject();
+            subject.login(token);
+            if (ShiroUtils.getUser() != null) {
+                rd.setCode(Constants.SUCCESS_CODE);
+                rd.setMsg("登陆成功");
+            }else {
+                rd.setMsg("密码不正确");
+            }
+        } catch (Exception e) {
+            logger.error(methodDesc + "未知错误, e {}", e);
+            rd.setMsg("未知错误");
         }
+
         return rd;
     }
     @ResponseBody
     @PostMapping("/doRegister")
     public ReturnData doRegister(String params) {
         ReturnData rd = getReturnData();
-        String methodDisc = "用户注册";
-        logger.info(methodDisc + "开始 >>>>>>>>>>>>>>>>>>> params:{}", params);
-        if (StringUtils.isEmpty(params) || null == params) {
-            logger.info(methodDisc + "失败，参数为空");
-            rd.setMsg("注册失败");
+        String methodDesc = "用户注册";
+        try{
+            logger.info(methodDesc + "开始 >>>>>>>>>>>>>>>>>>> params:{}", params);
+            if (StringUtils.isEmpty(params) || null == params) {
+                logger.info(methodDesc + "失败，参数为空");
+                rd.setMsg("注册失败");
+            }
+            User user = JSON.parseObject(params, User.class);
+            rd = userService.registerUser(user);
+        } catch (Exception e) {
+            logger.error(methodDesc + "未知错误, e {}", e);
+            rd.setMsg("未知错误");
         }
-        User user = JSON.parseObject(params, User.class);
-        rd = userService.registerUser(user);
+        return rd;
+    }
+
+    @ResponseBody
+    @GetMapping("/locaionInfo")
+    public ReturnData getLocationInfos(Byte id) {
+        ReturnData rd = getReturnData();
+        String methodDesc = "获取公寓信息接口";
+        try {
+            logger.info(methodDesc + "开始 >>>>>>>>>>>>>>>>> id:{}", id);
+            if (id == null) {
+                logger.info(methodDesc + "失败， 参数为空");
+                rd.setMsg("获取失败");
+                return rd;
+            }
+            rd.setData(infoService.getLocationsByPart(id));
+            logger.info(methodDesc + "完成， rd:{}", rd);
+        } catch (Exception e) {
+            logger.error(methodDesc + "未知错误, e {}", e);
+            rd.setMsg("未知错误");
+        }
+
         return rd;
     }
 
