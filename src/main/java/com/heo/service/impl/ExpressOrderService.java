@@ -1,9 +1,12 @@
 package com.heo.service.impl;
 
+import com.github.pagehelper.PageHelper;
 import com.heo.common.constant.Constants;
 import com.heo.entity.mapper.Express;
 import com.heo.entity.mapper.ExpressOrder;
+import com.heo.entity.mapper.ExpressOrderExample;
 import com.heo.entity.mapper.LocationInfo;
+import com.heo.entity.vo.ExpressOrderQueryVO;
 import com.heo.entity.vo.ExpressOrderVO;
 import com.heo.entity.vo.ReturnData;
 import com.heo.service.BaseService;
@@ -11,6 +14,9 @@ import com.heo.service.IExpressOrderService;
 import com.heo.service.IExpressService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+import java.util.Date;
+import java.util.List;
 
 /**
  * @Auth justinniu
@@ -39,7 +45,8 @@ public class ExpressOrderService extends BaseService implements IExpressOrderSer
             expressOrderMapper.insertSelective(expressOrder);
             rd.setMsg("完成");
             rd.setCode(Constants.SUCCESS_CODE);
-            logger.info(methodDesc + "完成");
+            rd.setData(expressOrder);
+            logger.info(methodDesc + "完成 expressOrder:{}", expressOrder);
         } catch (Exception e) {
             rd.setMsg("未知错误");
             logger.error(methodDesc + "失败， 未知错误 e ：{}", e.getMessage());
@@ -101,15 +108,88 @@ public class ExpressOrderService extends BaseService implements IExpressOrderSer
                 return rd;
             }
             expressOrder.setStatus(Constants.ORDER_FINISH);
+            Express express = expressMapper.selectByPrimaryKey(expressOrder.getExpressId());
+            express.setStatus(Constants.ORDER_FINISH);
             expressOrderMapper.updateByPrimaryKeySelective(expressOrder);
+            expressMapper.updateByPrimaryKeySelective(express);
             rd.setMsg("完成");
             rd.setCode(Constants.SUCCESS_CODE);
+            rd.setData(expressOrder);
             logger.info(methodDesc + "完成， expressOrder：{}", expressOrder);
         } catch (Exception e) {
             rd.setMsg("未知系统错误");
             logger.error(methodDesc + "失败, 未知系统错误, e:{}", e);
         }
         return rd;
+    }
+
+    @Override
+    public ReturnData getExpressOrderListById(ExpressOrderQueryVO vo, int limit, int offset) {
+        ReturnData rd = getReturnData();
+        String methodDesc = "根据Id获取快递代送单列表";
+        try {
+            logger.info(methodDesc + "开始 + vo：{} limit:{} offset:{} type:{}", vo, limit, offset);
+            PageHelper.startPage(limit, offset);
+            Long id = vo.getId();
+            Byte type = vo.getType();
+            Byte status = vo.getStatus();
+            Date beginTime = vo.getBeginTime();
+            Date endTime = vo.getEndTime();
+            if (type == null || type != Constants.PROVIDER || type != Constants.NEEDER) {
+                logger.info("不存在该用户类型， type:{}", type);
+                rd.setMsg("不存在该用户类型");
+                return rd;
+            }
+            ExpressOrderExample example = new ExpressOrderExample();
+            if (type.equals(Constants.PROVIDER)) {
+                example.createCriteria().andProviderIdEqualTo(id);
+            } else if (type.equals(Constants.NEEDER)) {
+                example.createCriteria().andNeederIdEqualTo(id);
+            }
+            if (null != status) {
+                example.createCriteria().andStatusEqualTo(status);
+            }
+            if (beginTime != null) {
+                example.createCriteria().andCreatedAtGreaterThanOrEqualTo(beginTime);
+            }
+            if (endTime != null) {
+                example.createCriteria().andUpdatedAtLessThanOrEqualTo(endTime);
+            }
+            List<ExpressOrder> expressOrderList = expressOrderMapper.selectByExample(example);
+            rd.setMsg("完成");
+            rd.setCode(Constants.SUCCESS_CODE);
+            rd.setData(expressOrderList);
+            logger.info(methodDesc + "完成 >>>>>>>>>>>>>>>> expressOrderList:{}", expressOrderList);
+            return rd;
+        }catch (Exception e) {
+            rd.setMsg("未知系统错误");
+            logger.error(methodDesc + "失败, 未知系统错误, e:{}", e);
+        }
+
+        return rd;
+    }
+
+    @Override
+    public ReturnData getByStatus(Long id, Byte status) {
+        return null;
+    }
+
+//    @Override
+//    public ReturnData getByStatus(Long id, Byte status) {
+//        ReturnData rd = getReturnData();
+//        String methodDesc = "根据状态获取"
+//    }
+
+    @Override
+    public ReturnData getByProviderAndNeederId(Long providerId, Long neederId) {
+        ReturnData rd = getReturnData();
+        String methodDesc = "根据跑腿者和需求者获取id";
+        try {
+            logger.info(methodDesc + " 开始 providerId:{}, neederId:{}", providerId, neederId);
+        } catch (Exception e) {
+
+        }
+        return null;
     }
 
     @Override

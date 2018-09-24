@@ -104,4 +104,7 @@ public interface ExpressOrderMapper {
      * 封装一些 订单双方信息
      */
     ExpressOrderVO selectExpressOrderAndUserName(Long id);
+
+//    List<ExpressOrder> selectByProviderId(Long id);
+//    List<ExpressOrder> selectByProviderId(Long id);
 }

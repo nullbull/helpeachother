@@ -73,6 +73,9 @@ public class Constants
     public static Byte ORDER_FINISH = 3;
     public static Byte ORDER_DELETE = 4;
 
+    public final static Byte PROVIDER = 2;
+    public final static Byte NEEDER = 1;
+
     public static HashMap<Byte, String> EXPRESS_INFO;
     static {
         EXPRESS_INFO.put((byte) 1, "圆通快递");
