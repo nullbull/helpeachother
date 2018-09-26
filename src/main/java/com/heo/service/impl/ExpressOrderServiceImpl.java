@@ -14,6 +14,7 @@ import com.heo.service.IExpressOrderService;
 import com.heo.service.IExpressService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.stereotype.Service;
 
 import java.util.Date;
 import java.util.List;
@@ -23,7 +24,8 @@ import java.util.List;
  * @Date 2018/9/21
  * @Desc
  */
-public class ExpressOrderService extends BaseService implements IExpressOrderService {
+@Service
+public class ExpressOrderServiceImpl extends BaseService implements IExpressOrderService {
     private Logger logger = LoggerFactory.getLogger(this.getClass());
 
     /**

@@ -76,7 +76,7 @@ public class Constants
     public final static Byte PROVIDER = 2;
     public final static Byte NEEDER = 1;
 
-    public static HashMap<Byte, String> EXPRESS_INFO;
+    public static HashMap<Byte, String> EXPRESS_INFO = new HashMap<>();
     static {
         EXPRESS_INFO.put((byte) 1, "圆通快递");
         EXPRESS_INFO.put((byte) 2, "京东快递");

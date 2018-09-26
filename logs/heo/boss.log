@@ -1,158 +1,269 @@
-14:35:44.674 [main] INFO  com.heo.HelpeachotherApplication - Starting HelpeachotherApplication on LAPTOP-1M5RA4JD with PID 15300 (C:\Users\11291\Desktop\helpeachother\target\classes started by 11291 in C:\Users\11291\Desktop\helpeachother)
-14:35:44.684 [main] DEBUG com.heo.HelpeachotherApplication - Running with Spring Boot v1.5.10.RELEASE, Spring v4.3.14.RELEASE
-14:35:44.685 [main] INFO  com.heo.HelpeachotherApplication - The following profiles are active: druid
-14:35:44.954 [background-preinit] INFO  org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 5.3.6.Final
-14:35:47.150 [main] INFO  org.apache.shiro.cache.ehcache.EhCacheManager - Cache with name 'com.heo.app.shiro.realm.UserRealm.authorizationCache' does not yet exist.  Creating now.
-14:35:47.152 [main] INFO  org.apache.shiro.cache.ehcache.EhCacheManager - Added EhCache named [com.heo.app.shiro.realm.UserRealm.authorizationCache]
-14:35:47.187 [main] INFO  org.apache.shiro.cache.ehcache.EhCacheManager - Using existing EHCache named [loginRecordCache]
-14:35:51.376 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
-14:35:51.378 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/8.5.27
-14:35:51.759 [localhost-startStop-1] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
-14:35:53.848 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
-14:35:53.870 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
-14:35:53.893 [main] INFO  org.apache.tomcat.util.net.NioSelectorPool - Using a shared selector for servlet write/read
-14:35:53.943 [main] INFO  com.heo.HelpeachotherApplication - Started HelpeachotherApplication in 9.894 seconds (JVM running for 13.066)
-14:36:16.421 [http-nio-8080-exec-1] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring FrameworkServlet 'dispatcherServlet'
-14:36:16.515 [http-nio-8080-exec-1] INFO  org.apache.shiro.session.mgt.AbstractValidatingSessionManager - Enabling session validation scheduler...
-14:36:16.516 [http-nio-8080-exec-1] DEBUG com.heo.app.shiro.web.session.SpringSessionValidationScheduler - Scheduling session validation job using Spring Scheduler with session validation interval of [600000]ms...
-14:36:16.518 [http-nio-8080-exec-1] DEBUG com.heo.app.shiro.web.session.SpringSessionValidationScheduler - Session validation job successfully scheduled with Spring Scheduler.
-14:36:16.576 [http-nio-8080-exec-1] INFO  org.apache.shiro.cache.ehcache.EhCacheManager - Using existing EHCache named [shiro-activeSessionCache]
-14:36:16.641 [http-nio-8080-exec-2] WARN  org.springframework.web.servlet.PageNotFound - Request method 'GET' not supported
-14:36:17.520 [pool-2-thread-1] INFO  com.heo.app.shiro.web.session.OnlineWebSessionManager - invalidation sessions...
-14:36:17.799 [pool-2-thread-1] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
-14:36:18.231 [pool-2-thread-1] DEBUG com.heo.dao.UserOnlineMapper.selectOnlineByExpired - ==>  Preparing: SELECT * FROM user_online o WHERE o.last_access_time <= ? ORDER BY o.last_access_time ASC 
-14:36:18.283 [pool-2-thread-1] DEBUG com.heo.dao.UserOnlineMapper.selectOnlineByExpired - ==> Parameters: 2018-09-24 14:06:17(String)
-14:36:57.469 [http-nio-8080-exec-9] INFO  com.heo.controller.loginController - 用户注册开始 >>>>>>>>>>>>>>>>>>> params:{"userName":"yangxu","passWord":"123456","email":"123","phone":"123","alipayId":"hhhh","wechatId":"ggg","qqNumber":"111"}
-14:36:57.727 [http-nio-8080-exec-9] INFO  com.heo.service.impl.UserServiceImpl - 用户注册开始user: com.heo.entity.mapper.User@65fb507
-14:36:57.853 [http-nio-8080-exec-9] DEBUG com.heo.dao.UserMapper.selectByExample - ==>  Preparing: select id, user_name, pass_word, salt, email, major_id, phone, location_id, type, alipay_id, wechat_id, qq_number, picture, student_id, created_at, updated_at, modify_by, login_ip, last_login from user WHERE ( email = ? ) 
-14:36:57.855 [http-nio-8080-exec-9] DEBUG com.heo.dao.UserMapper.selectByExample - ==> Parameters: 123(String)
-14:36:57.887 [http-nio-8080-exec-9] DEBUG com.heo.dao.UserMapper.selectByExample - <==      Total: 0
-14:36:57.890 [http-nio-8080-exec-9] INFO  com.heo.service.impl.UserServiceImpl - 用户注册失败, 位置系统异常 e:Index: 0, Size: 0
-14:37:09.831 [http-nio-8080-exec-10] INFO  com.heo.controller.loginController - 用户注册开始 >>>>>>>>>>>>>>>>>>> params:{"userName":"yangxu","passWord":"123456","email":"123@qq.com","phone":"123","alipayId":"hhhh","wechatId":"ggg","qqNumber":"111"}
-14:37:09.832 [http-nio-8080-exec-10] INFO  com.heo.service.impl.UserServiceImpl - 用户注册开始user: com.heo.entity.mapper.User@3af26730
-14:37:09.834 [http-nio-8080-exec-10] DEBUG com.heo.dao.UserMapper.selectByExample - ==>  Preparing: select id, user_name, pass_word, salt, email, major_id, phone, location_id, type, alipay_id, wechat_id, qq_number, picture, student_id, created_at, updated_at, modify_by, login_ip, last_login from user WHERE ( email = ? ) 
-14:37:09.836 [http-nio-8080-exec-10] DEBUG com.heo.dao.UserMapper.selectByExample - ==> Parameters: 123@qq.com(String)
-14:37:09.838 [http-nio-8080-exec-10] DEBUG com.heo.dao.UserMapper.selectByExample - <==      Total: 0
-14:37:09.839 [http-nio-8080-exec-10] INFO  com.heo.service.impl.UserServiceImpl - 用户注册失败, 位置系统异常 e:Index: 0, Size: 0
-14:38:57.201 [main] INFO  com.heo.HelpeachotherApplication - Starting HelpeachotherApplication on LAPTOP-1M5RA4JD with PID 8068 (C:\Users\11291\Desktop\helpeachother\target\classes started by 11291 in C:\Users\11291\Desktop\helpeachother)
-14:38:57.206 [main] DEBUG com.heo.HelpeachotherApplication - Running with Spring Boot v1.5.10.RELEASE, Spring v4.3.14.RELEASE
-14:38:57.206 [main] INFO  com.heo.HelpeachotherApplication - The following profiles are active: druid
-14:38:57.430 [background-preinit] INFO  org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 5.3.6.Final
-14:38:59.028 [main] INFO  org.apache.shiro.cache.ehcache.EhCacheManager - Cache with name 'com.heo.app.shiro.realm.UserRealm.authorizationCache' does not yet exist.  Creating now.
-14:38:59.029 [main] INFO  org.apache.shiro.cache.ehcache.EhCacheManager - Added EhCache named [com.heo.app.shiro.realm.UserRealm.authorizationCache]
-14:38:59.062 [main] INFO  org.apache.shiro.cache.ehcache.EhCacheManager - Using existing EHCache named [loginRecordCache]
-14:39:03.050 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
-14:39:03.051 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/8.5.27
-14:39:03.482 [localhost-startStop-1] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
-14:39:05.881 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
-14:39:05.896 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
-14:39:05.912 [main] INFO  org.apache.tomcat.util.net.NioSelectorPool - Using a shared selector for servlet write/read
-14:39:05.942 [main] INFO  com.heo.HelpeachotherApplication - Started HelpeachotherApplication in 9.328 seconds (JVM running for 12.127)
-14:39:19.085 [http-nio-8080-exec-1] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring FrameworkServlet 'dispatcherServlet'
-14:39:19.181 [http-nio-8080-exec-1] INFO  org.apache.shiro.session.mgt.AbstractValidatingSessionManager - Enabling session validation scheduler...
-14:39:19.182 [http-nio-8080-exec-1] DEBUG com.heo.app.shiro.web.session.SpringSessionValidationScheduler - Scheduling session validation job using Spring Scheduler with session validation interval of [600000]ms...
-14:39:19.184 [http-nio-8080-exec-1] DEBUG com.heo.app.shiro.web.session.SpringSessionValidationScheduler - Session validation job successfully scheduled with Spring Scheduler.
-14:39:19.189 [http-nio-8080-exec-1] INFO  org.apache.shiro.cache.ehcache.EhCacheManager - Using existing EHCache named [shiro-activeSessionCache]
-14:39:19.353 [http-nio-8080-exec-1] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
-14:39:19.878 [http-nio-8080-exec-1] DEBUG com.heo.dao.UserOnlineMapper.selectByPrimaryKey - ==>  Preparing: select sessionId, user_name, ipaddr, login_location, browser, os, status, start_timestsamp, last_access_time, expire_time from user_online where sessionId = ? 
-14:39:19.919 [http-nio-8080-exec-1] DEBUG com.heo.dao.UserOnlineMapper.selectByPrimaryKey - ==> Parameters: 5dca794d-92c0-46f7-b8b2-f7b463e61854(String)
-14:39:19.946 [http-nio-8080-exec-1] DEBUG com.heo.dao.UserOnlineMapper.selectByPrimaryKey - <==      Total: 0
-14:39:20.069 [http-nio-8080-exec-2] WARN  org.springframework.web.servlet.PageNotFound - Request method 'GET' not supported
-14:39:20.192 [pool-1-thread-1] INFO  com.heo.app.shiro.web.session.OnlineWebSessionManager - invalidation sessions...
-14:39:20.216 [pool-1-thread-1] DEBUG com.heo.dao.UserOnlineMapper.selectOnlineByExpired - ==>  Preparing: SELECT * FROM user_online o WHERE o.last_access_time <= ? ORDER BY o.last_access_time ASC 
-14:39:20.218 [pool-1-thread-1] DEBUG com.heo.dao.UserOnlineMapper.selectOnlineByExpired - ==> Parameters: 2018-09-24 14:09:20(String)
-14:40:02.718 [http-nio-8080-exec-7] INFO  com.heo.controller.loginController - 用户注册开始 >>>>>>>>>>>>>>>>>>> params:{"userName":"yangxu","passWord":"1234567","email":"113@qq.com","phone":"123","alipayId":"123","wechatId":"123","qqNumber":"213"}
-14:40:02.853 [http-nio-8080-exec-7] INFO  com.heo.service.impl.UserServiceImpl - 用户注册开始user: com.heo.entity.mapper.User@21ff73f3
-14:40:02.912 [http-nio-8080-exec-7] DEBUG com.heo.dao.UserMapper.selectByExample - ==>  Preparing: select id, user_name, pass_word, salt, email, major_id, phone, location_id, type, alipay_id, wechat_id, qq_number, picture, student_id, created_at, updated_at, modify_by, login_ip, last_login from user WHERE ( email = ? ) 
-14:40:02.914 [http-nio-8080-exec-7] DEBUG com.heo.dao.UserMapper.selectByExample - ==> Parameters: 113@qq.com(String)
-14:40:02.918 [http-nio-8080-exec-7] DEBUG com.heo.dao.UserMapper.selectByExample - <==      Total: 0
-14:40:02.919 [http-nio-8080-exec-7] INFO  com.heo.service.impl.UserServiceImpl - 用户注册失败, 位置系统异常 e:Index: 0, Size: 0
-14:43:16.490 [http-nio-8080-exec-10] INFO  com.heo.controller.loginController - 用户注册开始 >>>>>>>>>>>>>>>>>>> params:{"userName":"yangxu","passWord":"1234567","email":"113@qq.com","phone":"123","alipayId":"123","wechatId":"123","qqNumber":"213"}
-14:43:16.491 [http-nio-8080-exec-10] INFO  com.heo.service.impl.UserServiceImpl - 用户注册开始user: com.heo.entity.mapper.User@232451b3
-14:43:16.499 [http-nio-8080-exec-10] DEBUG com.heo.dao.UserMapper.selectByExample - ==>  Preparing: select id, user_name, pass_word, salt, email, major_id, phone, location_id, type, alipay_id, wechat_id, qq_number, picture, student_id, created_at, updated_at, modify_by, login_ip, last_login from user WHERE ( email = ? ) 
-14:43:16.500 [http-nio-8080-exec-10] DEBUG com.heo.dao.UserMapper.selectByExample - ==> Parameters: 113@qq.com(String)
-14:43:16.502 [http-nio-8080-exec-10] DEBUG com.heo.dao.UserMapper.selectByExample - <==      Total: 0
-14:43:16.503 [http-nio-8080-exec-10] INFO  com.heo.service.impl.UserServiceImpl - 用户注册失败, 位置系统异常 e:Index: 0, Size: 0
-14:43:37.176 [main] INFO  com.heo.HelpeachotherApplication - Starting HelpeachotherApplication on LAPTOP-1M5RA4JD with PID 22208 (C:\Users\11291\Desktop\helpeachother\target\classes started by 11291 in C:\Users\11291\Desktop\helpeachother)
-14:43:37.180 [main] DEBUG com.heo.HelpeachotherApplication - Running with Spring Boot v1.5.10.RELEASE, Spring v4.3.14.RELEASE
-14:43:37.181 [main] INFO  com.heo.HelpeachotherApplication - The following profiles are active: druid
-14:43:37.490 [background-preinit] INFO  org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 5.3.6.Final
-14:43:40.886 [main] INFO  org.apache.shiro.cache.ehcache.EhCacheManager - Cache with name 'com.heo.app.shiro.realm.UserRealm.authorizationCache' does not yet exist.  Creating now.
-14:43:40.889 [main] INFO  org.apache.shiro.cache.ehcache.EhCacheManager - Added EhCache named [com.heo.app.shiro.realm.UserRealm.authorizationCache]
-14:43:45.691 [main] INFO  org.apache.shiro.cache.ehcache.EhCacheManager - Using existing EHCache named [loginRecordCache]
-14:43:58.017 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
-14:43:58.028 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/8.5.27
-14:43:59.457 [localhost-startStop-1] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
-14:44:29.881 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
-14:44:30.158 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
-14:44:30.346 [main] INFO  org.apache.tomcat.util.net.NioSelectorPool - Using a shared selector for servlet write/read
-14:44:30.723 [main] INFO  com.heo.HelpeachotherApplication - Started HelpeachotherApplication in 54.189 seconds (JVM running for 57.222)
-14:45:16.924 [http-nio-8080-exec-1] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring FrameworkServlet 'dispatcherServlet'
-14:45:17.407 [http-nio-8080-exec-1] INFO  org.apache.shiro.session.mgt.AbstractValidatingSessionManager - Enabling session validation scheduler...
-14:45:17.409 [http-nio-8080-exec-1] DEBUG com.heo.app.shiro.web.session.SpringSessionValidationScheduler - Scheduling session validation job using Spring Scheduler with session validation interval of [600000]ms...
-14:45:17.415 [http-nio-8080-exec-1] DEBUG com.heo.app.shiro.web.session.SpringSessionValidationScheduler - Session validation job successfully scheduled with Spring Scheduler.
-14:45:17.428 [http-nio-8080-exec-1] INFO  org.apache.shiro.cache.ehcache.EhCacheManager - Using existing EHCache named [shiro-activeSessionCache]
-14:45:18.049 [http-nio-8080-exec-1] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
-14:45:18.416 [pool-1-thread-1] INFO  com.heo.app.shiro.web.session.OnlineWebSessionManager - invalidation sessions...
-14:45:18.722 [pool-1-thread-1] DEBUG com.heo.dao.UserOnlineMapper.selectOnlineByExpired - ==>  Preparing: SELECT * FROM user_online o WHERE o.last_access_time <= ? ORDER BY o.last_access_time ASC 
-14:45:18.722 [http-nio-8080-exec-1] DEBUG com.heo.dao.UserOnlineMapper.selectByPrimaryKey - ==>  Preparing: select sessionId, user_name, ipaddr, login_location, browser, os, status, start_timestsamp, last_access_time, expire_time from user_online where sessionId = ? 
-14:45:19.105 [pool-1-thread-1] DEBUG com.heo.dao.UserOnlineMapper.selectOnlineByExpired - ==> Parameters: 2018-09-24 14:15:18(String)
-14:45:19.105 [http-nio-8080-exec-1] DEBUG com.heo.dao.UserOnlineMapper.selectByPrimaryKey - ==> Parameters: 0759484c-fc6b-47f0-a3b8-7d864e56fca9(String)
-14:45:19.340 [http-nio-8080-exec-1] DEBUG com.heo.dao.UserOnlineMapper.selectByPrimaryKey - <==      Total: 0
-14:45:19.786 [http-nio-8080-exec-1] INFO  com.heo.controller.loginController - 用户注册开始 >>>>>>>>>>>>>>>>>>> params:{"userName":"yangxu","passWord":"1234567","email":"113@qq.com","phone":"123","alipayId":"123","wechatId":"123","qqNumber":"213"}
-14:45:20.411 [http-nio-8080-exec-1] INFO  com.heo.service.impl.UserServiceImpl - 用户注册开始user: User{id=null, userName='yangxu', passWord='1234567', salt=null, email='113@qq.com', majorId='null', phone='123', locationId=null, type=null, alipayId='123', wechatId='123', qqNumber='213', picture='null', studentId='null', createdAt=null, updatedAt=null, modifyBy=null, loginIp='null', lastLogin=null}
-14:45:25.944 [http-nio-8080-exec-1] DEBUG com.heo.dao.UserMapper.selectByExample - ==>  Preparing: select id, user_name, pass_word, salt, email, major_id, phone, location_id, type, alipay_id, wechat_id, qq_number, picture, student_id, created_at, updated_at, modify_by, login_ip, last_login from user WHERE ( email = ? ) 
-14:45:25.947 [http-nio-8080-exec-1] DEBUG com.heo.dao.UserMapper.selectByExample - ==> Parameters: 113@qq.com(String)
-14:45:25.954 [http-nio-8080-exec-1] DEBUG com.heo.dao.UserMapper.selectByExample - <==      Total: 0
-14:45:25.956 [http-nio-8080-exec-1] INFO  com.heo.service.impl.UserServiceImpl - 用户注册失败, 未知系统异常 e:Index: 0, Size: 0
-14:47:11.525 [http-nio-8080-exec-2] DEBUG com.heo.dao.UserOnlineMapper.selectByPrimaryKey - ==>  Preparing: select sessionId, user_name, ipaddr, login_location, browser, os, status, start_timestsamp, last_access_time, expire_time from user_online where sessionId = ? 
-14:47:11.529 [http-nio-8080-exec-2] DEBUG com.heo.dao.UserOnlineMapper.selectByPrimaryKey - ==> Parameters: 0759484c-fc6b-47f0-a3b8-7d864e56fca9(String)
-14:47:11.534 [http-nio-8080-exec-2] DEBUG com.heo.dao.UserOnlineMapper.selectByPrimaryKey - <==      Total: 0
-14:47:11.558 [http-nio-8080-exec-2] INFO  com.heo.controller.loginController - 用户注册开始 >>>>>>>>>>>>>>>>>>> params:{"userName":"yangxu","passWord":"1234567","email":"113@qq.com","phone":"123","alipayId":"123","wechatId":"123","qqNumber":"213"}
-14:47:11.561 [http-nio-8080-exec-2] INFO  com.heo.service.impl.UserServiceImpl - 用户注册开始user: User{id=null, userName='yangxu', passWord='1234567', salt=null, email='113@qq.com', majorId='null', phone='123', locationId=null, type=null, alipayId='123', wechatId='123', qqNumber='213', picture='null', studentId='null', createdAt=null, updatedAt=null, modifyBy=null, loginIp='null', lastLogin=null}
-14:47:30.986 [http-nio-8080-exec-2] DEBUG com.heo.dao.UserMapper.selectByExample - ==>  Preparing: select id, user_name, pass_word, salt, email, major_id, phone, location_id, type, alipay_id, wechat_id, qq_number, picture, student_id, created_at, updated_at, modify_by, login_ip, last_login from user WHERE ( email = ? ) 
-14:47:30.989 [http-nio-8080-exec-2] DEBUG com.heo.dao.UserMapper.selectByExample - ==> Parameters: 113@qq.com(String)
-14:47:30.995 [http-nio-8080-exec-2] DEBUG com.heo.dao.UserMapper.selectByExample - <==      Total: 0
-14:47:30.998 [http-nio-8080-exec-2] INFO  com.heo.service.impl.UserServiceImpl - 用户注册失败, 未知系统异常 e:Index: 0, Size: 0
-14:50:08.849 [main] INFO  com.heo.HelpeachotherApplication - Starting HelpeachotherApplication on LAPTOP-1M5RA4JD with PID 3172 (C:\Users\11291\Desktop\helpeachother\target\classes started by 11291 in C:\Users\11291\Desktop\helpeachother)
-14:50:08.857 [main] DEBUG com.heo.HelpeachotherApplication - Running with Spring Boot v1.5.10.RELEASE, Spring v4.3.14.RELEASE
-14:50:08.858 [main] INFO  com.heo.HelpeachotherApplication - The following profiles are active: druid
-14:50:09.135 [background-preinit] INFO  org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 5.3.6.Final
-14:50:12.808 [main] INFO  org.apache.shiro.cache.ehcache.EhCacheManager - Cache with name 'com.heo.app.shiro.realm.UserRealm.authorizationCache' does not yet exist.  Creating now.
-14:50:12.811 [main] INFO  org.apache.shiro.cache.ehcache.EhCacheManager - Added EhCache named [com.heo.app.shiro.realm.UserRealm.authorizationCache]
-14:50:17.731 [main] INFO  org.apache.shiro.cache.ehcache.EhCacheManager - Using existing EHCache named [loginRecordCache]
-14:50:30.872 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
-14:50:30.883 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/8.5.27
-14:50:32.070 [localhost-startStop-1] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
-14:51:03.544 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
-14:51:03.752 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
-14:51:03.899 [main] INFO  org.apache.tomcat.util.net.NioSelectorPool - Using a shared selector for servlet write/read
-14:51:04.145 [main] INFO  com.heo.HelpeachotherApplication - Started HelpeachotherApplication in 55.988 seconds (JVM running for 58.888)
-14:51:15.800 [http-nio-8080-exec-2] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring FrameworkServlet 'dispatcherServlet'
-14:51:16.283 [http-nio-8080-exec-2] INFO  org.apache.shiro.session.mgt.AbstractValidatingSessionManager - Enabling session validation scheduler...
-14:51:16.285 [http-nio-8080-exec-2] DEBUG com.heo.app.shiro.web.session.SpringSessionValidationScheduler - Scheduling session validation job using Spring Scheduler with session validation interval of [600000]ms...
-14:51:16.294 [http-nio-8080-exec-2] DEBUG com.heo.app.shiro.web.session.SpringSessionValidationScheduler - Session validation job successfully scheduled with Spring Scheduler.
-14:51:16.312 [http-nio-8080-exec-2] INFO  org.apache.shiro.cache.ehcache.EhCacheManager - Using existing EHCache named [shiro-activeSessionCache]
-14:51:16.987 [http-nio-8080-exec-2] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
-14:51:17.295 [pool-1-thread-1] INFO  com.heo.app.shiro.web.session.OnlineWebSessionManager - invalidation sessions...
-14:51:17.778 [pool-1-thread-1] DEBUG com.heo.dao.UserOnlineMapper.selectOnlineByExpired - ==>  Preparing: SELECT * FROM user_online o WHERE o.last_access_time <= ? ORDER BY o.last_access_time ASC 
-14:51:17.779 [http-nio-8080-exec-2] DEBUG com.heo.dao.UserOnlineMapper.selectByPrimaryKey - ==>  Preparing: select sessionId, user_name, ipaddr, login_location, browser, os, status, start_timestsamp, last_access_time, expire_time from user_online where sessionId = ? 
-14:51:18.258 [http-nio-8080-exec-2] DEBUG com.heo.dao.UserOnlineMapper.selectByPrimaryKey - ==> Parameters: 0759484c-fc6b-47f0-a3b8-7d864e56fca9(String)
-14:51:18.258 [pool-1-thread-1] DEBUG com.heo.dao.UserOnlineMapper.selectOnlineByExpired - ==> Parameters: 2018-09-24 14:21:17(String)
-14:51:18.493 [http-nio-8080-exec-2] DEBUG com.heo.dao.UserOnlineMapper.selectByPrimaryKey - <==      Total: 0
-14:51:19.002 [http-nio-8080-exec-2] INFO  com.heo.controller.loginController - 用户注册开始 >>>>>>>>>>>>>>>>>>> params:{"userName":"yangxu","passWord":"1234567","email":"113@qq.com","phone":"123","alipayId":"123","wechatId":"123","qqNumber":"213"}
-14:51:19.806 [http-nio-8080-exec-2] INFO  com.heo.service.impl.UserServiceImpl - 用户注册开始user: User{id=null, userName='yangxu', passWord='1234567', salt=null, email='113@qq.com', majorId='null', phone='123', locationId=null, type=null, alipayId='123', wechatId='123', qqNumber='213', picture='null', studentId='null', createdAt=null, updatedAt=null, modifyBy=null, loginIp='null', lastLogin=null}
-14:51:25.916 [http-nio-8080-exec-2] DEBUG com.heo.dao.UserMapper.selectByExample - ==>  Preparing: select id, user_name, pass_word, salt, email, major_id, phone, location_id, type, alipay_id, wechat_id, qq_number, picture, student_id, created_at, updated_at, modify_by, login_ip, last_login from user WHERE ( email = ? ) 
-14:51:25.919 [http-nio-8080-exec-2] DEBUG com.heo.dao.UserMapper.selectByExample - ==> Parameters: 113@qq.com(String)
-14:51:25.927 [http-nio-8080-exec-2] DEBUG com.heo.dao.UserMapper.selectByExample - <==      Total: 0
-14:51:25.947 [http-nio-8080-exec-2] INFO  com.heo.service.impl.UserServiceImpl - 用户注册失败, 未知系统异常 e:{}
-java.lang.IndexOutOfBoundsException: Index: 0, Size: 0
-	at java.util.ArrayList.rangeCheck(ArrayList.java:657)
-	at java.util.ArrayList.get(ArrayList.java:433)
-	at com.heo.service.impl.UserServiceImpl.selectUserByEmail(UserServiceImpl.java:94)
-	at com.heo.service.impl.UserServiceImpl.checkEmailUnique(UserServiceImpl.java:202)
-	at com.heo.service.impl.UserServiceImpl.registerUser(UserServiceImpl.java:216)
-	at com.heo.controller.loginController.doRegister(loginController.java:75)
+13:59:40.783 [main] INFO  com.heo.HelpeachotherApplication - Starting HelpeachotherApplication on LAPTOP-1M5RA4JD with PID 16572 (C:\Users\11291\Desktop\helpeachother\target\classes started by 11291 in C:\Users\11291\Desktop\helpeachother)
+13:59:40.801 [main] DEBUG com.heo.HelpeachotherApplication - Running with Spring Boot v1.5.10.RELEASE, Spring v4.3.14.RELEASE
+13:59:40.801 [main] INFO  com.heo.HelpeachotherApplication - The following profiles are active: druid
+13:59:41.236 [background-preinit] INFO  org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 5.3.6.Final
+13:59:42.878 [main] INFO  org.apache.shiro.cache.ehcache.EhCacheManager - Cache with name 'com.heo.app.shiro.realm.UserRealm.authorizationCache' does not yet exist.  Creating now.
+13:59:42.879 [main] INFO  org.apache.shiro.cache.ehcache.EhCacheManager - Added EhCache named [com.heo.app.shiro.realm.UserRealm.authorizationCache]
+13:59:42.905 [main] INFO  org.apache.shiro.cache.ehcache.EhCacheManager - Using existing EHCache named [loginRecordCache]
+13:59:43.533 [main] WARN  o.s.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'methodValidationPostProcessor' defined in class path resource [org/springframework/boot/autoconfigure/validation/ValidationAutoConfiguration.class]: Unsatisfied dependency expressed through method 'methodValidationPostProcessor' parameter 0; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'shiroFilterFactoryBean' defined in class path resource [com/heo/app/config/ShiroConfig.class]: Unsatisfied dependency expressed through method 'shiroFilterFactoryBean' parameter 0; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'securityManager' defined in class path resource [com/heo/app/config/ShiroConfig.class]: Unsatisfied dependency expressed through method 'securityManager' parameter 0; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'userRealm': Unsatisfied dependency expressed through field 'loginService'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'loginService': Unsatisfied dependency expressed through field 'userService'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'userService': Unsatisfied dependency expressed through field 'expressInfoMapper'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'expressInfoMapper' defined in file [C:\Users\11291\Desktop\helpeachother\target\classes\com\heo\dao\ExpressInfoMapper.class]: Unsatisfied dependency expressed through bean property 'sqlSessionFactory'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sqlSessionFactory' defined in class path resource [org/mybatis/spring/boot/autoconfigure/MybatisAutoConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.apache.ibatis.session.SqlSessionFactory]: Factory method 'sqlSessionFactory' threw exception; nested exception is org.springframework.core.NestedIOException: Failed to parse mapping resource: 'file [C:\Users\11291\Desktop\helpeachother\target\classes\mappers\ExpressOrderMapper.xml]'; nested exception is org.apache.ibatis.builder.BuilderException: Error creating document instance.  Cause: org.xml.sax.SAXParseException; lineNumber: 345; columnNumber: 1; Element type "select" must be followed by either attribute specifications, ">" or "/>".
+13:59:43.551 [main] ERROR org.springframework.boot.SpringApplication - Application startup failed
+org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'methodValidationPostProcessor' defined in class path resource [org/springframework/boot/autoconfigure/validation/ValidationAutoConfiguration.class]: Unsatisfied dependency expressed through method 'methodValidationPostProcessor' parameter 0; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'shiroFilterFactoryBean' defined in class path resource [com/heo/app/config/ShiroConfig.class]: Unsatisfied dependency expressed through method 'shiroFilterFactoryBean' parameter 0; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'securityManager' defined in class path resource [com/heo/app/config/ShiroConfig.class]: Unsatisfied dependency expressed through method 'securityManager' parameter 0; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'userRealm': Unsatisfied dependency expressed through field 'loginService'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'loginService': Unsatisfied dependency expressed through field 'userService'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'userService': Unsatisfied dependency expressed through field 'expressInfoMapper'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'expressInfoMapper' defined in file [C:\Users\11291\Desktop\helpeachother\target\classes\com\heo\dao\ExpressInfoMapper.class]: Unsatisfied dependency expressed through bean property 'sqlSessionFactory'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sqlSessionFactory' defined in class path resource [org/mybatis/spring/boot/autoconfigure/MybatisAutoConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.apache.ibatis.session.SqlSessionFactory]: Factory method 'sqlSessionFactory' threw exception; nested exception is org.springframework.core.NestedIOException: Failed to parse mapping resource: 'file [C:\Users\11291\Desktop\helpeachother\target\classes\mappers\ExpressOrderMapper.xml]'; nested exception is org.apache.ibatis.builder.BuilderException: Error creating document instance.  Cause: org.xml.sax.SAXParseException; lineNumber: 345; columnNumber: 1; Element type "select" must be followed by either attribute specifications, ">" or "/>".
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:749)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:467)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1173)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1067)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:513)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:483)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:306)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:302)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.registerBeanPostProcessors(PostProcessorRegistrationDelegate.java:225)
+	at org.springframework.context.support.AbstractApplicationContext.registerBeanPostProcessors(AbstractApplicationContext.java:703)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:528)
+	at org.springframework.boot.context.embedded.EmbeddedWebApplicationContext.refresh(EmbeddedWebApplicationContext.java:122)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:693)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:360)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:303)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1118)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1107)
+	at com.heo.HelpeachotherApplication.main(HelpeachotherApplication.java:13)
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'shiroFilterFactoryBean' defined in class path resource [com/heo/app/config/ShiroConfig.class]: Unsatisfied dependency expressed through method 'shiroFilterFactoryBean' parameter 0; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'securityManager' defined in class path resource [com/heo/app/config/ShiroConfig.class]: Unsatisfied dependency expressed through method 'securityManager' parameter 0; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'userRealm': Unsatisfied dependency expressed through field 'loginService'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'loginService': Unsatisfied dependency expressed through field 'userService'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'userService': Unsatisfied dependency expressed through field 'expressInfoMapper'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'expressInfoMapper' defined in file [C:\Users\11291\Desktop\helpeachother\target\classes\com\heo\dao\ExpressInfoMapper.class]: Unsatisfied dependency expressed through bean property 'sqlSessionFactory'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sqlSessionFactory' defined in class path resource [org/mybatis/spring/boot/autoconfigure/MybatisAutoConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.apache.ibatis.session.SqlSessionFactory]: Factory method 'sqlSessionFactory' threw exception; nested exception is org.springframework.core.NestedIOException: Failed to parse mapping resource: 'file [C:\Users\11291\Desktop\helpeachother\target\classes\mappers\ExpressOrderMapper.xml]'; nested exception is org.apache.ibatis.builder.BuilderException: Error creating document instance.  Cause: org.xml.sax.SAXParseException; lineNumber: 345; columnNumber: 1; Element type "select" must be followed by either attribute specifications, ">" or "/>".
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:749)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:467)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1173)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1067)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.getSingletonFactoryBeanForTypeCheck(AbstractAutowireCapableBeanFactory.java:923)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.getTypeForFactoryBean(AbstractAutowireCapableBeanFactory.java:804)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.isTypeMatch(AbstractBeanFactory.java:558)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doGetBeanNamesForType(DefaultListableBeanFactory.java:432)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.getBeanNamesForType(DefaultListableBeanFactory.java:395)
+	at org.springframework.beans.factory.BeanFactoryUtils.beanNamesForTypeIncludingAncestors(BeanFactoryUtils.java:220)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.findAutowireCandidates(DefaultListableBeanFactory.java:1267)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1101)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1066)
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:835)
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:741)
+	... 19 common frames omitted
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'securityManager' defined in class path resource [com/heo/app/config/ShiroConfig.class]: Unsatisfied dependency expressed through method 'securityManager' parameter 0; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'userRealm': Unsatisfied dependency expressed through field 'loginService'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'loginService': Unsatisfied dependency expressed through field 'userService'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'userService': Unsatisfied dependency expressed through field 'expressInfoMapper'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'expressInfoMapper' defined in file [C:\Users\11291\Desktop\helpeachother\target\classes\com\heo\dao\ExpressInfoMapper.class]: Unsatisfied dependency expressed through bean property 'sqlSessionFactory'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sqlSessionFactory' defined in class path resource [org/mybatis/spring/boot/autoconfigure/MybatisAutoConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.apache.ibatis.session.SqlSessionFactory]: Factory method 'sqlSessionFactory' threw exception; nested exception is org.springframework.core.NestedIOException: Failed to parse mapping resource: 'file [C:\Users\11291\Desktop\helpeachother\target\classes\mappers\ExpressOrderMapper.xml]'; nested exception is org.apache.ibatis.builder.BuilderException: Error creating document instance.  Cause: org.xml.sax.SAXParseException; lineNumber: 345; columnNumber: 1; Element type "select" must be followed by either attribute specifications, ">" or "/>".
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:749)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:467)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1173)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1067)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:513)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:483)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:306)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:302)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:208)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1138)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1066)
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:835)
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:741)
+	... 33 common frames omitted
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'userRealm': Unsatisfied dependency expressed through field 'loginService'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'loginService': Unsatisfied dependency expressed through field 'userService'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'userService': Unsatisfied dependency expressed through field 'expressInfoMapper'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'expressInfoMapper' defined in file [C:\Users\11291\Desktop\helpeachother\target\classes\com\heo\dao\ExpressInfoMapper.class]: Unsatisfied dependency expressed through bean property 'sqlSessionFactory'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sqlSessionFactory' defined in class path resource [org/mybatis/spring/boot/autoconfigure/MybatisAutoConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.apache.ibatis.session.SqlSessionFactory]: Factory method 'sqlSessionFactory' threw exception; nested exception is org.springframework.core.NestedIOException: Failed to parse mapping resource: 'file [C:\Users\11291\Desktop\helpeachother\target\classes\mappers\ExpressOrderMapper.xml]'; nested exception is org.apache.ibatis.builder.BuilderException: Error creating document instance.  Cause: org.xml.sax.SAXParseException; lineNumber: 345; columnNumber: 1; Element type "select" must be followed by either attribute specifications, ">" or "/>".
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:588)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:88)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessPropertyValues(AutowiredAnnotationBeanPostProcessor.java:366)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1264)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:553)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:483)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:306)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:302)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:208)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1138)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1066)
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:835)
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:741)
+	... 47 common frames omitted
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'loginService': Unsatisfied dependency expressed through field 'userService'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'userService': Unsatisfied dependency expressed through field 'expressInfoMapper'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'expressInfoMapper' defined in file [C:\Users\11291\Desktop\helpeachother\target\classes\com\heo\dao\ExpressInfoMapper.class]: Unsatisfied dependency expressed through bean property 'sqlSessionFactory'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sqlSessionFactory' defined in class path resource [org/mybatis/spring/boot/autoconfigure/MybatisAutoConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.apache.ibatis.session.SqlSessionFactory]: Factory method 'sqlSessionFactory' threw exception; nested exception is org.springframework.core.NestedIOException: Failed to parse mapping resource: 'file [C:\Users\11291\Desktop\helpeachother\target\classes\mappers\ExpressOrderMapper.xml]'; nested exception is org.apache.ibatis.builder.BuilderException: Error creating document instance.  Cause: org.xml.sax.SAXParseException; lineNumber: 345; columnNumber: 1; Element type "select" must be followed by either attribute specifications, ">" or "/>".
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:588)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:88)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessPropertyValues(AutowiredAnnotationBeanPostProcessor.java:366)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1264)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:553)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:483)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:306)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:302)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:208)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1138)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1066)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:585)
+	... 61 common frames omitted
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'userService': Unsatisfied dependency expressed through field 'expressInfoMapper'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'expressInfoMapper' defined in file [C:\Users\11291\Desktop\helpeachother\target\classes\com\heo\dao\ExpressInfoMapper.class]: Unsatisfied dependency expressed through bean property 'sqlSessionFactory'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sqlSessionFactory' defined in class path resource [org/mybatis/spring/boot/autoconfigure/MybatisAutoConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.apache.ibatis.session.SqlSessionFactory]: Factory method 'sqlSessionFactory' threw exception; nested exception is org.springframework.core.NestedIOException: Failed to parse mapping resource: 'file [C:\Users\11291\Desktop\helpeachother\target\classes\mappers\ExpressOrderMapper.xml]'; nested exception is org.apache.ibatis.builder.BuilderException: Error creating document instance.  Cause: org.xml.sax.SAXParseException; lineNumber: 345; columnNumber: 1; Element type "select" must be followed by either attribute specifications, ">" or "/>".
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:588)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:88)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessPropertyValues(AutowiredAnnotationBeanPostProcessor.java:366)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1264)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:553)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:483)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:306)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:302)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:208)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1138)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1066)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:585)
+	... 74 common frames omitted
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'expressInfoMapper' defined in file [C:\Users\11291\Desktop\helpeachother\target\classes\com\heo\dao\ExpressInfoMapper.class]: Unsatisfied dependency expressed through bean property 'sqlSessionFactory'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sqlSessionFactory' defined in class path resource [org/mybatis/spring/boot/autoconfigure/MybatisAutoConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.apache.ibatis.session.SqlSessionFactory]: Factory method 'sqlSessionFactory' threw exception; nested exception is org.springframework.core.NestedIOException: Failed to parse mapping resource: 'file [C:\Users\11291\Desktop\helpeachother\target\classes\mappers\ExpressOrderMapper.xml]'; nested exception is org.apache.ibatis.builder.BuilderException: Error creating document instance.  Cause: org.xml.sax.SAXParseException; lineNumber: 345; columnNumber: 1; Element type "select" must be followed by either attribute specifications, ">" or "/>".
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireByType(AbstractAutowireCapableBeanFactory.java:1357)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1249)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:553)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:483)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:306)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:302)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:208)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1138)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1066)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:585)
+	... 87 common frames omitted
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sqlSessionFactory' defined in class path resource [org/mybatis/spring/boot/autoconfigure/MybatisAutoConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.apache.ibatis.session.SqlSessionFactory]: Factory method 'sqlSessionFactory' threw exception; nested exception is org.springframework.core.NestedIOException: Failed to parse mapping resource: 'file [C:\Users\11291\Desktop\helpeachother\target\classes\mappers\ExpressOrderMapper.xml]'; nested exception is org.apache.ibatis.builder.BuilderException: Error creating document instance.  Cause: org.xml.sax.SAXParseException; lineNumber: 345; columnNumber: 1; Element type "select" must be followed by either attribute specifications, ">" or "/>".
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:599)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1173)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1067)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:513)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:483)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:306)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:302)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:208)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1138)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1066)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireByType(AbstractAutowireCapableBeanFactory.java:1342)
+	... 98 common frames omitted
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.apache.ibatis.session.SqlSessionFactory]: Factory method 'sqlSessionFactory' threw exception; nested exception is org.springframework.core.NestedIOException: Failed to parse mapping resource: 'file [C:\Users\11291\Desktop\helpeachother\target\classes\mappers\ExpressOrderMapper.xml]'; nested exception is org.apache.ibatis.builder.BuilderException: Error creating document instance.  Cause: org.xml.sax.SAXParseException; lineNumber: 345; columnNumber: 1; Element type "select" must be followed by either attribute specifications, ">" or "/>".
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:189)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:588)
+	... 110 common frames omitted
+Caused by: org.springframework.core.NestedIOException: Failed to parse mapping resource: 'file [C:\Users\11291\Desktop\helpeachother\target\classes\mappers\ExpressOrderMapper.xml]'; nested exception is org.apache.ibatis.builder.BuilderException: Error creating document instance.  Cause: org.xml.sax.SAXParseException; lineNumber: 345; columnNumber: 1; Element type "select" must be followed by either attribute specifications, ">" or "/>".
+	at org.mybatis.spring.SqlSessionFactoryBean.buildSqlSessionFactory(SqlSessionFactoryBean.java:523)
+	at org.mybatis.spring.SqlSessionFactoryBean.afterPropertiesSet(SqlSessionFactoryBean.java:380)
+	at org.mybatis.spring.SqlSessionFactoryBean.getObject(SqlSessionFactoryBean.java:547)
+	at org.mybatis.spring.boot.autoconfigure.MybatisAutoConfiguration.sqlSessionFactory(MybatisAutoConfiguration.java:153)
+	at org.mybatis.spring.boot.autoconfigure.MybatisAutoConfiguration$$EnhancerBySpringCGLIB$$b6fb5343.CGLIB$sqlSessionFactory$0(<generated>)
+	at org.mybatis.spring.boot.autoconfigure.MybatisAutoConfiguration$$EnhancerBySpringCGLIB$$b6fb5343$$FastClassBySpringCGLIB$$6f3b0f9b.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invokeSuper(MethodProxy.java:228)
+	at org.springframework.context.annotation.ConfigurationClassEnhancer$BeanMethodInterceptor.intercept(ConfigurationClassEnhancer.java:358)
+	at org.mybatis.spring.boot.autoconfigure.MybatisAutoConfiguration$$EnhancerBySpringCGLIB$$b6fb5343.sqlSessionFactory(<generated>)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:162)
+	... 111 common frames omitted
+Caused by: org.apache.ibatis.builder.BuilderException: Error creating document instance.  Cause: org.xml.sax.SAXParseException; lineNumber: 345; columnNumber: 1; Element type "select" must be followed by either attribute specifications, ">" or "/>".
+	at org.apache.ibatis.parsing.XPathParser.createDocument(XPathParser.java:259)
+	at org.apache.ibatis.parsing.XPathParser.<init>(XPathParser.java:125)
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.<init>(XMLMapperBuilder.java:78)
+	at org.mybatis.spring.SqlSessionFactoryBean.buildSqlSessionFactory(SqlSessionFactoryBean.java:520)
+	... 124 common frames omitted
+Caused by: org.xml.sax.SAXParseException: Element type "select" must be followed by either attribute specifications, ">" or "/>".
+	at org.apache.xerces.util.ErrorHandlerWrapper.createSAXParseException(Unknown Source)
+	at org.apache.xerces.util.ErrorHandlerWrapper.fatalError(Unknown Source)
+	at org.apache.xerces.impl.XMLErrorReporter.reportError(Unknown Source)
+	at org.apache.xerces.impl.XMLErrorReporter.reportError(Unknown Source)
+	at org.apache.xerces.impl.XMLErrorReporter.reportError(Unknown Source)
+	at org.apache.xerces.impl.XMLScanner.reportFatalError(Unknown Source)
+	at org.apache.xerces.impl.XMLDocumentFragmentScannerImpl.scanStartElement(Unknown Source)
+	at org.apache.xerces.impl.XMLDocumentFragmentScannerImpl$FragmentContentDispatcher.dispatch(Unknown Source)
+	at org.apache.xerces.impl.XMLDocumentFragmentScannerImpl.scanDocument(Unknown Source)
+	at org.apache.xerces.parsers.XML11Configuration.parse(Unknown Source)
+	at org.apache.xerces.parsers.XML11Configuration.parse(Unknown Source)
+	at org.apache.xerces.parsers.XMLParser.parse(Unknown Source)
+	at org.apache.xerces.parsers.DOMParser.parse(Unknown Source)
+	at org.apache.xerces.jaxp.DocumentBuilderImpl.parse(Unknown Source)
+	at org.apache.ibatis.parsing.XPathParser.createDocument(XPathParser.java:257)
+	... 127 common frames omitted
+14:01:04.128 [main] INFO  com.heo.HelpeachotherApplication - Starting HelpeachotherApplication on LAPTOP-1M5RA4JD with PID 6160 (C:\Users\11291\Desktop\helpeachother\target\classes started by 11291 in C:\Users\11291\Desktop\helpeachother)
+14:01:04.134 [main] DEBUG com.heo.HelpeachotherApplication - Running with Spring Boot v1.5.10.RELEASE, Spring v4.3.14.RELEASE
+14:01:04.134 [main] INFO  com.heo.HelpeachotherApplication - The following profiles are active: druid
+14:01:04.472 [background-preinit] INFO  org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 5.3.6.Final
+14:01:06.038 [main] INFO  org.apache.shiro.cache.ehcache.EhCacheManager - Cache with name 'com.heo.app.shiro.realm.UserRealm.authorizationCache' does not yet exist.  Creating now.
+14:01:06.038 [main] INFO  org.apache.shiro.cache.ehcache.EhCacheManager - Added EhCache named [com.heo.app.shiro.realm.UserRealm.authorizationCache]
+14:01:06.065 [main] INFO  org.apache.shiro.cache.ehcache.EhCacheManager - Using existing EHCache named [loginRecordCache]
+14:01:07.983 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+14:01:07.985 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/8.5.27
+14:01:08.260 [localhost-startStop-1] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+14:01:08.560 [main] WARN  o.s.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'loginController': Unsatisfied dependency expressed through field 'infoService'; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'com.heo.service.ILocationInfoService' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+14:01:08.563 [main] INFO  org.apache.catalina.core.StandardService - Stopping service [Tomcat]
+14:01:08.704 [main] ERROR org.springframework.boot.diagnostics.LoggingFailureAnalysisReporter - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Field infoService in com.heo.controller.loginController required a bean of type 'com.heo.service.ILocationInfoService' that could not be found.
+
+
+Action:
+
+Consider defining a bean of type 'com.heo.service.ILocationInfoService' in your configuration.
+
+14:05:43.819 [main] INFO  com.heo.HelpeachotherApplication - Starting HelpeachotherApplication on LAPTOP-1M5RA4JD with PID 6768 (C:\Users\11291\Desktop\helpeachother\target\classes started by 11291 in C:\Users\11291\Desktop\helpeachother)
+14:05:43.827 [main] DEBUG com.heo.HelpeachotherApplication - Running with Spring Boot v1.5.10.RELEASE, Spring v4.3.14.RELEASE
+14:05:43.828 [main] INFO  com.heo.HelpeachotherApplication - The following profiles are active: druid
+14:05:44.183 [background-preinit] INFO  org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 5.3.6.Final
+14:05:45.851 [main] INFO  org.apache.shiro.cache.ehcache.EhCacheManager - Cache with name 'com.heo.app.shiro.realm.UserRealm.authorizationCache' does not yet exist.  Creating now.
+14:05:45.851 [main] INFO  org.apache.shiro.cache.ehcache.EhCacheManager - Added EhCache named [com.heo.app.shiro.realm.UserRealm.authorizationCache]
+14:05:45.879 [main] INFO  org.apache.shiro.cache.ehcache.EhCacheManager - Using existing EHCache named [loginRecordCache]
+14:05:47.825 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+14:05:47.826 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/8.5.27
+14:05:48.074 [localhost-startStop-1] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+14:05:49.711 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+14:05:49.724 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+14:05:49.737 [main] INFO  org.apache.tomcat.util.net.NioSelectorPool - Using a shared selector for servlet write/read
+14:05:49.768 [main] INFO  com.heo.HelpeachotherApplication - Started HelpeachotherApplication in 6.828 seconds (JVM running for 9.655)
+14:22:21.523 [main] INFO  com.heo.HelpeachotherApplication - Starting HelpeachotherApplication on LAPTOP-1M5RA4JD with PID 20000 (C:\Users\11291\Desktop\helpeachother\target\classes started by 11291 in C:\Users\11291\Desktop\helpeachother)
+14:22:21.528 [main] DEBUG com.heo.HelpeachotherApplication - Running with Spring Boot v1.5.10.RELEASE, Spring v4.3.14.RELEASE
+14:22:21.529 [main] INFO  com.heo.HelpeachotherApplication - The following profiles are active: druid
+14:22:21.818 [background-preinit] INFO  org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 5.3.6.Final
+14:22:23.786 [main] INFO  org.apache.shiro.cache.ehcache.EhCacheManager - Cache with name 'com.heo.app.shiro.realm.UserRealm.authorizationCache' does not yet exist.  Creating now.
+14:22:23.787 [main] INFO  org.apache.shiro.cache.ehcache.EhCacheManager - Added EhCache named [com.heo.app.shiro.realm.UserRealm.authorizationCache]
+14:22:25.146 [main] INFO  org.apache.shiro.cache.ehcache.EhCacheManager - Using existing EHCache named [loginRecordCache]
+14:22:34.681 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+14:22:34.687 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/8.5.27
+14:22:35.492 [localhost-startStop-1] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+14:23:02.460 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+14:23:02.570 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+14:23:02.633 [main] INFO  org.apache.tomcat.util.net.NioSelectorPool - Using a shared selector for servlet write/read
+14:23:02.794 [main] INFO  com.heo.HelpeachotherApplication - Started HelpeachotherApplication in 42.174 seconds (JVM running for 44.757)
+14:23:44.129 [main] INFO  com.heo.HelpeachotherApplication - Starting HelpeachotherApplication on LAPTOP-1M5RA4JD with PID 2264 (C:\Users\11291\Desktop\helpeachother\target\classes started by 11291 in C:\Users\11291\Desktop\helpeachother)
+14:23:44.136 [main] DEBUG com.heo.HelpeachotherApplication - Running with Spring Boot v1.5.10.RELEASE, Spring v4.3.14.RELEASE
+14:23:44.136 [main] INFO  com.heo.HelpeachotherApplication - The following profiles are active: druid
+14:23:44.430 [background-preinit] INFO  org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 5.3.6.Final
+14:23:46.331 [main] INFO  org.apache.shiro.cache.ehcache.EhCacheManager - Cache with name 'com.heo.app.shiro.realm.UserRealm.authorizationCache' does not yet exist.  Creating now.
+14:23:46.332 [main] INFO  org.apache.shiro.cache.ehcache.EhCacheManager - Added EhCache named [com.heo.app.shiro.realm.UserRealm.authorizationCache]
+14:23:47.702 [main] INFO  org.apache.shiro.cache.ehcache.EhCacheManager - Using existing EHCache named [loginRecordCache]
+14:23:57.552 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+14:23:57.558 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/8.5.27
+14:23:58.465 [localhost-startStop-1] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+14:24:22.287 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+14:24:22.392 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+14:24:22.447 [main] INFO  org.apache.tomcat.util.net.NioSelectorPool - Using a shared selector for servlet write/read
+14:24:22.619 [main] INFO  com.heo.HelpeachotherApplication - Started HelpeachotherApplication in 39.3 seconds (JVM running for 43.338)
+14:24:37.967 [http-nio-8080-exec-2] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring FrameworkServlet 'dispatcherServlet'
+14:24:38.364 [http-nio-8080-exec-2] INFO  org.apache.shiro.session.mgt.AbstractValidatingSessionManager - Enabling session validation scheduler...
+14:24:38.365 [http-nio-8080-exec-2] DEBUG com.heo.app.shiro.web.session.SpringSessionValidationScheduler - Scheduling session validation job using Spring Scheduler with session validation interval of [600000]ms...
+14:24:38.368 [http-nio-8080-exec-2] DEBUG com.heo.app.shiro.web.session.SpringSessionValidationScheduler - Session validation job successfully scheduled with Spring Scheduler.
+14:24:39.368 [pool-1-thread-1] INFO  com.heo.app.shiro.web.session.OnlineWebSessionManager - invalidation sessions...
+14:24:39.730 [pool-1-thread-1] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+14:24:40.449 [pool-1-thread-1] DEBUG com.heo.dao.UserOnlineMapper.selectOnlineByExpired - ==>  Preparing: SELECT * FROM user_online o WHERE o.last_access_time <= ? ORDER BY o.last_access_time ASC 
+14:24:40.836 [pool-1-thread-1] DEBUG com.heo.dao.UserOnlineMapper.selectOnlineByExpired - ==> Parameters: 2018-09-26 13:54:39(String)
+14:25:32.432 [http-nio-8080-exec-6] ERROR o.a.catalina.core.ContainerBase.[Tomcat].[localhost].[/].[dispatcherServlet] - Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Handler dispatch failed; nested exception is java.lang.ExceptionInInitializerError] with root cause
+java.lang.NullPointerException: null
+	at com.heo.common.constant.Constants.<clinit>(Constants.java:81)
+	at com.heo.controller.loginController.ajaxLogin(loginController.java:57)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -238,48 +349,151 @@ java.lang.IndexOutOfBoundsException: Index: 0, Size: 0
 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
 	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
 	at java.lang.Thread.run(Thread.java:748)
-14:56:18.385 [main] INFO  com.heo.HelpeachotherApplication - Starting HelpeachotherApplication on LAPTOP-1M5RA4JD with PID 21512 (C:\Users\11291\Desktop\helpeachother\target\classes started by 11291 in C:\Users\11291\Desktop\helpeachother)
-14:56:18.391 [main] DEBUG com.heo.HelpeachotherApplication - Running with Spring Boot v1.5.10.RELEASE, Spring v4.3.14.RELEASE
-14:56:18.392 [main] INFO  com.heo.HelpeachotherApplication - The following profiles are active: druid
-14:56:18.682 [background-preinit] INFO  org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 5.3.6.Final
-14:56:21.362 [main] INFO  org.apache.shiro.cache.ehcache.EhCacheManager - Cache with name 'com.heo.app.shiro.realm.UserRealm.authorizationCache' does not yet exist.  Creating now.
-14:56:21.364 [main] INFO  org.apache.shiro.cache.ehcache.EhCacheManager - Added EhCache named [com.heo.app.shiro.realm.UserRealm.authorizationCache]
-14:56:22.851 [main] INFO  org.apache.shiro.cache.ehcache.EhCacheManager - Using existing EHCache named [loginRecordCache]
-14:56:35.679 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
-14:56:35.703 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/8.5.27
-14:56:37.251 [localhost-startStop-1] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
-14:57:05.460 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
-14:57:05.583 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
-14:57:05.657 [main] INFO  org.apache.tomcat.util.net.NioSelectorPool - Using a shared selector for servlet write/read
-14:57:05.830 [main] INFO  com.heo.HelpeachotherApplication - Started HelpeachotherApplication in 48.277 seconds (JVM running for 50.769)
-14:58:09.346 [http-nio-8080-exec-2] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring FrameworkServlet 'dispatcherServlet'
-14:58:10.006 [http-nio-8080-exec-2] INFO  org.apache.shiro.session.mgt.AbstractValidatingSessionManager - Enabling session validation scheduler...
-14:58:10.008 [http-nio-8080-exec-2] DEBUG com.heo.app.shiro.web.session.SpringSessionValidationScheduler - Scheduling session validation job using Spring Scheduler with session validation interval of [600000]ms...
-14:58:10.016 [http-nio-8080-exec-2] DEBUG com.heo.app.shiro.web.session.SpringSessionValidationScheduler - Session validation job successfully scheduled with Spring Scheduler.
-14:58:10.035 [http-nio-8080-exec-2] INFO  org.apache.shiro.cache.ehcache.EhCacheManager - Using existing EHCache named [shiro-activeSessionCache]
-14:58:10.887 [http-nio-8080-exec-2] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
-14:58:11.018 [pool-1-thread-1] INFO  com.heo.app.shiro.web.session.OnlineWebSessionManager - invalidation sessions...
-14:58:11.880 [http-nio-8080-exec-2] DEBUG com.heo.dao.UserOnlineMapper.selectByPrimaryKey - ==>  Preparing: select sessionId, user_name, ipaddr, login_location, browser, os, status, start_timestsamp, last_access_time, expire_time from user_online where sessionId = ? 
-14:58:11.880 [pool-1-thread-1] DEBUG com.heo.dao.UserOnlineMapper.selectOnlineByExpired - ==>  Preparing: SELECT * FROM user_online o WHERE o.last_access_time <= ? ORDER BY o.last_access_time ASC 
-14:58:12.656 [http-nio-8080-exec-2] DEBUG com.heo.dao.UserOnlineMapper.selectByPrimaryKey - ==> Parameters: 0759484c-fc6b-47f0-a3b8-7d864e56fca9(String)
-14:58:12.656 [pool-1-thread-1] DEBUG com.heo.dao.UserOnlineMapper.selectOnlineByExpired - ==> Parameters: 2018-09-24 14:28:11(String)
-14:58:13.114 [http-nio-8080-exec-2] DEBUG com.heo.dao.UserOnlineMapper.selectByPrimaryKey - <==      Total: 0
-14:58:13.497 [http-nio-8080-exec-2] INFO  com.heo.controller.loginController - 用户注册开始 >>>>>>>>>>>>>>>>>>> params:{"userName":"yangxu","passWord":"1234567","email":"113@qq.com","phone":"123","alipayId":"123","wechatId":"123","qqNumber":"213"}
-14:58:14.075 [http-nio-8080-exec-2] INFO  com.heo.service.impl.UserServiceImpl - 用户注册开始user: User{id=null, userName='yangxu', passWord='1234567', salt=null, email='113@qq.com', majorId='null', phone='123', locationId=null, type=null, alipayId='123', wechatId='123', qqNumber='213', picture='null', studentId='null', createdAt=null, updatedAt=null, modifyBy=null, loginIp='null', lastLogin=null}
-14:58:19.097 [http-nio-8080-exec-2] DEBUG com.heo.dao.UserMapper.selectByExample - ==>  Preparing: select id, user_name, pass_word, salt, email, major_id, phone, location_id, type, alipay_id, wechat_id, qq_number, picture, student_id, created_at, updated_at, modify_by, login_ip, last_login from user WHERE ( email = ? ) 
-14:58:19.099 [http-nio-8080-exec-2] DEBUG com.heo.dao.UserMapper.selectByExample - ==> Parameters: 113@qq.com(String)
-14:58:19.104 [http-nio-8080-exec-2] DEBUG com.heo.dao.UserMapper.selectByExample - <==      Total: 0
-14:58:19.110 [http-nio-8080-exec-2] DEBUG com.heo.dao.UserMapper.selectByExample - ==>  Preparing: select id, user_name, pass_word, salt, email, major_id, phone, location_id, type, alipay_id, wechat_id, qq_number, picture, student_id, created_at, updated_at, modify_by, login_ip, last_login from user WHERE ( email = ? ) 
-14:58:19.113 [http-nio-8080-exec-2] DEBUG com.heo.dao.UserMapper.selectByExample - ==> Parameters: 113@qq.com(String)
-14:58:19.117 [http-nio-8080-exec-2] DEBUG com.heo.dao.UserMapper.selectByExample - <==      Total: 0
-14:58:19.131 [http-nio-8080-exec-2] INFO  com.heo.service.impl.UserServiceImpl - 用户注册失败, 未知系统异常 e:{}
-java.lang.IndexOutOfBoundsException: Index: 0, Size: 0
-	at java.util.ArrayList.rangeCheck(ArrayList.java:657)
-	at java.util.ArrayList.get(ArrayList.java:433)
-	at com.heo.service.impl.UserServiceImpl.selectUserByEmail(UserServiceImpl.java:94)
-	at com.heo.service.impl.UserServiceImpl.checkEmailUnique(UserServiceImpl.java:202)
-	at com.heo.service.impl.UserServiceImpl.registerUser(UserServiceImpl.java:216)
-	at com.heo.controller.loginController.doRegister(loginController.java:75)
+14:26:48.612 [main] INFO  com.heo.HelpeachotherApplication - Starting HelpeachotherApplication on LAPTOP-1M5RA4JD with PID 10580 (C:\Users\11291\Desktop\helpeachother\target\classes started by 11291 in C:\Users\11291\Desktop\helpeachother)
+14:26:48.621 [main] DEBUG com.heo.HelpeachotherApplication - Running with Spring Boot v1.5.10.RELEASE, Spring v4.3.14.RELEASE
+14:26:48.621 [main] INFO  com.heo.HelpeachotherApplication - The following profiles are active: druid
+14:26:49.091 [background-preinit] INFO  org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 5.3.6.Final
+14:26:52.467 [main] INFO  org.apache.shiro.cache.ehcache.EhCacheManager - Cache with name 'com.heo.app.shiro.realm.UserRealm.authorizationCache' does not yet exist.  Creating now.
+14:26:52.468 [main] INFO  org.apache.shiro.cache.ehcache.EhCacheManager - Added EhCache named [com.heo.app.shiro.realm.UserRealm.authorizationCache]
+14:26:52.502 [main] INFO  org.apache.shiro.cache.ehcache.EhCacheManager - Using existing EHCache named [loginRecordCache]
+14:26:55.808 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+14:26:55.811 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/8.5.27
+14:26:56.030 [localhost-startStop-1] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+14:26:58.830 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+14:26:58.863 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+14:26:58.899 [main] INFO  org.apache.tomcat.util.net.NioSelectorPool - Using a shared selector for servlet write/read
+14:26:58.968 [main] INFO  com.heo.HelpeachotherApplication - Started HelpeachotherApplication in 11.397 seconds (JVM running for 13.626)
+14:27:00.741 [http-nio-8080-exec-1] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring FrameworkServlet 'dispatcherServlet'
+14:27:00.811 [http-nio-8080-exec-1] INFO  org.apache.shiro.session.mgt.AbstractValidatingSessionManager - Enabling session validation scheduler...
+14:27:00.811 [http-nio-8080-exec-1] DEBUG com.heo.app.shiro.web.session.SpringSessionValidationScheduler - Scheduling session validation job using Spring Scheduler with session validation interval of [600000]ms...
+14:27:00.815 [http-nio-8080-exec-1] DEBUG com.heo.app.shiro.web.session.SpringSessionValidationScheduler - Session validation job successfully scheduled with Spring Scheduler.
+14:27:01.002 [http-nio-8080-exec-1] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+14:27:01.209 [http-nio-8080-exec-1] DEBUG com.heo.dao.UserMapper.selectByExample - ==>  Preparing: select id, user_name, pass_word, salt, email, major_id, phone, location_id, type, alipay_id, wechat_id, qq_number, picture, student_id, created_at, updated_at, modify_by, login_ip, last_login from user WHERE ( user_name = ? ) 
+14:27:01.236 [http-nio-8080-exec-1] DEBUG com.heo.dao.UserMapper.selectByExample - ==> Parameters: zwt(String)
+14:27:01.268 [http-nio-8080-exec-1] DEBUG com.heo.dao.UserMapper.selectByExample - <==      Total: 1
+14:27:01.305 [http-nio-8080-exec-1] INFO  org.apache.shiro.cache.ehcache.EhCacheManager - Using existing EHCache named [shiro-activeSessionCache]
+14:27:01.816 [pool-1-thread-1] INFO  com.heo.app.shiro.web.session.OnlineWebSessionManager - invalidation sessions...
+14:27:01.821 [pool-1-thread-1] DEBUG com.heo.dao.UserOnlineMapper.selectOnlineByExpired - ==>  Preparing: SELECT * FROM user_online o WHERE o.last_access_time <= ? ORDER BY o.last_access_time ASC 
+14:27:01.821 [pool-1-thread-1] DEBUG com.heo.dao.UserOnlineMapper.selectOnlineByExpired - ==> Parameters: 2018-09-26 13:57:01(String)
+14:27:03.316 [http-nio-8080-exec-1] ERROR com.heo.common.utils.AddressUtils - 温馨提醒：您的主机已经断网，请您检查主机的网络连接
+14:27:03.317 [http-nio-8080-exec-1] ERROR com.heo.common.utils.AddressUtils - 根据IP获取所在位置----------错误消息：connect timed out
+14:27:03.448 [http-nio-8080-exec-1] ERROR com.heo.common.utils.AddressUtils - 根据IP获取所在位置----------错误消息：null
+14:27:03.449 [http-nio-8080-exec-1] INFO  sys-user - [127.0.0.1]null[zwt][Success][登录成功]
+14:27:03.561 [http-nio-8080-exec-1] DEBUG com.heo.dao.LoginInformationMapper.insertSelective - ==>  Preparing: insert into login_information ( user_name, ipaddr, login_location, browser, os, status, msg ) values ( ?, ?, ?, ?, ?, ?, ? ) 
+14:27:03.566 [http-nio-8080-exec-1] DEBUG com.heo.dao.LoginInformationMapper.insertSelective - ==> Parameters: zwt(String), 127.0.0.1(String), XX 内网IP(String), Chrome(String), Windows 10(String), 0(Integer), 登录成功(String)
+14:27:03.582 [http-nio-8080-exec-1] DEBUG com.heo.dao.LoginInformationMapper.insertSelective - <==    Updates: 1
+14:27:03.587 [http-nio-8080-exec-1] DEBUG com.heo.dao.UserMapper.updateByPrimaryKeySelective - ==>  Preparing: update user SET user_name = ?, pass_word = ?, salt = ?, email = ?, major_id = ?, phone = ?, location_id = ?, type = ?, student_id = ?, created_at = ?, updated_at = ?, login_ip = ?, last_login = ? where id = ? 
+14:27:03.589 [http-nio-8080-exec-1] DEBUG com.heo.dao.UserMapper.updateByPrimaryKeySelective - ==> Parameters: zwt(String), bdf94cae8883b035c2976e1b1e6c5d5c(String), 11111(Integer), 1129114837@qq.com(String), 1(String), 17611233021(String), 1(Byte), 1(Byte), (String), 2018-09-18 16:54:44.0(Timestamp), 2018-09-18 16:54:44.0(Timestamp), 127.0.0.1(String), 2018-09-26 14:27:03.583(Timestamp), 1(Long)
+14:27:03.598 [http-nio-8080-exec-1] DEBUG com.heo.dao.UserMapper.updateByPrimaryKeySelective - <==    Updates: 1
+14:27:08.002 [http-nio-8080-exec-2] DEBUG com.heo.dao.UserOnlineMapper.insertSelective - ==>  Preparing: insert into user_online ( sessionId, user_name, ipaddr, login_location, browser, os, status, start_timestsamp, last_access_time, expire_time ) values ( ?, ?, ?, ?, ?, ?, ?, ?, ?, ? ) 
+14:27:08.006 [http-nio-8080-exec-2] DEBUG com.heo.dao.UserOnlineMapper.insertSelective - ==> Parameters: b48b2072-de34-4d23-a64b-0602ccd6b006(String), zwt(String), 127.0.0.1(String), XX 内网IP(String), Chrome(String), Windows 10(String), 在线(String), 2018-09-26 14:27:01.29(Timestamp), 2018-09-26 14:27:07.918(Timestamp), 1800000(Integer)
+14:27:08.011 [http-nio-8080-exec-2] DEBUG com.heo.dao.UserOnlineMapper.insertSelective - <==    Updates: 1
+14:30:06.297 [main] ERROR org.springframework.boot.SpringApplication - Application startup failed
+java.lang.IllegalStateException: Failed to load property source from location 'classpath:/application.yml'
+	at org.springframework.boot.context.config.ConfigFileApplicationListener$Loader.loadIntoGroup(ConfigFileApplicationListener.java:476)
+	at org.springframework.boot.context.config.ConfigFileApplicationListener$Loader.load(ConfigFileApplicationListener.java:465)
+	at org.springframework.boot.context.config.ConfigFileApplicationListener$Loader.load(ConfigFileApplicationListener.java:386)
+	at org.springframework.boot.context.config.ConfigFileApplicationListener.addPropertySources(ConfigFileApplicationListener.java:225)
+	at org.springframework.boot.context.config.ConfigFileApplicationListener.postProcessEnvironment(ConfigFileApplicationListener.java:195)
+	at org.springframework.boot.context.config.ConfigFileApplicationListener.onApplicationEnvironmentPreparedEvent(ConfigFileApplicationListener.java:182)
+	at org.springframework.boot.context.config.ConfigFileApplicationListener.onApplicationEvent(ConfigFileApplicationListener.java:168)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.doInvokeListener(SimpleApplicationEventMulticaster.java:172)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.invokeListener(SimpleApplicationEventMulticaster.java:165)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:139)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:122)
+	at org.springframework.boot.context.event.EventPublishingRunListener.environmentPrepared(EventPublishingRunListener.java:74)
+	at org.springframework.boot.SpringApplicationRunListeners.environmentPrepared(SpringApplicationRunListeners.java:54)
+	at org.springframework.boot.SpringApplication.prepareEnvironment(SpringApplication.java:325)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:296)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1118)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1107)
+	at com.heo.HelpeachotherApplication.main(HelpeachotherApplication.java:14)
+Caused by: org.yaml.snakeyaml.scanner.ScannerException: while scanning a simple key
+ in 'reader', line 76, column 3:
+      aop:true
+      ^
+could not find expected ':'
+ in 'reader', line 79, column 1:
+    mybatis:
+    ^
+
+	at org.yaml.snakeyaml.scanner.ScannerImpl.stalePossibleSimpleKeys(ScannerImpl.java:465)
+	at org.yaml.snakeyaml.scanner.ScannerImpl.needMoreTokens(ScannerImpl.java:280)
+	at org.yaml.snakeyaml.scanner.ScannerImpl.checkToken(ScannerImpl.java:225)
+	at org.yaml.snakeyaml.parser.ParserImpl$ParseBlockMappingKey.produce(ParserImpl.java:557)
+	at org.yaml.snakeyaml.parser.ParserImpl.peekEvent(ParserImpl.java:157)
+	at org.yaml.snakeyaml.parser.ParserImpl.checkEvent(ParserImpl.java:147)
+	at org.yaml.snakeyaml.composer.Composer.composeMappingNode(Composer.java:224)
+	at org.yaml.snakeyaml.composer.Composer.composeNode(Composer.java:155)
+	at org.yaml.snakeyaml.composer.Composer.composeValueNode(Composer.java:246)
+	at org.yaml.snakeyaml.composer.Composer.composeMappingChildren(Composer.java:237)
+	at org.yaml.snakeyaml.composer.Composer.composeMappingNode(Composer.java:225)
+	at org.yaml.snakeyaml.composer.Composer.composeNode(Composer.java:155)
+	at org.yaml.snakeyaml.composer.Composer.composeValueNode(Composer.java:246)
+	at org.yaml.snakeyaml.composer.Composer.composeMappingChildren(Composer.java:237)
+	at org.yaml.snakeyaml.composer.Composer.composeMappingNode(Composer.java:225)
+	at org.yaml.snakeyaml.composer.Composer.composeNode(Composer.java:155)
+	at org.yaml.snakeyaml.composer.Composer.composeValueNode(Composer.java:246)
+	at org.yaml.snakeyaml.composer.Composer.composeMappingChildren(Composer.java:237)
+	at org.yaml.snakeyaml.composer.Composer.composeMappingNode(Composer.java:225)
+	at org.yaml.snakeyaml.composer.Composer.composeNode(Composer.java:155)
+	at org.yaml.snakeyaml.composer.Composer.composeDocument(Composer.java:122)
+	at org.yaml.snakeyaml.composer.Composer.getNode(Composer.java:84)
+	at org.yaml.snakeyaml.constructor.BaseConstructor.getData(BaseConstructor.java:104)
+	at org.yaml.snakeyaml.Yaml$1.next(Yaml.java:471)
+	at org.springframework.beans.factory.config.YamlProcessor.process(YamlProcessor.java:160)
+	at org.springframework.beans.factory.config.YamlProcessor.process(YamlProcessor.java:138)
+	at org.springframework.boot.env.YamlPropertySourceLoader$Processor.process(YamlPropertySourceLoader.java:101)
+	at org.springframework.boot.env.YamlPropertySourceLoader.load(YamlPropertySourceLoader.java:58)
+	at org.springframework.boot.env.PropertySourcesLoader.load(PropertySourcesLoader.java:127)
+	at org.springframework.boot.context.config.ConfigFileApplicationListener$Loader.doLoadIntoGroup(ConfigFileApplicationListener.java:490)
+	at org.springframework.boot.context.config.ConfigFileApplicationListener$Loader.loadIntoGroup(ConfigFileApplicationListener.java:473)
+	... 17 common frames omitted
+14:31:00.579 [main] INFO  com.heo.HelpeachotherApplication - Starting HelpeachotherApplication on LAPTOP-1M5RA4JD with PID 8360 (C:\Users\11291\Desktop\helpeachother\target\classes started by 11291 in C:\Users\11291\Desktop\helpeachother)
+14:31:00.579 [main] DEBUG com.heo.HelpeachotherApplication - Running with Spring Boot v1.5.10.RELEASE, Spring v4.3.14.RELEASE
+14:31:00.579 [main] INFO  com.heo.HelpeachotherApplication - The following profiles are active: druid
+14:31:00.927 [background-preinit] INFO  org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 5.3.6.Final
+14:31:02.553 [main] INFO  org.apache.shiro.cache.ehcache.EhCacheManager - Cache with name 'com.heo.app.shiro.realm.UserRealm.authorizationCache' does not yet exist.  Creating now.
+14:31:02.554 [main] INFO  org.apache.shiro.cache.ehcache.EhCacheManager - Added EhCache named [com.heo.app.shiro.realm.UserRealm.authorizationCache]
+14:31:02.580 [main] INFO  org.apache.shiro.cache.ehcache.EhCacheManager - Using existing EHCache named [loginRecordCache]
+14:31:04.754 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+14:31:04.754 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/8.5.27
+14:31:04.883 [localhost-startStop-1] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+14:31:07.043 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+14:31:07.057 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+14:31:07.071 [main] INFO  org.apache.tomcat.util.net.NioSelectorPool - Using a shared selector for servlet write/read
+14:31:07.097 [main] INFO  com.heo.HelpeachotherApplication - Started HelpeachotherApplication in 7.263 seconds (JVM running for 9.106)
+14:31:10.810 [http-nio-8080-exec-1] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring FrameworkServlet 'dispatcherServlet'
+14:31:10.862 [http-nio-8080-exec-1] INFO  org.apache.shiro.session.mgt.AbstractValidatingSessionManager - Enabling session validation scheduler...
+14:31:10.863 [http-nio-8080-exec-1] DEBUG com.heo.app.shiro.web.session.SpringSessionValidationScheduler - Scheduling session validation job using Spring Scheduler with session validation interval of [600000]ms...
+14:31:10.864 [http-nio-8080-exec-1] DEBUG com.heo.app.shiro.web.session.SpringSessionValidationScheduler - Session validation job successfully scheduled with Spring Scheduler.
+14:31:10.866 [http-nio-8080-exec-1] INFO  org.apache.shiro.cache.ehcache.EhCacheManager - Using existing EHCache named [shiro-activeSessionCache]
+14:31:10.947 [http-nio-8080-exec-1] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+14:31:11.159 [http-nio-8080-exec-1] DEBUG com.heo.dao.UserOnlineMapper.selectByPrimaryKey - ==>  Preparing: select sessionId, user_name, ipaddr, login_location, browser, os, status, start_timestsamp, last_access_time, expire_time from user_online where sessionId = ? 
+14:31:11.179 [http-nio-8080-exec-1] DEBUG com.heo.dao.UserOnlineMapper.selectByPrimaryKey - ==> Parameters: b48b2072-de34-4d23-a64b-0602ccd6b006(String)
+14:31:11.197 [http-nio-8080-exec-1] DEBUG com.heo.dao.UserOnlineMapper.selectByPrimaryKey - <==      Total: 1
+14:31:11.299 [http-nio-8080-exec-1] DEBUG com.heo.dao.UserMapper.selectByExample - ==>  Preparing: select id, user_name, pass_word, salt, email, major_id, phone, location_id, type, alipay_id, wechat_id, qq_number, picture, student_id, created_at, updated_at, modify_by, login_ip, last_login from user WHERE ( user_name = ? ) 
+14:31:11.300 [http-nio-8080-exec-1] DEBUG com.heo.dao.UserMapper.selectByExample - ==> Parameters: zwt(String)
+14:31:11.309 [http-nio-8080-exec-1] DEBUG com.heo.dao.UserMapper.selectByExample - <==      Total: 1
+14:31:11.553 [http-nio-8080-exec-1] INFO  sys-user - [127.0.0.1]XX 内网IP[zwt][Success][登录成功]
+14:31:11.865 [pool-1-thread-1] INFO  com.heo.app.shiro.web.session.OnlineWebSessionManager - invalidation sessions...
+14:31:11.872 [pool-1-thread-1] DEBUG com.heo.dao.UserOnlineMapper.selectOnlineByExpired - ==>  Preparing: SELECT * FROM user_online o WHERE o.last_access_time <= ? ORDER BY o.last_access_time ASC 
+14:31:11.872 [pool-1-thread-1] DEBUG com.heo.dao.UserOnlineMapper.selectOnlineByExpired - ==> Parameters: 2018-09-26 14:01:11(String)
+14:31:13.556 [http-nio-8080-exec-1] ERROR com.heo.common.utils.AddressUtils - 温馨提醒：您的主机已经断网，请您检查主机的网络连接
+14:31:13.557 [http-nio-8080-exec-1] ERROR com.heo.common.utils.AddressUtils - 根据IP获取所在位置----------错误消息：Read timed out
+14:31:13.561 [http-nio-8080-exec-1] ERROR com.heo.common.utils.AddressUtils - 根据IP获取所在位置----------错误消息：null
+14:31:13.576 [http-nio-8080-exec-1] INFO  com.heo.app.shiro.realm.UserRealm - 对用户[zwt]进行登录验证..验证未通过null
+14:31:13.578 [http-nio-8080-exec-1] ERROR com.heo.controller.loginController - 用户登陆未知错误, e {}
+org.apache.shiro.authc.AuthenticationException: null
+	at com.heo.app.shiro.realm.UserRealm.doGetAuthenticationInfo(UserRealm.java:89)
+	at org.apache.shiro.realm.AuthenticatingRealm.getAuthenticationInfo(AuthenticatingRealm.java:568)
+	at org.apache.shiro.authc.pam.ModularRealmAuthenticator.doSingleRealmAuthentication(ModularRealmAuthenticator.java:180)
+	at org.apache.shiro.authc.pam.ModularRealmAuthenticator.doAuthenticate(ModularRealmAuthenticator.java:267)
+	at org.apache.shiro.authc.AbstractAuthenticator.authenticate(AbstractAuthenticator.java:198)
+	at org.apache.shiro.mgt.AuthenticatingSecurityManager.authenticate(AuthenticatingSecurityManager.java:106)
+	at org.apache.shiro.mgt.DefaultSecurityManager.login(DefaultSecurityManager.java:270)
+	at org.apache.shiro.subject.support.DelegatingSubject.login(DelegatingSubject.java:256)
+	at com.heo.controller.loginController.ajaxLogin(loginController.java:62)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -365,45 +579,99 @@ java.lang.IndexOutOfBoundsException: Index: 0, Size: 0
 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
 	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
 	at java.lang.Thread.run(Thread.java:748)
-15:00:55.661 [main] INFO  com.heo.HelpeachotherApplication - Starting HelpeachotherApplication on LAPTOP-1M5RA4JD with PID 23352 (C:\Users\11291\Desktop\helpeachother\target\classes started by 11291 in C:\Users\11291\Desktop\helpeachother)
-15:00:55.666 [main] DEBUG com.heo.HelpeachotherApplication - Running with Spring Boot v1.5.10.RELEASE, Spring v4.3.14.RELEASE
-15:00:55.667 [main] INFO  com.heo.HelpeachotherApplication - The following profiles are active: druid
-15:00:55.937 [background-preinit] INFO  org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 5.3.6.Final
-15:00:58.711 [main] INFO  org.apache.shiro.cache.ehcache.EhCacheManager - Cache with name 'com.heo.app.shiro.realm.UserRealm.authorizationCache' does not yet exist.  Creating now.
-15:00:58.713 [main] INFO  org.apache.shiro.cache.ehcache.EhCacheManager - Added EhCache named [com.heo.app.shiro.realm.UserRealm.authorizationCache]
-15:01:00.357 [main] INFO  org.apache.shiro.cache.ehcache.EhCacheManager - Using existing EHCache named [loginRecordCache]
-15:01:12.797 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
-15:01:12.804 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/8.5.27
-15:01:14.160 [localhost-startStop-1] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
-15:01:42.397 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
-15:01:42.618 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
-15:01:42.689 [main] INFO  org.apache.tomcat.util.net.NioSelectorPool - Using a shared selector for servlet write/read
-15:01:43.039 [main] INFO  com.heo.HelpeachotherApplication - Started HelpeachotherApplication in 48.107 seconds (JVM running for 50.487)
-15:01:48.615 [http-nio-8080-exec-2] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring FrameworkServlet 'dispatcherServlet'
-15:01:49.245 [http-nio-8080-exec-2] INFO  org.apache.shiro.session.mgt.AbstractValidatingSessionManager - Enabling session validation scheduler...
-15:01:49.246 [http-nio-8080-exec-2] DEBUG com.heo.app.shiro.web.session.SpringSessionValidationScheduler - Scheduling session validation job using Spring Scheduler with session validation interval of [600000]ms...
-15:01:49.252 [http-nio-8080-exec-2] DEBUG com.heo.app.shiro.web.session.SpringSessionValidationScheduler - Session validation job successfully scheduled with Spring Scheduler.
-15:01:49.263 [http-nio-8080-exec-2] INFO  org.apache.shiro.cache.ehcache.EhCacheManager - Using existing EHCache named [shiro-activeSessionCache]
-15:01:49.776 [http-nio-8080-exec-2] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
-15:01:50.253 [pool-1-thread-1] INFO  com.heo.app.shiro.web.session.OnlineWebSessionManager - invalidation sessions...
-15:01:50.765 [pool-1-thread-1] DEBUG com.heo.dao.UserOnlineMapper.selectOnlineByExpired - ==>  Preparing: SELECT * FROM user_online o WHERE o.last_access_time <= ? ORDER BY o.last_access_time ASC 
-15:01:50.766 [http-nio-8080-exec-2] DEBUG com.heo.dao.UserOnlineMapper.selectByPrimaryKey - ==>  Preparing: select sessionId, user_name, ipaddr, login_location, browser, os, status, start_timestsamp, last_access_time, expire_time from user_online where sessionId = ? 
-15:01:51.376 [pool-1-thread-1] DEBUG com.heo.dao.UserOnlineMapper.selectOnlineByExpired - ==> Parameters: 2018-09-24 14:31:50(String)
-15:01:51.376 [http-nio-8080-exec-2] DEBUG com.heo.dao.UserOnlineMapper.selectByPrimaryKey - ==> Parameters: 0759484c-fc6b-47f0-a3b8-7d864e56fca9(String)
-15:01:52.024 [http-nio-8080-exec-2] DEBUG com.heo.dao.UserOnlineMapper.selectByPrimaryKey - <==      Total: 0
-15:01:52.479 [http-nio-8080-exec-2] INFO  com.heo.controller.loginController - 用户注册开始 >>>>>>>>>>>>>>>>>>> params:{"userName":"yangxu","passWord":"1234567","email":"113@qq.com","phone":"123","alipayId":"123","wechatId":"123","qqNumber":"213"}
-15:01:52.994 [http-nio-8080-exec-2] INFO  com.heo.service.impl.UserServiceImpl - 用户注册开始user: User{id=null, userName='yangxu', passWord='1234567', salt=null, email='113@qq.com', majorId='null', phone='123', locationId=null, type=null, alipayId='123', wechatId='123', qqNumber='213', picture='null', studentId='null', createdAt=null, updatedAt=null, modifyBy=null, loginIp='null', lastLogin=null}
-15:01:58.848 [http-nio-8080-exec-2] DEBUG com.heo.dao.UserMapper.selectByExample - ==>  Preparing: select id, user_name, pass_word, salt, email, major_id, phone, location_id, type, alipay_id, wechat_id, qq_number, picture, student_id, created_at, updated_at, modify_by, login_ip, last_login from user WHERE ( email = ? ) 
-15:01:58.852 [http-nio-8080-exec-2] DEBUG com.heo.dao.UserMapper.selectByExample - ==> Parameters: 113@qq.com(String)
-15:01:58.860 [http-nio-8080-exec-2] DEBUG com.heo.dao.UserMapper.selectByExample - <==      Total: 0
-15:02:30.866 [http-nio-8080-exec-2] INFO  com.heo.service.impl.UserServiceImpl - 用户注册失败, 未知系统异常 e:{}
-java.lang.IndexOutOfBoundsException: Index: 0, Size: 0
-	at java.util.ArrayList.rangeCheck(ArrayList.java:657)
-	at java.util.ArrayList.get(ArrayList.java:433)
-	at com.heo.service.impl.UserServiceImpl.selectUserByEmail(UserServiceImpl.java:97)
-	at com.heo.service.impl.UserServiceImpl.checkEmailUnique(UserServiceImpl.java:205)
-	at com.heo.service.impl.UserServiceImpl.registerUser(UserServiceImpl.java:219)
-	at com.heo.controller.loginController.doRegister(loginController.java:75)
+Caused by: java.lang.NullPointerException: null
+	at com.heo.service.AOPTest.Around(AOPTest.java:29)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.aop.aspectj.AbstractAspectJAdvice.invokeAdviceMethodWithGivenArgs(AbstractAspectJAdvice.java:629)
+	at org.springframework.aop.aspectj.AbstractAspectJAdvice.invokeAdviceMethod(AbstractAspectJAdvice.java:618)
+	at org.springframework.aop.aspectj.AspectJAroundAdvice.invoke(AspectJAroundAdvice.java:70)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179)
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:92)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179)
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:213)
+	at com.sun.proxy.$Proxy79.insertSelective(Unknown Source)
+	at com.heo.service.impl.LogininforServiceImpl.insertLogininfor(LogininforServiceImpl.java:31)
+	at com.heo.common.utils.SystemLogUtils.saveOpLog(SystemLogUtils.java:70)
+	at com.heo.common.utils.SystemLogUtils.log(SystemLogUtils.java:46)
+	at com.heo.app.shiro.service.LoginService.login(LoginService.java:94)
+	at com.heo.app.shiro.realm.UserRealm.doGetAuthenticationInfo(UserRealm.java:60)
+	... 93 common frames omitted
+14:32:56.565 [main] INFO  com.heo.HelpeachotherApplication - Starting HelpeachotherApplication on LAPTOP-1M5RA4JD with PID 17148 (C:\Users\11291\Desktop\helpeachother\target\classes started by 11291 in C:\Users\11291\Desktop\helpeachother)
+14:32:56.571 [main] DEBUG com.heo.HelpeachotherApplication - Running with Spring Boot v1.5.10.RELEASE, Spring v4.3.14.RELEASE
+14:32:56.571 [main] INFO  com.heo.HelpeachotherApplication - The following profiles are active: druid
+14:32:56.853 [background-preinit] INFO  org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 5.3.6.Final
+14:32:58.269 [main] INFO  org.apache.shiro.cache.ehcache.EhCacheManager - Cache with name 'com.heo.app.shiro.realm.UserRealm.authorizationCache' does not yet exist.  Creating now.
+14:32:58.270 [main] INFO  org.apache.shiro.cache.ehcache.EhCacheManager - Added EhCache named [com.heo.app.shiro.realm.UserRealm.authorizationCache]
+14:32:58.293 [main] INFO  org.apache.shiro.cache.ehcache.EhCacheManager - Using existing EHCache named [loginRecordCache]
+14:33:00.534 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+14:33:00.535 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/8.5.27
+14:33:00.661 [localhost-startStop-1] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+14:33:02.605 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+14:33:02.616 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+14:33:02.630 [main] INFO  org.apache.tomcat.util.net.NioSelectorPool - Using a shared selector for servlet write/read
+14:33:02.661 [main] INFO  com.heo.HelpeachotherApplication - Started HelpeachotherApplication in 6.844 seconds (JVM running for 8.936)
+14:33:08.016 [http-nio-8080-exec-1] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring FrameworkServlet 'dispatcherServlet'
+14:33:08.077 [http-nio-8080-exec-1] INFO  org.apache.shiro.session.mgt.AbstractValidatingSessionManager - Enabling session validation scheduler...
+14:33:08.077 [http-nio-8080-exec-1] DEBUG com.heo.app.shiro.web.session.SpringSessionValidationScheduler - Scheduling session validation job using Spring Scheduler with session validation interval of [600000]ms...
+14:33:08.078 [http-nio-8080-exec-1] DEBUG com.heo.app.shiro.web.session.SpringSessionValidationScheduler - Session validation job successfully scheduled with Spring Scheduler.
+14:33:08.079 [http-nio-8080-exec-1] INFO  org.apache.shiro.cache.ehcache.EhCacheManager - Using existing EHCache named [shiro-activeSessionCache]
+14:33:08.158 [http-nio-8080-exec-1] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+14:33:08.378 [http-nio-8080-exec-1] DEBUG com.heo.dao.UserOnlineMapper.selectByPrimaryKey - ==>  Preparing: select sessionId, user_name, ipaddr, login_location, browser, os, status, start_timestsamp, last_access_time, expire_time from user_online where sessionId = ? 
+14:33:08.401 [http-nio-8080-exec-1] DEBUG com.heo.dao.UserOnlineMapper.selectByPrimaryKey - ==> Parameters: bed0c010-ad12-451d-83e6-8eccf2f41df3(String)
+14:33:08.415 [http-nio-8080-exec-1] DEBUG com.heo.dao.UserOnlineMapper.selectByPrimaryKey - <==      Total: 0
+14:33:08.988 [http-nio-8080-exec-2] DEBUG com.heo.dao.UserOnlineMapper.selectByPrimaryKey - ==>  Preparing: select sessionId, user_name, ipaddr, login_location, browser, os, status, start_timestsamp, last_access_time, expire_time from user_online where sessionId = ? 
+14:33:08.990 [http-nio-8080-exec-2] DEBUG com.heo.dao.UserOnlineMapper.selectByPrimaryKey - ==> Parameters: bed0c010-ad12-451d-83e6-8eccf2f41df3(String)
+14:33:08.992 [http-nio-8080-exec-2] DEBUG com.heo.dao.UserOnlineMapper.selectByPrimaryKey - <==      Total: 0
+14:33:08.993 [http-nio-8080-exec-4] DEBUG com.heo.dao.UserOnlineMapper.selectByPrimaryKey - ==>  Preparing: select sessionId, user_name, ipaddr, login_location, browser, os, status, start_timestsamp, last_access_time, expire_time from user_online where sessionId = ? 
+14:33:08.994 [http-nio-8080-exec-4] DEBUG com.heo.dao.UserOnlineMapper.selectByPrimaryKey - ==> Parameters: bed0c010-ad12-451d-83e6-8eccf2f41df3(String)
+14:33:08.996 [http-nio-8080-exec-4] DEBUG com.heo.dao.UserOnlineMapper.selectByPrimaryKey - <==      Total: 0
+14:33:09.002 [http-nio-8080-exec-3] DEBUG com.heo.dao.UserOnlineMapper.selectByPrimaryKey - ==>  Preparing: select sessionId, user_name, ipaddr, login_location, browser, os, status, start_timestsamp, last_access_time, expire_time from user_online where sessionId = ? 
+14:33:09.005 [http-nio-8080-exec-3] DEBUG com.heo.dao.UserOnlineMapper.selectByPrimaryKey - ==> Parameters: bed0c010-ad12-451d-83e6-8eccf2f41df3(String)
+14:33:09.008 [http-nio-8080-exec-3] DEBUG com.heo.dao.UserOnlineMapper.selectByPrimaryKey - <==      Total: 0
+14:33:09.079 [pool-1-thread-1] INFO  com.heo.app.shiro.web.session.OnlineWebSessionManager - invalidation sessions...
+14:33:09.092 [pool-1-thread-1] DEBUG com.heo.dao.UserOnlineMapper.selectOnlineByExpired - ==>  Preparing: SELECT * FROM user_online o WHERE o.last_access_time <= ? ORDER BY o.last_access_time ASC 
+14:33:09.093 [pool-1-thread-1] DEBUG com.heo.dao.UserOnlineMapper.selectOnlineByExpired - ==> Parameters: 2018-09-26 14:03:09(String)
+14:33:09.450 [http-nio-8080-exec-5] DEBUG com.heo.dao.UserOnlineMapper.selectByPrimaryKey - ==>  Preparing: select sessionId, user_name, ipaddr, login_location, browser, os, status, start_timestsamp, last_access_time, expire_time from user_online where sessionId = ? 
+14:33:09.451 [http-nio-8080-exec-5] DEBUG com.heo.dao.UserOnlineMapper.selectByPrimaryKey - ==> Parameters: bed0c010-ad12-451d-83e6-8eccf2f41df3(String)
+14:33:09.452 [http-nio-8080-exec-5] DEBUG com.heo.dao.UserOnlineMapper.selectByPrimaryKey - <==      Total: 0
+14:33:10.793 [http-nio-8080-exec-6] DEBUG com.heo.dao.UserOnlineMapper.selectByPrimaryKey - ==>  Preparing: select sessionId, user_name, ipaddr, login_location, browser, os, status, start_timestsamp, last_access_time, expire_time from user_online where sessionId = ? 
+14:33:10.794 [http-nio-8080-exec-6] DEBUG com.heo.dao.UserOnlineMapper.selectByPrimaryKey - ==> Parameters: bed0c010-ad12-451d-83e6-8eccf2f41df3(String)
+14:33:10.795 [http-nio-8080-exec-6] DEBUG com.heo.dao.UserOnlineMapper.selectByPrimaryKey - <==      Total: 0
+14:33:10.853 [http-nio-8080-exec-6] DEBUG com.heo.dao.UserMapper.selectByExample - ==>  Preparing: select id, user_name, pass_word, salt, email, major_id, phone, location_id, type, alipay_id, wechat_id, qq_number, picture, student_id, created_at, updated_at, modify_by, login_ip, last_login from user WHERE ( user_name = ? ) 
+14:33:10.854 [http-nio-8080-exec-6] DEBUG com.heo.dao.UserMapper.selectByExample - ==> Parameters: zwt(String)
+14:33:10.860 [http-nio-8080-exec-6] DEBUG com.heo.dao.UserMapper.selectByExample - <==      Total: 1
+14:33:12.436 [http-nio-8080-exec-7] DEBUG com.heo.dao.UserOnlineMapper.selectByPrimaryKey - ==>  Preparing: select sessionId, user_name, ipaddr, login_location, browser, os, status, start_timestsamp, last_access_time, expire_time from user_online where sessionId = ? 
+14:33:12.437 [http-nio-8080-exec-7] DEBUG com.heo.dao.UserOnlineMapper.selectByPrimaryKey - ==> Parameters: bed0c010-ad12-451d-83e6-8eccf2f41df3(String)
+14:33:12.438 [http-nio-8080-exec-7] DEBUG com.heo.dao.UserOnlineMapper.selectByPrimaryKey - <==      Total: 0
+14:33:12.441 [http-nio-8080-exec-7] DEBUG com.heo.dao.UserMapper.selectByExample - ==>  Preparing: select id, user_name, pass_word, salt, email, major_id, phone, location_id, type, alipay_id, wechat_id, qq_number, picture, student_id, created_at, updated_at, modify_by, login_ip, last_login from user WHERE ( user_name = ? ) 
+14:33:12.442 [http-nio-8080-exec-7] DEBUG com.heo.dao.UserMapper.selectByExample - ==> Parameters: zwt(String)
+14:33:12.444 [http-nio-8080-exec-7] DEBUG com.heo.dao.UserMapper.selectByExample - <==      Total: 1
+14:33:12.630 [http-nio-8080-exec-7] INFO  sys-user - [127.0.0.1]XX 内网IP[zwt][Success][登录成功]
+14:33:12.949 [http-nio-8080-exec-8] DEBUG com.heo.dao.UserOnlineMapper.selectByPrimaryKey - ==>  Preparing: select sessionId, user_name, ipaddr, login_location, browser, os, status, start_timestsamp, last_access_time, expire_time from user_online where sessionId = ? 
+14:33:12.949 [http-nio-8080-exec-6] ERROR com.heo.common.utils.AddressUtils - 温馨提醒：您的主机已经断网，请您检查主机的网络连接
+14:33:12.950 [http-nio-8080-exec-8] DEBUG com.heo.dao.UserOnlineMapper.selectByPrimaryKey - ==> Parameters: bed0c010-ad12-451d-83e6-8eccf2f41df3(String)
+14:33:12.950 [http-nio-8080-exec-6] ERROR com.heo.common.utils.AddressUtils - 根据IP获取所在位置----------错误消息：Read timed out
+14:33:12.951 [http-nio-8080-exec-8] DEBUG com.heo.dao.UserOnlineMapper.selectByPrimaryKey - <==      Total: 0
+14:33:12.954 [http-nio-8080-exec-8] DEBUG com.heo.dao.UserMapper.selectByExample - ==>  Preparing: select id, user_name, pass_word, salt, email, major_id, phone, location_id, type, alipay_id, wechat_id, qq_number, picture, student_id, created_at, updated_at, modify_by, login_ip, last_login from user WHERE ( user_name = ? ) 
+14:33:12.956 [http-nio-8080-exec-8] DEBUG com.heo.dao.UserMapper.selectByExample - ==> Parameters: zwt(String)
+14:33:12.958 [http-nio-8080-exec-6] ERROR com.heo.common.utils.AddressUtils - 根据IP获取所在位置----------错误消息：null
+14:33:12.958 [http-nio-8080-exec-8] DEBUG com.heo.dao.UserMapper.selectByExample - <==      Total: 1
+14:33:12.958 [http-nio-8080-exec-6] INFO  sys-user - [127.0.0.1]null[zwt][Success][登录成功]
+14:33:13.109 [http-nio-8080-exec-6] INFO  com.heo.app.shiro.realm.UserRealm - 对用户[zwt]进行登录验证..验证未通过null
+14:33:13.112 [http-nio-8080-exec-6] ERROR com.heo.controller.loginController - 用户登陆未知错误, e {}
+org.apache.shiro.authc.AuthenticationException: null
+	at com.heo.app.shiro.realm.UserRealm.doGetAuthenticationInfo(UserRealm.java:89)
+	at org.apache.shiro.realm.AuthenticatingRealm.getAuthenticationInfo(AuthenticatingRealm.java:568)
+	at org.apache.shiro.authc.pam.ModularRealmAuthenticator.doSingleRealmAuthentication(ModularRealmAuthenticator.java:180)
+	at org.apache.shiro.authc.pam.ModularRealmAuthenticator.doAuthenticate(ModularRealmAuthenticator.java:267)
+	at org.apache.shiro.authc.AbstractAuthenticator.authenticate(AbstractAuthenticator.java:198)
+	at org.apache.shiro.mgt.AuthenticatingSecurityManager.authenticate(AuthenticatingSecurityManager.java:106)
+	at org.apache.shiro.mgt.DefaultSecurityManager.login(DefaultSecurityManager.java:270)
+	at org.apache.shiro.subject.support.DelegatingSubject.login(DelegatingSubject.java:256)
+	at com.heo.controller.loginController.ajaxLogin(loginController.java:62)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -489,75 +757,40 @@ java.lang.IndexOutOfBoundsException: Index: 0, Size: 0
 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
 	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
 	at java.lang.Thread.run(Thread.java:748)
-15:02:37.620 [main] INFO  com.heo.HelpeachotherApplication - Starting HelpeachotherApplication on LAPTOP-1M5RA4JD with PID 23048 (C:\Users\11291\Desktop\helpeachother\target\classes started by 11291 in C:\Users\11291\Desktop\helpeachother)
-15:02:37.626 [main] DEBUG com.heo.HelpeachotherApplication - Running with Spring Boot v1.5.10.RELEASE, Spring v4.3.14.RELEASE
-15:02:37.626 [main] INFO  com.heo.HelpeachotherApplication - The following profiles are active: druid
-15:02:37.903 [background-preinit] INFO  org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 5.3.6.Final
-15:02:39.961 [main] INFO  org.apache.shiro.cache.ehcache.EhCacheManager - Cache with name 'com.heo.app.shiro.realm.UserRealm.authorizationCache' does not yet exist.  Creating now.
-15:02:39.963 [main] INFO  org.apache.shiro.cache.ehcache.EhCacheManager - Added EhCache named [com.heo.app.shiro.realm.UserRealm.authorizationCache]
-15:02:40.054 [main] INFO  org.apache.shiro.cache.ehcache.EhCacheManager - Using existing EHCache named [loginRecordCache]
-15:02:43.988 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
-15:02:43.991 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/8.5.27
-15:02:44.470 [localhost-startStop-1] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
-15:02:47.710 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
-15:02:47.751 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
-15:02:47.794 [main] INFO  org.apache.tomcat.util.net.NioSelectorPool - Using a shared selector for servlet write/read
-15:02:47.909 [main] INFO  com.heo.HelpeachotherApplication - Started HelpeachotherApplication in 10.94 seconds (JVM running for 12.864)
-15:03:07.630 [main] INFO  com.heo.HelpeachotherApplication - Starting HelpeachotherApplication on LAPTOP-1M5RA4JD with PID 4480 (C:\Users\11291\Desktop\helpeachother\target\classes started by 11291 in C:\Users\11291\Desktop\helpeachother)
-15:03:07.636 [main] DEBUG com.heo.HelpeachotherApplication - Running with Spring Boot v1.5.10.RELEASE, Spring v4.3.14.RELEASE
-15:03:07.636 [main] INFO  com.heo.HelpeachotherApplication - The following profiles are active: druid
-15:03:07.882 [background-preinit] INFO  org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 5.3.6.Final
-15:03:09.474 [main] INFO  org.apache.shiro.cache.ehcache.EhCacheManager - Cache with name 'com.heo.app.shiro.realm.UserRealm.authorizationCache' does not yet exist.  Creating now.
-15:03:09.475 [main] INFO  org.apache.shiro.cache.ehcache.EhCacheManager - Added EhCache named [com.heo.app.shiro.realm.UserRealm.authorizationCache]
-15:03:09.519 [main] INFO  org.apache.shiro.cache.ehcache.EhCacheManager - Using existing EHCache named [loginRecordCache]
-15:03:13.154 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
-15:03:13.156 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/8.5.27
-15:03:13.437 [localhost-startStop-1] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
-15:03:16.619 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
-15:03:16.641 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
-15:03:16.659 [main] INFO  org.apache.tomcat.util.net.NioSelectorPool - Using a shared selector for servlet write/read
-15:03:16.697 [main] INFO  com.heo.HelpeachotherApplication - Started HelpeachotherApplication in 9.701 seconds (JVM running for 11.633)
-15:03:27.054 [http-nio-8080-exec-1] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring FrameworkServlet 'dispatcherServlet'
-15:03:27.110 [http-nio-8080-exec-1] INFO  org.apache.shiro.session.mgt.AbstractValidatingSessionManager - Enabling session validation scheduler...
-15:03:27.112 [http-nio-8080-exec-1] DEBUG com.heo.app.shiro.web.session.SpringSessionValidationScheduler - Scheduling session validation job using Spring Scheduler with session validation interval of [600000]ms...
-15:03:27.112 [http-nio-8080-exec-1] DEBUG com.heo.app.shiro.web.session.SpringSessionValidationScheduler - Session validation job successfully scheduled with Spring Scheduler.
-15:03:27.114 [http-nio-8080-exec-1] INFO  org.apache.shiro.cache.ehcache.EhCacheManager - Using existing EHCache named [shiro-activeSessionCache]
-15:03:27.199 [http-nio-8080-exec-1] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
-15:03:27.488 [http-nio-8080-exec-1] DEBUG com.heo.dao.UserOnlineMapper.selectByPrimaryKey - ==>  Preparing: select sessionId, user_name, ipaddr, login_location, browser, os, status, start_timestsamp, last_access_time, expire_time from user_online where sessionId = ? 
-15:03:27.520 [http-nio-8080-exec-1] DEBUG com.heo.dao.UserOnlineMapper.selectByPrimaryKey - ==> Parameters: 0759484c-fc6b-47f0-a3b8-7d864e56fca9(String)
-15:03:27.545 [http-nio-8080-exec-1] DEBUG com.heo.dao.UserOnlineMapper.selectByPrimaryKey - <==      Total: 0
-15:03:27.621 [http-nio-8080-exec-1] INFO  com.heo.controller.loginController - 用户注册开始 >>>>>>>>>>>>>>>>>>> params:{"userName":"yangxu","passWord":"1234567","email":"113@qq.com","phone":"123","alipayId":"123","wechatId":"123","qqNumber":"213"}
-15:03:27.771 [http-nio-8080-exec-1] INFO  com.heo.service.impl.UserServiceImpl - 用户注册开始user: User{id=null, userName='yangxu', passWord='1234567', salt=null, email='113@qq.com', majorId='null', phone='123', locationId=null, type=null, alipayId='123', wechatId='123', qqNumber='213', picture='null', studentId='null', createdAt=null, updatedAt=null, modifyBy=null, loginIp='null', lastLogin=null}
-15:03:27.844 [http-nio-8080-exec-1] DEBUG com.heo.dao.UserMapper.selectByExample - ==>  Preparing: select id, user_name, pass_word, salt, email, major_id, phone, location_id, type, alipay_id, wechat_id, qq_number, picture, student_id, created_at, updated_at, modify_by, login_ip, last_login from user WHERE ( email = ? ) 
-15:03:27.845 [http-nio-8080-exec-1] DEBUG com.heo.dao.UserMapper.selectByExample - ==> Parameters: 113@qq.com(String)
-15:03:27.849 [http-nio-8080-exec-1] DEBUG com.heo.dao.UserMapper.selectByExample - <==      Total: 0
-15:03:27.851 [http-nio-8080-exec-1] DEBUG com.heo.dao.UserMapper.selectByExample - ==>  Preparing: select id, user_name, pass_word, salt, email, major_id, phone, location_id, type, alipay_id, wechat_id, qq_number, picture, student_id, created_at, updated_at, modify_by, login_ip, last_login from user WHERE ( user_name = ? ) 
-15:03:27.852 [http-nio-8080-exec-1] DEBUG com.heo.dao.UserMapper.selectByExample - ==> Parameters: yangxu(String)
-15:03:27.854 [http-nio-8080-exec-1] DEBUG com.heo.dao.UserMapper.selectByExample - <==      Total: 0
-15:03:27.856 [http-nio-8080-exec-1] DEBUG com.heo.dao.UserMapper.selectByExample - ==>  Preparing: select id, user_name, pass_word, salt, email, major_id, phone, location_id, type, alipay_id, wechat_id, qq_number, picture, student_id, created_at, updated_at, modify_by, login_ip, last_login from user WHERE ( phone = ? ) 
-15:03:27.857 [http-nio-8080-exec-1] DEBUG com.heo.dao.UserMapper.selectByExample - ==> Parameters: 123(String)
-15:03:27.859 [http-nio-8080-exec-1] DEBUG com.heo.dao.UserMapper.selectByExample - <==      Total: 0
-15:03:27.876 [http-nio-8080-exec-1] DEBUG com.heo.dao.UserMapper.insertSelective - ==>  Preparing: insert into user ( user_name, pass_word, salt, email, phone, alipay_id, wechat_id, qq_number ) values ( ?, ?, ?, ?, ?, ?, ?, ? ) 
-15:03:27.879 [http-nio-8080-exec-1] DEBUG com.heo.dao.UserMapper.insertSelective - ==> Parameters: yangxu(String), 9d99602ffa901dd7cc48a6b0b746a977(String), 9258(Integer), 113@qq.com(String), 123(String), 123(String), 123(String), 213(String)
-15:03:27.978 [http-nio-8080-exec-1] INFO  com.heo.service.impl.UserServiceImpl - 用户注册失败, 未知系统异常 e:{}
-org.springframework.dao.DataIntegrityViolationException: 
-### Error updating database.  Cause: java.sql.SQLException: Field 'id' doesn't have a default value
-### The error may involve com.heo.dao.UserMapper.insertSelective-Inline
-### The error occurred while setting parameters
-### SQL: insert into user      ( user_name,                       pass_word,                       salt,                       email,                              phone,                                     alipay_id,                       wechat_id,                       qq_number )       values ( ?,                       ?,                       ?,                       ?,                              ?,                                     ?,                       ?,                       ? )
-### Cause: java.sql.SQLException: Field 'id' doesn't have a default value
-; SQL []; Field 'id' doesn't have a default value; nested exception is java.sql.SQLException: Field 'id' doesn't have a default value
-	at org.springframework.jdbc.support.SQLErrorCodeSQLExceptionTranslator.doTranslate(SQLErrorCodeSQLExceptionTranslator.java:243)
-	at org.springframework.jdbc.support.AbstractFallbackSQLExceptionTranslator.translate(AbstractFallbackSQLExceptionTranslator.java:73)
-	at org.mybatis.spring.MyBatisExceptionTranslator.translateExceptionIfPossible(MyBatisExceptionTranslator.java:73)
-	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:446)
-	at com.sun.proxy.$Proxy53.insert(Unknown Source)
-	at org.mybatis.spring.SqlSessionTemplate.insert(SqlSessionTemplate.java:278)
-	at org.apache.ibatis.binding.MapperMethod.execute(MapperMethod.java:58)
-	at org.apache.ibatis.binding.MapperProxy.invoke(MapperProxy.java:59)
-	at com.sun.proxy.$Proxy58.insertSelective(Unknown Source)
-	at com.heo.service.impl.UserServiceImpl.registerUser(UserServiceImpl.java:242)
-	at com.heo.controller.loginController.doRegister(loginController.java:75)
+Caused by: java.lang.NullPointerException: null
+	at com.heo.service.AOPTest.Around(AOPTest.java:33)
+	at com.heo.service.AOPTest.HH(AOPTest.java:22)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.aop.aspectj.AbstractAspectJAdvice.invokeAdviceMethodWithGivenArgs(AbstractAspectJAdvice.java:629)
+	at org.springframework.aop.aspectj.AbstractAspectJAdvice.invokeAdviceMethod(AbstractAspectJAdvice.java:618)
+	at org.springframework.aop.aspectj.AspectJAroundAdvice.invoke(AspectJAroundAdvice.java:70)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179)
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:92)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179)
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:213)
+	at com.sun.proxy.$Proxy79.insertSelective(Unknown Source)
+	at com.heo.service.impl.LogininforServiceImpl.insertLogininfor(LogininforServiceImpl.java:31)
+	at com.heo.common.utils.SystemLogUtils.saveOpLog(SystemLogUtils.java:70)
+	at com.heo.common.utils.SystemLogUtils.log(SystemLogUtils.java:46)
+	at com.heo.app.shiro.service.LoginService.login(LoginService.java:94)
+	at com.heo.app.shiro.realm.UserRealm.doGetAuthenticationInfo(UserRealm.java:60)
+	... 93 common frames omitted
+14:33:13.179 [http-nio-8080-exec-8] INFO  sys-user - [127.0.0.1]XX 内网IP[zwt][Success][登录成功]
+14:33:13.328 [http-nio-8080-exec-8] INFO  com.heo.app.shiro.realm.UserRealm - 对用户[zwt]进行登录验证..验证未通过null
+14:33:13.329 [http-nio-8080-exec-8] ERROR com.heo.controller.loginController - 用户登陆未知错误, e {}
+org.apache.shiro.authc.AuthenticationException: null
+	at com.heo.app.shiro.realm.UserRealm.doGetAuthenticationInfo(UserRealm.java:89)
+	at org.apache.shiro.realm.AuthenticatingRealm.getAuthenticationInfo(AuthenticatingRealm.java:568)
+	at org.apache.shiro.authc.pam.ModularRealmAuthenticator.doSingleRealmAuthentication(ModularRealmAuthenticator.java:180)
+	at org.apache.shiro.authc.pam.ModularRealmAuthenticator.doAuthenticate(ModularRealmAuthenticator.java:267)
+	at org.apache.shiro.authc.AbstractAuthenticator.authenticate(AbstractAuthenticator.java:198)
+	at org.apache.shiro.mgt.AuthenticatingSecurityManager.authenticate(AuthenticatingSecurityManager.java:106)
+	at org.apache.shiro.mgt.DefaultSecurityManager.login(DefaultSecurityManager.java:270)
+	at org.apache.shiro.subject.support.DelegatingSubject.login(DelegatingSubject.java:256)
+	at com.heo.controller.loginController.ajaxLogin(loginController.java:62)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -643,93 +876,42 @@ org.springframework.dao.DataIntegrityViolationException:
 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
 	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
 	at java.lang.Thread.run(Thread.java:748)
-Caused by: java.sql.SQLException: Field 'id' doesn't have a default value
-	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:965)
-	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3976)
-	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3912)
-	at com.mysql.jdbc.MysqlIO.sendCommand(MysqlIO.java:2530)
-	at com.mysql.jdbc.MysqlIO.sqlQueryDirect(MysqlIO.java:2683)
-	at com.mysql.jdbc.ConnectionImpl.execSQL(ConnectionImpl.java:2486)
-	at com.mysql.jdbc.PreparedStatement.executeInternal(PreparedStatement.java:1858)
-	at com.mysql.jdbc.PreparedStatement.execute(PreparedStatement.java:1197)
-	at com.alibaba.druid.pool.DruidPooledPreparedStatement.execute(DruidPooledPreparedStatement.java:498)
+Caused by: java.lang.NullPointerException: null
+	at com.heo.service.AOPTest.Around(AOPTest.java:33)
+	at com.heo.service.AOPTest.HH(AOPTest.java:22)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
 	at java.lang.reflect.Method.invoke(Method.java:498)
-	at org.apache.ibatis.logging.jdbc.PreparedStatementLogger.invoke(PreparedStatementLogger.java:59)
-	at com.sun.proxy.$Proxy77.execute(Unknown Source)
-	at org.apache.ibatis.executor.statement.PreparedStatementHandler.update(PreparedStatementHandler.java:46)
-	at org.apache.ibatis.executor.statement.RoutingStatementHandler.update(RoutingStatementHandler.java:74)
-	at org.apache.ibatis.executor.SimpleExecutor.doUpdate(SimpleExecutor.java:50)
-	at org.apache.ibatis.executor.BaseExecutor.update(BaseExecutor.java:117)
-	at org.apache.ibatis.executor.CachingExecutor.update(CachingExecutor.java:76)
-	at org.apache.ibatis.session.defaults.DefaultSqlSession.update(DefaultSqlSession.java:198)
-	at org.apache.ibatis.session.defaults.DefaultSqlSession.insert(DefaultSqlSession.java:185)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:498)
-	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:433)
-	... 92 common frames omitted
-15:03:28.113 [pool-1-thread-1] INFO  com.heo.app.shiro.web.session.OnlineWebSessionManager - invalidation sessions...
-15:03:28.122 [pool-1-thread-1] DEBUG com.heo.dao.UserOnlineMapper.selectOnlineByExpired - ==>  Preparing: SELECT * FROM user_online o WHERE o.last_access_time <= ? ORDER BY o.last_access_time ASC 
-15:03:28.123 [pool-1-thread-1] DEBUG com.heo.dao.UserOnlineMapper.selectOnlineByExpired - ==> Parameters: 2018-09-24 14:33:28(String)
-15:04:32.492 [main] INFO  com.heo.HelpeachotherApplication - Starting HelpeachotherApplication on LAPTOP-1M5RA4JD with PID 20792 (C:\Users\11291\Desktop\helpeachother\target\classes started by 11291 in C:\Users\11291\Desktop\helpeachother)
-15:04:32.497 [main] DEBUG com.heo.HelpeachotherApplication - Running with Spring Boot v1.5.10.RELEASE, Spring v4.3.14.RELEASE
-15:04:32.498 [main] INFO  com.heo.HelpeachotherApplication - The following profiles are active: druid
-15:04:32.749 [background-preinit] INFO  org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 5.3.6.Final
-15:04:34.436 [main] INFO  org.apache.shiro.cache.ehcache.EhCacheManager - Cache with name 'com.heo.app.shiro.realm.UserRealm.authorizationCache' does not yet exist.  Creating now.
-15:04:34.437 [main] INFO  org.apache.shiro.cache.ehcache.EhCacheManager - Added EhCache named [com.heo.app.shiro.realm.UserRealm.authorizationCache]
-15:04:34.468 [main] INFO  org.apache.shiro.cache.ehcache.EhCacheManager - Using existing EHCache named [loginRecordCache]
-15:04:38.290 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
-15:04:38.292 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/8.5.27
-15:04:38.796 [localhost-startStop-1] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
-15:04:41.563 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
-15:04:41.578 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
-15:04:41.593 [main] INFO  org.apache.tomcat.util.net.NioSelectorPool - Using a shared selector for servlet write/read
-15:04:41.628 [main] INFO  com.heo.HelpeachotherApplication - Started HelpeachotherApplication in 9.765 seconds (JVM running for 11.657)
-15:04:47.660 [http-nio-8080-exec-1] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring FrameworkServlet 'dispatcherServlet'
-15:04:47.738 [http-nio-8080-exec-1] INFO  org.apache.shiro.session.mgt.AbstractValidatingSessionManager - Enabling session validation scheduler...
-15:04:47.739 [http-nio-8080-exec-1] DEBUG com.heo.app.shiro.web.session.SpringSessionValidationScheduler - Scheduling session validation job using Spring Scheduler with session validation interval of [600000]ms...
-15:04:47.741 [http-nio-8080-exec-1] DEBUG com.heo.app.shiro.web.session.SpringSessionValidationScheduler - Session validation job successfully scheduled with Spring Scheduler.
-15:04:47.743 [http-nio-8080-exec-1] INFO  org.apache.shiro.cache.ehcache.EhCacheManager - Using existing EHCache named [shiro-activeSessionCache]
-15:04:47.833 [http-nio-8080-exec-1] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
-15:04:48.080 [http-nio-8080-exec-1] DEBUG com.heo.dao.UserOnlineMapper.selectByPrimaryKey - ==>  Preparing: select sessionId, user_name, ipaddr, login_location, browser, os, status, start_timestsamp, last_access_time, expire_time from user_online where sessionId = ? 
-15:04:48.104 [http-nio-8080-exec-1] DEBUG com.heo.dao.UserOnlineMapper.selectByPrimaryKey - ==> Parameters: 0759484c-fc6b-47f0-a3b8-7d864e56fca9(String)
-15:04:48.121 [http-nio-8080-exec-1] DEBUG com.heo.dao.UserOnlineMapper.selectByPrimaryKey - <==      Total: 0
-15:04:48.184 [http-nio-8080-exec-1] INFO  com.heo.controller.loginController - 用户注册开始 >>>>>>>>>>>>>>>>>>> params:{"userName":"yangxu","passWord":"1234567","email":"113@qq.com","phone":"123","alipayId":"123","wechatId":"123","qqNumber":"213"}
-15:04:48.302 [http-nio-8080-exec-1] INFO  com.heo.service.impl.UserServiceImpl - 用户注册开始user: User{id=null, userName='yangxu', passWord='1234567', salt=null, email='113@qq.com', majorId='null', phone='123', locationId=null, type=null, alipayId='123', wechatId='123', qqNumber='213', picture='null', studentId='null', createdAt=null, updatedAt=null, modifyBy=null, loginIp='null', lastLogin=null}
-15:04:48.344 [http-nio-8080-exec-1] DEBUG com.heo.dao.UserMapper.selectByExample - ==>  Preparing: select id, user_name, pass_word, salt, email, major_id, phone, location_id, type, alipay_id, wechat_id, qq_number, picture, student_id, created_at, updated_at, modify_by, login_ip, last_login from user WHERE ( email = ? ) 
-15:04:48.345 [http-nio-8080-exec-1] DEBUG com.heo.dao.UserMapper.selectByExample - ==> Parameters: 113@qq.com(String)
-15:04:48.348 [http-nio-8080-exec-1] DEBUG com.heo.dao.UserMapper.selectByExample - <==      Total: 0
-15:04:48.349 [http-nio-8080-exec-1] DEBUG com.heo.dao.UserMapper.selectByExample - ==>  Preparing: select id, user_name, pass_word, salt, email, major_id, phone, location_id, type, alipay_id, wechat_id, qq_number, picture, student_id, created_at, updated_at, modify_by, login_ip, last_login from user WHERE ( user_name = ? ) 
-15:04:48.350 [http-nio-8080-exec-1] DEBUG com.heo.dao.UserMapper.selectByExample - ==> Parameters: yangxu(String)
-15:04:48.352 [http-nio-8080-exec-1] DEBUG com.heo.dao.UserMapper.selectByExample - <==      Total: 0
-15:04:48.353 [http-nio-8080-exec-1] DEBUG com.heo.dao.UserMapper.selectByExample - ==>  Preparing: select id, user_name, pass_word, salt, email, major_id, phone, location_id, type, alipay_id, wechat_id, qq_number, picture, student_id, created_at, updated_at, modify_by, login_ip, last_login from user WHERE ( phone = ? ) 
-15:04:48.354 [http-nio-8080-exec-1] DEBUG com.heo.dao.UserMapper.selectByExample - ==> Parameters: 123(String)
-15:04:48.355 [http-nio-8080-exec-1] DEBUG com.heo.dao.UserMapper.selectByExample - <==      Total: 0
-15:04:48.364 [http-nio-8080-exec-1] DEBUG com.heo.dao.UserMapper.insertSelective - ==>  Preparing: insert into user ( user_name, pass_word, salt, email, phone, alipay_id, wechat_id, qq_number ) values ( ?, ?, ?, ?, ?, ?, ?, ? ) 
-15:04:48.367 [http-nio-8080-exec-1] DEBUG com.heo.dao.UserMapper.insertSelective - ==> Parameters: yangxu(String), 9d99602ffa901dd7cc48a6b0b746a977(String), 9258(Integer), 113@qq.com(String), 123(String), 123(String), 123(String), 213(String)
-15:04:48.428 [http-nio-8080-exec-1] INFO  com.heo.service.impl.UserServiceImpl - 用户注册失败, 未知系统异常 e:{}
-org.springframework.dao.DataIntegrityViolationException: 
-### Error updating database.  Cause: java.sql.SQLException: Field 'location_id' doesn't have a default value
-### The error may involve com.heo.dao.UserMapper.insertSelective-Inline
-### The error occurred while setting parameters
-### SQL: insert into user      ( user_name,                       pass_word,                       salt,                       email,                              phone,                                     alipay_id,                       wechat_id,                       qq_number )       values ( ?,                       ?,                       ?,                       ?,                              ?,                                     ?,                       ?,                       ? )
-### Cause: java.sql.SQLException: Field 'location_id' doesn't have a default value
-; SQL []; Field 'location_id' doesn't have a default value; nested exception is java.sql.SQLException: Field 'location_id' doesn't have a default value
-	at org.springframework.jdbc.support.SQLErrorCodeSQLExceptionTranslator.doTranslate(SQLErrorCodeSQLExceptionTranslator.java:243)
-	at org.springframework.jdbc.support.AbstractFallbackSQLExceptionTranslator.translate(AbstractFallbackSQLExceptionTranslator.java:73)
-	at org.mybatis.spring.MyBatisExceptionTranslator.translateExceptionIfPossible(MyBatisExceptionTranslator.java:73)
-	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:446)
-	at com.sun.proxy.$Proxy53.insert(Unknown Source)
-	at org.mybatis.spring.SqlSessionTemplate.insert(SqlSessionTemplate.java:278)
-	at org.apache.ibatis.binding.MapperMethod.execute(MapperMethod.java:58)
-	at org.apache.ibatis.binding.MapperProxy.invoke(MapperProxy.java:59)
-	at com.sun.proxy.$Proxy58.insertSelective(Unknown Source)
-	at com.heo.service.impl.UserServiceImpl.registerUser(UserServiceImpl.java:242)
-	at com.heo.controller.loginController.doRegister(loginController.java:75)
+	at org.springframework.aop.aspectj.AbstractAspectJAdvice.invokeAdviceMethodWithGivenArgs(AbstractAspectJAdvice.java:629)
+	at org.springframework.aop.aspectj.AbstractAspectJAdvice.invokeAdviceMethod(AbstractAspectJAdvice.java:618)
+	at org.springframework.aop.aspectj.AspectJAroundAdvice.invoke(AspectJAroundAdvice.java:70)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179)
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:92)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179)
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:213)
+	at com.sun.proxy.$Proxy79.insertSelective(Unknown Source)
+	at com.heo.service.impl.LogininforServiceImpl.insertLogininfor(LogininforServiceImpl.java:31)
+	at com.heo.common.utils.SystemLogUtils.saveOpLog(SystemLogUtils.java:70)
+	at com.heo.common.utils.SystemLogUtils.log(SystemLogUtils.java:46)
+	at com.heo.app.shiro.service.LoginService.login(LoginService.java:94)
+	at com.heo.app.shiro.realm.UserRealm.doGetAuthenticationInfo(UserRealm.java:60)
+	... 93 common frames omitted
+14:33:14.632 [http-nio-8080-exec-7] ERROR com.heo.common.utils.AddressUtils - 温馨提醒：您的主机已经断网，请您检查主机的网络连接
+14:33:14.632 [http-nio-8080-exec-7] ERROR com.heo.common.utils.AddressUtils - 根据IP获取所在位置----------错误消息：Read timed out
+14:33:14.633 [http-nio-8080-exec-7] ERROR com.heo.common.utils.AddressUtils - 根据IP获取所在位置----------错误消息：null
+14:33:14.633 [http-nio-8080-exec-7] INFO  com.heo.app.shiro.realm.UserRealm - 对用户[zwt]进行登录验证..验证未通过null
+14:33:14.634 [http-nio-8080-exec-7] ERROR com.heo.controller.loginController - 用户登陆未知错误, e {}
+org.apache.shiro.authc.AuthenticationException: null
+	at com.heo.app.shiro.realm.UserRealm.doGetAuthenticationInfo(UserRealm.java:89)
+	at org.apache.shiro.realm.AuthenticatingRealm.getAuthenticationInfo(AuthenticatingRealm.java:568)
+	at org.apache.shiro.authc.pam.ModularRealmAuthenticator.doSingleRealmAuthentication(ModularRealmAuthenticator.java:180)
+	at org.apache.shiro.authc.pam.ModularRealmAuthenticator.doAuthenticate(ModularRealmAuthenticator.java:267)
+	at org.apache.shiro.authc.AbstractAuthenticator.authenticate(AbstractAuthenticator.java:198)
+	at org.apache.shiro.mgt.AuthenticatingSecurityManager.authenticate(AuthenticatingSecurityManager.java:106)
+	at org.apache.shiro.mgt.DefaultSecurityManager.login(DefaultSecurityManager.java:270)
+	at org.apache.shiro.subject.support.DelegatingSubject.login(DelegatingSubject.java:256)
+	at com.heo.controller.loginController.ajaxLogin(loginController.java:62)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -815,41 +997,146 @@ org.springframework.dao.DataIntegrityViolationException:
 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
 	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
 	at java.lang.Thread.run(Thread.java:748)
-Caused by: java.sql.SQLException: Field 'location_id' doesn't have a default value
-	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:965)
-	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3976)
-	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3912)
-	at com.mysql.jdbc.MysqlIO.sendCommand(MysqlIO.java:2530)
-	at com.mysql.jdbc.MysqlIO.sqlQueryDirect(MysqlIO.java:2683)
-	at com.mysql.jdbc.ConnectionImpl.execSQL(ConnectionImpl.java:2486)
-	at com.mysql.jdbc.PreparedStatement.executeInternal(PreparedStatement.java:1858)
-	at com.mysql.jdbc.PreparedStatement.execute(PreparedStatement.java:1197)
-	at com.alibaba.druid.pool.DruidPooledPreparedStatement.execute(DruidPooledPreparedStatement.java:498)
+Caused by: java.lang.NullPointerException: null
+	at com.heo.service.AOPTest.Around(AOPTest.java:33)
+	at com.heo.service.AOPTest.HH(AOPTest.java:22)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
 	at java.lang.reflect.Method.invoke(Method.java:498)
-	at org.apache.ibatis.logging.jdbc.PreparedStatementLogger.invoke(PreparedStatementLogger.java:59)
-	at com.sun.proxy.$Proxy77.execute(Unknown Source)
-	at org.apache.ibatis.executor.statement.PreparedStatementHandler.update(PreparedStatementHandler.java:46)
-	at org.apache.ibatis.executor.statement.RoutingStatementHandler.update(RoutingStatementHandler.java:74)
-	at org.apache.ibatis.executor.SimpleExecutor.doUpdate(SimpleExecutor.java:50)
-	at org.apache.ibatis.executor.BaseExecutor.update(BaseExecutor.java:117)
-	at org.apache.ibatis.executor.CachingExecutor.update(CachingExecutor.java:76)
-	at org.apache.ibatis.session.defaults.DefaultSqlSession.update(DefaultSqlSession.java:198)
-	at org.apache.ibatis.session.defaults.DefaultSqlSession.insert(DefaultSqlSession.java:185)
+	at org.springframework.aop.aspectj.AbstractAspectJAdvice.invokeAdviceMethodWithGivenArgs(AbstractAspectJAdvice.java:629)
+	at org.springframework.aop.aspectj.AbstractAspectJAdvice.invokeAdviceMethod(AbstractAspectJAdvice.java:618)
+	at org.springframework.aop.aspectj.AspectJAroundAdvice.invoke(AspectJAroundAdvice.java:70)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179)
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:92)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179)
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:213)
+	at com.sun.proxy.$Proxy79.insertSelective(Unknown Source)
+	at com.heo.service.impl.LogininforServiceImpl.insertLogininfor(LogininforServiceImpl.java:31)
+	at com.heo.common.utils.SystemLogUtils.saveOpLog(SystemLogUtils.java:70)
+	at com.heo.common.utils.SystemLogUtils.log(SystemLogUtils.java:46)
+	at com.heo.app.shiro.service.LoginService.login(LoginService.java:94)
+	at com.heo.app.shiro.realm.UserRealm.doGetAuthenticationInfo(UserRealm.java:60)
+	... 93 common frames omitted
+14:33:48.887 [http-nio-8080-exec-3] DEBUG com.heo.dao.UserMapper.selectByExample - ==>  Preparing: select id, user_name, pass_word, salt, email, major_id, phone, location_id, type, alipay_id, wechat_id, qq_number, picture, student_id, created_at, updated_at, modify_by, login_ip, last_login from user WHERE ( user_name = ? ) 
+14:33:48.888 [http-nio-8080-exec-3] DEBUG com.heo.dao.UserMapper.selectByExample - ==> Parameters: zwt(String)
+14:33:48.890 [http-nio-8080-exec-3] DEBUG com.heo.dao.UserMapper.selectByExample - <==      Total: 1
+14:33:49.003 [http-nio-8080-exec-3] INFO  sys-user - [127.0.0.1]XX 内网IP[zwt][Success][登录成功]
+14:33:49.046 [http-nio-8080-exec-3] INFO  com.heo.app.shiro.realm.UserRealm - 对用户[zwt]进行登录验证..验证未通过null
+14:33:49.047 [http-nio-8080-exec-3] ERROR com.heo.controller.loginController - 用户登陆未知错误, e {}
+org.apache.shiro.authc.AuthenticationException: null
+	at com.heo.app.shiro.realm.UserRealm.doGetAuthenticationInfo(UserRealm.java:89)
+	at org.apache.shiro.realm.AuthenticatingRealm.getAuthenticationInfo(AuthenticatingRealm.java:568)
+	at org.apache.shiro.authc.pam.ModularRealmAuthenticator.doSingleRealmAuthentication(ModularRealmAuthenticator.java:180)
+	at org.apache.shiro.authc.pam.ModularRealmAuthenticator.doAuthenticate(ModularRealmAuthenticator.java:267)
+	at org.apache.shiro.authc.AbstractAuthenticator.authenticate(AbstractAuthenticator.java:198)
+	at org.apache.shiro.mgt.AuthenticatingSecurityManager.authenticate(AuthenticatingSecurityManager.java:106)
+	at org.apache.shiro.mgt.DefaultSecurityManager.login(DefaultSecurityManager.java:270)
+	at org.apache.shiro.subject.support.DelegatingSubject.login(DelegatingSubject.java:256)
+	at com.heo.controller.loginController.ajaxLogin(loginController.java:62)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
 	at java.lang.reflect.Method.invoke(Method.java:498)
-	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:433)
-	... 92 common frames omitted
-15:04:48.742 [pool-1-thread-1] INFO  com.heo.app.shiro.web.session.OnlineWebSessionManager - invalidation sessions...
-15:04:48.750 [pool-1-thread-1] DEBUG com.heo.dao.UserOnlineMapper.selectOnlineByExpired - ==>  Preparing: SELECT * FROM user_online o WHERE o.last_access_time <= ? ORDER BY o.last_access_time ASC 
-15:04:48.752 [pool-1-thread-1] DEBUG com.heo.dao.UserOnlineMapper.selectOnlineByExpired - ==> Parameters: 2018-09-24 14:34:48(String)
-15:45:22.734 [main] INFO  org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Neither @ContextConfiguration nor @ContextHierarchy found for test class [com.heo.HelpeachotherApplicationTests], using SpringBootContextLoader
-15:45:22.748 [main] INFO  org.springframework.test.context.support.AbstractContextLoader - Could not detect default resource locations for test class [com.heo.HelpeachotherApplicationTests]: no resource found for suffixes {-context.xml, Context.groovy}.
-15:45:22.749 [main] INFO  org.springframework.test.context.support.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.heo.HelpeachotherApplicationTests]: HelpeachotherApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
-15:45:23.053 [main] INFO  org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.heo.HelpeachotherApplication for test class com.heo.HelpeachotherApplicationTests
-15:45:23.072 [main] INFO  org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
-15:45:23.135 [main] INFO  org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@515aebb0, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@dd8ba08, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@245b4bdc, org.springframework.test.context.support.DirtiesContextTestExecutionListener@6c64cb25, org.springframework.test.context.transaction.TransactionalTestExecutionListener@6ae5aa72, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@222545dc, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@5c5eefef, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@16293aa2, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@5158b42f, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@595b007d, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@72d1ad2e, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@2d7275fc]
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:133)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:97)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:827)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:738)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:85)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:967)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:901)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:970)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:872)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:661)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:846)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:742)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.shiro.web.servlet.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:112)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.shiro.web.servlet.AdviceFilter.executeChain(AdviceFilter.java:108)
+	at org.apache.shiro.web.servlet.AdviceFilter.doFilterInternal(AdviceFilter.java:137)
+	at org.apache.shiro.web.servlet.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:125)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.shiro.web.servlet.AdviceFilter.executeChain(AdviceFilter.java:108)
+	at org.apache.shiro.web.servlet.AdviceFilter.doFilterInternal(AdviceFilter.java:137)
+	at org.apache.shiro.web.servlet.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:125)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.shiro.web.servlet.ProxiedFilterChain.doFilter(ProxiedFilterChain.java:61)
+	at org.apache.shiro.web.servlet.AdviceFilter.executeChain(AdviceFilter.java:108)
+	at org.apache.shiro.web.servlet.AdviceFilter.doFilterInternal(AdviceFilter.java:137)
+	at org.apache.shiro.web.servlet.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:125)
+	at org.apache.shiro.web.servlet.ProxiedFilterChain.doFilter(ProxiedFilterChain.java:66)
+	at org.apache.shiro.web.servlet.AdviceFilter.executeChain(AdviceFilter.java:108)
+	at org.apache.shiro.web.servlet.AdviceFilter.doFilterInternal(AdviceFilter.java:137)
+	at org.apache.shiro.web.servlet.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:125)
+	at org.apache.shiro.web.servlet.ProxiedFilterChain.doFilter(ProxiedFilterChain.java:66)
+	at org.apache.shiro.web.servlet.AbstractShiroFilter.executeChain(AbstractShiroFilter.java:449)
+	at org.apache.shiro.web.servlet.AbstractShiroFilter$1.call(AbstractShiroFilter.java:365)
+	at org.apache.shiro.subject.support.SubjectCallable.doCall(SubjectCallable.java:90)
+	at org.apache.shiro.subject.support.SubjectCallable.call(SubjectCallable.java:83)
+	at org.apache.shiro.subject.support.DelegatingSubject.execute(DelegatingSubject.java:383)
+	at org.apache.shiro.web.servlet.AbstractShiroFilter.doFilterInternal(AbstractShiroFilter.java:362)
+	at org.apache.shiro.web.servlet.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:125)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:99)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.HttpPutFormContentFilter.doFilterInternal(HttpPutFormContentFilter.java:108)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:81)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:197)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:199)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:504)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:140)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:81)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:87)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:342)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:803)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:790)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1459)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: java.lang.NullPointerException: null
+	at com.heo.service.AOPTest.Around(AOPTest.java:33)
+	at com.heo.service.AOPTest.HH(AOPTest.java:22)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.aop.aspectj.AbstractAspectJAdvice.invokeAdviceMethodWithGivenArgs(AbstractAspectJAdvice.java:629)
+	at org.springframework.aop.aspectj.AbstractAspectJAdvice.invokeAdviceMethod(AbstractAspectJAdvice.java:618)
+	at org.springframework.aop.aspectj.AspectJAroundAdvice.invoke(AspectJAroundAdvice.java:70)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179)
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:92)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179)
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:213)
+	at com.sun.proxy.$Proxy79.insertSelective(Unknown Source)
+	at com.heo.service.impl.LogininforServiceImpl.insertLogininfor(LogininforServiceImpl.java:31)
+	at com.heo.common.utils.SystemLogUtils.saveOpLog(SystemLogUtils.java:70)
+	at com.heo.common.utils.SystemLogUtils.log(SystemLogUtils.java:46)
+	at com.heo.app.shiro.service.LoginService.login(LoginService.java:94)
+	at com.heo.app.shiro.realm.UserRealm.doGetAuthenticationInfo(UserRealm.java:60)
+	... 93 common frames omitted

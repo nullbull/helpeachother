@@ -13,6 +13,7 @@ import org.apache.commons.collections.CollectionUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import javax.xml.crypto.Data;
 import java.util.Calendar;
@@ -24,9 +25,10 @@ import java.util.List;
  * @Date 2018/9/17
  * @Desc
  */
-public class ExpressService extends BaseService implements IExpressService {
+@Service
+public class ExpressServiceImpl extends BaseService implements IExpressService {
 
-    private Logger logger = LoggerFactory.getLogger(ExpressService.class);
+    private Logger logger = LoggerFactory.getLogger(ExpressServiceImpl.class);
     @Override
     public ReturnData createExpress(Express express) {
         ReturnData rd = getReturnData();

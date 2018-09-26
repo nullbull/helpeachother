@@ -73,6 +73,8 @@ spring:
     multipart:
       max-file-size: 30Mb
       max-request-size: 30Mb
+  aop:
+    auto: true
 
 
 mybatis:

@@ -7,6 +7,7 @@ import com.heo.service.ILocationInfoService;
 import com.heo.service.ILogininforService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
@@ -15,8 +16,9 @@ import java.util.List;
  * @Date 2018/9/24
  * @Desc
  */
-public class LocaitonInfoService extends BaseService implements ILocationInfoService {
-    private static Logger logger = LoggerFactory.getLogger(LocaitonInfoService.class);
+@Service
+public class LocaitonInfoServiceImpl extends BaseService implements ILocationInfoService {
+    private static Logger logger = LoggerFactory.getLogger(LocaitonInfoServiceImpl.class);
     @Override
     public List<LocationInfo> getLocationsByPart(Byte partId) {
         String methodDesc = "根据宿舍区域查询宿舍";

@@ -30,10 +30,11 @@ public class loginController {
     private Logger logger = LoggerFactory.getLogger(this.getClass());
     @Autowired
     IUserService userService;
-    @Autowired
-    ILocationInfoService infoService;
 
-    @RequestMapping("/login")
+    @Autowired
+    ILocationInfoService locationInfoService;
+
+    @RequestMapping("/dologin")
     public String login(Model model) {
         model.addAttribute("hhh" , "123");
         return "login";
@@ -104,7 +105,7 @@ public class loginController {
                 rd.setMsg("获取失败");
                 return rd;
             }
-            rd.setData(infoService.getLocationsByPart(id));
+            rd.setData(locationInfoService.getLocationsByPart(id));
             logger.info(methodDesc + "完成， rd:{}", rd);
         } catch (Exception e) {
             logger.error(methodDesc + "未知错误, e {}", e);

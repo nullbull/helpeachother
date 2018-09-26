@@ -3,7 +3,6 @@ package com.heo.service;
 import com.heo.entity.mapper.ExpressOrder;
 import com.heo.entity.vo.ExpressOrderQueryVO;
 import com.heo.entity.vo.ReturnData;
-import com.heo.service.impl.ExpressOrderService;
 
 /**
  * @Auth justinniu
