@@ -15,7 +15,15 @@
             <input type="password" id="passWord" name="passWord" placeholder="密码"/>
             <input type="email" id="email" name="email" placeholder="邮箱"/>
             <input type="text" id="phone" name="phone" placeholder="手机号"/>
-            <input type="text" id="locationId" name="locationId" placeholder="宿舍号"/>
+            <select id="loction" >
+                <option id="l0" value="0">请选择</option>
+                <option id="l1" value="1">A区</option>
+                <option id="l2" value="2">B区</option>
+                <option id="l3" value="3">C区</option>
+            </select>
+            <select id="locationChild">
+
+            </select>
             <input type="text" id="alipayId" name="alipayId" placeholder="支付宝账号"/>
             <input type="text" id="wechatId" name="wechatId" placeholder="微信号"/>
             <input type="text" id="qqNumber" name="qqNumeber" placeholder="QQ号"/>
@@ -23,6 +31,7 @@
                 <option id="p1" value="1">学生</option>
                 <option id="p2" value="2">服务者</option>
             </select>
+
             <input hidden type="text" id="studentId" name="studentId" placeholder="学号">
             <input hidden type="file" id="picture" name="picture" placeholder="学号">
             <input type="button" id="register_btn" value="注册"/>

@@ -341,4 +341,7 @@
           left join user c on a.provider_id = c.id
         where a.id = #{id}
     </select>
+    <select id="selectExpressOrderByTwoIds" resultType="com.heo.entity.mapper.ExpressOrder">
+        select * from express_order where provider_id = #{pId} and needer_id = #{nId}
+    </select>
 </mapper>

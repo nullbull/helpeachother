@@ -14,8 +14,11 @@ import com.heo.service.IExpressOrderService;
 import com.heo.service.IExpressService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotNull;
 import java.util.Date;
 import java.util.List;
 
@@ -126,7 +129,7 @@ public class ExpressOrderServiceImpl extends BaseService implements IExpressOrde
     }
 
     @Override
-    public ReturnData getExpressOrderListById(ExpressOrderQueryVO vo, int limit, int offset) {
+    public ReturnData getExpressOrderListById(@NotNull ExpressOrderQueryVO vo, int limit, int offset) {
         ReturnData rd = getReturnData();
         String methodDesc = "根据Id获取快递代送单列表";
         try {
@@ -137,7 +140,7 @@ public class ExpressOrderServiceImpl extends BaseService implements IExpressOrde
             Byte status = vo.getStatus();
             Date beginTime = vo.getBeginTime();
             Date endTime = vo.getEndTime();
-            if (type == null || type != Constants.PROVIDER || type != Constants.NEEDER) {
+            if (type == null || !type.equals(Constants.PROVIDER) || !type.equals(Constants.NEEDER)) {
                 logger.info("不存在该用户类型， type:{}", type);
                 rd.setMsg("不存在该用户类型");
                 return rd;
@@ -183,15 +186,24 @@ public class ExpressOrderServiceImpl extends BaseService implements IExpressOrde
 //    }
 
     @Override
-    public ReturnData getByProviderAndNeederId(Long providerId, Long neederId) {
+    public ReturnData getByProviderAndNeederId(@NotNull @Min(1) Long providerId, @NotNull @Min(1) Long neederId) {
         ReturnData rd = getReturnData();
-        String methodDesc = "根据跑腿者和需求者获取id";
+        String methodDesc = "根据跑腿者和需求者id获取快递代送单";
         try {
             logger.info(methodDesc + " 开始 providerId:{}, neederId:{}", providerId, neederId);
+            ExpressOrder expressOrder = expressOrderMapper.selectExpressOrderByTwoIds(providerId, neederId);
+            if (null == expressOrder) {
+                rd.setMsg("该快递代送单不存在");
+                logger.info(methodDesc + "失败，不再存在该单 providerId:{}, neederId:{} ", providerId, neederId);
+            }
+            rd.setMsg("成功");
+            rd.setCode(Constants.SUCCESS_CODE);
+            rd.setData(expressOrder);
         } catch (Exception e) {
-
+            rd.setMsg("未知系统错误");
+            logger.error(methodDesc + "失败, 未知系统错误, e:{}", e);
         }
-        return null;
+        return rd;
     }
 
     @Override

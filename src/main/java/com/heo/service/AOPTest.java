@@ -28,6 +28,7 @@ public class AOPTest {
         Object[] arguments = joinPoint.getArgs();
         //此处joinPoint的实现类是MethodInvocationProceedingJoinPoint
         Signature signature = joinPoint.getSignature();
+
         //获取参数名
         MethodSignature methodSignature = (MethodSignature) signature;
         for (int i = 0; i < methodSignature.getParameterNames().length; i++) {

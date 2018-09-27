@@ -107,4 +107,5 @@ public interface ExpressOrderMapper {
 
 //    List<ExpressOrder> selectByProviderId(Long id);
 //    List<ExpressOrder> selectByProviderId(Long id);
+    ExpressOrder selectExpressOrderByTwoIds(Long pId, Long nId);
 }

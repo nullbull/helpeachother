@@ -18,6 +18,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import java.util.Random;
 
@@ -239,6 +240,8 @@ public class UserServiceImpl extends BaseService implements IUserService
             }
             user.setSalt(randomSalt());
             user.setPassWord(passwordService.encryptPassword(user.getUserName(), user.getPassWord(), user.getSalt().toString()));
+            user.setCreatedAt(new Date());
+            user.setUpdatedAt(new Date());
             userMapper.insertSelective(user);
             rd.setCode(Constants.SUCCESS_CODE);
             rd.setMsg("完成");
@@ -253,9 +256,4 @@ public class UserServiceImpl extends BaseService implements IUserService
           return random.nextInt(10000);
     }
 
-    public ReturnData getReturnData() {
-        ReturnData rd = new ReturnData();
-        rd.setCode(Constants.FAIL_CODE);
-        return rd;
-    }
 }

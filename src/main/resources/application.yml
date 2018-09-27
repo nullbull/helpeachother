@@ -77,7 +77,7 @@ spring:
     auto: true
 
 
-mybatis:
+mybatis-plus:
   #实体类所做包
   type-aliases-package: com.heo.entity.mapper
   #mapper.xml所在位置
