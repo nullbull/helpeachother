@@ -35,8 +35,8 @@
         <table tableName="live_course_channel" domainObjectName="LiveCourseChannel"></table>
         -->
         <!--<table tableName="user" domainObjectName="User"></table>-->
-        <table tableName="location_info" domainObjectName="LocationInfo"></table>
-        <!--<table tableName="express" domainObjectName="Express"></table>-->
+        <!--<table tableName="location_info" domainObjectName="LocationInfo"></table>-->
+        <table tableName="express" domainObjectName="Express"></table>
         <!--<table tableName="express_order" domainObjectName="ExpressOrder"></table>-->
         <!--<table tableName="express_info" domainObjectName="ExpressInfo"></table>-->
         <!--<table tableName="location_info" domainObjectName="LocationInfo"></table>-->

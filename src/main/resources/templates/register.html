@@ -11,36 +11,63 @@
     <div class="container">
         <h1>Welcome</h1>
         <form id="loginForm"  >
-            <input type="text" id="userName" name="userName" placeholder="用户名" /><br>
-            <!--<p th:if="${#fields.hasErrors('userName')}" th:errors="*{userName}">bfg</p>-->
+            <table>
+                <th></th>
+                <td>
+                    <input type="text" id="userName" name="userName" placeholder="用户名" /><br>
+                </td>
+                <!--<p th:if="${#fields.hasErrors('userName')}" th:errors="*{userName}">bfg</p>-->
+                <td>
+                    <input type="password" id="passWord" name="passWord" placeholder="密码"/><br>
+                </td>
+                <td>
+                    <input type="email" id="email" name="email" placeholder="邮箱"/><br>
+                </td>
+                <td>
+                    <input type="text" id="phone" name="phone" placeholder="手机号"/><br>
+                </td>
+                <!--<p th:if="${#fields.hasErrors('phone')}" th:errors="*{phone}"></p>-->
+                <tr>
+                    <td>
+                        <select id="loction" >
+                            <option id="l0" value="0">请选择</option>
+                            <option id="l1" value="1">A区</option>
+                            <option id="l2" value="2">B区</option>
+                            <option id="l3" value="3">C区</option>
+                        </select>
+                    </td>
+                    <td>
+                        <select id="locationChild">
+                        </select><br>
+                    </td>
+                </tr>
 
-            <input type="password" id="passWord" name="passWord" placeholder="密码"/><br>
-            <input type="email" id="email" name="email" placeholder="邮箱"/><br>
-            <input type="text" id="phone" name="phone" placeholder="手机号"/><br>
-            <!--<p th:if="${#fields.hasErrors('phone')}" th:errors="*{phone}"></p>-->
 
+                <td>
+                    <input type="text" id="alipayId" name="alipayId" placeholder="支付宝账号"/><br>
+                </td>
+                <td>
+                    <input type="text" id="wechatId" name="wechatId" placeholder="微信号"/><br>
+                </td>
+                <td>
+                    <input type="text" id="qqNumber" name="qqNumber" placeholder="QQ号"/><br>
+                </td>
+                <td>
+                    <select id="s1" onchange="fun()">
+                        <option id="p1" value="1">学生</option>
+                        <option id="p2" value="2">服务者</option>
+                    </select><br>
+                </td>
+                <td>
+                    <input hidden type="text" id="studentId" name="studentId" placeholder="学号"><br>
+                </td>
+                <td>
+                    <input hidden type="file" id="picture" name="picture" placeholder="学号"><br>
+                </td>
+                <span id = "mess"></span>
+                <input type="button" id="register_btn" value="注册"/><br>
+            </table>
 
-            <select id="loction" >
-                <option id="l0" value="0">请选择</option>
-                <option id="l1" value="1">A区</option>
-                <option id="l2" value="2">B区</option>
-                <option id="l3" value="3">C区</option>
-            </select>
-            <select id="locationChild">
-
-            </select><br>
-            <input type="text" id="alipayId" name="alipayId" placeholder="支付宝账号"/><br>
-            <input type="text" id="wechatId" name="wechatId" placeholder="微信号"/><br>
-            <input type="text" id="qqNumber" name="qqNumber" placeholder="QQ号"/><br>
-            <select id="s1" onchange="fun()">
-                <option id="p1" value="1">学生</option>
-                <option id="p2" value="2">服务者</option>
-            </select><br>
-
-            <input hidden type="text" id="studentId" name="studentId" placeholder="学号"><br>
-            <input hidden type="file" id="picture" name="picture" placeholder="学号"><br>
-            <span id = "mess"></span>
-            <input type="button" id="register_btn" value="注册"/><br>
         </form>
     </div>
 

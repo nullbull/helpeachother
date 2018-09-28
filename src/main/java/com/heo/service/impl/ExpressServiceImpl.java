@@ -1,24 +1,28 @@
 package com.heo.service.impl;
 
+import com.github.pagehelper.PageHelper;
 import com.heo.common.constant.Constants;
-import com.heo.common.utils.NiuUtils;
 import com.heo.common.utils.StringUtils;
+import com.heo.common.utils.security.ShiroUtils;
+import com.heo.dao.ExpressMapper;
+import com.heo.entity.dto.ExpressQureyDTO;
 import com.heo.entity.mapper.Express;
 import com.heo.entity.mapper.ExpressExample;
 import com.heo.entity.mapper.ExpressOrder;
+import com.heo.entity.vo.ExpressVO;
 import com.heo.entity.vo.ReturnData;
-import com.heo.service.BaseService;
 import com.heo.service.IExpressService;
 import org.apache.commons.collections.CollectionUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
-import javax.xml.crypto.Data;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
+import java.util.Random;
+import java.util.stream.Collectors;
 
 /**
  * @Auth justinniu
@@ -29,11 +33,17 @@ import java.util.List;
 public class ExpressServiceImpl extends BaseService implements IExpressService {
 
     private Logger logger = LoggerFactory.getLogger(ExpressServiceImpl.class);
+    private static Random random = new Random(47);
+    @Value("Default.page.size")
+    private int pageSize;
     @Override
     public ReturnData createExpress(Express express) {
         ReturnData rd = getReturnData();
         String methoDesc = "创建代送快递信息";
         try {
+            express.setUserId(ShiroUtils.getUserId());
+            express.setStatus(Constants.ORDER_NEW);
+            express.setPhone(ShiroUtils.getUser().getPhone());
             if (StringUtils.isEmpty(express.getPhone()) || null == express.getLocationId() || null == express.getUserId() || null == express.getPrice() || null == express.getExpressType() || null == express.getGetCode()) {
                 rd.setMsg("关键信息不能为空");
                 logger.info(methoDesc + "失败 关键信息不能为空 Express:{}", express);
@@ -44,6 +54,8 @@ public class ExpressServiceImpl extends BaseService implements IExpressService {
                 logger.info(methoDesc + "失败，该快递信息已被提交 Express:{}", express);
                 return rd;
             }
+            express.setCreatedAt(new Date());
+            express.setUpdatedAt(new Date());
             expressMapper.insertSelective(express);
             rd.setMsg("成功");
             rd.setCode(Constants.SUCCESS_CODE);
@@ -51,6 +63,59 @@ public class ExpressServiceImpl extends BaseService implements IExpressService {
         }catch (Exception e) {
             rd.setMsg("未知错误");
             logger.error(methoDesc + "未知异常， e:{}", e);
+        }
+        return rd;
+    }
+
+    @Override
+    public ReturnData getExpressList(ExpressQureyDTO expressQureyDTO) {
+        String methodDesc = "分页查询Express列表";
+        ReturnData rd = getReturnData();
+        int limit = 1;
+
+        try {
+            logger.info(methodDesc + "开始>>>>>>>>>> expressQueryDTO:{}", expressQureyDTO);
+            if (null != expressQureyDTO.getLimit()) {
+                limit = expressQureyDTO.getLimit();
+            }
+            PageHelper.startPage(limit, pageSize);
+            ExpressExample example = new ExpressExample();
+            if (null != expressQureyDTO.getExpressType()) {
+                example.createCriteria().andExpressTypeEqualTo(expressQureyDTO.getExpressType());
+            }
+            if (validPrice(expressQureyDTO)) {
+                if (null != expressQureyDTO.getLowPrice()) {
+                    example.createCriteria().andPriceGreaterThanOrEqualTo(expressQureyDTO.getLowPrice());
+                }
+                if (null != expressQureyDTO.getHighPrice()) {
+                    example.createCriteria().andPriceLessThanOrEqualTo(expressQureyDTO.getHighPrice());
+                }
+            }
+
+            if (validTime(expressQureyDTO)) {
+                if (null != expressQureyDTO.getBeginTime()) {
+                    example.createCriteria().andCreatedAtGreaterThanOrEqualTo(expressQureyDTO.getBeginTime());
+                }
+                if (null != expressQureyDTO.getEndTime()) {
+                    example.createCriteria().andCreatedAtLessThanOrEqualTo(expressQureyDTO.getEndTime());
+                }
+            }
+            List<Express> expressList = expressMapper.selectByExample(example);
+            List<ExpressVO> expressVOList = expressList.stream().map(e ->{
+                ExpressVO expressVO = new ExpressVO();
+                expressVO.setCreatedAt(e.getCreatedAt());
+                expressVO.setExpressName(Constants.EXPRESS_INFO.get(e.getExpressType()));
+                expressVO.setMessage(e.getMessage());
+                expressVO.setPrice(e.getPrice());
+                expressVO.setNickName(random.nextInt()+"");
+                return expressVO;
+            }).collect(Collectors.toList());
+            rd.setMsg("完成");
+            rd.setCode(Constants.SUCCESS_CODE);
+            logger.info(methodDesc + "完成>>>>>>>>>>>>>>>> expressVOList:{}", expressVOList);
+        } catch (Exception e) {
+             rd.setMsg("未知系统异常");
+             logger.error(methodDesc + "未知系统异常 >>>>>>>>>>>> e:{}", e);
         }
         return rd;
     }
@@ -96,7 +161,7 @@ public class ExpressServiceImpl extends BaseService implements IExpressService {
         ExpressOrder expressOrder = expressOrderMapper.selectByExpressId(express.getId());
         try {
             if (null != expressOrder) {
-                if (expressOrder.getStatus() == Constants.ORDER_PICK_UP) {
+                if (expressOrder.getStatus().equals(Constants.ORDER_PICK_UP)) {
                     rd.setMsg("订单正在进行中，不能删除");
                     logger.info(methodDesc + "失败， 订单正在进行中，不能删除");
                     return rd;
@@ -122,8 +187,9 @@ public class ExpressServiceImpl extends BaseService implements IExpressService {
         example.createCriteria().andExpressTypeEqualTo(express.getExpressType()).andGetCodeEqualTo(express.getGetCode());
         example.setOrderByClause("created_at desc");
         List<Express> expressList = expressMapper.selectByExample(example);
-        if (CollectionUtils.isEmpty(expressList))
+        if (CollectionUtils.isEmpty(expressList)) {
             return true;
+        }
 
         //判断是否是同一天
         Calendar calendar = Calendar.getInstance();
@@ -134,8 +200,33 @@ public class ExpressServiceImpl extends BaseService implements IExpressService {
         calendar2.setTime(expressList.get(0).getCreatedAt());
         int y2 = calendar2.get(Calendar.YEAR);
         int d2 = calendar2.get(Calendar.DAY_OF_YEAR);
-        if (y1 == y2 && d1 == d2)
+        if (y1 == y2 && d1 == d2) {
             return false;
+        }
+        return true;
+    }
+
+    /**
+     * 验证查询日期是否正确
+     * @param qureyDTO
+     * @return
+     */
+    private boolean validTime(ExpressQureyDTO qureyDTO) {
+        if (null != qureyDTO.getBeginTime() && null != qureyDTO.getEndTime()) {
+            if (qureyDTO.getEndTime().getTime() > qureyDTO.getBeginTime().getTime()) {
+                return true;
+            }
+            return false;
+        }
+        return true;
+    }
+    private boolean validPrice(ExpressQureyDTO qureyDTO) {
+        if (null != qureyDTO.getLowPrice() && null != qureyDTO.getHighPrice()) {
+            if (qureyDTO.getLowPrice().compareTo(qureyDTO.getHighPrice()) == 1) {
+                return true;
+            }
+            return false;
+        }
         return true;
     }
 

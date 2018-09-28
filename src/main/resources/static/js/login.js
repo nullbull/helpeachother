@@ -22,9 +22,8 @@ $("#login_btn").click(function () {
 
 
         success : function (rd) {
-            alert(rd);
             if (rd.code == 1) {
-                window.location.href = "/hello";
+                window.location.href = "/express";
             }else {
                 $("#mess").innerText("用户名或密码不正确");
             }

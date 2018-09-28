@@ -25,9 +25,11 @@ public class test {
         int y2 = calendar2.get(Calendar.YEAR);
         int d2 = calendar2.get(Calendar.DAY_OF_YEAR);
 
-        if (y1 == y2 && d1 == d2)
+        if (y1 == y2 && d1 == d2) {
             System.out.println(true);
-        else
+        }
+        else {
             System.out.println(true);
+        }
     }
 }

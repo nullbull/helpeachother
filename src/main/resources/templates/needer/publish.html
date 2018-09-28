@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"><head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div>
+        <form>
+            <table>
+                <tr>
+                    <td>
+                        <select id="expressInfo">
+                            <option id="" value="0">请选择</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input id="getCode" placeholder="取货码">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input id="price" placeholder="价格">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <select id="loction" >
+                            <option id="l0" value="0">请选择</option>
+                            <option id="l1" value="1">A区</option>
+                            <option id="l2" value="2">B区</option>
+                            <option id="l3" value="3">C区</option>
+                        </select>
+                    </td>
+                    <td>
+                        <select id="locationChild">
+                        </select><br>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input id="message" placeholder="备注">
+                    </td>
+                </tr>
+            </table>
+            <button id="pub_btn"></button>
+        </form>
+
+    </div>
+</body>
+<script src="../static/js/jquery-3.3.1.js" th:src="@{/js/jquery-3.3.1.js}"></script>
+<script src="../static/js/needer/publish.js" th:src="@{/js/needer/publish.js}"></script>
+</html>

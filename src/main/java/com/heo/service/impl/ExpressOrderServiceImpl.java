@@ -9,12 +9,9 @@ import com.heo.entity.mapper.LocationInfo;
 import com.heo.entity.vo.ExpressOrderQueryVO;
 import com.heo.entity.vo.ExpressOrderVO;
 import com.heo.entity.vo.ReturnData;
-import com.heo.service.BaseService;
 import com.heo.service.IExpressOrderService;
-import com.heo.service.IExpressService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
 import javax.validation.constraints.Min;

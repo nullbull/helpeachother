@@ -2,9 +2,7 @@ package com.heo.service.impl;
 
 import com.heo.entity.mapper.LocationInfo;
 import com.heo.entity.mapper.LocationInfoExample;
-import com.heo.service.BaseService;
 import com.heo.service.ILocationInfoService;
-import com.heo.service.ILogininforService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;

@@ -1,5 +1,6 @@
 package com.heo.service;
 
+import com.heo.entity.dto.ExpressQureyDTO;
 import com.heo.entity.mapper.Express;
 import com.heo.entity.mapper.ExpressOrder;
 import com.heo.entity.vo.ReturnData;
@@ -11,6 +12,7 @@ import com.heo.entity.vo.ReturnData;
  */
 public interface IExpressService {
     ReturnData createExpress(Express exress);
+    ReturnData getExpressList(ExpressQureyDTO expressQureyDTO);
     ReturnData modifyExpress(Express express);
     ReturnData deleteExpress(Long id);
 }
