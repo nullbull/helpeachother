@@ -34,34 +34,26 @@ $("#register_btn").click(function () {
     var alipayId = $.trim($("#alipayId").val());
     var wechatId = $.trim($("#wechatId").val());
     var qqNumber = $.trim($("#qqNumber").val());
-    if (userName === "") {
-        $("#mess").innerText =  "用户名不能为空";
+    if (userName == "") {
+        alert("用户名不能为空");
+        $("#mess").text =  "用户名不能为空";
         return;
     }
-    else if (passWord === "") {
+    else if (passWord == "") {
         $("#mess").innerText = "密码不能为空";
         return;
     }
-    var data = {
-        "userName" : userName,
-        "passWord" : passWord,
-        "email" : email,
-        "phone" : phone,
-        "alipayId" : alipayId,
-        "wechatId" : wechatId,
-        "qqNumber" : qqNumber,
-        "location_id" : location_id
-    };
-    $.ajax({
-        type : "POST",
-        url : "/doRegister",
-        data : { "params": JSON.stringify(data) },
-        success : function (rd) {
-            if (rd.code == 1) {
-                window.location.href = "/hello";
-            }else {
-                $("#mess").innerText("用户名或密码不正确");
-            }
+
+
+    $.post("/doRegister", $("#loginForm").serialize(), function (rd) {
+        if (rd.code == 0) {
+            alert("成功！");
+            location.href = "/register_ok";
+            return false;
+        }else {
+            alert(rd.msg);
+            $("#mess").innerText("用户名或密码不正确");
         }
-    });
+    } )
+
 });

@@ -17,8 +17,14 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
+import org.springframework.validation.ObjectError;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
+
+import javax.validation.Valid;
+import java.util.List;
 
 /**
  * @Auth justinniu
@@ -43,10 +49,18 @@ public class LoginController {
     public String register(Model model) {
         return "register";
     }
+
     @RequestMapping("/hello")
     public String hello(Model model) {
+        System.out.println("cskdnvkdsnvlkn------------");
         model.addAttribute("hhh" , "123");
         return "test";
+    }
+
+    @RequestMapping("/register_ok")
+    public String register_ok()
+    {
+        return "register_ok";
     }
 
     @ResponseBody
@@ -73,9 +87,10 @@ public class LoginController {
 
         return rd;
     }
-    @ResponseBody
+    /*@ResponseBody
     @PostMapping("/doRegister")
     public ReturnData doRegister(String params) {
+        System.out.println("----------------------------");
         ReturnData rd = getReturnData();
         String methodDesc = "用户注册";
         try{
@@ -90,6 +105,27 @@ public class LoginController {
             logger.error(methodDesc + "未知错误, e {}", e);
             rd.setMsg("未知错误");
         }
+        return rd;
+    }*/
+
+    @ResponseBody
+    @PostMapping("/doRegister")
+    public ReturnData doRegister(@Valid User user, BindingResult result, Model model) {
+        ReturnData rd = getReturnData();
+        if(result.hasErrors())
+        {
+            List<ObjectError> list = result.getAllErrors();
+            StringBuffer sb = new StringBuffer();
+            for(ObjectError error : list)
+            {
+                sb.append(error.getDefaultMessage());
+                System.out.println(error.getCode()+" "+error.getArguments()+" "+error.getDefaultMessage());
+            }
+            rd.setMsg(sb.toString());
+            rd.setCode((byte)1);
+            return rd;
+        }
+        userService.registerUser(user);
         return rd;
     }
 

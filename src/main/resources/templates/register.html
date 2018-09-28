@@ -2,7 +2,7 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head lang="en">
     <meta charset="UTF-8">
-    <title>一款很漂亮的CSS3登录界面</title>
+    <title>注册界面</title>
     <!--<link href="/static/css/register.css" th:href="@{/css/register.css}" rel="stylesheet">-->
 </head>
 
@@ -10,11 +10,16 @@
 <div>
     <div class="container">
         <h1>Welcome</h1>
-        <form id="loginForm">
-            <input type="text" id="userName" name="userName" placeholder="用户名" />
-            <input type="password" id="passWord" name="passWord" placeholder="密码"/>
-            <input type="email" id="email" name="email" placeholder="邮箱"/>
-            <input type="text" id="phone" name="phone" placeholder="手机号"/>
+        <form id="loginForm"  >
+            <input type="text" id="userName" name="userName" placeholder="用户名" /><br>
+            <!--<p th:if="${#fields.hasErrors('userName')}" th:errors="*{userName}">bfg</p>-->
+
+            <input type="password" id="passWord" name="passWord" placeholder="密码"/><br>
+            <input type="email" id="email" name="email" placeholder="邮箱"/><br>
+            <input type="text" id="phone" name="phone" placeholder="手机号"/><br>
+            <!--<p th:if="${#fields.hasErrors('phone')}" th:errors="*{phone}"></p>-->
+
+
             <select id="loction" >
                 <option id="l0" value="0">请选择</option>
                 <option id="l1" value="1">A区</option>
@@ -23,32 +28,22 @@
             </select>
             <select id="locationChild">
 
-            </select>
-            <input type="text" id="alipayId" name="alipayId" placeholder="支付宝账号"/>
-            <input type="text" id="wechatId" name="wechatId" placeholder="微信号"/>
-            <input type="text" id="qqNumber" name="qqNumeber" placeholder="QQ号"/>
+            </select><br>
+            <input type="text" id="alipayId" name="alipayId" placeholder="支付宝账号"/><br>
+            <input type="text" id="wechatId" name="wechatId" placeholder="微信号"/><br>
+            <input type="text" id="qqNumber" name="qqNumber" placeholder="QQ号"/><br>
             <select id="s1" onchange="fun()">
                 <option id="p1" value="1">学生</option>
                 <option id="p2" value="2">服务者</option>
-            </select>
+            </select><br>
 
-            <input hidden type="text" id="studentId" name="studentId" placeholder="学号">
-            <input hidden type="file" id="picture" name="picture" placeholder="学号">
-            <input type="button" id="register_btn" value="注册"/>
+            <input hidden type="text" id="studentId" name="studentId" placeholder="学号"><br>
+            <input hidden type="file" id="picture" name="picture" placeholder="学号"><br>
+            <span id = "mess"></span>
+            <input type="button" id="register_btn" value="注册"/><br>
         </form>
     </div>
-    <ul>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-    </ul>
+
 </div>
 
 <script>

@@ -218,7 +218,7 @@ public class UserServiceImpl extends BaseService implements IUserService
 
     @Override
     public ReturnData registerUser(User user) {
-        String userName = "";
+        Long id = System.currentTimeMillis();
         String methodDesc = "用户注册";
         ReturnData rd = getReturnData();
         logger.info(methodDesc + "开始" + "user: {}", user);
@@ -238,10 +238,18 @@ public class UserServiceImpl extends BaseService implements IUserService
                 logger.info(methodDesc + "手机号已注册");
                 return rd;
             }
+            user.setId(id);
             user.setSalt(randomSalt());
             user.setPassWord(passwordService.encryptPassword(user.getUserName(), user.getPassWord(), user.getSalt().toString()));
             user.setCreatedAt(new Date());
             user.setUpdatedAt(new Date());
+            /*
+            ------------
+             */
+            user.setMajorId("1");
+            //user.setLocationId((byte)17);
+
+
             userMapper.insertSelective(user);
             rd.setCode(Constants.SUCCESS_CODE);
             rd.setMsg("完成");

@@ -1,5 +1,11 @@
 package com.heo.entity.mapper;
 
+import org.hibernate.validator.constraints.Email;
+import org.hibernate.validator.constraints.Length;
+import org.hibernate.validator.constraints.NotEmpty;
+
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Pattern;
 import java.util.Date;
 
 public class User {
@@ -19,6 +25,7 @@ public class User {
      *
      * @mbg.generated Fri Sep 21 16:39:41 GMT+08:00 2018
      */
+    @NotEmpty(message = "用户名不能为空！")
     private String userName;
 
     /**
@@ -28,6 +35,8 @@ public class User {
      *
      * @mbg.generated Fri Sep 21 16:39:41 GMT+08:00 2018
      */
+    @NotEmpty(message = "密码名不能为空！")
+    @Length(min = 3, max = 6, message = "密码长度要求在3-6之间！")
     private String passWord;
 
     /**
@@ -46,6 +55,8 @@ public class User {
      *
      * @mbg.generated Fri Sep 21 16:39:41 GMT+08:00 2018
      */
+    @Email(message = "不是正确的邮箱格式！")
+    @NotEmpty(message = "邮箱不能为空！")
     private String email;
 
     /**
@@ -64,6 +75,8 @@ public class User {
      *
      * @mbg.generated Fri Sep 21 16:39:41 GMT+08:00 2018
      */
+    @NotEmpty(message = "电话不能为空！")
+    @Pattern(regexp = "^(13[0-9]|14[579]|15[0-3,5-9]|16[6]|17[0135678]|18[0-9]|19[89])\\d{8}$", message = "电话格式不对！")
     private String phone;
 
     /**
@@ -100,6 +113,7 @@ public class User {
      *
      * @mbg.generated Fri Sep 21 16:39:41 GMT+08:00 2018
      */
+    @NotEmpty(message = "微信号不能为空！")
     private String wechatId;
 
     /**
@@ -109,6 +123,7 @@ public class User {
      *
      * @mbg.generated Fri Sep 21 16:39:41 GMT+08:00 2018
      */
+    @NotEmpty(message = "QQ号不能为空！")
     private String qqNumber;
 
     /**
