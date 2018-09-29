@@ -7,7 +7,7 @@ $("#s1").change(function () {
 }),
 $("#loction").change(function () {
     var val = $("#loction option:selected").val();
-    var child = $("#locationChild");
+    var child = $("#locationId");
     child.empty();
     if (val != 0) {
         $.ajax({
@@ -30,7 +30,7 @@ $("#register_btn").click(function () {
     var passWord = $.trim($("#passWord").val());
     var email = $.trim($("#email").val());
     var phone = $.trim($("#phone").val());
-    var location_id = $("#locationChild option:selected").val();
+    var location_id = $("#locationId option:selected").val();
     var alipayId = $.trim($("#alipayId").val());
     var wechatId = $.trim($("#wechatId").val());
     var qqNumber = $.trim($("#qqNumber").val());

@@ -36,6 +36,7 @@ public class ProviderController {
     public String showExpress() {
         return "/provider/list";
     }
+
     @PostMapping("/expressList")
     @ResponseBody
     public ReturnData getExpressList(@NotNull String params) {

@@ -23,7 +23,10 @@ $("#login_btn").click(function () {
 
         success : function (rd) {
             if (rd.code == 1) {
-                window.location.href = "/express";
+                if(rd.msg == 1)
+                    window.location.href = "/user";//用户
+                else
+                    window.location.href = "/userB";//跑腿
             }else {
                 //$("#mess").innerText("用户名或密码不正确");
                 alert("用户名或密码不正确");

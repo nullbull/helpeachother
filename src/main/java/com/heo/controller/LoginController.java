@@ -52,7 +52,6 @@ public class LoginController {
 
     @RequestMapping("/hello")
     public String hello(Model model) {
-        System.out.println("cskdnvkdsnvlkn------------");
         model.addAttribute("hhh" , "123");
         return "test";
     }
@@ -67,6 +66,8 @@ public class LoginController {
     @PostMapping("/login")
     public ReturnData ajaxLogin(String userName, String passWord, Boolean rememberMe)
     {
+        System.out.println("-----------------------------");
+        System.out.println(passWord);
         ReturnData rd = new ReturnData();
         rd.setCode(Constants.FAIL_CODE);
         String methodDesc = "用户登陆";
@@ -74,9 +75,11 @@ public class LoginController {
             UsernamePasswordToken token = new UsernamePasswordToken(userName, passWord, rememberMe);
             Subject subject = SecurityUtils.getSubject();
             subject.login(token);
-            if (ShiroUtils.getUser() != null) {
+            User user = ShiroUtils.getUser();
+            if ( user != null ) {
                 rd.setCode(Constants.SUCCESS_CODE);
-                rd.setMsg("登陆成功");
+                /*rd.setMsg("登陆成功");*/
+                rd.setMsg(String.valueOf(user.getType()));
             }else {
                 rd.setMsg("密码不正确");
             }
@@ -154,6 +157,18 @@ public class LoginController {
         ReturnData rd = new ReturnData();
         rd.setCode(Constants.FAIL_CODE);
         return rd;
+    }
+
+    @GetMapping("/user")
+    public String user()
+    {
+        return "needer/user";
+    }
+
+    @GetMapping("/userB")
+    public String userB()
+    {
+        return "provider/userB";
     }
 
 }

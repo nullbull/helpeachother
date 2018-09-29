@@ -13,7 +13,6 @@ public class User {
      *
      * @mbg.generated Sat Sep 29 09:56:51 GMT+08:00 2018
      */
-    @NotEmpty
     private Long id;
 
     /**
@@ -82,7 +81,7 @@ public class User {
      *
      * @mbg.generated Sat Sep 29 09:56:51 GMT+08:00 2018
      */
-    @NotEmpty(message = "宿舍号不能为空！")
+
     private Byte locationId;
 
     /**
