@@ -1,5 +1,5 @@
 $(function () {
-    var list = $("#express-list");
+    var list = $("#form");
     var expressType = "";
     var beginTime = "";
     var endTime = "";
@@ -19,11 +19,14 @@ $(function () {
         success : function (rd) {
             if (rd.code == 1) {
                 for(var i = 0; i < rd.data.length; i++) {
-                    list.append("<tr><th>" + rd.data[i].nickName  + "</th>");
-                    list.append("<th>" + rd.data[i].expressName + "</th>");
-                    list.append("<th>" + rd.data[i].locationName + "</th>");
-                    list.append("<th>" + rd.data[i].price + "</th>");
-                    list.append("<th>" + rd.data[i].createdAt + "</th>");
+                    list.append("<tr>");
+                    list.append("<td>" + rd.data[i].id + "</td>");
+                    list.append("<td>" + rd.data[i].nickName  + "</td>");
+                    list.append("<td>" + rd.data[i].expressName + "</td>");
+                    list.append("<td>" + rd.data[i].locationName + "</td>");
+                    list.append("<td>" + rd.data[i].price + "</td>");
+                    list.append("<td>" + rd.data[i].createdAt + "</td>");
+                    list.append("<a href='/expressOrder/"+ rd.data[i].id + "'>抢单</a>")
                     list.append("</tr>");
                 }
             }

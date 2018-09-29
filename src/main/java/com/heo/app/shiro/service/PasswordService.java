@@ -84,20 +84,4 @@ public class PasswordService
         return new Md5Hash(username + password + salt).toHex().toString();
     }
 
-    public static void main(String[] args)
-    {
-        //System.out.println(new PasswordService().encryptPassword("admin", "admin123", "111111"));
-        //System.out.println(new PasswordService().encryptPassword("ry", "admin123", "222222"));
-        System.out.println(new PasswordService().encryptPassword("ly", "admin123", "123456"));
-        System.out.println(new PasswordService().encryptPassword("ce", "admin123", "123456"));
-        System.out.println(new PasswordService().encryptPassword("zs", "admin123", "123456"));
-        System.out.println(new PasswordService().encryptPassword("ls", "admin123", "123456"));
-        System.out.println(new PasswordService().encryptPassword("ww", "admin123", "123456"));
-        System.out.println(new PasswordService().encryptPassword("zl", "admin123", "123456"));
-        System.out.println(new PasswordService().encryptPassword("sq", "admin123", "123456"));
-        System.out.println(new PasswordService().encryptPassword("zb", "admin123", "123456"));
-        System.out.println(new PasswordService().encryptPassword("wj", "admin123", "123456"));
-        System.out.println(new PasswordService().encryptPassword("ys", "admin123", "123456"));
-        System.out.println(new PasswordService().encryptPassword("123", "123", "9258"));
-    }
 }
