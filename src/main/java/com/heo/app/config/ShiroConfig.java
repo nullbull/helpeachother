@@ -248,6 +248,7 @@ public class ShiroConfig
         filterChainDefinitionMap.put("/register_ok", "anon,captchaValidate");
         filterChainDefinitionMap.put("/publish/**", "anon,captchaValidate");
         filterChainDefinitionMap.put("/express", "anon,captchaValidate");
+        filterChainDefinitionMap.put("/expressList/**", "anon,captchaValidate");
         // 系统权限列表
         // filterChainDefinitionMap.putAll(SpringUtils.getBean(IMenuService.class).selectPermsAll());
 

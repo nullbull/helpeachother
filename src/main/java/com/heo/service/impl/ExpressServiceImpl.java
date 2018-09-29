@@ -4,8 +4,8 @@ import com.github.pagehelper.PageHelper;
 import com.heo.common.constant.Constants;
 import com.heo.common.utils.StringUtils;
 import com.heo.common.utils.security.ShiroUtils;
-import com.heo.dao.ExpressMapper;
-import com.heo.entity.dto.ExpressQureyDTO;
+import com.heo.entity.dto.ExpressAndNameDTO;
+import com.heo.entity.dto.ExpressQueryDTO;
 import com.heo.entity.mapper.Express;
 import com.heo.entity.mapper.ExpressExample;
 import com.heo.entity.mapper.ExpressOrder;
@@ -15,9 +15,9 @@ import com.heo.service.IExpressService;
 import org.apache.commons.collections.CollectionUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
+import javax.validation.constraints.NotNull;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
@@ -34,8 +34,8 @@ public class ExpressServiceImpl extends BaseService implements IExpressService {
 
     private Logger logger = LoggerFactory.getLogger(ExpressServiceImpl.class);
     private static Random random = new Random(47);
-    @Value("Default.page.size")
-    private int pageSize;
+
+    private int pageSize = 10;
     @Override
     public ReturnData createExpress(Express express) {
         ReturnData rd = getReturnData();
@@ -68,7 +68,7 @@ public class ExpressServiceImpl extends BaseService implements IExpressService {
     }
 
     @Override
-    public ReturnData getExpressList(ExpressQureyDTO expressQureyDTO) {
+    public ReturnData getExpressList(@NotNull ExpressQueryDTO expressQureyDTO) {
         String methodDesc = "分页查询Express列表";
         ReturnData rd = getReturnData();
         int limit = 1;
@@ -79,39 +79,20 @@ public class ExpressServiceImpl extends BaseService implements IExpressService {
                 limit = expressQureyDTO.getLimit();
             }
             PageHelper.startPage(limit, pageSize);
-            ExpressExample example = new ExpressExample();
-            if (null != expressQureyDTO.getExpressType()) {
-                example.createCriteria().andExpressTypeEqualTo(expressQureyDTO.getExpressType());
-            }
-            if (validPrice(expressQureyDTO)) {
-                if (null != expressQureyDTO.getLowPrice()) {
-                    example.createCriteria().andPriceGreaterThanOrEqualTo(expressQureyDTO.getLowPrice());
-                }
-                if (null != expressQureyDTO.getHighPrice()) {
-                    example.createCriteria().andPriceLessThanOrEqualTo(expressQureyDTO.getHighPrice());
-                }
-            }
-
-            if (validTime(expressQureyDTO)) {
-                if (null != expressQureyDTO.getBeginTime()) {
-                    example.createCriteria().andCreatedAtGreaterThanOrEqualTo(expressQureyDTO.getBeginTime());
-                }
-                if (null != expressQureyDTO.getEndTime()) {
-                    example.createCriteria().andCreatedAtLessThanOrEqualTo(expressQureyDTO.getEndTime());
-                }
-            }
-            List<Express> expressList = expressMapper.selectByExample(example);
+            List<ExpressAndNameDTO> expressList = expressMapper.selectByExpressQureyDTO(expressQureyDTO);
             List<ExpressVO> expressVOList = expressList.stream().map(e ->{
                 ExpressVO expressVO = new ExpressVO();
                 expressVO.setCreatedAt(e.getCreatedAt());
                 expressVO.setExpressName(Constants.EXPRESS_INFO.get(e.getExpressType()));
                 expressVO.setMessage(e.getMessage());
                 expressVO.setPrice(e.getPrice());
-                expressVO.setNickName(random.nextInt()+"");
+                expressVO.setNickName( null == e.getNickName() ? e.getUserName() + "@" + random.nextInt(10000) : e.getNickName());
+                expressVO.setLocationName(null == e.getLocationName() ? "" : e.getLocationName());
                 return expressVO;
             }).collect(Collectors.toList());
             rd.setMsg("完成");
             rd.setCode(Constants.SUCCESS_CODE);
+            rd.setData(expressVOList);
             logger.info(methodDesc + "完成>>>>>>>>>>>>>>>> expressVOList:{}", expressVOList);
         } catch (Exception e) {
              rd.setMsg("未知系统异常");
@@ -211,7 +192,7 @@ public class ExpressServiceImpl extends BaseService implements IExpressService {
      * @param qureyDTO
      * @return
      */
-    private boolean validTime(ExpressQureyDTO qureyDTO) {
+    private boolean validTime(ExpressQueryDTO qureyDTO) {
         if (null != qureyDTO.getBeginTime() && null != qureyDTO.getEndTime()) {
             if (qureyDTO.getEndTime().getTime() > qureyDTO.getBeginTime().getTime()) {
                 return true;
@@ -220,7 +201,7 @@ public class ExpressServiceImpl extends BaseService implements IExpressService {
         }
         return true;
     }
-    private boolean validPrice(ExpressQureyDTO qureyDTO) {
+    private boolean validPrice(ExpressQueryDTO qureyDTO) {
         if (null != qureyDTO.getLowPrice() && null != qureyDTO.getHighPrice()) {
             if (qureyDTO.getLowPrice().compareTo(qureyDTO.getHighPrice()) == 1) {
                 return true;

@@ -1,5 +1,6 @@
 package com.heo.entity.vo;
 
+import com.heo.entity.mapper.Express;
 import lombok.Data;
 
 import java.math.BigDecimal;
@@ -11,7 +12,8 @@ import java.util.Date;
  * @Desc
  */
 @Data
-public class ExpressVO {
+public class ExpressVO  {
+    private String locationName;
     private String nickName;
     private String expressName;
     private BigDecimal price;

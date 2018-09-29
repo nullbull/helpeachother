@@ -1,5 +1,7 @@
 package com.heo.dao;
 
+import com.heo.entity.dto.ExpressAndNameDTO;
+import com.heo.entity.dto.ExpressQueryDTO;
 import com.heo.entity.mapper.Express;
 import com.heo.entity.mapper.ExpressExample;
 import java.util.List;
@@ -93,4 +95,6 @@ public interface ExpressMapper {
      * @mbg.generated Fri Sep 28 12:16:46 GMT+08:00 2018
      */
     int updateByPrimaryKey(Express record);
+
+    List<ExpressAndNameDTO> selectByExpressQureyDTO(ExpressQueryDTO qureyDTO);
 }

@@ -76,13 +76,13 @@ spring:
   aop:
     auto: true
 
-
-mybatis-plus:
+mybatis:
   #实体类所做包
   type-aliases-package: com.heo.entity.mapper
   #mapper.xml所在位置
   mapper-locations: classpath:mappers/*.xml
-
+  configuration:
+    map-underscore-to-camel-case: true
 # 分页配置
 pagehelper:
   helper-dialect: mysql

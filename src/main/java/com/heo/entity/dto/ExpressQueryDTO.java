@@ -12,7 +12,7 @@ import java.util.Date;
  * @Desc
  */
 @Data
-public class ExpressQureyDTO {
+public class ExpressQueryDTO {
     private Byte expressType;
     @Past
     private Date beginTime;
