@@ -1,5 +1,8 @@
 package com.heo.entity.mapper;
 
+import org.hibernate.validator.constraints.Email;
+import org.hibernate.validator.constraints.NotEmpty;
+
 import java.util.Date;
 
 public class User {
@@ -10,6 +13,7 @@ public class User {
      *
      * @mbg.generated Sat Sep 29 09:56:51 GMT+08:00 2018
      */
+    @NotEmpty
     private Long id;
 
     /**
@@ -19,6 +23,7 @@ public class User {
      *
      * @mbg.generated Sat Sep 29 09:56:51 GMT+08:00 2018
      */
+    @NotEmpty(message = "用户名不能为空！")
     private String userName;
 
     /**
@@ -28,6 +33,7 @@ public class User {
      *
      * @mbg.generated Sat Sep 29 09:56:51 GMT+08:00 2018
      */
+    @NotEmpty(message = "密码不能为空！")
     private String passWord;
 
     /**
@@ -46,6 +52,7 @@ public class User {
      *
      * @mbg.generated Sat Sep 29 09:56:51 GMT+08:00 2018
      */
+    @Email(message = "邮箱格式不正确！")
     private String email;
 
     /**
@@ -55,6 +62,7 @@ public class User {
      *
      * @mbg.generated Sat Sep 29 09:56:51 GMT+08:00 2018
      */
+    @NotEmpty(message = "专业不能为空！")
     private String majorId;
 
     /**
@@ -64,6 +72,7 @@ public class User {
      *
      * @mbg.generated Sat Sep 29 09:56:51 GMT+08:00 2018
      */
+    @NotEmpty(message = "手机号不能为空！")
     private String phone;
 
     /**
@@ -73,6 +82,7 @@ public class User {
      *
      * @mbg.generated Sat Sep 29 09:56:51 GMT+08:00 2018
      */
+    @NotEmpty(message = "宿舍号不能为空！")
     private Byte locationId;
 
     /**
@@ -91,6 +101,7 @@ public class User {
      *
      * @mbg.generated Sat Sep 29 09:56:51 GMT+08:00 2018
      */
+    @NotEmpty(message = "支付宝号不能为空")
     private String alipayId;
 
     /**
@@ -100,6 +111,7 @@ public class User {
      *
      * @mbg.generated Sat Sep 29 09:56:51 GMT+08:00 2018
      */
+    @NotEmpty(message = "支付宝号不能为空！")
     private String wechatId;
 
     /**
@@ -109,6 +121,7 @@ public class User {
      *
      * @mbg.generated Sat Sep 29 09:56:51 GMT+08:00 2018
      */
+    @NotEmpty(message = "QQ号不能为空！")
     private String qqNumber;
 
     /**

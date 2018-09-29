@@ -84,7 +84,6 @@ public class LoginController {
             logger.error(methodDesc + "未知错误, e {}", e);
             rd.setMsg("未知错误");
         }
-
         return rd;
     }
     /*@ResponseBody

@@ -25,7 +25,8 @@ $("#login_btn").click(function () {
             if (rd.code == 1) {
                 window.location.href = "/express";
             }else {
-                $("#mess").innerText("用户名或密码不正确");
+                //$("#mess").innerText("用户名或密码不正确");
+                alert("用户名或密码不正确");
             }
         }
     });
