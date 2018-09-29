@@ -2,6 +2,7 @@ package com.heo.service.impl;
 
 import com.github.pagehelper.PageHelper;
 import com.heo.common.constant.Constants;
+import com.heo.common.utils.security.ShiroUtils;
 import com.heo.entity.mapper.Express;
 import com.heo.entity.mapper.ExpressOrder;
 import com.heo.entity.mapper.ExpressOrderExample;
@@ -30,19 +31,35 @@ public class ExpressOrderServiceImpl extends BaseService implements IExpressOrde
 
     /**
      * 创建快递代送单
-     * @param expressOrder
+     * @param   id
      * @return
      */
     @Override
-    public ReturnData createExpressOrder(ExpressOrder expressOrder) {
+    public ReturnData createExpressOrder(@NotNull Long id) {
         ReturnData rd = getReturnData();
         String methodDesc = "创建快递代送单";
         try {
-            if (null == expressOrder.getNeederId() || null == expressOrder.getProviderId() || null == expressOrder.getPrice()) {
-                rd.setMsg("关键信息不能为空");
-                logger.info(methodDesc + "失败 + expressOrder : {}", expressOrder);
+            logger.info(methodDesc + "开始>>>>>>>>>>>>>>>>>>>>>>>>id:{}", id);
+            Express express = expressMapper.selectByPrimaryKey(id);
+            ExpressOrder expressOrder = new ExpressOrder();
+            if (null == express) {
+                rd.setMsg("代送信息不存在");
+                logger.info(methodDesc + "失败 >>>>>>>>>>>>>>>>>>>>>>>> id:{} 不存在", id);
                 return rd;
             }
+            if (null == ShiroUtils.getUser()) {
+                rd.setMsg("未登录");
+                logger.info(methodDesc + "失败 >>>>>>>>>>>>>>>>>>>>>>>>>> 用户未登录", id);
+                return rd;
+            }
+            //数据封装
+            expressOrder.setExpressId(express.getId());
+            expressOrder.setStatus(Constants.ORDER_NEW);
+            expressOrder.setNeederId(express.getUserId());
+            expressOrder.setProviderId(ShiroUtils.getUserId());
+            expressOrder.setPrice(express.getPrice());
+            expressOrder.setCreatedAt(new Date());
+
             //todo 不想让某人接单，用户可以设置黑名单
             expressOrderMapper.insertSelective(expressOrder);
             rd.setMsg("完成");

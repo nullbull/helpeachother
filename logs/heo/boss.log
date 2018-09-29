@@ -1879,3 +1879,213 @@ Caused by: java.sql.SQLException: Field 'created_at' doesn't have a default valu
 12:07:48.233 [http-nio-8080-exec-6] DEBUG com.heo.dao.ExpressInfoMapper.getAllExpressInfo - ==> Parameters: 
 12:07:48.235 [http-nio-8080-exec-6] DEBUG com.heo.dao.ExpressInfoMapper.getAllExpressInfo - <==      Total: 7
 12:07:48.236 [http-nio-8080-exec-6] INFO  com.heo.controller.ExpressInfoController - 获取快递信息接口完成
+14:03:58.715 [main] INFO  com.heo.HelpeachotherApplication - Starting HelpeachotherApplication on LAPTOP-1M5RA4JD with PID 19192 (C:\Users\11291\Desktop\helpeachother\target\classes started by 11291 in C:\Users\11291\Desktop\helpeachother)
+14:03:58.719 [main] DEBUG com.heo.HelpeachotherApplication - Running with Spring Boot v1.5.10.RELEASE, Spring v4.3.14.RELEASE
+14:03:58.719 [main] INFO  com.heo.HelpeachotherApplication - The following profiles are active: druid
+14:03:58.891 [background-preinit] INFO  org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 5.3.6.Final
+14:04:00.166 [main] INFO  org.apache.shiro.cache.ehcache.EhCacheManager - Cache with name 'com.heo.app.shiro.realm.UserRealm.authorizationCache' does not yet exist.  Creating now.
+14:04:00.167 [main] INFO  org.apache.shiro.cache.ehcache.EhCacheManager - Added EhCache named [com.heo.app.shiro.realm.UserRealm.authorizationCache]
+14:04:00.201 [main] INFO  org.apache.shiro.cache.ehcache.EhCacheManager - Using existing EHCache named [loginRecordCache]
+14:04:02.141 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+14:04:02.142 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/8.5.27
+14:04:02.388 [localhost-startStop-1] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+14:04:04.281 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+14:04:04.292 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+14:04:04.303 [main] INFO  org.apache.tomcat.util.net.NioSelectorPool - Using a shared selector for servlet write/read
+14:04:04.326 [main] INFO  com.heo.HelpeachotherApplication - Started HelpeachotherApplication in 6.2 seconds (JVM running for 8.766)
+14:04:04.546 [http-nio-8080-exec-1] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring FrameworkServlet 'dispatcherServlet'
+14:04:04.589 [http-nio-8080-exec-1] INFO  org.apache.shiro.session.mgt.AbstractValidatingSessionManager - Enabling session validation scheduler...
+14:04:04.590 [http-nio-8080-exec-1] DEBUG com.heo.app.shiro.web.session.SpringSessionValidationScheduler - Scheduling session validation job using Spring Scheduler with session validation interval of [600000]ms...
+14:04:04.591 [http-nio-8080-exec-1] DEBUG com.heo.app.shiro.web.session.SpringSessionValidationScheduler - Session validation job successfully scheduled with Spring Scheduler.
+14:04:05.591 [pool-1-thread-1] INFO  com.heo.app.shiro.web.session.OnlineWebSessionManager - invalidation sessions...
+14:04:05.627 [http-nio-8080-exec-2] INFO  com.heo.controller.ProviderController - 查询Express列表接口开始 >>>>>>>>>>>>>>>>>>  params:{"expressType":"","beginTime":"","endTime":"","lowPrice":"","highPrice":""}
+14:04:05.695 [pool-1-thread-1] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+14:04:05.727 [http-nio-8080-exec-2] INFO  com.heo.service.impl.ExpressServiceImpl - 分页查询Express列表开始>>>>>>>>>> expressQueryDTO:ExpressQueryDTO(expressType=null, beginTime=null, endTime=null, lowPrice=null, highPrice=null, limit=null)
+14:04:05.878 [pool-1-thread-1] DEBUG com.heo.dao.UserOnlineMapper.selectOnlineByExpired - ==>  Preparing: SELECT * FROM user_online o WHERE o.last_access_time <= ? ORDER BY o.last_access_time ASC 
+14:04:05.881 [http-nio-8080-exec-2] DEBUG com.heo.dao.ExpressMapper.selectByExpressQureyDTO - ==>  Preparing: select a.id, a.user_id as userId, a.phone, a.express_type as expressType, a.get_code, a.price, a.location_id as locationId, a.message, a.created_at, a.updated_at as updatedAt, a.status, b.user_name as userName, b.nick_name as nickName, c.name as locationName from express a left join user b on a.user_id = b.id left join location_info c on a.location_id = c.id 
+14:04:05.898 [http-nio-8080-exec-2] DEBUG com.heo.dao.ExpressMapper.selectByExpressQureyDTO - ==> Parameters: 
+14:04:05.898 [pool-1-thread-1] DEBUG com.heo.dao.UserOnlineMapper.selectOnlineByExpired - ==> Parameters: 2018-09-29 13:34:05(String)
+14:04:05.918 [http-nio-8080-exec-2] DEBUG com.heo.dao.ExpressMapper.selectByExpressQureyDTO - <==      Total: 2
+14:04:05.928 [http-nio-8080-exec-2] INFO  com.heo.service.impl.ExpressServiceImpl - 分页查询Express列表完成>>>>>>>>>>>>>>>> expressVOList:[ExpressVO(locationName=A1, nickName=zwt@9258, expressName=圆通快递, price=2.50, message=尽快, createdAt=Mon Sep 24 15:49:48 GMT+08:00 2018), ExpressVO(locationName=A1, nickName=zwt@555, expressName=京东快递, price=2.50, message=hhh, createdAt=Fri Sep 28 15:39:48 GMT+08:00 2018)]
+14:06:14.210 [http-nio-8080-exec-1] INFO  com.heo.controller.ProviderController - 查询Express列表接口开始 >>>>>>>>>>>>>>>>>>  params:{"expressType":"","beginTime":"","endTime":"","lowPrice":"","highPrice":""}
+14:06:14.211 [http-nio-8080-exec-1] INFO  com.heo.service.impl.ExpressServiceImpl - 分页查询Express列表开始>>>>>>>>>> expressQueryDTO:ExpressQueryDTO(expressType=null, beginTime=null, endTime=null, lowPrice=null, highPrice=null, limit=null)
+14:06:14.217 [http-nio-8080-exec-1] DEBUG com.heo.dao.ExpressMapper.selectByExpressQureyDTO - ==>  Preparing: select a.id, a.user_id as userId, a.phone, a.express_type as expressType, a.get_code, a.price, a.location_id as locationId, a.message, a.created_at, a.updated_at as updatedAt, a.status, b.user_name as userName, b.nick_name as nickName, c.name as locationName from express a left join user b on a.user_id = b.id left join location_info c on a.location_id = c.id 
+14:06:14.218 [http-nio-8080-exec-1] DEBUG com.heo.dao.ExpressMapper.selectByExpressQureyDTO - ==> Parameters: 
+14:06:14.222 [http-nio-8080-exec-1] DEBUG com.heo.dao.ExpressMapper.selectByExpressQureyDTO - <==      Total: 2
+14:06:14.223 [http-nio-8080-exec-1] INFO  com.heo.service.impl.ExpressServiceImpl - 分页查询Express列表完成>>>>>>>>>>>>>>>> expressVOList:[ExpressVO(locationName=A1, nickName=zwt@6693, expressName=圆通快递, price=2.50, message=尽快, createdAt=Mon Sep 24 15:49:48 GMT+08:00 2018), ExpressVO(locationName=A1, nickName=zwt@1861, expressName=京东快递, price=2.50, message=hhh, createdAt=Fri Sep 28 15:39:48 GMT+08:00 2018)]
+14:07:59.343 [main] INFO  com.heo.HelpeachotherApplication - Starting HelpeachotherApplication on LAPTOP-1M5RA4JD with PID 25312 (C:\Users\11291\Desktop\helpeachother\target\classes started by 11291 in C:\Users\11291\Desktop\helpeachother)
+14:07:59.349 [main] DEBUG com.heo.HelpeachotherApplication - Running with Spring Boot v1.5.10.RELEASE, Spring v4.3.14.RELEASE
+14:07:59.349 [main] INFO  com.heo.HelpeachotherApplication - The following profiles are active: druid
+14:07:59.570 [background-preinit] INFO  org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 5.3.6.Final
+14:08:00.941 [main] INFO  org.apache.shiro.cache.ehcache.EhCacheManager - Cache with name 'com.heo.app.shiro.realm.UserRealm.authorizationCache' does not yet exist.  Creating now.
+14:08:00.942 [main] INFO  org.apache.shiro.cache.ehcache.EhCacheManager - Added EhCache named [com.heo.app.shiro.realm.UserRealm.authorizationCache]
+14:08:00.966 [main] INFO  org.apache.shiro.cache.ehcache.EhCacheManager - Using existing EHCache named [loginRecordCache]
+14:08:02.567 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+14:08:02.568 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/8.5.27
+14:08:02.785 [localhost-startStop-1] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+14:08:04.344 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+14:08:04.354 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+14:08:04.364 [main] INFO  org.apache.tomcat.util.net.NioSelectorPool - Using a shared selector for servlet write/read
+14:08:04.388 [main] INFO  com.heo.HelpeachotherApplication - Started HelpeachotherApplication in 5.729 seconds (JVM running for 7.152)
+14:08:07.785 [http-nio-8080-exec-1] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring FrameworkServlet 'dispatcherServlet'
+14:08:07.832 [http-nio-8080-exec-1] INFO  org.apache.shiro.session.mgt.AbstractValidatingSessionManager - Enabling session validation scheduler...
+14:08:07.832 [http-nio-8080-exec-1] DEBUG com.heo.app.shiro.web.session.SpringSessionValidationScheduler - Scheduling session validation job using Spring Scheduler with session validation interval of [600000]ms...
+14:08:07.833 [http-nio-8080-exec-1] DEBUG com.heo.app.shiro.web.session.SpringSessionValidationScheduler - Session validation job successfully scheduled with Spring Scheduler.
+14:08:08.713 [http-nio-8080-exec-5] INFO  com.heo.controller.ProviderController - 查询Express列表接口开始 >>>>>>>>>>>>>>>>>>  params:{"expressType":"","beginTime":"","endTime":"","lowPrice":"","highPrice":""}
+14:08:08.832 [http-nio-8080-exec-5] INFO  com.heo.service.impl.ExpressServiceImpl - 分页查询Express列表开始>>>>>>>>>> expressQueryDTO:ExpressQueryDTO(expressType=null, beginTime=null, endTime=null, lowPrice=null, highPrice=null, limit=null)
+14:08:08.835 [pool-1-thread-1] INFO  com.heo.app.shiro.web.session.OnlineWebSessionManager - invalidation sessions...
+14:08:08.914 [pool-1-thread-1] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+14:08:09.069 [http-nio-8080-exec-5] DEBUG com.heo.dao.ExpressMapper.selectByExpressQureyDTO - ==>  Preparing: select a.id, a.user_id as userId, a.phone, a.express_type as expressType, a.get_code, a.price, a.location_id as locationId, a.message, a.created_at, a.updated_at as updatedAt, a.status, b.user_name as userName, b.nick_name as nickName, c.name as locationName from express a left join user b on a.user_id = b.id left join location_info c on a.location_id = c.id 
+14:08:09.071 [pool-1-thread-1] DEBUG com.heo.dao.UserOnlineMapper.selectOnlineByExpired - ==>  Preparing: SELECT * FROM user_online o WHERE o.last_access_time <= ? ORDER BY o.last_access_time ASC 
+14:08:09.087 [http-nio-8080-exec-5] DEBUG com.heo.dao.ExpressMapper.selectByExpressQureyDTO - ==> Parameters: 
+14:08:09.087 [pool-1-thread-1] DEBUG com.heo.dao.UserOnlineMapper.selectOnlineByExpired - ==> Parameters: 2018-09-29 13:38:08(String)
+14:08:09.106 [http-nio-8080-exec-5] DEBUG com.heo.dao.ExpressMapper.selectByExpressQureyDTO - <==      Total: 2
+14:08:09.114 [http-nio-8080-exec-5] INFO  com.heo.service.impl.ExpressServiceImpl - 分页查询Express列表完成>>>>>>>>>>>>>>>> expressVOList:[ExpressVO(locationName=A1, nickName=zwt@9258, expressName=圆通快递, price=2.50, message=尽快, createdAt=Mon Sep 24 15:49:48 GMT+08:00 2018), ExpressVO(locationName=A1, nickName=zwt@555, expressName=京东快递, price=2.50, message=hhh, createdAt=Fri Sep 28 15:39:48 GMT+08:00 2018)]
+14:08:19.744 [http-nio-8080-exec-7] INFO  com.heo.controller.ProviderController - 查询Express列表接口开始 >>>>>>>>>>>>>>>>>>  params:{"expressType":"","beginTime":"","endTime":"","lowPrice":"","highPrice":""}
+14:08:19.745 [http-nio-8080-exec-7] INFO  com.heo.service.impl.ExpressServiceImpl - 分页查询Express列表开始>>>>>>>>>> expressQueryDTO:ExpressQueryDTO(expressType=null, beginTime=null, endTime=null, lowPrice=null, highPrice=null, limit=null)
+14:08:19.746 [http-nio-8080-exec-7] DEBUG com.heo.dao.ExpressMapper.selectByExpressQureyDTO - ==>  Preparing: select a.id, a.user_id as userId, a.phone, a.express_type as expressType, a.get_code, a.price, a.location_id as locationId, a.message, a.created_at, a.updated_at as updatedAt, a.status, b.user_name as userName, b.nick_name as nickName, c.name as locationName from express a left join user b on a.user_id = b.id left join location_info c on a.location_id = c.id 
+14:08:19.747 [http-nio-8080-exec-7] DEBUG com.heo.dao.ExpressMapper.selectByExpressQureyDTO - ==> Parameters: 
+14:08:19.752 [http-nio-8080-exec-7] DEBUG com.heo.dao.ExpressMapper.selectByExpressQureyDTO - <==      Total: 2
+14:08:19.753 [http-nio-8080-exec-7] INFO  com.heo.service.impl.ExpressServiceImpl - 分页查询Express列表完成>>>>>>>>>>>>>>>> expressVOList:[ExpressVO(locationName=A1, nickName=zwt@6693, expressName=圆通快递, price=2.50, message=尽快, createdAt=Mon Sep 24 15:49:48 GMT+08:00 2018), ExpressVO(locationName=A1, nickName=zwt@1861, expressName=京东快递, price=2.50, message=hhh, createdAt=Fri Sep 28 15:39:48 GMT+08:00 2018)]
+14:08:44.103 [http-nio-8080-exec-1] INFO  com.heo.controller.ProviderController - 查询Express列表接口开始 >>>>>>>>>>>>>>>>>>  params:{"expressType":"","beginTime":"","endTime":"","lowPrice":"","highPrice":""}
+14:08:44.104 [http-nio-8080-exec-1] INFO  com.heo.service.impl.ExpressServiceImpl - 分页查询Express列表开始>>>>>>>>>> expressQueryDTO:ExpressQueryDTO(expressType=null, beginTime=null, endTime=null, lowPrice=null, highPrice=null, limit=null)
+14:08:44.105 [http-nio-8080-exec-1] DEBUG com.heo.dao.ExpressMapper.selectByExpressQureyDTO - ==>  Preparing: select a.id, a.user_id as userId, a.phone, a.express_type as expressType, a.get_code, a.price, a.location_id as locationId, a.message, a.created_at, a.updated_at as updatedAt, a.status, b.user_name as userName, b.nick_name as nickName, c.name as locationName from express a left join user b on a.user_id = b.id left join location_info c on a.location_id = c.id 
+14:08:44.106 [http-nio-8080-exec-1] DEBUG com.heo.dao.ExpressMapper.selectByExpressQureyDTO - ==> Parameters: 
+14:08:44.111 [http-nio-8080-exec-1] DEBUG com.heo.dao.ExpressMapper.selectByExpressQureyDTO - <==      Total: 2
+14:08:44.112 [http-nio-8080-exec-1] INFO  com.heo.service.impl.ExpressServiceImpl - 分页查询Express列表完成>>>>>>>>>>>>>>>> expressVOList:[ExpressVO(locationName=A1, nickName=zwt@961, expressName=圆通快递, price=2.50, message=尽快, createdAt=Mon Sep 24 15:49:48 GMT+08:00 2018), ExpressVO(locationName=A1, nickName=zwt@429, expressName=京东快递, price=2.50, message=hhh, createdAt=Fri Sep 28 15:39:48 GMT+08:00 2018)]
+14:09:17.594 [main] INFO  com.heo.HelpeachotherApplication - Starting HelpeachotherApplication on LAPTOP-1M5RA4JD with PID 12836 (C:\Users\11291\Desktop\helpeachother\target\classes started by 11291 in C:\Users\11291\Desktop\helpeachother)
+14:09:17.599 [main] DEBUG com.heo.HelpeachotherApplication - Running with Spring Boot v1.5.10.RELEASE, Spring v4.3.14.RELEASE
+14:09:17.600 [main] INFO  com.heo.HelpeachotherApplication - The following profiles are active: druid
+14:09:17.880 [background-preinit] INFO  org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 5.3.6.Final
+14:09:19.357 [main] INFO  org.apache.shiro.cache.ehcache.EhCacheManager - Cache with name 'com.heo.app.shiro.realm.UserRealm.authorizationCache' does not yet exist.  Creating now.
+14:09:19.358 [main] INFO  org.apache.shiro.cache.ehcache.EhCacheManager - Added EhCache named [com.heo.app.shiro.realm.UserRealm.authorizationCache]
+14:09:19.384 [main] INFO  org.apache.shiro.cache.ehcache.EhCacheManager - Using existing EHCache named [loginRecordCache]
+14:09:21.135 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+14:09:21.136 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/8.5.27
+14:09:21.339 [localhost-startStop-1] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+14:09:23.143 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+14:09:23.156 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+14:09:23.171 [main] INFO  org.apache.tomcat.util.net.NioSelectorPool - Using a shared selector for servlet write/read
+14:09:23.203 [main] INFO  com.heo.HelpeachotherApplication - Started HelpeachotherApplication in 6.33 seconds (JVM running for 7.738)
+14:09:23.328 [http-nio-8080-exec-1] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring FrameworkServlet 'dispatcherServlet'
+14:09:23.383 [http-nio-8080-exec-1] INFO  org.apache.shiro.session.mgt.AbstractValidatingSessionManager - Enabling session validation scheduler...
+14:09:23.383 [http-nio-8080-exec-1] DEBUG com.heo.app.shiro.web.session.SpringSessionValidationScheduler - Scheduling session validation job using Spring Scheduler with session validation interval of [600000]ms...
+14:09:23.384 [http-nio-8080-exec-1] DEBUG com.heo.app.shiro.web.session.SpringSessionValidationScheduler - Session validation job successfully scheduled with Spring Scheduler.
+14:09:24.336 [http-nio-8080-exec-4] INFO  com.heo.controller.ProviderController - 查询Express列表接口开始 >>>>>>>>>>>>>>>>>>  params:{"expressType":"","beginTime":"","endTime":"","lowPrice":"","highPrice":""}
+14:09:24.387 [pool-1-thread-1] INFO  com.heo.app.shiro.web.session.OnlineWebSessionManager - invalidation sessions...
+14:09:24.482 [http-nio-8080-exec-4] INFO  com.heo.service.impl.ExpressServiceImpl - 分页查询Express列表开始>>>>>>>>>> expressQueryDTO:ExpressQueryDTO(expressType=null, beginTime=null, endTime=null, lowPrice=null, highPrice=null, limit=null)
+14:09:24.502 [pool-1-thread-1] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+14:09:24.705 [pool-1-thread-1] DEBUG com.heo.dao.UserOnlineMapper.selectOnlineByExpired - ==>  Preparing: SELECT * FROM user_online o WHERE o.last_access_time <= ? ORDER BY o.last_access_time ASC 
+14:09:24.705 [http-nio-8080-exec-4] DEBUG com.heo.dao.ExpressMapper.selectByExpressQureyDTO - ==>  Preparing: select a.id, a.user_id as userId, a.phone, a.express_type as expressType, a.get_code, a.price, a.location_id as locationId, a.message, a.created_at, a.updated_at as updatedAt, a.status, b.user_name as userName, b.nick_name as nickName, c.name as locationName from express a left join user b on a.user_id = b.id left join location_info c on a.location_id = c.id 
+14:09:24.735 [http-nio-8080-exec-4] DEBUG com.heo.dao.ExpressMapper.selectByExpressQureyDTO - ==> Parameters: 
+14:09:24.735 [pool-1-thread-1] DEBUG com.heo.dao.UserOnlineMapper.selectOnlineByExpired - ==> Parameters: 2018-09-29 13:39:24(String)
+14:09:24.762 [http-nio-8080-exec-4] DEBUG com.heo.dao.ExpressMapper.selectByExpressQureyDTO - <==      Total: 2
+14:09:24.774 [http-nio-8080-exec-4] INFO  com.heo.service.impl.ExpressServiceImpl - 分页查询Express列表完成>>>>>>>>>>>>>>>> expressVOList:[ExpressVO(locationName=A1, nickName=zwt@9258, expressName=圆通快递, price=2.50, message=尽快, createdAt=Mon Sep 24 15:49:48 GMT+08:00 2018), ExpressVO(locationName=A1, nickName=zwt@555, expressName=京东快递, price=2.50, message=hhh, createdAt=Fri Sep 28 15:39:48 GMT+08:00 2018)]
+14:11:08.382 [main] INFO  com.heo.HelpeachotherApplication - Starting HelpeachotherApplication on LAPTOP-1M5RA4JD with PID 22492 (C:\Users\11291\Desktop\helpeachother\target\classes started by 11291 in C:\Users\11291\Desktop\helpeachother)
+14:11:08.390 [main] DEBUG com.heo.HelpeachotherApplication - Running with Spring Boot v1.5.10.RELEASE, Spring v4.3.14.RELEASE
+14:11:08.391 [main] INFO  com.heo.HelpeachotherApplication - The following profiles are active: druid
+14:11:08.761 [background-preinit] INFO  org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 5.3.6.Final
+14:11:10.275 [main] INFO  org.apache.shiro.cache.ehcache.EhCacheManager - Cache with name 'com.heo.app.shiro.realm.UserRealm.authorizationCache' does not yet exist.  Creating now.
+14:11:10.276 [main] INFO  org.apache.shiro.cache.ehcache.EhCacheManager - Added EhCache named [com.heo.app.shiro.realm.UserRealm.authorizationCache]
+14:11:10.298 [main] INFO  org.apache.shiro.cache.ehcache.EhCacheManager - Using existing EHCache named [loginRecordCache]
+14:11:12.211 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+14:11:12.212 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/8.5.27
+14:11:12.436 [localhost-startStop-1] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+14:11:14.379 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+14:11:14.393 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+14:11:14.406 [main] INFO  org.apache.tomcat.util.net.NioSelectorPool - Using a shared selector for servlet write/read
+14:11:14.436 [main] INFO  com.heo.HelpeachotherApplication - Started HelpeachotherApplication in 6.719 seconds (JVM running for 8.285)
+14:11:21.709 [http-nio-8080-exec-1] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring FrameworkServlet 'dispatcherServlet'
+14:11:21.771 [http-nio-8080-exec-1] INFO  org.apache.shiro.session.mgt.AbstractValidatingSessionManager - Enabling session validation scheduler...
+14:11:21.772 [http-nio-8080-exec-1] DEBUG com.heo.app.shiro.web.session.SpringSessionValidationScheduler - Scheduling session validation job using Spring Scheduler with session validation interval of [600000]ms...
+14:11:21.773 [http-nio-8080-exec-1] DEBUG com.heo.app.shiro.web.session.SpringSessionValidationScheduler - Session validation job successfully scheduled with Spring Scheduler.
+14:11:22.754 [http-nio-8080-exec-4] INFO  com.heo.controller.ProviderController - 查询Express列表接口开始 >>>>>>>>>>>>>>>>>>  params:{"expressType":"","beginTime":"","endTime":"","lowPrice":"","highPrice":""}
+14:11:22.773 [pool-1-thread-1] INFO  com.heo.app.shiro.web.session.OnlineWebSessionManager - invalidation sessions...
+14:11:22.867 [pool-1-thread-1] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+14:11:22.878 [http-nio-8080-exec-4] INFO  com.heo.service.impl.ExpressServiceImpl - 分页查询Express列表开始>>>>>>>>>> expressQueryDTO:ExpressQueryDTO(expressType=null, beginTime=null, endTime=null, lowPrice=null, highPrice=null, limit=null)
+14:11:23.047 [pool-1-thread-1] DEBUG com.heo.dao.UserOnlineMapper.selectOnlineByExpired - ==>  Preparing: SELECT * FROM user_online o WHERE o.last_access_time <= ? ORDER BY o.last_access_time ASC 
+14:11:23.050 [http-nio-8080-exec-4] DEBUG com.heo.dao.ExpressMapper.selectByExpressQureyDTO - ==>  Preparing: select a.id, a.user_id as userId, a.phone, a.express_type as expressType, a.get_code, a.price, a.location_id as locationId, a.message, a.created_at, a.updated_at as updatedAt, a.status, b.user_name as userName, b.nick_name as nickName, c.name as locationName from express a left join user b on a.user_id = b.id left join location_info c on a.location_id = c.id 
+14:11:23.066 [http-nio-8080-exec-4] DEBUG com.heo.dao.ExpressMapper.selectByExpressQureyDTO - ==> Parameters: 
+14:11:23.066 [pool-1-thread-1] DEBUG com.heo.dao.UserOnlineMapper.selectOnlineByExpired - ==> Parameters: 2018-09-29 13:41:22(String)
+14:11:23.088 [http-nio-8080-exec-4] DEBUG com.heo.dao.ExpressMapper.selectByExpressQureyDTO - <==      Total: 2
+14:11:23.100 [http-nio-8080-exec-4] INFO  com.heo.service.impl.ExpressServiceImpl - 分页查询Express列表完成>>>>>>>>>>>>>>>> expressVOList:[ExpressVO(locationName=A1, nickName=zwt@9258, expressName=圆通快递, price=2.50, message=尽快, createdAt=Mon Sep 24 15:49:48 GMT+08:00 2018), ExpressVO(locationName=A1, nickName=zwt@555, expressName=京东快递, price=2.50, message=hhh, createdAt=Fri Sep 28 15:39:48 GMT+08:00 2018)]
+14:11:55.169 [main] INFO  com.heo.HelpeachotherApplication - Starting HelpeachotherApplication on LAPTOP-1M5RA4JD with PID 1812 (C:\Users\11291\Desktop\helpeachother\target\classes started by 11291 in C:\Users\11291\Desktop\helpeachother)
+14:11:55.174 [main] DEBUG com.heo.HelpeachotherApplication - Running with Spring Boot v1.5.10.RELEASE, Spring v4.3.14.RELEASE
+14:11:55.174 [main] INFO  com.heo.HelpeachotherApplication - The following profiles are active: druid
+14:11:55.433 [background-preinit] INFO  org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 5.3.6.Final
+14:11:56.579 [main] INFO  org.apache.shiro.cache.ehcache.EhCacheManager - Cache with name 'com.heo.app.shiro.realm.UserRealm.authorizationCache' does not yet exist.  Creating now.
+14:11:56.580 [main] INFO  org.apache.shiro.cache.ehcache.EhCacheManager - Added EhCache named [com.heo.app.shiro.realm.UserRealm.authorizationCache]
+14:11:56.599 [main] INFO  org.apache.shiro.cache.ehcache.EhCacheManager - Using existing EHCache named [loginRecordCache]
+14:11:58.160 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+14:11:58.161 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/8.5.27
+14:11:58.393 [localhost-startStop-1] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+14:11:59.909 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+14:11:59.919 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+14:11:59.929 [main] INFO  org.apache.tomcat.util.net.NioSelectorPool - Using a shared selector for servlet write/read
+14:11:59.952 [main] INFO  com.heo.HelpeachotherApplication - Started HelpeachotherApplication in 5.334 seconds (JVM running for 6.772)
+14:12:04.840 [http-nio-8080-exec-1] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring FrameworkServlet 'dispatcherServlet'
+14:12:04.912 [http-nio-8080-exec-1] INFO  org.apache.shiro.session.mgt.AbstractValidatingSessionManager - Enabling session validation scheduler...
+14:12:04.912 [http-nio-8080-exec-1] DEBUG com.heo.app.shiro.web.session.SpringSessionValidationScheduler - Scheduling session validation job using Spring Scheduler with session validation interval of [600000]ms...
+14:12:04.915 [http-nio-8080-exec-1] DEBUG com.heo.app.shiro.web.session.SpringSessionValidationScheduler - Session validation job successfully scheduled with Spring Scheduler.
+14:12:05.916 [pool-1-thread-1] INFO  com.heo.app.shiro.web.session.OnlineWebSessionManager - invalidation sessions...
+14:12:05.971 [http-nio-8080-exec-5] INFO  com.heo.controller.ProviderController - 查询Express列表接口开始 >>>>>>>>>>>>>>>>>>  params:{"expressType":"","beginTime":"","endTime":"","lowPrice":"","highPrice":""}
+14:12:06.016 [pool-1-thread-1] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+14:12:06.098 [http-nio-8080-exec-5] INFO  com.heo.service.impl.ExpressServiceImpl - 分页查询Express列表开始>>>>>>>>>> expressQueryDTO:ExpressQueryDTO(expressType=null, beginTime=null, endTime=null, lowPrice=null, highPrice=null, limit=null)
+14:12:06.259 [pool-1-thread-1] DEBUG com.heo.dao.UserOnlineMapper.selectOnlineByExpired - ==>  Preparing: SELECT * FROM user_online o WHERE o.last_access_time <= ? ORDER BY o.last_access_time ASC 
+14:12:06.262 [http-nio-8080-exec-5] DEBUG com.heo.dao.ExpressMapper.selectByExpressQureyDTO - ==>  Preparing: select a.id, a.user_id as userId, a.phone, a.express_type as expressType, a.get_code, a.price, a.location_id as locationId, a.message, a.created_at, a.updated_at as updatedAt, a.status, b.user_name as userName, b.nick_name as nickName, c.name as locationName from express a left join user b on a.user_id = b.id left join location_info c on a.location_id = c.id 
+14:12:06.277 [http-nio-8080-exec-5] DEBUG com.heo.dao.ExpressMapper.selectByExpressQureyDTO - ==> Parameters: 
+14:12:06.277 [pool-1-thread-1] DEBUG com.heo.dao.UserOnlineMapper.selectOnlineByExpired - ==> Parameters: 2018-09-29 13:42:05(String)
+14:12:06.293 [http-nio-8080-exec-5] DEBUG com.heo.dao.ExpressMapper.selectByExpressQureyDTO - <==      Total: 2
+14:12:06.301 [http-nio-8080-exec-5] INFO  com.heo.service.impl.ExpressServiceImpl - 分页查询Express列表完成>>>>>>>>>>>>>>>> expressVOList:[ExpressVO(locationName=A1, nickName=zwt@9258, expressName=圆通快递, price=2.50, message=尽快, createdAt=Mon Sep 24 15:49:48 GMT+08:00 2018), ExpressVO(locationName=A1, nickName=zwt@555, expressName=京东快递, price=2.50, message=hhh, createdAt=Fri Sep 28 15:39:48 GMT+08:00 2018)]
+15:13:52.610 [main] INFO  com.heo.HelpeachotherApplication - Starting HelpeachotherApplication on LAPTOP-1M5RA4JD with PID 21444 (C:\Users\11291\Desktop\helpeachother\target\classes started by 11291 in C:\Users\11291\Desktop\helpeachother)
+15:13:52.615 [main] DEBUG com.heo.HelpeachotherApplication - Running with Spring Boot v1.5.10.RELEASE, Spring v4.3.14.RELEASE
+15:13:52.615 [main] INFO  com.heo.HelpeachotherApplication - The following profiles are active: druid
+15:13:53.043 [background-preinit] INFO  org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 5.3.6.Final
+15:13:54.536 [main] INFO  org.apache.shiro.cache.ehcache.EhCacheManager - Cache with name 'com.heo.app.shiro.realm.UserRealm.authorizationCache' does not yet exist.  Creating now.
+15:13:54.536 [main] INFO  org.apache.shiro.cache.ehcache.EhCacheManager - Added EhCache named [com.heo.app.shiro.realm.UserRealm.authorizationCache]
+15:13:54.556 [main] INFO  org.apache.shiro.cache.ehcache.EhCacheManager - Using existing EHCache named [loginRecordCache]
+15:13:56.308 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+15:13:56.309 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/8.5.27
+15:13:56.539 [localhost-startStop-1] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+15:13:58.197 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+15:13:58.207 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+15:13:58.218 [main] INFO  org.apache.tomcat.util.net.NioSelectorPool - Using a shared selector for servlet write/read
+15:13:58.243 [main] INFO  com.heo.HelpeachotherApplication - Started HelpeachotherApplication in 6.323 seconds (JVM running for 8.908)
+15:14:17.886 [http-nio-8080-exec-1] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring FrameworkServlet 'dispatcherServlet'
+15:14:17.944 [http-nio-8080-exec-1] INFO  org.apache.shiro.session.mgt.AbstractValidatingSessionManager - Enabling session validation scheduler...
+15:14:17.944 [http-nio-8080-exec-1] DEBUG com.heo.app.shiro.web.session.SpringSessionValidationScheduler - Scheduling session validation job using Spring Scheduler with session validation interval of [600000]ms...
+15:14:17.946 [http-nio-8080-exec-1] DEBUG com.heo.app.shiro.web.session.SpringSessionValidationScheduler - Session validation job successfully scheduled with Spring Scheduler.
+15:14:18.817 [http-nio-8080-exec-6] INFO  com.heo.controller.ProviderController - 查询Express列表接口开始 >>>>>>>>>>>>>>>>>>  params:{"expressType":"","beginTime":"","endTime":"","lowPrice":"","highPrice":""}
+15:14:18.909 [http-nio-8080-exec-6] INFO  com.heo.service.impl.ExpressServiceImpl - 分页查询Express列表开始>>>>>>>>>> expressQueryDTO:ExpressQueryDTO(expressType=null, beginTime=null, endTime=null, lowPrice=null, highPrice=null, limit=null)
+15:14:18.948 [pool-1-thread-1] INFO  com.heo.app.shiro.web.session.OnlineWebSessionManager - invalidation sessions...
+15:14:18.990 [pool-1-thread-1] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+15:14:19.170 [http-nio-8080-exec-6] DEBUG com.heo.dao.ExpressMapper.selectByExpressQureyDTO - ==>  Preparing: select a.id, a.user_id as userId, a.phone, a.express_type as expressType, a.get_code, a.price, a.location_id as locationId, a.message, a.created_at, a.updated_at as updatedAt, a.status, b.user_name as userName, b.nick_name as nickName, c.name as locationName from express a left join user b on a.user_id = b.id left join location_info c on a.location_id = c.id 
+15:14:19.172 [pool-1-thread-1] DEBUG com.heo.dao.UserOnlineMapper.selectOnlineByExpired - ==>  Preparing: SELECT * FROM user_online o WHERE o.last_access_time <= ? ORDER BY o.last_access_time ASC 
+15:14:19.191 [http-nio-8080-exec-6] DEBUG com.heo.dao.ExpressMapper.selectByExpressQureyDTO - ==> Parameters: 
+15:14:19.191 [pool-1-thread-1] DEBUG com.heo.dao.UserOnlineMapper.selectOnlineByExpired - ==> Parameters: 2018-09-29 14:44:18(String)
+15:14:19.215 [http-nio-8080-exec-6] DEBUG com.heo.dao.ExpressMapper.selectByExpressQureyDTO - <==      Total: 2
+15:14:19.225 [http-nio-8080-exec-6] INFO  com.heo.service.impl.ExpressServiceImpl - 分页查询Express列表完成>>>>>>>>>>>>>>>> expressVOList:[ExpressVO(id=1, locationName=A1, nickName=zwt@9258, expressName=圆通快递, price=2.50, message=尽快, createdAt=Mon Sep 24 15:49:48 GMT+08:00 2018), ExpressVO(id=2, locationName=A1, nickName=zwt@555, expressName=京东快递, price=2.50, message=hhh, createdAt=Fri Sep 28 15:39:48 GMT+08:00 2018)]
+15:14:22.636 [http-nio-8080-exec-2] INFO  com.heo.controller.ProviderController - 创建ExpressOrder接口开始 >>>>>>>>>>>>>>>>>>>> id:1
+15:14:22.636 [http-nio-8080-exec-2] INFO  com.heo.service.impl.ExpressOrderServiceImpl - 创建快递代送单开始>>>>>>>>>>>>>>>>>>>>>>>>id:1
+15:14:22.637 [http-nio-8080-exec-2] DEBUG com.heo.dao.ExpressMapper.selectByPrimaryKey - ==>  Preparing: select id, user_id, phone, express_type, get_code, price, location_id, message, created_at, updated_at, status from express where id = ? 
+15:14:22.638 [http-nio-8080-exec-2] DEBUG com.heo.dao.ExpressMapper.selectByPrimaryKey - ==> Parameters: 1(Long)
+15:14:22.641 [http-nio-8080-exec-2] DEBUG com.heo.dao.ExpressMapper.selectByPrimaryKey - <==      Total: 1
+15:14:22.643 [http-nio-8080-exec-2] INFO  com.heo.service.impl.ExpressOrderServiceImpl - 创建快递代送单失败 >>>>>>>>>>>>>>>>>>>>>>>>>> 用户未登录
+15:14:35.263 [http-nio-8080-exec-7] INFO  com.heo.controller.ProviderController - 查询Express列表接口开始 >>>>>>>>>>>>>>>>>>  params:{"expressType":"","beginTime":"","endTime":"","lowPrice":"","highPrice":""}
+15:14:35.264 [http-nio-8080-exec-7] INFO  com.heo.service.impl.ExpressServiceImpl - 分页查询Express列表开始>>>>>>>>>> expressQueryDTO:ExpressQueryDTO(expressType=null, beginTime=null, endTime=null, lowPrice=null, highPrice=null, limit=null)
+15:14:35.265 [http-nio-8080-exec-7] DEBUG com.heo.dao.ExpressMapper.selectByExpressQureyDTO - ==>  Preparing: select a.id, a.user_id as userId, a.phone, a.express_type as expressType, a.get_code, a.price, a.location_id as locationId, a.message, a.created_at, a.updated_at as updatedAt, a.status, b.user_name as userName, b.nick_name as nickName, c.name as locationName from express a left join user b on a.user_id = b.id left join location_info c on a.location_id = c.id 
+15:14:35.266 [http-nio-8080-exec-7] DEBUG com.heo.dao.ExpressMapper.selectByExpressQureyDTO - ==> Parameters: 
+15:14:35.270 [http-nio-8080-exec-7] DEBUG com.heo.dao.ExpressMapper.selectByExpressQureyDTO - <==      Total: 2
+15:14:35.271 [http-nio-8080-exec-7] INFO  com.heo.service.impl.ExpressServiceImpl - 分页查询Express列表完成>>>>>>>>>>>>>>>> expressVOList:[ExpressVO(id=1, locationName=A1, nickName=zwt@6693, expressName=圆通快递, price=2.50, message=尽快, createdAt=Mon Sep 24 15:49:48 GMT+08:00 2018), ExpressVO(id=2, locationName=A1, nickName=zwt@1861, expressName=京东快递, price=2.50, message=hhh, createdAt=Fri Sep 28 15:39:48 GMT+08:00 2018)]
+15:14:36.735 [http-nio-8080-exec-8] INFO  com.heo.controller.ProviderController - 创建ExpressOrder接口开始 >>>>>>>>>>>>>>>>>>>> id:1
+15:14:36.735 [http-nio-8080-exec-8] INFO  com.heo.service.impl.ExpressOrderServiceImpl - 创建快递代送单开始>>>>>>>>>>>>>>>>>>>>>>>>id:1
+15:14:36.735 [http-nio-8080-exec-8] DEBUG com.heo.dao.ExpressMapper.selectByPrimaryKey - ==>  Preparing: select id, user_id, phone, express_type, get_code, price, location_id, message, created_at, updated_at, status from express where id = ? 
+15:14:36.736 [http-nio-8080-exec-8] DEBUG com.heo.dao.ExpressMapper.selectByPrimaryKey - ==> Parameters: 1(Long)
+15:14:36.739 [http-nio-8080-exec-8] DEBUG com.heo.dao.ExpressMapper.selectByPrimaryKey - <==      Total: 1
+15:14:36.740 [http-nio-8080-exec-8] INFO  com.heo.service.impl.ExpressOrderServiceImpl - 创建快递代送单失败 >>>>>>>>>>>>>>>>>>>>>>>>>> 用户未登录
+15:14:37.748 [http-nio-8080-exec-10] INFO  com.heo.controller.ProviderController - 查询Express列表接口开始 >>>>>>>>>>>>>>>>>>  params:{"expressType":"","beginTime":"","endTime":"","lowPrice":"","highPrice":""}
+15:14:37.749 [http-nio-8080-exec-10] INFO  com.heo.service.impl.ExpressServiceImpl - 分页查询Express列表开始>>>>>>>>>> expressQueryDTO:ExpressQueryDTO(expressType=null, beginTime=null, endTime=null, lowPrice=null, highPrice=null, limit=null)
+15:14:37.750 [http-nio-8080-exec-10] DEBUG com.heo.dao.ExpressMapper.selectByExpressQureyDTO - ==>  Preparing: select a.id, a.user_id as userId, a.phone, a.express_type as expressType, a.get_code, a.price, a.location_id as locationId, a.message, a.created_at, a.updated_at as updatedAt, a.status, b.user_name as userName, b.nick_name as nickName, c.name as locationName from express a left join user b on a.user_id = b.id left join location_info c on a.location_id = c.id 
+15:14:37.751 [http-nio-8080-exec-10] DEBUG com.heo.dao.ExpressMapper.selectByExpressQureyDTO - ==> Parameters: 
+15:14:37.754 [http-nio-8080-exec-10] DEBUG com.heo.dao.ExpressMapper.selectByExpressQureyDTO - <==      Total: 2
+15:14:37.756 [http-nio-8080-exec-10] INFO  com.heo.service.impl.ExpressServiceImpl - 分页查询Express列表完成>>>>>>>>>>>>>>>> expressVOList:[ExpressVO(id=1, locationName=A1, nickName=zwt@961, expressName=圆通快递, price=2.50, message=尽快, createdAt=Mon Sep 24 15:49:48 GMT+08:00 2018), ExpressVO(id=2, locationName=A1, nickName=zwt@429, expressName=京东快递, price=2.50, message=hhh, createdAt=Fri Sep 28 15:39:48 GMT+08:00 2018)]

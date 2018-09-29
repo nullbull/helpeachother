@@ -10,7 +10,7 @@ import com.heo.entity.vo.ReturnData;
  * @Desc
  */
 public interface IExpressOrderService {
-    ReturnData createExpressOrder(ExpressOrder expressOrder);
+    ReturnData createExpressOrder(Long id);
     ReturnData getExpressOrderDetail(Long id);
     ReturnData deleteExpressOrder(Long id);
     ReturnData finishExpressOrder(Long id);

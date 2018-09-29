@@ -82,6 +82,7 @@ public class ExpressServiceImpl extends BaseService implements IExpressService {
             List<ExpressAndNameDTO> expressList = expressMapper.selectByExpressQureyDTO(expressQureyDTO);
             List<ExpressVO> expressVOList = expressList.stream().map(e ->{
                 ExpressVO expressVO = new ExpressVO();
+                expressVO.setId(e.getId());
                 expressVO.setCreatedAt(e.getCreatedAt());
                 expressVO.setExpressName(Constants.EXPRESS_INFO.get(e.getExpressType()));
                 expressVO.setMessage(e.getMessage());
