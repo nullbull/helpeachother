@@ -12,10 +12,11 @@ import com.heo.entity.mapper.ExpressOrder;
 import com.heo.entity.vo.ExpressVO;
 import com.heo.entity.vo.ReturnData;
 import com.heo.service.IExpressService;
-import org.apache.commons.collections.CollectionUtils;
+//import org.apache.commons.collections.CollectionUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
+import org.springframework.util.CollectionUtils;
 
 import javax.validation.constraints.NotNull;
 import java.util.Calendar;

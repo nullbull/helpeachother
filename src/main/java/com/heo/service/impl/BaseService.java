@@ -10,6 +10,7 @@ import com.heo.entity.mapper.LocationInfo;
 import com.heo.entity.mapper.LocationInfoExample;
 import com.heo.entity.vo.ReturnData;
 import com.heo.service.IBaseService;
+import com.heo.service.IKafkaService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -48,6 +49,9 @@ public class BaseService implements IBaseService {
     @Autowired
     public ExpressOrderMapper  expressOrderMapper;
 
+
+    @Autowired
+    public IKafkaService kafkaService;
 
     @Override
     public List<LocationInfo> getLocationByPart(Byte part) {

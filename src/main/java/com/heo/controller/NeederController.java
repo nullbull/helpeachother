@@ -5,7 +5,10 @@ import com.heo.common.constant.Constants;
 import com.heo.entity.mapper.Express;
 import com.heo.entity.vo.ReturnData;
 import com.heo.service.IExpressService;
+import com.heo.service.IKafkaService;
+import com.heo.service.impl.EmailService;
 import org.hibernate.validator.constraints.NotBlank;
+import org.omg.CORBA.SystemException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,6 +27,11 @@ public class NeederController {
 
     @Autowired
     private IExpressService expressService;
+    @Autowired
+    private IKafkaService kafkaService;
+
+    @Autowired
+    EmailService emailService;
 
     private final Logger logger = LoggerFactory.getLogger(this.getClass());
 
@@ -37,14 +45,26 @@ public class NeederController {
         String methodDesc = "创建Express接口";
         ReturnData rd = getReturnData();
         try {
+            logger.info(methodDesc  + "开始>>>>>>>>>>>>>>>>>>>>>> params:{}", params);
             Express express = JSON.parseObject(params, Express.class);
             rd = expressService.createExpress(express);
 
         } catch (Exception e) {
-
+            rd.setMsg("未知系统异常");
+            logger.error(methodDesc + "失败>>>>>>>>>>>>>>>>>>未知系统异常 e:{}", e);
         }
         return rd;
     }
+
+    @GetMapping("/expressOrder/fin/{id}")
+    @ResponseBody
+    public ReturnData finshExpressOrder(@PathVariable("id") Long id) {
+       ReturnData rd = getReturnData();
+       kafkaService.sendMessage(id, "zwt");
+       emailService.sendHtmlEmail("1129114837@qq.com", "justinniu@yeah.net", "test", "test", "test",false);
+       return rd;
+    }
+
 
     private ReturnData getReturnData() {
         ReturnData rd = new ReturnData();
