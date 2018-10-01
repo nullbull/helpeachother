@@ -75,6 +75,44 @@ spring:
       max-request-size: 30Mb
   aop:
     auto: true
+  redis:
+    port: 6379
+    password:
+    jedis:
+      pool:
+        max-active: 200
+        max-wait: -1
+        max-idle: 10
+        min-idle: 0
+    timeout: 1000
+  kafka:
+    bootstrap-servers: 59.110.137.45:9092
+    producer:
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.apache.kafka.common.serialization.StringSerializer
+      batch-size: 4086
+      buffer-memory: 40960
+    consumer:
+      group-id: test
+      enable-auto-commit: true
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      bootstrap-servers: 59.110.137.45:9092
+      auto-offset-reset: earliest
+  mail:
+    host: smtp.yeah.net
+    port: 25
+    username: justinniu@yeah.net
+    password: n1996z11h2
+    properties:
+      mail:
+        smtp:
+          auth: true
+        startttls:
+          enable: false
+          requried: false
+    protocol: smtp
+    default-encoding: UTF-8
 
 mybatis:
   #实体类所做包
@@ -89,3 +127,5 @@ pagehelper:
   reasonable: true
   support-methods-arguments: true
   params: count=countSql
+#465
+#587

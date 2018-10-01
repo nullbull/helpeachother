@@ -2,6 +2,7 @@ package com.heo.controller;
 
 import com.alibaba.fastjson.JSON;
 import com.heo.common.constant.Constants;
+import com.heo.common.utils.RedisUtil;
 import com.heo.entity.dto.ExpressQueryDTO;
 import com.heo.entity.vo.ReturnData;
 import com.heo.service.IExpressOrderService;
@@ -29,6 +30,9 @@ public class ProviderController {
 
     @Autowired
     private IExpressOrderService expressOrderService;
+
+    @Autowired
+    private RedisUtil redisUtil;
 
     private final Logger logger = LoggerFactory.getLogger(this.getClass());
 
@@ -62,6 +66,12 @@ public class ProviderController {
             logger.error(methodDesc + "失败，未知系统异常 e:{}", e.getMessage());
         }
         return rd;
+    }
+    @GetMapping("/test")
+    @ResponseBody
+    public String redisTest() {
+        redisUtil.set("zwt", "zwt");
+        return redisUtil.get("zwt").toString();
     }
     private ReturnData getReturnData() {
         ReturnData rd = new ReturnData();

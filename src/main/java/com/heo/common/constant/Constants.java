@@ -1,5 +1,7 @@
 package com.heo.common.constant;
 
+import com.heo.common.utils.RedisUtil;
+
 import java.util.HashMap;
 
 /**
@@ -87,6 +89,11 @@ public class Constants
         EXPRESS_INFO.put((byte) 7, "天天快递");
         EXPRESS_INFO.put((byte) 8, "天猫快递");
     }
+    public static String redisKey = "expressOrder:message:";
+
+    public static String kafkaKey = "email";
+
+
 
 
 }
