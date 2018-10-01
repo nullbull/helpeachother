@@ -4,6 +4,7 @@ import com.alibaba.fastjson.JSON;
 import com.heo.common.constant.Constants;
 import com.heo.entity.mapper.Express;
 import com.heo.entity.vo.ReturnData;
+import com.heo.service.IExpressOrderService;
 import com.heo.service.IExpressService;
 import com.heo.service.IKafkaService;
 import com.heo.service.impl.EmailService;
@@ -29,7 +30,8 @@ public class NeederController {
     private IExpressService expressService;
     @Autowired
     private IKafkaService kafkaService;
-
+    @Autowired
+    private IExpressOrderService expressOrderService;
     @Autowired
     EmailService emailService;
 
@@ -59,9 +61,12 @@ public class NeederController {
     @GetMapping("/expressOrder/fin/{id}")
     @ResponseBody
     public ReturnData finshExpressOrder(@PathVariable("id") Long id) {
-       ReturnData rd = getReturnData();
-       kafkaService.sendMessage(id, "zwt");
-       emailService.sendHtmlEmail("1129114837@qq.com", "justinniu@yeah.net", "test", "test", "test",false);
+        String methodDesc = "完成ExpressOrder 接口";
+        ReturnData rd = getReturnData();
+//       kafkaService.sendMessage(id, "zwt");
+// emailService.sendHtmlEmail("1129114837@qq.com", "justinniu@yeah.net", "test", "test", "test",false);
+        logger.info(methodDesc + "开始>>>>>>>>>>>>>>>>>>>>>id:{}", id);
+        rd = expressOrderService.finishExpressOrder(id);
        return rd;
     }
 

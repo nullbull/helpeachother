@@ -1,15 +1,13 @@
 package com.heo.service.impl;
 
 import com.heo.common.constant.Constants;
-import com.heo.dao.ExpressInfoMapper;
-import com.heo.dao.ExpressMapper;
-import com.heo.dao.ExpressOrderMapper;
-import com.heo.dao.LocationInfoMapper;
+import com.heo.dao.*;
 import com.heo.entity.mapper.ExpressInfo;
 import com.heo.entity.mapper.LocationInfo;
 import com.heo.entity.mapper.LocationInfoExample;
 import com.heo.entity.vo.ReturnData;
 import com.heo.service.IBaseService;
+import com.heo.service.IEmailService;
 import com.heo.service.IKafkaService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -49,9 +47,12 @@ public class BaseService implements IBaseService {
     @Autowired
     public ExpressOrderMapper  expressOrderMapper;
 
-
+    @Autowired
+    public UserMapper userMapper;
     @Autowired
     public IKafkaService kafkaService;
+    @Autowired
+    public IEmailService emailService;
 
     @Override
     public List<LocationInfo> getLocationByPart(Byte part) {

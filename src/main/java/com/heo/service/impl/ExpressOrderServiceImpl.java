@@ -1,8 +1,11 @@
 package com.heo.service.impl;
 
+import com.alibaba.fastjson.JSON;
 import com.github.pagehelper.PageHelper;
 import com.heo.common.constant.Constants;
 import com.heo.common.utils.security.ShiroUtils;
+import com.heo.dao.UserMapper;
+import com.heo.entity.dto.ExpressOrderEmailDTO;
 import com.heo.entity.mapper.Express;
 import com.heo.entity.mapper.ExpressOrder;
 import com.heo.entity.mapper.ExpressOrderExample;
@@ -131,6 +134,12 @@ public class ExpressOrderServiceImpl extends BaseService implements IExpressOrde
             express.setStatus(Constants.ORDER_FINISH);
             expressOrderMapper.updateByPrimaryKeySelective(expressOrder);
             expressMapper.updateByPrimaryKeySelective(express);
+            ExpressOrderEmailDTO orderDTO = new ExpressOrderEmailDTO();
+            orderDTO.setExpressOrderId(id);
+            orderDTO.setProviderName(userMapper.selectByPrimaryKey(expressOrder.getProviderId()).getUserName());
+            orderDTO.setFinishTime(new Date());
+            orderDTO.setPrice(expressOrder.getPrice());
+            kafkaService.sendMessage(id, JSON.toJSONString(orderDTO));
             rd.setMsg("完成");
             rd.setCode(Constants.SUCCESS_CODE);
             rd.setData(expressOrder);
