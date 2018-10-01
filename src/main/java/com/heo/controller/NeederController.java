@@ -4,11 +4,10 @@ import com.alibaba.fastjson.JSON;
 import com.heo.common.constant.Constants;
 import com.heo.entity.mapper.Express;
 import com.heo.entity.vo.ReturnData;
+import com.heo.service.IEmailService;
 import com.heo.service.IExpressService;
 import com.heo.service.IKafkaService;
-import com.heo.service.impl.EmailService;
 import org.hibernate.validator.constraints.NotBlank;
-import org.omg.CORBA.SystemException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -31,7 +30,7 @@ public class NeederController {
     private IKafkaService kafkaService;
 
     @Autowired
-    EmailService emailService;
+    IEmailService emailService;
 
     private final Logger logger = LoggerFactory.getLogger(this.getClass());
 

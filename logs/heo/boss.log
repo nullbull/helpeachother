@@ -7605,3 +7605,82 @@ Caused by: org.springframework.beans.factory.NoSuchBeanDefinitionException: No q
 17:08:13.221 [main] INFO  com.heo.test - Started test in 15.142 seconds (JVM running for 19.315)
 17:08:15.091 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] WARN  org.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-1, groupId=test] Connection to node -1 could not be established. Broker may not be available.
 17:08:16.235 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] WARN  org.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-1, groupId=test] Connection to node -1 could not be established. Broker may not be available.
+17:46:13.747 [main] INFO  org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Neither @ContextConfiguration nor @ContextHierarchy found for test class [com.heo.test], using SpringBootContextLoader
+17:46:13.780 [main] INFO  org.springframework.test.context.support.AbstractContextLoader - Could not detect default resource locations for test class [com.heo.test]: no resource found for suffixes {-context.xml, Context.groovy}.
+17:46:13.781 [main] INFO  org.springframework.test.context.support.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.heo.test]: test does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+17:46:14.093 [main] INFO  org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.heo.HelpeachotherApplication for test class com.heo.test
+17:46:14.480 [main] INFO  org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+17:46:14.523 [main] INFO  org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@3e8c3cb, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@563f38c4, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@543295b0, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@54422e18, org.springframework.test.context.support.DirtiesContextTestExecutionListener@117159c0, org.springframework.test.context.transaction.TransactionalTestExecutionListener@3e27ba32, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@7ef82753, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@3b0fe47a, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@202b0582, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@235ecd9f, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@1ca3b418, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@58cbafc2]
+17:46:15.536 [main] INFO  com.heo.test - Starting test on DESKTOP-E0T2V9B with PID 7636 (started by 张慧 in C:\Users\张慧\Desktop\helpeachother-master\helpeachother)
+17:46:15.545 [main] DEBUG com.heo.test - Running with Spring Boot v2.0.4.RELEASE, Spring v5.0.8.RELEASE
+17:46:15.551 [main] INFO  com.heo.test - The following profiles are active: druid
+17:46:20.662 [main] INFO  org.apache.shiro.cache.ehcache.EhCacheManager - Cache with name 'com.heo.app.shiro.realm.UserRealm.authorizationCache' does not yet exist.  Creating now.
+17:46:20.664 [main] INFO  org.apache.shiro.cache.ehcache.EhCacheManager - Added EhCache named [com.heo.app.shiro.realm.UserRealm.authorizationCache]
+17:46:20.704 [main] INFO  org.apache.shiro.cache.ehcache.EhCacheManager - Using existing EHCache named [loginRecordCache]
+17:46:28.258 [main] INFO  org.apache.kafka.clients.consumer.ConsumerConfig - ConsumerConfig values: 
+	auto.commit.interval.ms = 5000
+	auto.offset.reset = earliest
+	bootstrap.servers = [59.110.137.45:9092]
+	check.crcs = true
+	client.id = 
+	connections.max.idle.ms = 540000
+	enable.auto.commit = true
+	exclude.internal.topics = true
+	fetch.max.bytes = 52428800
+	fetch.max.wait.ms = 500
+	fetch.min.bytes = 1
+	group.id = test
+	heartbeat.interval.ms = 3000
+	interceptor.classes = null
+	internal.leave.group.on.close = true
+	isolation.level = read_uncommitted
+	key.deserializer = class org.apache.kafka.common.serialization.StringDeserializer
+	max.partition.fetch.bytes = 1048576
+	max.poll.interval.ms = 300000
+	max.poll.records = 500
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partition.assignment.strategy = [class org.apache.kafka.clients.consumer.RangeAssignor]
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 305000
+	retry.backoff.ms = 100
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.mechanism = GSSAPI
+	security.protocol = PLAINTEXT
+	send.buffer.bytes = 131072
+	session.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.1, TLSv1]
+	ssl.endpoint.identification.algorithm = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLS
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	value.deserializer = class org.apache.kafka.common.serialization.StringDeserializer
+
+17:46:28.568 [main] INFO  org.apache.kafka.common.utils.AppInfoParser - Kafka version : 1.0.2
+17:46:28.571 [main] INFO  org.apache.kafka.common.utils.AppInfoParser - Kafka commitId : 2a121f7b1d402825
+17:46:28.632 [main] INFO  com.heo.test - Started test in 13.997 seconds (JVM running for 19.171)
+17:46:29.096 [main] INFO  com.heo.service.impl.EmailServiceImpl - 发送激活邮件 ...
+17:46:30.339 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] WARN  org.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-1, groupId=test] Connection to node -1 could not be established. Broker may not be available.
+17:46:31.661 [main] INFO  com.heo.service.impl.EmailServiceImpl - 发送到：979292329@qq.com
+17:46:31.661 [main] INFO  com.heo.service.impl.EmailServiceImpl - 发送成功！
+17:46:31.671 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] WARN  org.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-1, groupId=test] Connection to node -1 could not be established. Broker may not be available.
