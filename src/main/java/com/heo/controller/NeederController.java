@@ -7,7 +7,6 @@ import com.heo.entity.vo.ReturnData;
 import com.heo.service.IExpressOrderService;
 import com.heo.service.IExpressService;
 import com.heo.service.IKafkaService;
-import com.heo.service.impl.EmailService;
 import org.hibernate.validator.constraints.NotBlank;
 import org.omg.CORBA.SystemException;
 import org.slf4j.Logger;
@@ -32,8 +31,6 @@ public class NeederController {
     private IKafkaService kafkaService;
     @Autowired
     private IExpressOrderService expressOrderService;
-    @Autowired
-    EmailService emailService;
 
     private final Logger logger = LoggerFactory.getLogger(this.getClass());
 
