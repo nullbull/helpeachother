@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>注册邮件模板</title>
+</head>
+<body>
+<p>欢迎注册！请点击链接完成注册！</p>
+<p>用户名：<span th:text="${id}"></span></p>
+<!--<a th:href="@{http://www.ityouknow.com/register/{id}(id=${id})}">激活账户</a>-->
+<a th:href="@{http://www.baidu.com}">激活账户</a>
+</body>
+</html>
