@@ -3,79 +3,123 @@
 <head lang="en">
     <meta charset="UTF-8">
     <title>注册界面</title>
-    <!--<link href="/static/css/register.css" th:href="@{/css/register.css}" rel="stylesheet">-->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://cdn.bootcss.com/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 
-<body class="wrap">
-<div>
-    <div class="container">
-        <h1>注册页面</h1>
-        <form id="loginForm"  >
-            <table>
-                <th></th>
-                <td>
-                    <input type="text" id="userName" name="userName" placeholder="用户名" /><br>
-                </td>
-                <!--<p th:if="${#fields.hasErrors('userName')}" th:errors="*{userName}">bfg</p>-->
-                <td>
-                    <input type="password" id="passWord" name="passWord" placeholder="密码"/><br>
-                </td>
-                <td>
-                    <input type="email" id="email" name="email" placeholder="邮箱"/><br>
-                </td>
-                <td>
-                    <input type="majorId" id="majorId" name="majorId" placeholder="专业"/><br>
-                </td>
-                <td>
-                    <input type="text" id="phone" name="phone" placeholder="手机号"/><br>
-                </td>
-                <!--<p th:if="${#fields.hasErrors('phone')}" th:errors="*{phone}"></p>-->
-                <tr>
-                    <td>
-                        <select id="loction" >
-                            <option id="l0" value="0">请选择</option>
-                            <option id="l1" value="1">A区</option>
-                            <option id="l2" value="2">B区</option>
-                            <option id="l3" value="3">C区</option>
-                        </select>
-                    </td>
-                    <td>
-                      <select id="locationId" name="locationId">
-                        </select><br>
-                    </td>
-                </tr>
-
-                <td>
-                    <input type="text" id="alipayId" name="alipayId" placeholder="支付宝账号"/><br>
-                </td>
-                <td>
-                    <input type="text" id="wechatId" name="wechatId" placeholder="微信号"/><br>
-                </td>
-                <td>
-                    <input type="text" id="qqNumber" name="qqNumber" placeholder="QQ号"/><br>
-                </td>
-                <td>
-                    <select id="s1" onchange="fun()">
-                        <option id="p1" value="1">学生</option>
-                        <option id="p2" value="2">服务者</option>
-                    </select><br>
-                </td>
-                <td>
-                    <input hidden type="text" id="studentId" name="studentId" placeholder="学号"><br>
-                </td>
-                <td>
-                    <input hidden type="file" id="picture" name="picture" placeholder="学号"><br>
-                </td>
-                <span id = "mess"></span>
-                <input type="button" id="register_btn" value="注册"/><br>
-            </table>
-
-        </form>
+<body>
+<h1>欢迎注册</h1>
+<form role="form" id="loginForm" class="form-horizontal">
+    <div class="form-group">
+        <label for="userName" class="col-sm-1 control-label">用户名</label>
+        <div class="col-sm-3">
+            <input type="text" class="form-control" id="userName" name="userName" placeholder="用户名">
+        </div>
+        <!--<p class="help-block">这里是块级帮助文本的实例。</p>-->
     </div>
 
-</div>
+    <div class="form-group">
+        <label for="password" class="control-label col-sm-1">密码</label>
+        <div class="col-sm-3">
+            <input type="password" class="form-control" id="passWord" name="passWord" placeholder="密码">
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="email" class="control-label col-sm-1">邮箱</label>
+        <div class="col-sm-3">
+            <input type="email" class="form-control" id="email" name="email" placeholder="邮箱">
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="majorId" class="control-label col-sm-1">专业</label>
+        <div class="col-sm-3">
+            <input type="text" class="form-control" id="majorId" name="majorId" placeholder="专业">
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="phone" class="control-label col-sm-1">手机号</label>
+        <div class="col-sm-3">
+            <input type="text" class="form-control" id="phone" name="phone" placeholder="手机号">
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="locationId" class="control-label col-sm-1">宿舍号</label>
+
+        <div class="col-sm-1">
+            <select id="loction" >
+                <option id="l0" value="0">请选择</option>
+                <option id="l1" value="1">A区</option>
+                <option id="l2" value="2">B区</option>
+                <option id="l3" value="3">C区</option>
+            </select>
+        </div>
+        <div class="col-sm-2">
+            <select id="locationId" name="locationId">
+            </select>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="phone" class="control-label col-sm-1">支付宝</label>
+        <div class="col-sm-3">
+            <input type="text" class="form-control" id="alipayId" name="alipayId" placeholder="支付宝账号">
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="phone" class="control-label col-sm-1">微信号</label>
+        <div class="col-sm-3">
+            <input type="text" class="form-control" id="wechatId" name="wechatId" placeholder="微信号">
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="phone" class="control-label col-sm-1">QQ号</label>
+        <div class="col-sm-3">
+            <input type="text" class="form-control" id="qqNumber" name="qqNumber" placeholder="QQ号">
+        </div>
+    </div>
+
+
+    <div class="form-group">
+        <label for="s1" class="control-label col-sm-1">注册类型</label>
+        <div class="col-sm-2">
+            <select id="s1">
+                <option id="p1" value="1">学生</option>
+                <option id="p2" value="2">服务者</option>
+            </select>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="phone" class="control-label col-sm-1">QQ号</label>
+        <div class="col-sm-3">
+            <input hidden type="text" class="form-control" id="studentId" name="studentId" placeholder="学号">
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="phone" class="control-label col-sm-1">QQ号</label>
+        <div class="col-sm-3">
+            <input hidden type="text" class="form-control" id="picture" name="picture" placeholder="学号">
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="col-sm-offset-1 col-sm-10">
+            <button type="button" class="btn btn-default" id="register_btn">注册</button>
+        </div>
+    </div>
+</form>
 
 <script>
+
     function fun() {
         var a = $("#s1").val();
         if(a=="2")
@@ -91,7 +135,7 @@
     }
 </script>
 
-<script src="../static/js/jquery-3.3.1.js" th:src="@{/js/jquery-3.3.1.js}"></script>
+<!--<script src="../static/js/jquery-3.3.1.js" th:src="@{/js/jquery-3.3.1.js}"></script>-->
 <script src="../static/js/login.js" th:src="@{/js/register.js}"></script>
 
 </body>

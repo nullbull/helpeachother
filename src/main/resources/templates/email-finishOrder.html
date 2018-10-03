@@ -2,14 +2,20 @@
 <html xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html">
 <head lang="en">
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://cdn.bootcss.com/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <title>注册邮件模板</title>
 </head>
 <body>
-<p>订单状态更细</p>
+<h1>订单状态更细</h1>
 <p>亲爱的用户<span th:text="${providerName}"></span></p>
 <p>您的订单<span th:text="${expressOrderId}"></span></p>
 <p>已完成,收入为<span th:text="${price}"></span> </p>
 <p>完成时间<span th:text="${finishTime}"></span> </p>
+
+
 <!--<a th:href="@{http://www.ityouknow.com/register/{id}(id=${id})}">激活账户</a>-->
 <a th:href="@{http://www.baidu.com}">激活账户</a>
 </body>
