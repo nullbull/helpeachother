@@ -1,0 +1,140 @@
+09:52:22.869 [main] INFO  com.heo.HelpeachotherApplication - Starting HelpeachotherApplication on LAPTOP-1M5RA4JD with PID 18496 (D:\Git\helpeachother\target\classes started by 11291 in D:\Git\helpeachother)
+09:52:22.880 [main] DEBUG com.heo.HelpeachotherApplication - Running with Spring Boot v2.0.4.RELEASE, Spring v5.0.8.RELEASE
+09:52:22.882 [main] INFO  com.heo.HelpeachotherApplication - The following profiles are active: druid
+09:52:25.123 [main] INFO  org.apache.shiro.cache.ehcache.EhCacheManager - Cache with name 'com.heo.app.shiro.realm.UserRealm.authorizationCache' does not yet exist.  Creating now.
+09:52:25.124 [main] INFO  org.apache.shiro.cache.ehcache.EhCacheManager - Added EhCache named [com.heo.app.shiro.realm.UserRealm.authorizationCache]
+09:52:25.151 [main] INFO  org.apache.shiro.cache.ehcache.EhCacheManager - Using existing EHCache named [loginRecordCache]
+09:52:28.230 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+09:52:28.247 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+09:52:28.248 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/8.5.32
+09:52:28.254 [localhost-startStop-1] INFO  org.apache.catalina.core.AprLifecycleListener - The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [C:\Program Files\Java\jdk1.8.0_171\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\ProgramData\Oracle\Java\javapath;C:\Program Files (x86)\Intel\iCLS Client\;C:\Program Files\Intel\iCLS Client\;C:\windows\system32;C:\windows;C:\windows\System32\Wbem;C:\windows\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\Program Files\Intel\WiFi\bin\;C:\Program Files\Common Files\Intel\WirelessCommon\;D:\SoftwareForCode\Git\cmd;C:\Program Files\nodejs\;C:\Users\11291\AppData\Local\Microsoft\WindowsApps;D:\wamp64\bin\mysql\mysql5.7.14\bin;C:\Users\11291\AppData\Roaming\npm;%C:\Go%\bin;;.]
+09:52:28.431 [localhost-startStop-1] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+09:52:30.643 [main] INFO  org.apache.kafka.clients.consumer.ConsumerConfig - ConsumerConfig values: 
+	auto.commit.interval.ms = 5000
+	auto.offset.reset = earliest
+	bootstrap.servers = [59.110.137.45:9092]
+	check.crcs = true
+	client.id = 
+	connections.max.idle.ms = 540000
+	enable.auto.commit = true
+	exclude.internal.topics = true
+	fetch.max.bytes = 52428800
+	fetch.max.wait.ms = 500
+	fetch.min.bytes = 1
+	group.id = test
+	heartbeat.interval.ms = 3000
+	interceptor.classes = null
+	internal.leave.group.on.close = true
+	isolation.level = read_uncommitted
+	key.deserializer = class org.apache.kafka.common.serialization.StringDeserializer
+	max.partition.fetch.bytes = 1048576
+	max.poll.interval.ms = 300000
+	max.poll.records = 500
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partition.assignment.strategy = [class org.apache.kafka.clients.consumer.RangeAssignor]
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 305000
+	retry.backoff.ms = 100
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.mechanism = GSSAPI
+	security.protocol = PLAINTEXT
+	send.buffer.bytes = 131072
+	session.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.1, TLSv1]
+	ssl.endpoint.identification.algorithm = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLS
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	value.deserializer = class org.apache.kafka.common.serialization.StringDeserializer
+
+09:52:30.791 [main] INFO  org.apache.kafka.common.utils.AppInfoParser - Kafka version : 1.0.2
+09:52:30.791 [main] INFO  org.apache.kafka.common.utils.AppInfoParser - Kafka commitId : 2a121f7b1d402825
+09:52:30.816 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+09:52:30.817 [main] INFO  org.apache.tomcat.util.net.NioSelectorPool - Using a shared selector for servlet write/read
+09:52:30.850 [main] INFO  com.heo.HelpeachotherApplication - Started HelpeachotherApplication in 8.766 seconds (JVM running for 11.689)
+09:52:31.046 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  org.apache.kafka.clients.consumer.internals.AbstractCoordinator - [Consumer clientId=consumer-1, groupId=test] Discovered group coordinator 59.110.137.45:9092 (id: 2147483647 rack: null)
+09:52:31.050 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  org.apache.kafka.clients.consumer.internals.ConsumerCoordinator - [Consumer clientId=consumer-1, groupId=test] Revoking previously assigned partitions []
+09:52:31.051 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  org.apache.kafka.clients.consumer.internals.AbstractCoordinator - [Consumer clientId=consumer-1, groupId=test] (Re-)joining group
+09:52:31.094 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  org.apache.kafka.clients.consumer.internals.AbstractCoordinator - [Consumer clientId=consumer-1, groupId=test] Successfully joined group with generation 63
+09:52:31.097 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  org.apache.kafka.clients.consumer.internals.ConsumerCoordinator - [Consumer clientId=consumer-1, groupId=test] Setting newly assigned partitions [test-0]
+09:52:34.371 [http-nio-8080-exec-1] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring FrameworkServlet 'dispatcherServlet'
+09:52:34.461 [http-nio-8080-exec-1] INFO  org.apache.shiro.session.mgt.AbstractValidatingSessionManager - Enabling session validation scheduler...
+09:52:34.461 [http-nio-8080-exec-1] DEBUG com.heo.app.shiro.web.session.SpringSessionValidationScheduler - Scheduling session validation job using Spring Scheduler with session validation interval of [600000]ms...
+09:52:34.462 [http-nio-8080-exec-1] DEBUG com.heo.app.shiro.web.session.SpringSessionValidationScheduler - Session validation job successfully scheduled with Spring Scheduler.
+09:52:34.514 [http-nio-8080-exec-1] INFO  org.apache.shiro.cache.ehcache.EhCacheManager - Using existing EHCache named [shiro-activeSessionCache]
+09:52:34.589 [http-nio-8080-exec-2] WARN  org.springframework.web.servlet.PageNotFound - Request method 'GET' not supported
+09:52:35.474 [pool-2-thread-1] INFO  com.heo.app.shiro.web.session.OnlineWebSessionManager - invalidation sessions...
+09:52:35.785 [pool-2-thread-1] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+09:52:36.332 [pool-2-thread-1] DEBUG com.heo.dao.UserOnlineMapper.selectOnlineByExpired - ==>  Preparing: SELECT * FROM user_online o WHERE o.last_access_time <= ? ORDER BY o.last_access_time ASC 
+09:52:36.397 [pool-2-thread-1] DEBUG com.heo.dao.UserOnlineMapper.selectOnlineByExpired - ==> Parameters: 2018-10-04 09:22:35(String)
+09:53:03.747 [http-nio-8080-exec-5] DEBUG com.heo.dao.UserMapper.selectByExample - ==>  Preparing: select id, user_name, pass_word, salt, email, major_id, phone, location_id, type, alipay_id, wechat_id, qq_number, picture, student_id, created_at, updated_at, modify_by, login_ip, last_login, nick_name from user WHERE ( user_name = ? ) 
+09:53:03.748 [http-nio-8080-exec-5] DEBUG com.heo.dao.UserMapper.selectByExample - ==> Parameters: zwt(String)
+09:53:03.759 [http-nio-8080-exec-5] DEBUG com.heo.dao.UserMapper.selectByExample - <==      Total: 1
+09:53:03.989 [http-nio-8080-exec-5] INFO  sys-user - [127.0.0.1]XX 内网IP[zwt][Success][登录成功]
+09:53:06.013 [http-nio-8080-exec-5] ERROR com.heo.common.utils.AddressUtils - 温馨提醒：您的主机已经断网，请您检查主机的网络连接
+09:53:06.014 [http-nio-8080-exec-5] ERROR com.heo.common.utils.AddressUtils - 根据IP获取所在位置----------错误消息：Read timed out
+09:53:06.020 [http-nio-8080-exec-5] ERROR com.heo.common.utils.AddressUtils - 根据IP获取所在位置----------错误消息：null
+09:53:06.028 [http-nio-8080-exec-5] DEBUG com.heo.dao.LoginInformationMapper.insertSelective - ==>  Preparing: insert into login_information ( user_name, ipaddr, browser, os, status, msg ) values ( ?, ?, ?, ?, ?, ? ) 
+09:53:06.030 [http-nio-8080-exec-5] DEBUG com.heo.dao.LoginInformationMapper.insertSelective - ==> Parameters: zwt(String), 127.0.0.1(String), Chrome(String), Windows 10(String), 0(Integer), 登录成功(String)
+09:53:06.051 [http-nio-8080-exec-5] DEBUG com.heo.dao.LoginInformationMapper.insertSelective - <==    Updates: 1
+09:53:06.053 [http-nio-8080-exec-5] DEBUG com.heo.dao.UserMapper.updateByPrimaryKeySelective - ==>  Preparing: update user SET user_name = ?, pass_word = ?, salt = ?, email = ?, major_id = ?, phone = ?, location_id = ?, type = ?, student_id = ?, created_at = ?, updated_at = ?, login_ip = ?, last_login = ? where id = ? 
+09:53:06.053 [http-nio-8080-exec-5] DEBUG com.heo.dao.UserMapper.updateByPrimaryKeySelective - ==> Parameters: zwt(String), bdf94cae8883b035c2976e1b1e6c5d5c(String), 11111(Integer), 1129114837@qq.com(String), 1(String), 17611233021(String), 1(Byte), 1(Byte), (String), 2018-09-18 16:54:44.0(Timestamp), 2018-09-18 16:54:44.0(Timestamp), 127.0.0.1(String), 2018-10-04 09:53:06.052(Timestamp), 1(Long)
+09:53:06.067 [http-nio-8080-exec-5] DEBUG com.heo.dao.UserMapper.updateByPrimaryKeySelective - <==    Updates: 1
+09:53:06.796 [http-nio-8080-exec-10] INFO  com.heo.controller.ExpressInfoController - 获取快递信息接口开始
+09:53:06.798 [http-nio-8080-exec-10] DEBUG com.heo.dao.ExpressInfoMapper.getAllExpressInfo - ==>  Preparing: select * from express_info; 
+09:53:06.802 [http-nio-8080-exec-10] DEBUG com.heo.dao.ExpressInfoMapper.getAllExpressInfo - ==> Parameters: 
+09:53:06.814 [http-nio-8080-exec-10] DEBUG com.heo.dao.ExpressInfoMapper.getAllExpressInfo - <==      Total: 7
+09:53:06.816 [http-nio-8080-exec-10] INFO  com.heo.controller.ExpressInfoController - 获取快递信息接口完成
+09:53:11.576 [http-nio-8080-exec-1] INFO  com.heo.controller.ExpressInfoController - 获取快递信息接口开始
+09:53:11.576 [http-nio-8080-exec-1] DEBUG com.heo.dao.ExpressInfoMapper.getAllExpressInfo - ==>  Preparing: select * from express_info; 
+09:53:11.576 [http-nio-8080-exec-1] DEBUG com.heo.dao.ExpressInfoMapper.getAllExpressInfo - ==> Parameters: 
+09:53:11.581 [http-nio-8080-exec-1] DEBUG com.heo.dao.ExpressInfoMapper.getAllExpressInfo - <==      Total: 7
+09:53:11.581 [http-nio-8080-exec-1] INFO  com.heo.controller.ExpressInfoController - 获取快递信息接口完成
+09:53:13.758 [http-nio-8080-exec-3] INFO  com.heo.controller.ExpressInfoController - 获取快递信息接口开始
+09:53:13.759 [http-nio-8080-exec-3] DEBUG com.heo.dao.ExpressInfoMapper.getAllExpressInfo - ==>  Preparing: select * from express_info; 
+09:53:13.760 [http-nio-8080-exec-3] DEBUG com.heo.dao.ExpressInfoMapper.getAllExpressInfo - ==> Parameters: 
+09:53:13.765 [http-nio-8080-exec-3] DEBUG com.heo.dao.ExpressInfoMapper.getAllExpressInfo - <==      Total: 7
+09:53:13.766 [http-nio-8080-exec-3] INFO  com.heo.controller.ExpressInfoController - 获取快递信息接口完成
+09:53:34.995 [http-nio-8080-exec-6] INFO  com.heo.controller.LocationInfoController - 根据宿舍区获取该区域宿舍接口开始   id:1
+09:53:34.996 [http-nio-8080-exec-6] INFO  com.heo.service.impl.LocaitonInfoServiceImpl - 根据宿舍区域查询宿舍开始, partId:1
+09:53:34.998 [http-nio-8080-exec-6] DEBUG com.heo.dao.LocationInfoMapper.selectByExample - ==>  Preparing: select id, part, name, content from location_info WHERE ( part = ? ) 
+09:53:34.998 [http-nio-8080-exec-6] DEBUG com.heo.dao.LocationInfoMapper.selectByExample - ==> Parameters: 1(Byte)
+09:53:35.004 [http-nio-8080-exec-6] DEBUG com.heo.dao.LocationInfoMapper.selectByExample - <==      Total: 17
+09:53:35.004 [http-nio-8080-exec-6] INFO  com.heo.service.impl.LocaitonInfoServiceImpl - 根据宿舍区域查询宿舍完成, result :[LocationInfo{id=1, part=1, name='A1', content='null'}, LocationInfo{id=2, part=1, name='A2', content='null'}, LocationInfo{id=3, part=1, name='A3', content='null'}, LocationInfo{id=4, part=1, name='A4', content='null'}, LocationInfo{id=5, part=1, name='A5', content='null'}, LocationInfo{id=6, part=1, name='A6', content='null'}, LocationInfo{id=7, part=1, name='A7', content='null'}, LocationInfo{id=8, part=1, name='A8', content='null'}, LocationInfo{id=9, part=1, name='A9', content='null'}, LocationInfo{id=10, part=1, name='A10', content='null'}, LocationInfo{id=11, part=1, name='A11', content='null'}, LocationInfo{id=12, part=1, name='A12', content='null'}, LocationInfo{id=13, part=1, name='A13', content='null'}, LocationInfo{id=14, part=1, name='A14', content='null'}, LocationInfo{id=15, part=1, name='A15', content='null'}, LocationInfo{id=16, part=1, name='A16', content='null'}, LocationInfo{id=17, part=1, name='A17', content='null'}]
+09:53:35.004 [http-nio-8080-exec-6] INFO  com.heo.controller.LocationInfoController - 完成, locaitonInfolist :[LocationInfo{id=1, part=1, name='A1', content='null'}, LocationInfo{id=2, part=1, name='A2', content='null'}, LocationInfo{id=3, part=1, name='A3', content='null'}, LocationInfo{id=4, part=1, name='A4', content='null'}, LocationInfo{id=5, part=1, name='A5', content='null'}, LocationInfo{id=6, part=1, name='A6', content='null'}, LocationInfo{id=7, part=1, name='A7', content='null'}, LocationInfo{id=8, part=1, name='A8', content='null'}, LocationInfo{id=9, part=1, name='A9', content='null'}, LocationInfo{id=10, part=1, name='A10', content='null'}, LocationInfo{id=11, part=1, name='A11', content='null'}, LocationInfo{id=12, part=1, name='A12', content='null'}, LocationInfo{id=13, part=1, name='A13', content='null'}, LocationInfo{id=14, part=1, name='A14', content='null'}, LocationInfo{id=15, part=1, name='A15', content='null'}, LocationInfo{id=16, part=1, name='A16', content='null'}, LocationInfo{id=17, part=1, name='A17', content='null'}]
+09:55:14.754 [http-nio-8080-exec-10] INFO  com.heo.controller.ProviderController - 查询Express列表接口开始 >>>>>>>>>>>>>>>>>>  params:{"expressType":"","beginTime":"","endTime":"","lowPrice":"","highPrice":""}
+09:55:14.770 [http-nio-8080-exec-10] INFO  com.heo.service.impl.ExpressServiceImpl - 分页查询Express列表开始>>>>>>>>>> expressQueryDTO:ExpressQueryDTO(expressType=null, beginTime=null, endTime=null, lowPrice=null, highPrice=null, limit=null)
+09:55:14.780 [http-nio-8080-exec-10] DEBUG com.heo.dao.ExpressMapper.selectByExpressQureyDTO - ==>  Preparing: select a.id, a.user_id as userId, a.phone, a.express_type as expressType, a.get_code, a.price, a.location_id as locationId, a.message, a.created_at, a.updated_at as updatedAt, a.status, b.user_name as userName, b.nick_name as nickName, c.name as locationName from express a left join user b on a.user_id = b.id left join location_info c on a.location_id = c.id 
+09:55:14.782 [http-nio-8080-exec-10] DEBUG com.heo.dao.ExpressMapper.selectByExpressQureyDTO - ==> Parameters: 
+09:55:14.791 [http-nio-8080-exec-10] DEBUG com.heo.dao.ExpressMapper.selectByExpressQureyDTO - <==      Total: 2
+09:55:14.793 [http-nio-8080-exec-10] INFO  com.heo.service.impl.ExpressServiceImpl - 分页查询Express列表完成>>>>>>>>>>>>>>>> expressVOList:[ExpressVO(id=1, locationName=A1, nickName=zwt@9258, expressName=圆通快递, price=2.50, message=尽快, createdAt=Mon Sep 24 15:49:48 GMT+08:00 2018), ExpressVO(id=2, locationName=A1, nickName=zwt@555, expressName=京东快递, price=2.50, message=hhh, createdAt=Fri Sep 28 15:39:48 GMT+08:00 2018)]
+10:05:31.004 [kafka-coordinator-heartbeat-thread | test] INFO  org.apache.kafka.clients.consumer.internals.AbstractCoordinator - [Consumer clientId=consumer-1, groupId=test] Group coordinator 59.110.137.45:9092 (id: 2147483647 rack: null) is unavailable or invalid, will attempt rediscovery
+10:06:12.582 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  org.apache.kafka.clients.consumer.internals.AbstractCoordinator - [Consumer clientId=consumer-1, groupId=test] Discovered group coordinator 59.110.137.45:9092 (id: 2147483647 rack: null)
+10:06:12.614 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] ERROR org.apache.kafka.clients.consumer.internals.ConsumerCoordinator - [Consumer clientId=consumer-1, groupId=test] Offset commit failed on partition test-0 at offset 40: The coordinator is not aware of this member.
+10:06:12.614 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] WARN  org.apache.kafka.clients.consumer.internals.ConsumerCoordinator - [Consumer clientId=consumer-1, groupId=test] Asynchronous auto-commit of offsets {test-0=OffsetAndMetadata{offset=40, metadata=''}} failed: Commit cannot be completed since the group has already rebalanced and assigned the partitions to another member. This means that the time between subsequent calls to poll() was longer than the configured max.poll.interval.ms, which typically implies that the poll loop is spending too much time message processing. You can address this either by increasing the session timeout or by reducing the maximum size of batches returned in poll() with max.poll.records.
+10:06:12.623 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] WARN  org.apache.kafka.clients.consumer.internals.ConsumerCoordinator - [Consumer clientId=consumer-1, groupId=test] Synchronous auto-commit of offsets {test-0=OffsetAndMetadata{offset=40, metadata=''}} failed: Commit cannot be completed since the group has already rebalanced and assigned the partitions to another member. This means that the time between subsequent calls to poll() was longer than the configured max.poll.interval.ms, which typically implies that the poll loop is spending too much time message processing. You can address this either by increasing the session timeout or by reducing the maximum size of batches returned in poll() with max.poll.records.
+10:06:12.623 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  org.apache.kafka.clients.consumer.internals.ConsumerCoordinator - [Consumer clientId=consumer-1, groupId=test] Revoking previously assigned partitions [test-0]
+10:06:12.623 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  org.apache.kafka.clients.consumer.internals.AbstractCoordinator - [Consumer clientId=consumer-1, groupId=test] (Re-)joining group
+10:06:12.635 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  org.apache.kafka.clients.consumer.internals.AbstractCoordinator - [Consumer clientId=consumer-1, groupId=test] Successfully joined group with generation 65
+10:06:12.635 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  org.apache.kafka.clients.consumer.internals.ConsumerCoordinator - [Consumer clientId=consumer-1, groupId=test] Setting newly assigned partitions [test-0]
