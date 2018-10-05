@@ -7,6 +7,7 @@ import com.heo.entity.dto.ExpressQueryDTO;
 import com.heo.entity.vo.ReturnData;
 import com.heo.service.IExpressOrderService;
 import com.heo.service.IExpressService;
+import com.heo.service.IUserService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,6 +18,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.validation.constraints.NotNull;
+import java.math.BigDecimal;
 
 /**
  * @Auth justinniu
@@ -33,6 +35,9 @@ public class ProviderController {
 
     @Autowired
     private RedisUtil redisUtil;
+
+    @Autowired
+    private IUserService userService;
 
     private final Logger logger = LoggerFactory.getLogger(this.getClass());
 
@@ -79,6 +84,22 @@ public class ProviderController {
         rd.setCode(Constants.FAIL_CODE);
         return rd;
     }
+
+    @GetMapping("/dailyIncome")
+    @ResponseBody
+    public BigDecimal getDailyIncome()
+    {
+        Long id = new Long(2);
+        BigDecimal bigDecimal = userService.getDailyIncome(id);
+        System.out.println(bigDecimal);
+        return bigDecimal;
+    }
+/*
+    public static void main(String[] args) {
+        ProviderController providerController = new ProviderController();
+        BigDecimal dailyIncome = providerController.getDailyIncome((long) 2);
+        System.out.println(dailyIncome);
+    }*/
 
 
 }

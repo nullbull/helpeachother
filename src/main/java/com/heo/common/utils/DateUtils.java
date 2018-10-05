@@ -2,7 +2,7 @@ package com.heo.common.utils;
 
 
 import org.apache.commons.lang3.time.DateFormatUtils;
-
+import org.slf4j.LoggerFactory;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -14,6 +14,7 @@ import java.util.Date;
  */
 public class DateUtils
 {
+
     public static String YYYY = "yyyy";
 
     public static String YYYY_MM = "yyyy-MM";
@@ -98,5 +99,43 @@ public class DateUtils
         Date now = new Date();
         return DateFormatUtils.format(now, "yyyyMMdd");
     }
+
+    /**
+     * 判断日期是否在当天
+     */
+    public static boolean isToday(Date date)
+    {
+        Date now = new Date(System.currentTimeMillis());
+
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        String format = simpleDateFormat.format(now);
+        String subDate = format.substring(0,10);
+        String begin = subDate+" 00:00:00";
+        String end = subDate+" 23:59:59";
+        Date beginTime = null;
+        Date endTime = null;
+        try
+        {
+            beginTime = simpleDateFormat.parse(begin);
+            endTime = simpleDateFormat.parse(end);
+        }
+        catch (ParseException e)
+        {
+            e.printStackTrace();
+        }
+        if(date.after(beginTime) && date.before(endTime))
+        {
+            return true;
+        }
+        return false;
+    }
+
+  /*  public static void main(String[] args) throws ParseException {
+        String date = "2018-10-06 12:03:30";
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        Date cur = null;
+        cur = simpleDateFormat.parse(date);
+        System.out.println(isToday(cur));
+    }*/
 
 }

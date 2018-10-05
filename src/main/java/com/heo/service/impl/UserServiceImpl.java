@@ -4,7 +4,12 @@ package com.heo.service.impl;
 import com.heo.app.shiro.service.PasswordService;
 import com.heo.common.constant.Constants;
 import com.heo.common.constant.UserConstants;
+import com.heo.common.utils.DateUtils;
+import com.heo.common.utils.RedisUtil;
+import com.heo.dao.ExpressOrderMapper;
 import com.heo.dao.UserMapper;
+import com.heo.entity.mapper.ExpressOrder;
+import com.heo.entity.mapper.ExpressOrderExample;
 import com.heo.entity.mapper.User;
 import com.heo.entity.mapper.UserExample;
 import com.heo.entity.vo.ReturnData;
@@ -12,8 +17,10 @@ import com.heo.service.IUserService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.autoconfigure.cache.CacheProperties;
 import org.springframework.stereotype.Service;
 
+import java.math.BigDecimal;
 import java.util.Date;
 import java.util.List;
 import java.util.Random;
@@ -31,7 +38,14 @@ public class UserServiceImpl extends BaseService implements IUserService
     private UserMapper userMapper;
 
     @Autowired
+    private ExpressOrderMapper expressOrderMapper;
+
+    @Autowired
     private PasswordService passwordService;
+
+    @Autowired
+    private RedisUtil redisUtil;
+
 
     private Logger logger = LoggerFactory.getLogger(this.getClass());
 
@@ -256,6 +270,51 @@ public class UserServiceImpl extends BaseService implements IUserService
         return rd;
 
     }
+
+    /**
+    根据ID得到日收入
+     */
+    @Override
+    public BigDecimal getDailyIncome(Long id) {
+        String key = id+"DAILY_INCOME";
+        try
+        {
+
+            if(redisUtil.get(key)!=null)
+            {
+                BigDecimal bigDecimal = (BigDecimal) redisUtil.get(key);
+                return bigDecimal;
+            }
+        }
+        catch (Exception e)
+        {
+            e.printStackTrace();
+        }
+        ExpressOrderExample example = new ExpressOrderExample();
+        ExpressOrderExample.Criteria criteria = example.createCriteria();
+        criteria.andProviderIdEqualTo(id);
+        criteria.andStatusEqualTo((byte) 3);
+        List<ExpressOrder> expressOrders = expressOrderMapper.selectByExample(example);
+        BigDecimal income = new BigDecimal(0);
+        for(int i=0; i<expressOrders.size(); i++)
+        {
+            ExpressOrder expressOrder = expressOrders.get(i);
+            if(DateUtils.isToday(expressOrder.getUpdatedAt()))
+            {
+                income = income.add(expressOrder.getPrice());
+            }
+        }
+        try
+        {
+            redisUtil.set(key, income);
+        }
+        catch (Exception e)
+        {
+            e.printStackTrace();
+        }
+        return income;
+    }
+
     private int randomSalt() {
           return random.nextInt(10000);
     }

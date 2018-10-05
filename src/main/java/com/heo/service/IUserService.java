@@ -4,6 +4,7 @@ package com.heo.service;
 import com.heo.entity.mapper.User;
 import com.heo.entity.vo.ReturnData;
 
+import java.math.BigDecimal;
 import java.util.List;
 
 /**
@@ -89,5 +90,7 @@ public interface IUserService
 
 
     public ReturnData registerUser(User user);
+
+    public BigDecimal getDailyIncome(Long id);
 
 }

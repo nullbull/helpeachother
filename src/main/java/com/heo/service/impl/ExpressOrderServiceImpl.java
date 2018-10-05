@@ -3,6 +3,7 @@ package com.heo.service.impl;
 import com.alibaba.fastjson.JSON;
 import com.github.pagehelper.PageHelper;
 import com.heo.common.constant.Constants;
+import com.heo.common.utils.RedisUtil;
 import com.heo.common.utils.security.ShiroUtils;
 import com.heo.dao.UserMapper;
 import com.heo.entity.dto.ExpressOrderEmailDTO;
@@ -20,6 +21,7 @@ import org.springframework.stereotype.Service;
 
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
+import java.math.BigDecimal;
 import java.util.Date;
 import java.util.List;
 
@@ -31,6 +33,8 @@ import java.util.List;
 @Service
 public class ExpressOrderServiceImpl extends BaseService implements IExpressOrderService {
     private Logger logger = LoggerFactory.getLogger(this.getClass());
+
+    private RedisUtil redisUtil;
 
     /**
      * 创建快递代送单
@@ -121,9 +125,10 @@ public class ExpressOrderServiceImpl extends BaseService implements IExpressOrde
     public ReturnData finishExpressOrder(Long id) {
         ReturnData rd = getReturnData();
         String methodDesc = "完成快递代送单";
+        ExpressOrder expressOrder = null;
         try {
             logger.info(methodDesc + "开始， id：{}", id);
-            ExpressOrder expressOrder = expressOrderMapper.selectByPrimaryKey(id);
+            expressOrder = expressOrderMapper.selectByPrimaryKey(id);
             if (null == expressOrder) {
                 rd.setMsg("该快递代送单不存在");
                 logger.info(methodDesc + "失败， 该快递代送单不存在 id：{}", id);
@@ -147,6 +152,24 @@ public class ExpressOrderServiceImpl extends BaseService implements IExpressOrde
         } catch (Exception e) {
             rd.setMsg("未知系统错误");
             logger.error(methodDesc + "失败, 未知系统错误, e:{}", e);
+        }
+
+        /**
+         * 更新缓存中的income
+         */
+        String key = expressOrder.getProviderId()+"DAILY_INCOME";
+        try
+        {
+            if(redisUtil.get(key)!=null)
+            {
+                BigDecimal bigDecimal = (BigDecimal) redisUtil.get(key);
+                bigDecimal.add(expressOrder.getPrice());
+                redisUtil.set(key,bigDecimal);
+            }
+        }
+        catch (Exception e)
+        {
+            e.printStackTrace();
         }
         return rd;
     }
