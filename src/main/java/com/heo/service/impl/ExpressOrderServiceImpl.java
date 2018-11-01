@@ -22,6 +22,7 @@ import org.springframework.stereotype.Service;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
 import java.math.BigDecimal;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -254,7 +255,27 @@ public class ExpressOrderServiceImpl extends BaseService implements IExpressOrde
 
     @Override
     public ReturnData deleteExpressOrder(Long id) {
-        return null;
+        ReturnData rd = getReturnData();
+        String methodDesc = "删除订单接口";
+        try {
+            logger.info(methodDesc + "开始>>>>>>>>>>>>>>>>>>>>>>>>>>id:{}", id);
+            ExpressOrder expressOrder;
+            if (null == (expressOrder = expressOrderMapper.selectByPrimaryKey(id))) {
+                rd.setMsg("该订单不存在");
+                logger.info(methodDesc + "失败>>>>>>>>>>>>>>>>>>>>>>id{}不存在", id);
+                return rd;
+            }
+            expressOrder.setStatus(Constants.ORDER_DELETE);
+            expressOrderMapper.updateByPrimaryKeySelective(expressOrder);
+            rd.setCode(Constants.SUCCESS_CODE);
+            rd.setMsg("成功");
+            logger.info(methodDesc + "完成");
+        } catch (Exception e) {
+            rd.setMsg("未知系统错误");
+            logger.error(methodDesc + "失败, 未知系统错误, e:{}", e);
+        }
+        return rd;
     }
+
 
 }
