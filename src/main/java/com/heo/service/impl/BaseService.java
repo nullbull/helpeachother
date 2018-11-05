@@ -11,7 +11,9 @@ import com.heo.entity.vo.ReturnData;
 import com.heo.service.IBaseService;
 import com.heo.service.IEmailService;
 import com.heo.service.IKafkaService;
+import org.springframework.amqp.core.AmqpTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 import redis.clients.jedis.Jedis;
 import redis.clients.jedis.JedisPool;
@@ -38,6 +40,12 @@ public class BaseService implements IBaseService {
         }
     };
 
+    @Value("${rabbitMQ.exchange}")
+    protected String EXCHANGE_NAME;
+
+    protected String QUEUE_A = "create.a";
+
+    protected String QUEUE_B = "create.b";
 
     @Autowired
     protected ExpressInfoMapper expressInfoMapper;
@@ -68,6 +76,10 @@ public class BaseService implements IBaseService {
 
     @Autowired
     protected RedisUtil redisUtil;
+
+    @Autowired
+    protected AmqpTemplate amqpTemplate;
+
     @Override
     public List<LocationInfo> getLocationByPart(Byte part) {
         LocationInfoExample example = new LocationInfoExample();

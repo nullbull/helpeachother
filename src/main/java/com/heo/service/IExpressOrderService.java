@@ -1,5 +1,6 @@
 package com.heo.service;
 
+import com.heo.entity.dto.ExpressMessageDTO;
 import com.heo.entity.mapper.ExpressOrder;
 import com.heo.entity.vo.ExpressOrderQueryVO;
 import com.heo.entity.vo.ReturnData;
@@ -11,7 +12,7 @@ import com.heo.entity.vo.ReturnData;
  */
 public interface IExpressOrderService {
     ReturnData createExpressOrder(Long id);
-    ReturnData getExpressOrderDetail(Long id);
+    ReturnData doCreateExpressOrder(ExpressMessageDTO dto);
     ReturnData deleteExpressOrder(Long id);
     ReturnData finishExpressOrder(Long id);
     ReturnData getExpressOrderListById(ExpressOrderQueryVO vo, int limit, int offset);

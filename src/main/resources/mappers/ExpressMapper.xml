@@ -457,34 +457,34 @@
       end_at = #{endAt,jdbcType=TIMESTAMP}
     where id = #{id,jdbcType=BIGINT}
   </update>
-    <select id="selectByExpressQureyDTO" parameterType="com.heo.entity.dto.ExpressQueryDTO" resultType="com.heo.entity.dto.ExpressAndNameDTO">
-        select
-          a.id, a.user_id as userId, a.phone, a.express_type as expressType, a.get_code, a.price, a.location_id as locationId, a.message, a.created_at,
-          a.updated_at as updatedAt, a.status, b.user_name as userName, b.nick_name as nickName, c.name as locationName
-          from express a
-          left join user b on
-           a.user_id = b.id
-          left join location_info c on
-           a.location_id = c.id
-           <where>
-               <if test="expressType != null">
-                   a.express_type = #{expressType}
-               </if>
-               <if test="lowPrice != null">
-                   and a.price &gt;= #{lowPrice}
-               </if>
-               <if test="highPrice != null">
-                   and a.price &lt;= #{highPrice}
-               </if>
-               <if test="beginTime != null">
-                   and a.created_at &gt;= #{beginTime}
-               </if>
-               <if test="endTime != null">
-                   and  a.created_at $lt;= #{endTime}
-               </if>
-           </where>
+    <!--<select id="selectByExpressQureyDTO" parameterType="com.heo.entity.dto.ExpressQueryDTO" resultType="com.heo.entity.dto.ExpressAndNameDTO">-->
+        <!--select-->
+          <!--a.id, a.user_id as userId, a.phone, a.express_type as expressType, a.get_code, a.price, a.location_id as locationId, a.message, a.created_at,-->
+          <!--a.updated_at as updatedAt, a.status, b.user_name as userName, b.nick_name as nickName, c.name as locationName-->
+          <!--from express a-->
+          <!--left join user b on-->
+           <!--a.user_id = b.id-->
+          <!--left join location_info c on-->
+           <!--a.location_id = c.id-->
+           <!--<where>-->
+               <!--<if test="expressType != null">-->
+                   <!--a.express_type = #{expressType}-->
+               <!--</if>-->
+               <!--<if test="lowPrice != null">-->
+                   <!--and a.price &gt;= #{lowPrice}-->
+               <!--</if>-->
+               <!--<if test="highPrice != null">-->
+                   <!--and a.price &lt;= #{highPrice}-->
+               <!--</if>-->
+               <!--<if test="beginTime != null">-->
+                   <!--and a.created_at &gt;= #{beginTime}-->
+               <!--</if>-->
+               <!--<if test="endTime != null">-->
+                   <!--and  a.created_at $lt;= #{endTime}-->
+               <!--</if>-->
+           <!--</where>-->
 
-    </select>
+    <!--</select>-->
 
     <select id="selectByExpressQureyDTO" parameterType="com.heo.entity.dto.ExpressQueryDTO" resultType="com.heo.entity.dto.ExpressAndNameDTO">
         select
