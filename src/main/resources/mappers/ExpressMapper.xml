@@ -518,4 +518,15 @@
 
     </select>
 
+  <select id="selectExpressOrderByTwoIds" resultType="com.heo.entity.dto.ExpressOrderNameDTO">
+    select a.id, a.user_id, a.phone, a.express_type, a.get_code, a.price, a.location_id, a.message, a.created_at,
+    a.updated_at, a.express_status, a.provider_id, a.order_status, a.score, a.start_at, a.end_at, b.name as neederName,
+    c.name as providerName, d.name as expressName, e.name as locationName
+     from express
+    left join user b on a.user_id = b.id
+    left join user c on a.provider_id = c.id
+    left join express_info d on a.express_type = d.id
+    left join location_info e on a.location_id = e.id
+  </select>
+
 </mapper>

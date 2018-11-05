@@ -1,6 +1,7 @@
 package com.heo.dao;
 
 import com.heo.entity.dto.ExpressAndNameDTO;
+import com.heo.entity.dto.ExpressOrderNameDTO;
 import com.heo.entity.dto.ExpressQueryDTO;
 import com.heo.entity.mapper.Express;
 import com.heo.entity.mapper.ExpressExample;
@@ -98,4 +99,7 @@ public interface ExpressMapper {
 
 
     List<ExpressAndNameDTO> selectByExpressQureyDTO(ExpressQueryDTO expressQureyDTO);
+
+
+    List<ExpressOrderNameDTO> selectExpressOrderByTwoIds(Long providerId, Long neederId);
 }
