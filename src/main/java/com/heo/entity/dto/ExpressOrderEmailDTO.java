@@ -12,10 +12,15 @@ import java.util.Date;
  */
 @Data
 public class ExpressOrderEmailDTO {
+
     private String providerName;
+
     private String nickName;
+
     private Date finishTime;
+
     private BigDecimal price;
+
     private Long expressOrderId;
 
 }

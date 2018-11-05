@@ -75,13 +75,18 @@ public class RedisUtil {
      */
     @SuppressWarnings("unchecked")
     public void del(String ... key){
-        if(key!=null&&key.length>0){
+        if(key != null && key.length > 0){
             if(key.length==1){
                 redisTemplate.delete(key[0]);
             }else{
                 redisTemplate.delete(CollectionUtils.arrayToList(key));
             }
         }
+    }
+
+
+    public void del(ERedisKey e, String key) {
+        del(e.getName() + key);
     }
 
     //============================String=============================
@@ -139,11 +144,11 @@ public class RedisUtil {
     /**
      * 递增
      * @param key 键
-     * @param by 要增加几(大于0)
+     * @param delta 要增加几(大于0)
      * @return
      */
     public long incr(String key, long delta){
-        if(delta<0){
+        if(delta < 0){
             throw new RuntimeException("递增因子必须大于0");
         }
         return redisTemplate.opsForValue().increment(key, delta);
@@ -152,7 +157,7 @@ public class RedisUtil {
     /**
      * 递减
      * @param key 键
-     * @param by 要减少几(小于0)
+     * @param delta 要减少几(小于0)
      * @return
      */
     public long decr(String key, long delta){

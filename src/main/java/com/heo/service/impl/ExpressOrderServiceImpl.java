@@ -3,10 +3,13 @@ package com.heo.service.impl;
 import com.alibaba.fastjson.JSON;
 import com.github.pagehelper.PageHelper;
 import com.heo.common.constant.Constants;
+import com.heo.common.redis.ERedisKey;
 import com.heo.common.utils.RedisUtil;
 import com.heo.common.utils.security.ShiroUtils;
 import com.heo.dao.UserMapper;
+import com.heo.entity.dto.ExpressMessageDTO;
 import com.heo.entity.dto.ExpressOrderEmailDTO;
+import com.heo.entity.dto.ExpressOrderNameDTO;
 import com.heo.entity.mapper.Express;
 import com.heo.entity.mapper.ExpressOrder;
 import com.heo.entity.mapper.ExpressOrderExample;
@@ -58,30 +61,80 @@ public class ExpressOrderServiceImpl extends BaseService implements IExpressOrde
                 logger.info(methodDesc + "失败 >>>>>>>>>>>>>>>>>>>>>>>>>> 用户未登录", id);
                 return rd;
             }
+            String key = ERedisKey.EXPRESS_ORDER + id.toString();
             if (redisUtil.lock(getJedis(), REDIS_METHOD_LOCK, id.toString())) {
-            }
+                if (null != redisUtil.get(key)) {
+                    redisUtil.del(ERedisKey.EXPRESS_ORDER, id.toString());
+                    /**
+                     * 数据封装
+                     */
+                    ExpressMessageDTO expressMessageDTO = new ExpressMessageDTO();
+                    expressMessageDTO.setCreatedAt(new Date());
+                    expressMessageDTO.setId(id);
+                    expressMessageDTO.setProviderId(ShiroUtils.getUserId());
 
-            //数据封装
-            expressOrder.setExpressId(express.getId());
-            expressOrder.setStatus(Constants.ORDER_NEW);
-            expressOrder.setNeederId(express.getUserId());
-            expressOrder.setProviderId(ShiroUtils.getUserId());
-            expressOrder.setPrice(express.getPrice());
-            expressOrder.setCreatedAt(new Date());
-            //todo 不想让某人接单，用户可以设置黑名单
-            expressOrderMapper.insertSelective(expressOrder);
-            rd.setMsg("完成");
-            rd.setCode(Constants.SUCCESS_CODE);
-            rd.setData(expressOrder);
-            logger.info(methodDesc + "完成 expressOrder:{}", expressOrder);
+                    /**
+                     * 发送到RabbitMq
+                     */
+                    amqpTemplate.convertAndSend(EXCHANGE_NAME, QUEUE_A, JSON.toJSONString(expressMessageDTO));
+
+                    /**
+                     * 释放锁
+                     */
+                    redisUtil.releaseLock(jedisPool.getResource(), REDIS_METHOD_LOCK, id.toString());
+                    rd.setMsg("预订中,请等候");
+                    rd.setCode(Constants.SUCCESS_CODE);
+                    logger.info(methodDesc + "交给RabbitMQ处理>>>>>>>>>>>id", id);
+                }
+                rd.setMsg("该订单已被下单,请尝试其他");
+                logger.info(methodDesc + "失败 >>>>>>>>>>> {}已被下单", id);
+                return rd;
+            } else {
+                /**
+                 * 重新尝试获取锁
+                 */
+                if (redisUtil.tryLock(getJedis(), REDIS_METHOD_LOCK, id.toString())) {
+                    if (null != redisUtil.get(key)) {
+                        redisUtil.del(ERedisKey.EXPRESS_ORDER, id.toString());
+                        amqpTemplate.convertAndSend(EXCHANGE_NAME, QUEUE_A, id.toString());
+                    }
+                    rd.setMsg("该订单已被下单,请尝试其他");
+                    logger.info(methodDesc + "失败 >>>>>>>>>>> {}已被下单", id);
+                    return rd;
+                }
+                rd.setMsg("服务器繁忙,请重试");
+                logger.info(methodDesc + "多次尝试获取锁失败>>>>>>>>>>>>>>>>id{}", id);
+            }
         } catch (Exception e) {
             rd.setMsg("未知错误");
-            logger.error(methodDesc + "失败， 未知错误 e ：{}", e.getMessage());
+            logger.error(methodDesc + "失败， 未知错误 e ：{}", e);
         }
         return rd;
     }
 
-    public
+    private ReturnData doCreateExpressOrder(ExpressMessageDTO dto) {
+        ReturnData rd = getReturnData();
+        String methodDesc = "真实创建ExpressOrder接口";
+        try {
+            logger.info(methodDesc + "开始>>>>>>>>>>>>ExpressMessageDTO:{}", dto);
+            Express express = expressMapper.selectByPrimaryKey(dto.getId());
+            //数据封装
+            express.setStartAt(dto.getCreatedAt());
+            express.setProviderId(dto.getProviderId());
+            express.setOrderStatus(Constants.ORDER_NEW);
+            //todo 不想让某人接单，用户可以设置黑名单
+            expressMapper.insertSelective(express);
+            rd.setMsg("完成");
+            rd.setCode(Constants.SUCCESS_CODE);
+            rd.setData(express);
+            logger.info(methodDesc + "完成 >>>>>>>>>>>>> express:{}", express);
+        } catch (Exception e) {
+            rd.setMsg("未知错误");
+            logger.error(methodDesc + "失败， 未知错误 e ：{}", e);
+            throw new RuntimeException(e.getMessage());
+        }
+        return rd;
+    }
 
     /**
      * 获取代送单详情
@@ -117,7 +170,7 @@ public class ExpressOrderServiceImpl extends BaseService implements IExpressOrde
             logger.info(methodDesc + "完成， rd：{}", rd);
         } catch (Exception e) {
             rd.setMsg("未知错误");
-            logger.error(methodDesc + "失败， 未知错误 e ：{}", e.getMessage());
+            logger.error(methodDesc + "失败， 未知错误 e ：{}", e);
         }
         return rd;
     }
@@ -240,14 +293,15 @@ public class ExpressOrderServiceImpl extends BaseService implements IExpressOrde
         String methodDesc = "根据跑腿者和需求者id获取快递代送单";
         try {
             logger.info(methodDesc + " 开始 providerId:{}, neederId:{}", providerId, neederId);
-            ExpressOrder expressOrder = expressOrderMapper.selectExpressOrderByTwoIds(providerId, neederId);
-            if (null == expressOrder) {
+            List<ExpressOrderNameDTO> express = expressMapper.selectExpressOrderByTwoIds(providerId, neederId);
+            if (null == express) {
                 rd.setMsg("该快递代送单不存在");
                 logger.info(methodDesc + "失败，不再存在该单 providerId:{}, neederId:{} ", providerId, neederId);
             }
             rd.setMsg("成功");
             rd.setCode(Constants.SUCCESS_CODE);
-            rd.setData(expressOrder);
+            rd.setData(express);
+            logger.info(methodDesc + "完成>>>>>>>>>>>>express", express);
         } catch (Exception e) {
             rd.setMsg("未知系统错误");
             logger.error(methodDesc + "失败, 未知系统错误, e:{}", e);
@@ -261,14 +315,14 @@ public class ExpressOrderServiceImpl extends BaseService implements IExpressOrde
         String methodDesc = "删除订单接口";
         try {
             logger.info(methodDesc + "开始>>>>>>>>>>>>>>>>>>>>>>>>>>id:{}", id);
-            ExpressOrder expressOrder;
-            if (null == (expressOrder = expressOrderMapper.selectByPrimaryKey(id))) {
+            Express express;
+            if (null == (express = expressMapper.selectByPrimaryKey(id))) {
                 rd.setMsg("该订单不存在");
                 logger.info(methodDesc + "失败>>>>>>>>>>>>>>>>>>>>>>id{}不存在", id);
                 return rd;
             }
-            expressOrder.setStatus(Constants.ORDER_DELETE);
-            expressOrderMapper.updateByPrimaryKeySelective(expressOrder);
+            express.setOrderStatus(Constants.ORDER_DELETE);
+            expressMapper.updateByPrimaryKeySelective(express);
             rd.setCode(Constants.SUCCESS_CODE);
             rd.setMsg("成功");
             logger.info(methodDesc + "完成");

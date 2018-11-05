@@ -105,6 +105,8 @@ public class ExpressAndNameDTO {
     private Byte status;
 
     private String locationName;
+
     private String userName;
+
     private String nickName;
 }
