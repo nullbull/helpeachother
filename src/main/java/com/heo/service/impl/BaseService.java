@@ -1,6 +1,8 @@
 package com.heo.service.impl;
 
 import com.heo.common.constant.Constants;
+import com.heo.common.utils.RedisLock;
+import com.heo.common.utils.RedisUtil;
 import com.heo.dao.*;
 import com.heo.entity.mapper.ExpressInfo;
 import com.heo.entity.mapper.LocationInfo;
@@ -11,6 +13,8 @@ import com.heo.service.IEmailService;
 import com.heo.service.IKafkaService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+import redis.clients.jedis.Jedis;
+import redis.clients.jedis.JedisPool;
 
 import java.text.DateFormat;
 import java.text.ParseException;
@@ -36,24 +40,34 @@ public class BaseService implements IBaseService {
 
 
     @Autowired
-    public ExpressInfoMapper expressInfoMapper;
+    protected ExpressInfoMapper expressInfoMapper;
 
     @Autowired
-    public LocationInfoMapper locationInfoMapper;
+    protected LocationInfoMapper locationInfoMapper;
 
     @Autowired
-    public ExpressMapper expressMapper;
+    protected ExpressMapper expressMapper;
 
     @Autowired
-    public ExpressOrderMapper  expressOrderMapper;
+    protected ExpressOrderMapper  expressOrderMapper;
 
     @Autowired
-    public UserMapper userMapper;
-    @Autowired
-    public IKafkaService kafkaService;
-    @Autowired
-    public IEmailService emailService;
+    protected UserMapper userMapper;
 
+    @Autowired
+    protected IKafkaService kafkaService;
+
+    @Autowired
+    protected IEmailService emailService;
+
+    @Autowired
+    protected RedisLock redisLock;
+
+    @Autowired
+    protected JedisPool jedisPool;
+
+    @Autowired
+    protected RedisUtil redisUtil;
     @Override
     public List<LocationInfo> getLocationByPart(Byte part) {
         LocationInfoExample example = new LocationInfoExample();
@@ -79,6 +93,13 @@ public class BaseService implements IBaseService {
         rd.setCode(Constants.FAIL_CODE);
         return rd;
     }
+
+    public Jedis getJedis() {
+        return jedisPool.getResource();
+    }
+
+
+
 
 
 }

@@ -1,7 +1,9 @@
 package com.heo.service.impl;
 
+import com.alibaba.fastjson.JSON;
 import com.github.pagehelper.PageHelper;
 import com.heo.common.constant.Constants;
+import com.heo.common.redis.ERedisKey;
 import com.heo.common.utils.StringUtils;
 import com.heo.common.utils.security.ShiroUtils;
 import com.heo.entity.dto.ExpressAndNameDTO;
@@ -15,6 +17,7 @@ import com.heo.service.IExpressService;
 //import org.apache.commons.collections.CollectionUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.springframework.util.CollectionUtils;
 
@@ -35,7 +38,10 @@ public class ExpressServiceImpl extends BaseService implements IExpressService {
 
     private Logger logger = LoggerFactory.getLogger(ExpressServiceImpl.class);
     private static Random random = new Random(47);
-
+    @Value("cache.value")
+    private String CACHE_VALUE;
+    @Value("cache.key")
+    private String CACHE_KEY;
     private int pageSize = 10;
     @Override
     public ReturnData createExpress(Express express) {
@@ -43,7 +49,7 @@ public class ExpressServiceImpl extends BaseService implements IExpressService {
         String methoDesc = "创建代送快递信息";
         try {
             express.setUserId(ShiroUtils.getUserId());
-            express.setStatus(Constants.ORDER_NEW);
+            express.setExpressStatus(Constants.ORDER_NEW);
             express.setPhone(ShiroUtils.getUser().getPhone());
             if (StringUtils.isEmpty(express.getPhone()) || null == express.getLocationId() || null == express.getUserId() || null == express.getPrice() || null == express.getExpressType() || null == express.getGetCode()) {
                 rd.setMsg("关键信息不能为空");
@@ -92,6 +98,18 @@ public class ExpressServiceImpl extends BaseService implements IExpressService {
                 expressVO.setLocationName(null == e.getLocationName() ? "" : e.getLocationName());
                 return expressVO;
             }).collect(Collectors.toList());
+
+            /**
+             * 将数据缓存到数据库里
+             * 如果已经缓存了, 就不添加缓存
+             */
+            if (!CACHE_VALUE.equals(redisUtil.get(CACHE_VALUE))) {
+                expressVOList.forEach(vo -> {
+                    redisUtil.set(ERedisKey.EXPRESS_ORDER, vo.getId().toString(), vo);
+                });
+                redisUtil.set(CACHE_KEY, CACHE_VALUE, 10 * 60 * 1000);
+            }
+
             rd.setMsg("完成");
             rd.setCode(Constants.SUCCESS_CODE);
             rd.setData(expressVOList);
@@ -152,7 +170,7 @@ public class ExpressServiceImpl extends BaseService implements IExpressService {
                 expressOrder.setStatus(Constants.ORDER_DELETE);
                 expressOrderMapper.updateByPrimaryKeySelective(expressOrder);
             }
-            express.setStatus(Constants.ORDER_DELETE);
+            express.setExpressStatus(Constants.ORDER_DELETE);
             expressMapper.updateByPrimaryKeySelective(express);
             rd.setCode(Constants.SUCCESS_CODE);
             rd.setMsg("订单删除完成");

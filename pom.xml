@@ -73,6 +73,14 @@
             <artifactId>spring-boot-starter-quartz</artifactId>
         </dependency>
 
+        <!--quartz定时任务-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-amqp</artifactId>
+        </dependency>
+
+
+
 
         <!-- 解析客户端操作系统、浏览器等 -->
         <dependency>

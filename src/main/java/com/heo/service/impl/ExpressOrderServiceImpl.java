@@ -33,10 +33,8 @@ import java.util.List;
  */
 @Service
 public class ExpressOrderServiceImpl extends BaseService implements IExpressOrderService {
+    private String REDIS_METHOD_LOCK =  "lock:createOrder";
     private Logger logger = LoggerFactory.getLogger(this.getClass());
-
-    private RedisUtil redisUtil;
-
     /**
      * 创建快递代送单
      * @param   id
@@ -60,6 +58,9 @@ public class ExpressOrderServiceImpl extends BaseService implements IExpressOrde
                 logger.info(methodDesc + "失败 >>>>>>>>>>>>>>>>>>>>>>>>>> 用户未登录", id);
                 return rd;
             }
+            if (redisUtil.lock(getJedis(), REDIS_METHOD_LOCK, id.toString())) {
+            }
+
             //数据封装
             expressOrder.setExpressId(express.getId());
             expressOrder.setStatus(Constants.ORDER_NEW);
@@ -67,7 +68,6 @@ public class ExpressOrderServiceImpl extends BaseService implements IExpressOrde
             expressOrder.setProviderId(ShiroUtils.getUserId());
             expressOrder.setPrice(express.getPrice());
             expressOrder.setCreatedAt(new Date());
-
             //todo 不想让某人接单，用户可以设置黑名单
             expressOrderMapper.insertSelective(expressOrder);
             rd.setMsg("完成");
@@ -80,6 +80,8 @@ public class ExpressOrderServiceImpl extends BaseService implements IExpressOrde
         }
         return rd;
     }
+
+    public
 
     /**
      * 获取代送单详情

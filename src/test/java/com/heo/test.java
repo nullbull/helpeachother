@@ -4,6 +4,7 @@ import com.heo.common.utils.RedisLock;
 import com.heo.service.IEmailService;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.springframework.amqp.core.AmqpTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.mail.SimpleMailMessage;
@@ -37,6 +38,8 @@ public class test {
     TemplateEngine templateEngine;
 
 
+    @Autowired
+    AmqpTemplate amqpTemplate;
     @Autowired
     private IEmailService emailService;
 
@@ -112,6 +115,11 @@ public class test {
 
 
 
+    }
+
+    @Test
+    public void testRabbitMq() {
+        amqpTemplate.convertAndSend("zwt", "create.b", "mylove");
     }
 }
 
