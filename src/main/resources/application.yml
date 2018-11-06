@@ -87,7 +87,7 @@ spring:
     timeout: 1000
     host: localhost
   kafka:
-    bootstrap-servers: 59.110.137.45:9092
+    bootstrap-servers:
     producer:
       key-serializer: org.apache.kafka.common.serialization.StringSerializer
       value-serializer: org.apache.kafka.common.serialization.StringSerializer
@@ -98,13 +98,13 @@ spring:
       enable-auto-commit: true
       key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
       value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
-      bootstrap-servers: 59.110.137.45:9092
+      bootstrap-servers:
       auto-offset-reset: earliest
   mail:
     host: smtp.yeah.net
     port: 25
-    username: justinniu@yeah.net
-    password: n1996z11h2
+    username:
+    password:
     properties:
       mail:
         smtp:
@@ -115,9 +115,9 @@ spring:
     protocol: smtp
     default-encoding: UTF-8
   rabbitmq:
-    addresses: 59.110.137.45:5672
-    username: justinniu
-    password: n1996z11h2
+    addresses:
+    username:
+    password:
     virtual-host: /zwt
 
 mybatis:
