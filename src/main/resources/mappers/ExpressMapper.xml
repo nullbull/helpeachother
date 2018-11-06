@@ -528,5 +528,9 @@
     left join express_info d on a.express_type = d.id
     left join location_info e on a.location_id = e.id
   </select>
+  
+  <select id="selectIncomeByProviderIdAndDate" resultType="com.heo.entity.dto.IncomeStatisEmailDTO">
+    select provider_id, sum(price) as inCome, max(end_at) as lastOrder, count(*) as amount, b.user_name, b.nick_name from express left join user b on b.id = expresss.provider_id where order_status = 3  and provider_id = #{providerId} and end_at >= #{date}
+  </select>
 
 </mapper>

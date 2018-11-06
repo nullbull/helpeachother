@@ -96,5 +96,8 @@ public interface UserMapper {
 
     List<User> selectUserList(User user);
 
+    List<Long> selectUserIdByType(Byte type);
+
+
 
 }

@@ -11,11 +11,21 @@ import com.heo.entity.vo.ReturnData;
  * @Desc
  */
 public interface IExpressOrderService {
+
     ReturnData createExpressOrder(Long id);
+
     ReturnData doCreateExpressOrder(ExpressMessageDTO dto);
+
     ReturnData deleteExpressOrder(Long id);
+
     ReturnData finishExpressOrder(Long id);
+
     ReturnData getExpressOrderListById(ExpressOrderQueryVO vo, int limit, int offset);
+
     ReturnData getByStatus(Long id, Byte status);
+
     ReturnData getByProviderAndNeederId(Long providerId, Long neederId);
+
+    void statisIncome(Long providerId, int hour);
+
 }

@@ -1,5 +1,6 @@
 package com.heo.service.impl;
 
+import com.heo.common.Properties.RabbitMqProperties;
 import com.heo.common.constant.Constants;
 import com.heo.common.utils.RedisLock;
 import com.heo.common.utils.RedisUtil;
@@ -50,6 +51,9 @@ public class BaseService implements IBaseService {
 
     @Value("${rabbitMQ.exchange}")
     protected String EXCHANGE_NAME;
+
+    @Autowired
+    protected RabbitMqProperties rabbitMqProperties;
 
 //    protected String QUEUE_A = "create.a";
 //

@@ -269,7 +269,7 @@ public class ShiroConfig
         filterChainDefinitionMap.put("/system/**", "onlineSession,syncOnlineSession");
         filterChainDefinitionMap.put("/monitor/**", "onlineSession,syncOnlineSession");
         filterChainDefinitionMap.put("/tool/**", "onlineSession,syncOnlineSession");
-        filterChainDefinitionMap.put("/hello", "onlineSession,syncOnlineSession");
+        filterChainDefinitionMap.put("/hello", "onlineSession, syncOnlineSession");
         shiroFilterFactoryBean.setFilterChainDefinitionMap(filterChainDefinitionMap);
 
         return shiroFilterFactoryBean;

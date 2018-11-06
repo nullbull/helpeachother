@@ -10,11 +10,13 @@ import com.heo.dao.UserMapper;
 import com.heo.entity.dto.ExpressMessageDTO;
 import com.heo.entity.dto.ExpressOrderEmailDTO;
 import com.heo.entity.dto.ExpressOrderNameDTO;
+import com.heo.entity.dto.IncomeStatisEmailDTO;
 import com.heo.entity.mapper.*;
 import com.heo.entity.vo.ExpressOrderQueryVO;
 import com.heo.entity.vo.ExpressOrderVO;
 import com.heo.entity.vo.ReturnData;
 import com.heo.service.IExpressOrderService;
+import org.apache.shiro.crypto.hash.Hash;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
@@ -24,6 +26,7 @@ import javax.validation.constraints.NotNull;
 import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.HashMap;
 import java.util.List;
 
 /**
@@ -329,9 +332,22 @@ public class ExpressOrderServiceImpl extends BaseService implements IExpressOrde
         return rd;
     }
 
-//    public ReturnData statisIncome(Long providerId, int Hour) {
-//
-//    }
-
+    /**
+     * 根据用户ID获取时间段内收入v
+     * @param providerId
+     * @param hour
+     * @return
+     */
+    public void statisIncome(Long providerId, int hour) {
+        String methodDesc = "根据用户ID获取时间段内收入";
+        logger.info(methodDesc + "开始>>>>>>>>>>>>>>>>>>>id:{}, hour:{}", providerId, hour);
+        try {
+            IncomeStatisEmailDTO income =  expressMapper.selectIncomeByProviderIdAndDate(providerId, getPastDateByHour(hour));
+            amqpTemplate.convertAndSend(rabbitMqProperties.getEmailExchange(), rabbitMqProperties.getEmailQueue(), JSON.toJSON(income));
+            logger.info(methodDesc + "发送MQ完成>>>>>>>>>>>>>>>>>>>>>>income:{}", income);
+        } catch (Exception e) {
+            logger.error(methodDesc + "失败, 未知系统异常", e);
+        }
+    }
 
 }

@@ -1,4 +1,4 @@
-package com.heo.controller;
+package com.heo.mq;
 
 import com.heo.common.utils.RedisUtil;
 import com.heo.service.IEmailService;

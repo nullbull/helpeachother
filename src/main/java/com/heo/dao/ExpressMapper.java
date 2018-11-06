@@ -3,8 +3,11 @@ package com.heo.dao;
 import com.heo.entity.dto.ExpressAndNameDTO;
 import com.heo.entity.dto.ExpressOrderNameDTO;
 import com.heo.entity.dto.ExpressQueryDTO;
+import com.heo.entity.dto.IncomeStatisEmailDTO;
 import com.heo.entity.mapper.Express;
 import com.heo.entity.mapper.ExpressExample;
+
+import java.util.Date;
 import java.util.List;
 import org.apache.ibatis.annotations.Param;
 
@@ -102,4 +105,8 @@ public interface ExpressMapper {
 
 
     List<ExpressOrderNameDTO> selectExpressOrderByTwoIds(Long providerId, Long neederId);
+
+
+    IncomeStatisEmailDTO selectIncomeByProviderIdAndDate(Long providerId, Date date);
+
 }

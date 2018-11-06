@@ -1,10 +1,8 @@
-package com.heo.controller;
+package com.heo.mq;
 
 import com.alibaba.fastjson.JSON;
 import com.heo.entity.dto.ExpressMessageDTO;
-import com.heo.entity.dto.ExpressOrderNameDTO;
 import com.heo.service.IExpressOrderService;
-import com.heo.service.IExpressService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.amqp.rabbit.annotation.RabbitListener;

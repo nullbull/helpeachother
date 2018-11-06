@@ -72,14 +72,20 @@ public class Constants
     public static final Byte FAIL_CODE = 0;
 
     public static final Byte ORDER_INVALID = 0;
+
     public static final Byte ORDER_NEW = 1;
+
     public static final Byte ORDER_PICK_UP = 2;
+
     public static final Byte ORDER_FINISH = 3;
+
     public static final Byte ORDER_DELETE = 4;
 
     public final static Byte PROVIDER = 2;
+
     public final static Byte NEEDER = 1;
 
+    public final static Byte STATIS_HOUR = 12;
     public final static HashMap<Byte, String> EXPRESS_INFO = new HashMap<>();
     static {
         EXPRESS_INFO.put((byte) 1, "圆通快递");

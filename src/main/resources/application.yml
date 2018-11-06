@@ -143,6 +143,8 @@ Cache:
 #  key: AlreadyCache
 #  value: YES
 rabbitMQ:
+  emailExchange: niu
+  emailQueue: email
   exchange: zwt
   queue1: create.a
   queue2: create.b

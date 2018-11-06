@@ -1,12 +1,12 @@
 package com.heo.app.config;
 
-import org.springframework.amqp.core.Binding;
-import org.springframework.amqp.core.BindingBuilder;
-import org.springframework.amqp.core.Queue;
-import org.springframework.amqp.core.TopicExchange;
+import org.springframework.amqp.core.*;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Component;
+
+import java.util.Collection;
+import java.util.Map;
 
 /**
  * @Auth justinniu
@@ -20,6 +20,12 @@ public class RabbitMqConfig {
     private String CreateB = "create.b";
 
     private String DefaultExchange = "zwt";
+
+    @Value("${rabbitMQ.emailExchange}")
+    private String EAMIL_EXCHANGE;
+
+    @Value("${rabbitMQ.emailQueue}")
+    private String EMAIL_QUEUE;
     @Bean(name = "create.a")
     public Queue createA() {
         return new Queue(CreateA);
@@ -44,6 +50,21 @@ public class RabbitMqConfig {
     @Bean
     public Binding topicBinding2() {
         return BindingBuilder.bind(createB()).to(exchange()).with("create.#");
+    }
+
+
+    @Bean(name = "email")
+    public Queue emailQueue() {
+        return new Queue(EMAIL_QUEUE);
+    }
+
+    @Bean
+    public DirectExchange exchangeDirect() {
+        return new DirectExchange(EAMIL_EXCHANGE);
+    }
+    @Bean
+    public Binding directBinding() {
+        return BindingBuilder.bind(emailQueue()).to(exchangeDirect()).with(EMAIL_QUEUE);
     }
 
 }
