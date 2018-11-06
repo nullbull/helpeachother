@@ -139,5 +139,9 @@ pagehelper:
 cache:
   key: AlreadyCache
   value: YES
+rabbitmq:
+  exchange: zwt
+  queue1: create.a
+  queue2: create.b
 
 

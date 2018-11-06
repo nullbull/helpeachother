@@ -107,7 +107,7 @@ public class ExpressServiceImpl extends BaseService implements IExpressService {
                 expressVOList.forEach(vo -> {
                     redisUtil.set(ERedisKey.EXPRESS_ORDER, vo.getId().toString(), vo);
                 });
-                redisUtil.set(CACHE_KEY, CACHE_VALUE, 10 * 60 * 1000);
+                redisUtil.set(CACHE_KEY, CACHE_VALUE,   24 * 60 * 60 * 1000);
             }
 
             rd.setMsg("完成");
