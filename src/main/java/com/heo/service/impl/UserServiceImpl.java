@@ -28,7 +28,7 @@ import java.util.Random;
 /**
  * 用户 业务层处理
  * 
- * @author ruoyi
+ * @author justinniu
  */
 @Service("userService")
 public class UserServiceImpl extends BaseService implements IUserService

@@ -3,7 +3,7 @@ package com.heo.common.exception.user;
 /**
  * 用户锁定异常类
  * 
- * @author ruoyi
+ * @author justinniu
  */
 public class UserBlockedException extends UserException
 {

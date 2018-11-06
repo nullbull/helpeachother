@@ -9,7 +9,7 @@ import java.util.Map;
 /**
  * 字符串工具类
  * 
- * @author ruoyi
+ * @author justinniu
  */
 public class StringUtils
 {
