@@ -136,10 +136,13 @@ pagehelper:
 #465
 #587
 #redis jedis配置
-cache:
+Cache:
   key: AlreadyCache
   value: YES
-rabbitmq:
+#cache:
+#  key: AlreadyCache
+#  value: YES
+rabbitMQ:
   exchange: zwt
   queue1: create.a
   queue2: create.b

@@ -21,6 +21,7 @@ import redis.clients.jedis.JedisPool;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 
@@ -40,15 +41,19 @@ public class BaseService implements IBaseService {
         }
     };
 
-    @Value("rabbitmq.exchange")
-    protected String EXCHANGE_NAME;
 
-    @Value("rabbitmq.queue1")
+    @Value("${rabbitMQ.queue1}")
     protected String QUEUE_A;
 
-    @Value("rabbitmq.queue2")
+    @Value("${rabbitMQ.queue2}")
     protected String QUEUE_B;
 
+    @Value("${rabbitMQ.exchange}")
+    protected String EXCHANGE_NAME;
+
+//    protected String QUEUE_A = "create.a";
+//
+//    protected String QUEUE_B = "create.b";
     @Autowired
     protected ExpressInfoMapper expressInfoMapper;
 
@@ -81,6 +86,7 @@ public class BaseService implements IBaseService {
 
     @Autowired
     protected AmqpTemplate amqpTemplate;
+
     @Override
     public List<LocationInfo> getLocationByPart(Byte part) {
         LocationInfoExample example = new LocationInfoExample();
@@ -111,6 +117,24 @@ public class BaseService implements IBaseService {
         return jedisPool.getResource();
     }
 
+    /**
+     * 获取 多少小时之前的时间
+     * @param Hour
+     * @return Date
+     */
+    public Date getPastDateByHour(int Hour) {
+        Calendar calendar = Calendar.getInstance();
+        calendar.setTime(new Date());
+        calendar.add(Calendar.HOUR_OF_DAY, -Hour);
+        return calendar.getTime();
+    }
+
+    public Date getPastDateByDay(int Day) {
+        Calendar calendar = Calendar.getInstance();
+        calendar.setTime(new Date());
+        calendar.add(Calendar.DAY_OF_YEAR, -Day);
+        return calendar.getTime();
+    }
 
 
 

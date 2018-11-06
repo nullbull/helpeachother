@@ -10,10 +10,7 @@ import com.heo.dao.UserMapper;
 import com.heo.entity.dto.ExpressMessageDTO;
 import com.heo.entity.dto.ExpressOrderEmailDTO;
 import com.heo.entity.dto.ExpressOrderNameDTO;
-import com.heo.entity.mapper.Express;
-import com.heo.entity.mapper.ExpressOrder;
-import com.heo.entity.mapper.ExpressOrderExample;
-import com.heo.entity.mapper.LocationInfo;
+import com.heo.entity.mapper.*;
 import com.heo.entity.vo.ExpressOrderQueryVO;
 import com.heo.entity.vo.ExpressOrderVO;
 import com.heo.entity.vo.ReturnData;
@@ -112,7 +109,8 @@ public class ExpressOrderServiceImpl extends BaseService implements IExpressOrde
         return rd;
     }
 
-    private ReturnData doCreateExpressOrder(ExpressMessageDTO dto) {
+    @Override
+    public ReturnData doCreateExpressOrder(ExpressMessageDTO dto) {
         ReturnData rd = getReturnData();
         String methodDesc = "真实创建ExpressOrder接口";
         try {
@@ -142,38 +140,38 @@ public class ExpressOrderServiceImpl extends BaseService implements IExpressOrde
      * @return
      */
 
-    @Override
-    public ReturnData getExpressOrderDetail(Long id) {
-        ReturnData rd = getReturnData();
-        String methodDesc = "获取代送单详情";
-        ExpressOrderVO orderVO = new ExpressOrderVO();
-        try {
-            ExpressOrder expressOrder =  expressOrderMapper.selectByExpressId(id);
-            if (expressOrder == null) {
-                rd.setMsg("该订单不存在");
-                logger.info(methodDesc + "订单不存在");
-            }
-            orderVO = expressOrderMapper.selectExpressOrderAndUserName(id);
-            Express express = expressMapper.selectByPrimaryKey(orderVO.getExpressId());
-            /*
-                orderVO数据封装
-             */
-            orderVO.setExpressType(express.getExpressType());
-            orderVO.setExpressName(Constants.EXPRESS_INFO.get(orderVO.getExpressType()));
-            orderVO.setLocationId(express.getLocationId());
-            LocationInfo locationInfo = locationInfoMapper.selectByPrimaryKey(express.getLocationId());
-            orderVO.setLocationName( locationInfo == null ? "" : locationInfo.getName());
-            orderVO.setGetCode(express.getGetCode());
-            rd.setData(orderVO);
-            rd.setMsg("完成");
-            rd.setCode(Constants.SUCCESS_CODE);
-            logger.info(methodDesc + "完成， rd：{}", rd);
-        } catch (Exception e) {
-            rd.setMsg("未知错误");
-            logger.error(methodDesc + "失败， 未知错误 e ：{}", e);
-        }
-        return rd;
-    }
+//    @Override
+//    public ReturnData getExpressOrderDetail(Long id) {
+//        ReturnData rd = getReturnData();
+//        String methodDesc = "获取代送单详情";
+//        ExpressOrderVO orderVO = new ExpressOrderVO();
+//        try {
+//            ExpressOrder expressOrder =  expressOrderMapper.selectByExpressId(id);
+//            if (expressOrder == null) {
+//                rd.setMsg("该订单不存在");
+//                logger.info(methodDesc + "订单不存在");
+//            }
+//            orderVO = expressOrderMapper.selectExpressOrderAndUserName(id);
+//            Express express = expressMapper.selectByPrimaryKey(orderVO.getExpressId());
+//            /*
+//                orderVO数据封装
+//             */
+//            orderVO.setExpressType(express.getExpressType());
+//            orderVO.setExpressName(Constants.EXPRESS_INFO.get(orderVO.getExpressType()));
+//            orderVO.setLocationId(express.getLocationId());
+//            LocationInfo locationInfo = locationInfoMapper.selectByPrimaryKey(express.getLocationId());
+//            orderVO.setLocationName( locationInfo == null ? "" : locationInfo.getName());
+//            orderVO.setGetCode(express.getGetCode());
+//            rd.setData(orderVO);
+//            rd.setMsg("完成");
+//            rd.setCode(Constants.SUCCESS_CODE);
+//            logger.info(methodDesc + "完成， rd：{}", rd);
+//        } catch (Exception e) {
+//            rd.setMsg("未知错误");
+//            logger.error(methodDesc + "失败， 未知错误 e ：{}", e);
+//        }
+//        return rd;
+//    }
 
 
 
@@ -181,30 +179,28 @@ public class ExpressOrderServiceImpl extends BaseService implements IExpressOrde
     public ReturnData finishExpressOrder(Long id) {
         ReturnData rd = getReturnData();
         String methodDesc = "完成快递代送单";
-        ExpressOrder expressOrder = null;
+        Express express = null;
         try {
             logger.info(methodDesc + "开始， id：{}", id);
-            expressOrder = expressOrderMapper.selectByPrimaryKey(id);
-            if (null == expressOrder) {
+            express = expressMapper.selectByPrimaryKey(id);
+            if (null == express) {
                 rd.setMsg("该快递代送单不存在");
                 logger.info(methodDesc + "失败， 该快递代送单不存在 id：{}", id);
                 return rd;
             }
-            expressOrder.setStatus(Constants.ORDER_FINISH);
-            Express express = expressMapper.selectByPrimaryKey(expressOrder.getExpressId());
-            express.setStatus(Constants.ORDER_FINISH);
-            expressOrderMapper.updateByPrimaryKeySelective(expressOrder);
+            express.setOrderStatus(Constants.ORDER_FINISH);
+            express.setExpressStatus(Constants.ORDER_FINISH);
             expressMapper.updateByPrimaryKeySelective(express);
             ExpressOrderEmailDTO orderDTO = new ExpressOrderEmailDTO();
             orderDTO.setExpressOrderId(id);
-            orderDTO.setProviderName(userMapper.selectByPrimaryKey(expressOrder.getProviderId()).getUserName());
+            orderDTO.setProviderName(userMapper.selectByPrimaryKey(express.getProviderId()).getUserName());
             orderDTO.setFinishTime(new Date());
-            orderDTO.setPrice(expressOrder.getPrice());
+            orderDTO.setPrice(express.getPrice());
             kafkaService.sendMessage(id, JSON.toJSONString(orderDTO));
             rd.setMsg("完成");
             rd.setCode(Constants.SUCCESS_CODE);
-            rd.setData(expressOrder);
-            logger.info(methodDesc + "完成， expressOrder：{}", expressOrder);
+            rd.setData(express);
+            logger.info(methodDesc + "完成， expressOrder：{}", express);
         } catch (Exception e) {
             rd.setMsg("未知系统错误");
             logger.error(methodDesc + "失败, 未知系统错误, e:{}", e);
@@ -213,14 +209,14 @@ public class ExpressOrderServiceImpl extends BaseService implements IExpressOrde
         /**
          * 更新缓存中的income
          */
-        String key = expressOrder.getProviderId()+"DAILY_INCOME";
+        String key = express.getProviderId()+"DAILY_INCOME";
         try
         {
             if(redisUtil.get(key)!=null)
             {
                 BigDecimal bigDecimal = (BigDecimal) redisUtil.get(key);
-                bigDecimal.add(expressOrder.getPrice());
-                redisUtil.set(key,bigDecimal);
+                bigDecimal.add(express.getPrice());
+                redisUtil.set(key, bigDecimal);
             }
         }
         catch (Exception e)
@@ -233,7 +229,7 @@ public class ExpressOrderServiceImpl extends BaseService implements IExpressOrde
     @Override
     public ReturnData getExpressOrderListById(@NotNull ExpressOrderQueryVO vo, int limit, int offset) {
         ReturnData rd = getReturnData();
-        String methodDesc = "根据Id获取快递代送单列表";
+        String methodDesc = "根据用户Id获取快递代送单列表";
         try {
             logger.info(methodDesc + "开始 + vo：{} limit:{} offset:{} type:{}", vo, limit, offset);
             PageHelper.startPage(limit, offset);
@@ -247,14 +243,14 @@ public class ExpressOrderServiceImpl extends BaseService implements IExpressOrde
                 rd.setMsg("不存在该用户类型");
                 return rd;
             }
-            ExpressOrderExample example = new ExpressOrderExample();
+            ExpressExample example = new ExpressExample();
             if (type.equals(Constants.PROVIDER)) {
                 example.createCriteria().andProviderIdEqualTo(id);
             } else if (type.equals(Constants.NEEDER)) {
-                example.createCriteria().andNeederIdEqualTo(id);
+                example.createCriteria().andUserIdEqualTo(id);
             }
             if (null != status) {
-                example.createCriteria().andStatusEqualTo(status);
+                example.createCriteria().andOrderStatusEqualTo(status);
             }
             if (beginTime != null) {
                 example.createCriteria().andCreatedAtGreaterThanOrEqualTo(beginTime);
@@ -262,11 +258,11 @@ public class ExpressOrderServiceImpl extends BaseService implements IExpressOrde
             if (endTime != null) {
                 example.createCriteria().andUpdatedAtLessThanOrEqualTo(endTime);
             }
-            List<ExpressOrder> expressOrderList = expressOrderMapper.selectByExample(example);
+            List<Express> expressList = expressMapper.selectByExample(example);
             rd.setMsg("完成");
             rd.setCode(Constants.SUCCESS_CODE);
-            rd.setData(expressOrderList);
-            logger.info(methodDesc + "完成 >>>>>>>>>>>>>>>> expressOrderList:{}", expressOrderList);
+            rd.setData(expressList);
+            logger.info(methodDesc + "完成 >>>>>>>>>>>>>>>> expressOrderList:{}", expressList);
             return rd;
         }catch (Exception e) {
             rd.setMsg("未知系统错误");
@@ -332,6 +328,10 @@ public class ExpressOrderServiceImpl extends BaseService implements IExpressOrde
         }
         return rd;
     }
+
+//    public ReturnData statisIncome(Long providerId, int Hour) {
+//
+//    }
 
 
 }

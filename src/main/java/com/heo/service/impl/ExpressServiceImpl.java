@@ -21,6 +21,7 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.springframework.util.CollectionUtils;
 
+import javax.validation.Configuration;
 import javax.validation.constraints.NotNull;
 import java.util.Calendar;
 import java.util.Date;
@@ -38,10 +39,8 @@ public class ExpressServiceImpl extends BaseService implements IExpressService {
 
     private Logger logger = LoggerFactory.getLogger(ExpressServiceImpl.class);
     private static Random random = new Random(47);
-    @Value("cache.value")
-    private String CACHE_VALUE;
-    @Value("cache.key")
-    private String CACHE_KEY;
+    private String CACHE_VALUE = "OK";
+    private String CACHE_KEY =  "AlreadyCache";
     private int pageSize = 10;
     @Override
     public ReturnData createExpress(Express express) {
@@ -132,8 +131,9 @@ public class ExpressServiceImpl extends BaseService implements IExpressService {
                 return rd;
             }
             //todo 有人接单，需要双方打电话修改
-            if (null != expressOrderMapper.selectByExpressId(express.getId())) {
-                rd.setMsg("操作失败，需要双方电话沟通");
+            Express old = expressMapper.selectByPrimaryKey(express.getId());
+            if (old.getOrderStatus().equals(Constants.ORDER_INVALID)) {
+                rd.setMsg("订单以生效，需要与对方电话沟通");
                 logger.info(methodDesc + "失败， 已生成订单，需要双方电话修改 Express：{}", express);
                 return rd;
             }
