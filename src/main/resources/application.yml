@@ -142,7 +142,7 @@ Cache:
 #cache:
 #  key: AlreadyCache
 #  value: YES
-rabbitMQ:
+rabbit-mq:
   emailExchange: niu
   emailQueue: email
   exchange: zwt

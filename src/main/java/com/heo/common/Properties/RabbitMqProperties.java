@@ -6,7 +6,7 @@ import org.springframework.stereotype.Component;
 
 @Data
 @Component
-@ConfigurationProperties(prefix = "rabbitMQ")
+@ConfigurationProperties(prefix = "rabbit-mq")
 public class RabbitMqProperties {
 
     private String emailExchange;

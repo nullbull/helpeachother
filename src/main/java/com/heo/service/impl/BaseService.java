@@ -43,13 +43,13 @@ public class BaseService implements IBaseService {
     };
 
 
-    @Value("${rabbitMQ.queue1}")
+    @Value("${rabbit-mq.queue1}")
     protected String QUEUE_A;
 
-    @Value("${rabbitMQ.queue2}")
+    @Value("${rabbit-mq.queue2}")
     protected String QUEUE_B;
 
-    @Value("${rabbitMQ.exchange}")
+    @Value("${rabbit-mq.exchange}")
     protected String EXCHANGE_NAME;
 
     @Autowired

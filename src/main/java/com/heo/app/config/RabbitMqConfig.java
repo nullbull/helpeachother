@@ -21,10 +21,10 @@ public class RabbitMqConfig {
 
     private String DefaultExchange = "zwt";
 
-    @Value("${rabbitMQ.emailExchange}")
+    @Value("${rabbit-mq.emailExchange}")
     private String EAMIL_EXCHANGE;
 
-    @Value("${rabbitMQ.emailQueue}")
+    @Value("${rabbit-mq.emailQueue}")
     private String EMAIL_QUEUE;
     @Bean(name = "create.a")
     public Queue createA() {
