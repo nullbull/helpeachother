@@ -6,7 +6,7 @@ import org.springframework.context.MessageSource;
 /**
  * 获取i18n资源文件
  * 
- * @author ruoyi
+ * @author justinniu
  */
 public class MessageUtils
 {

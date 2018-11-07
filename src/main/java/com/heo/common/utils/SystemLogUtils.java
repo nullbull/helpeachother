@@ -13,7 +13,7 @@ import org.slf4j.LoggerFactory;
 /**
  * 记录用户日志信息
  * 
- * @author ruoyi
+ * @author justinniu
  */
 public class SystemLogUtils
 {

@@ -136,5 +136,17 @@ pagehelper:
 #465
 #587
 #redis jedis配置
+Cache:
+  key: AlreadyCache
+  value: YES
+#cache:
+#  key: AlreadyCache
+#  value: YES
+rabbit-mq:
+  emailExchange: niu
+  emailQueue: email
+  exchange: zwt
+  queue1: create.a
+  queue2: create.b
 
 

@@ -6,8 +6,9 @@ import java.util.HashMap;
 
 /**
  * 通用常量信息
- * 
- * @author ruoyi
+ * 所有的变量必须是final static的
+ * @author justinniu
+ * @desc
  */
 public class Constants
 {
@@ -44,17 +45,17 @@ public class Constants
     /**
      * 自动去除表前缀
      */
-    public static String AUTO_REOMVE_PRE = "true";
+    public static final String AUTO_REOMVE_PRE = "true";
 
     /**
      * 当前记录起始索引
      */
-    public static String PAGENUM = "pageNum";
+    public static final String PAGENUM = "pageNum";
 
     /**
      * 每页显示记录数
      */
-    public static String PAGESIZE = "pageSize";
+    public static final String PAGESIZE = "pageSize";
 
     /**
      * 排序列
@@ -64,21 +65,28 @@ public class Constants
     /**
      * 排序的方向 "desc" 或者 "asc".
      */
-    public static String ISASC = "isAsc";
+    public static final String ISASC = "isAsc";
 
-    public static Byte SUCCESS_CODE = 1;
+    public static final Byte SUCCESS_CODE = 1;
 
-    public static Byte FAIL_CODE = 0;
+    public static final Byte FAIL_CODE = 0;
 
-    public static Byte ORDER_NEW = 1;
-    public static Byte ORDER_PICK_UP = 2;
-    public static Byte ORDER_FINISH = 3;
-    public static Byte ORDER_DELETE = 4;
+    public static final Byte ORDER_INVALID = 0;
+
+    public static final Byte ORDER_NEW = 1;
+
+    public static final Byte ORDER_PICK_UP = 2;
+
+    public static final Byte ORDER_FINISH = 3;
+
+    public static final Byte ORDER_DELETE = 4;
 
     public final static Byte PROVIDER = 2;
+
     public final static Byte NEEDER = 1;
 
-    public static HashMap<Byte, String> EXPRESS_INFO = new HashMap<>();
+    public final static Byte STATIS_HOUR = 12;
+    public final static HashMap<Byte, String> EXPRESS_INFO = new HashMap<>();
     static {
         EXPRESS_INFO.put((byte) 1, "圆通快递");
         EXPRESS_INFO.put((byte) 2, "京东快递");
@@ -89,9 +97,9 @@ public class Constants
         EXPRESS_INFO.put((byte) 7, "天天快递");
         EXPRESS_INFO.put((byte) 8, "天猫快递");
     }
-    public static String redisKey = "expressOrder:message:";
+    public final static String REDIS_KEY = "expressOrder:message:";
 
-    public static String kafkaKey = "email";
+    public final static String KAFKA_KEY = "email";
 
 
 

@@ -87,11 +87,11 @@ public class KafkaServiceImpl implements IKafkaService {
             /**
              * 这个key是 redis的key， 消费者获取key 去redis里获取数据
              */
-            String key = Constants.redisKey + id;
+            String key = Constants.REDIS_KEY + id;
             redisUtil.set(key, value);
             CountDownLatch cd = new CountDownLatch(1);
 
-            service.execute(new ProducerThread(producer, Constants.kafkaKey, key, cd));
+            service.execute(new ProducerThread(producer, Constants.KAFKA_KEY, key, cd));
             cd.await();
             thread.start();
             return true;

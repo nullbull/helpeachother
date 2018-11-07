@@ -14,7 +14,7 @@ import java.util.Date;
 /**
  * 针对自定义的ShiroSession的db操作
  * 
- * @author ruoyi
+ * @author justinniu
  */
 public class OnlineSessionDAO extends EnterpriseCacheSessionDAO
 {

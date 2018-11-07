@@ -3,7 +3,7 @@ package com.heo.common.exception.user;
 /**
  * 验证码错误异常类
  * 
- * @author ruoyi
+ * @author justinniu
  */
 public class CaptchaException extends UserException
 {

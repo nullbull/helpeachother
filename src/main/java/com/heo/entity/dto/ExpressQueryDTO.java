@@ -13,12 +13,20 @@ import java.util.Date;
  */
 @Data
 public class ExpressQueryDTO {
+
+    private Byte expressStatus;
+
     private Byte expressType;
+
     @Past
     private Date beginTime;
+
     @Past
     private Date endTime;
+
     private BigDecimal lowPrice;
+
     private BigDecimal highPrice;
+
     private Integer limit;
 }

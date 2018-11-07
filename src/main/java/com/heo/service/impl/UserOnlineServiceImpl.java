@@ -15,7 +15,7 @@ import java.util.List;
 /**
  * 在线用户 服务层处理
  * 
- * @author ruoyi
+ * @author justinniu
  */
 @Service("userOnlineService")
 public class UserOnlineServiceImpl implements IUserOnlineService

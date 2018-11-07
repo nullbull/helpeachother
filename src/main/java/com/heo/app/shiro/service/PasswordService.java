@@ -20,7 +20,7 @@ import java.util.concurrent.atomic.AtomicInteger;
 /**
  * 登录密码方法
  * 
- * @author ruoyi
+ * @author justinniu
  */
 @Component
 public class PasswordService

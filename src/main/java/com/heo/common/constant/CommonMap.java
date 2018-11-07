@@ -6,7 +6,7 @@ import java.util.Map;
 /**
  * 通用Map数据
  * 
- * @author ruoyi
+ * @author justinniu
  */
 public class CommonMap
 {

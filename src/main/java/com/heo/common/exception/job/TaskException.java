@@ -3,7 +3,7 @@ package com.heo.common.exception.job;
 /**
  * 计划策略异常
  * 
- * @author ruoyi
+ * @author justinniu
  */
 public class TaskException extends Exception
 {

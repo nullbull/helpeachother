@@ -3,7 +3,7 @@ package com.heo.common.constant;
 /**
  * 用户常量信息
  * 
- * @author ruoyi
+ * @author justinniu
  */
 public class UserConstants
 {

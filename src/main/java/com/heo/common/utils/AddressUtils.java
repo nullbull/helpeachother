@@ -15,7 +15,7 @@ import java.net.URL;
 /**
  * 获取地址类
  * 
- * @author ruoyi
+ * @author justinniu
  */
 public class AddressUtils
 {

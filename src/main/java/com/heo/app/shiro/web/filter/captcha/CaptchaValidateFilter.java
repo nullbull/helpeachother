@@ -13,7 +13,7 @@ import javax.servlet.http.HttpServletRequest;
 /**
  * 验证码过滤器
  * 
- * @author ruoyi
+ * @author justinniu
  */
 public class CaptchaValidateFilter extends AccessControlFilter
 {

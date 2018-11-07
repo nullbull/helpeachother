@@ -21,15 +21,15 @@
             <property name="trimStrings" value="true" />
         </javaModelGenerator>
 
-        <!--<sqlMapGenerator targetPackage="mappers"-->
-                         <!--targetProject="${sqlMapGenerator.targetProject}">-->
-            <!--<property name="enableSubPackages" value="true" />-->
-        <!--</sqlMapGenerator>-->
+        <sqlMapGenerator targetPackage="mappers"
+                         targetProject="${sqlMapGenerator.targetProject}">
+            <property name="enableSubPackages" value="true" />
+        </sqlMapGenerator>
 
-            <!--<javaClientGenerator type="XMLMAPPER"-->
-                             <!--targetPackage="com.heo.dao" targetProject="${javaClientGenerator.targetProject}">-->
-            <!--<property name="enableSubPackages" value="false" />-->
-        <!--</javaClientGenerator>-->
+            <javaClientGenerator type="XMLMAPPER"
+                             targetPackage="com.heo.dao" targetProject="${javaClientGenerator.targetProject}">
+            <property name="enableSubPackages" value="false" />
+        </javaClientGenerator>
 
         <!--
         <table tableName="live_course_channel" domainObjectName="LiveCourseChannel"></table>
@@ -37,6 +37,7 @@
         <!--<table tableName="user" domainObjectName="User"></table>-->
         <!--<table tableName="location_info" domainObjectName="LocationInfo"></table>-->
         <table tableName="express" domainObjectName="Express"></table>
+        <table tableName="score" domainObjectName="Score"></table>
         <!--<table tableName="express_order" domainObjectName="ExpressOrder"></table>-->
         <!--<table tableName="express_info" domainObjectName="ExpressInfo"></table>-->
         <!--<table tableName="location_info" domainObjectName="LocationInfo"></table>-->
