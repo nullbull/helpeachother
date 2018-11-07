@@ -1,4 +1,4 @@
-package com.heo.common.Properties;
+package com.heo.common.properties;
 
 import lombok.Data;
 import org.springframework.boot.context.properties.ConfigurationProperties;

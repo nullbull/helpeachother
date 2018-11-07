@@ -1,6 +1,5 @@
 package com.heo.app.shiro.web.filter.captcha;
 
-import com.google.code.kaptcha.Constants;
 import com.heo.common.constant.ShiroConstants;
 import com.heo.common.utils.StringUtils;
 import com.heo.common.utils.security.ShiroUtils;
@@ -61,12 +60,12 @@ public class CaptchaValidateFilter extends AccessControlFilter
 
     public boolean validateResponse(HttpServletRequest request, String validateCode)
     {
-        Object obj = ShiroUtils.getSession().getAttribute(Constants.KAPTCHA_SESSION_KEY);
-        String code = String.valueOf(obj != null ? obj : "");
-        if (StringUtils.isEmpty(validateCode) || !validateCode.equalsIgnoreCase(code))
-        {
-            return false;
-        }
+//        Object obj = ShiroUtils.getSession().getAttribute(Constants.KAPTCHA_SESSION_KEY);
+//        String code = String.valueOf(obj != null ? obj : "");
+//        if (StringUtils.isEmpty(validateCode) || !validateCode.equalsIgnoreCase(code))
+//        {
+//            return false;
+//        }
         return true;
     }
 
