@@ -50,7 +50,6 @@ public class ExpressOrderServiceImpl extends BaseService implements IExpressOrde
         try {
             logger.info(methodDesc + "开始>>>>>>>>>>>>>>>>>>>>>>>>id:{}", id);
             Express express = expressMapper.selectByPrimaryKey(id);
-            ExpressOrder expressOrder = new ExpressOrder();
             if (null == express) {
                 rd.setMsg("代送信息不存在");
                 logger.info(methodDesc + "失败 >>>>>>>>>>>>>>>>>>>>>>>> id:{} 不存在", id);

@@ -10,7 +10,6 @@ import com.heo.entity.dto.ExpressAndNameDTO;
 import com.heo.entity.dto.ExpressQueryDTO;
 import com.heo.entity.mapper.Express;
 import com.heo.entity.mapper.ExpressExample;
-import com.heo.entity.mapper.ExpressOrder;
 import com.heo.entity.vo.ExpressVO;
 import com.heo.entity.vo.ReturnData;
 import com.heo.service.IExpressService;
@@ -159,16 +158,12 @@ public class ExpressServiceImpl extends BaseService implements IExpressService {
             logger.info(methodDesc + "失败 ExpressId : {}", id);
             return rd;
         }
-        ExpressOrder expressOrder = expressOrderMapper.selectByExpressId(express.getId());
         try {
-            if (null != expressOrder) {
-                if (expressOrder.getStatus().equals(Constants.ORDER_PICK_UP)) {
-                    rd.setMsg("订单正在进行中，不能删除");
-                    logger.info(methodDesc + "失败， 订单正在进行中，不能删除");
-                    return rd;
-                }
-                expressOrder.setStatus(Constants.ORDER_DELETE);
-                expressOrderMapper.updateByPrimaryKeySelective(expressOrder);
+
+            if (express.getOrderStatus().equals(Constants.ORDER_PICK_UP)) {
+                rd.setMsg("订单正在进行中，不能删除");
+                logger.info(methodDesc + "失败， 订单正在进行中，不能删除");
+                return rd;
             }
             express.setExpressStatus(Constants.ORDER_DELETE);
             expressMapper.updateByPrimaryKeySelective(express);

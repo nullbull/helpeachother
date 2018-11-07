@@ -98,7 +98,7 @@ public interface ExpressInfoMapper {
 
     List<ExpressInfo> getAllExpressInfo();
 
-    ExpressOrderVO getExpressOrderDetail(Long id);
+//    ExpressOrderVO getExpressOrderDetail(Long id);
 
 
 

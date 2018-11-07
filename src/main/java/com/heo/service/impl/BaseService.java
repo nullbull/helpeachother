@@ -68,9 +68,6 @@ public class BaseService implements IBaseService {
     protected ExpressMapper expressMapper;
 
     @Autowired
-    protected ExpressOrderMapper  expressOrderMapper;
-
-    @Autowired
     protected UserMapper userMapper;
 
     @Autowired

@@ -6,12 +6,8 @@ import com.heo.common.constant.Constants;
 import com.heo.common.constant.UserConstants;
 import com.heo.common.utils.DateUtils;
 import com.heo.common.utils.RedisUtil;
-import com.heo.dao.ExpressOrderMapper;
 import com.heo.dao.UserMapper;
-import com.heo.entity.mapper.ExpressOrder;
-import com.heo.entity.mapper.ExpressOrderExample;
-import com.heo.entity.mapper.User;
-import com.heo.entity.mapper.UserExample;
+import com.heo.entity.mapper.*;
 import com.heo.entity.vo.ReturnData;
 import com.heo.service.IUserService;
 import org.slf4j.Logger;
@@ -36,9 +32,6 @@ public class UserServiceImpl extends BaseService implements IUserService
 
     @Autowired
     private UserMapper userMapper;
-
-    @Autowired
-    private ExpressOrderMapper expressOrderMapper;
 
     @Autowired
     private PasswordService passwordService;
@@ -290,15 +283,15 @@ public class UserServiceImpl extends BaseService implements IUserService
         {
             e.printStackTrace();
         }
-        ExpressOrderExample example = new ExpressOrderExample();
-        ExpressOrderExample.Criteria criteria = example.createCriteria();
+        ExpressExample example = new ExpressExample();
+        ExpressExample.Criteria criteria = example.createCriteria();
         criteria.andProviderIdEqualTo(id);
-        criteria.andStatusEqualTo((byte) 3);
-        List<ExpressOrder> expressOrders = expressOrderMapper.selectByExample(example);
+        criteria.andOrderStatusEqualTo((byte) 3);
+        List<Express> expressOrders = expressMapper.selectByExample(example);
         BigDecimal income = new BigDecimal(0);
-        for(int i=0; i<expressOrders.size(); i++)
+        for(int i = 0; i < expressOrders.size(); i++)
         {
-            ExpressOrder expressOrder = expressOrders.get(i);
+            Express expressOrder = expressOrders.get(i);
             if(DateUtils.isToday(expressOrder.getUpdatedAt()))
             {
                 income = income.add(expressOrder.getPrice());

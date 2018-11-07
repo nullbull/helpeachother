@@ -1,7 +1,6 @@
 package com.heo.entity.vo;
 
 import com.heo.entity.mapper.Express;
-import com.heo.entity.mapper.ExpressOrder;
 import lombok.Data;
 
 import java.util.Date;
@@ -12,7 +11,7 @@ import java.util.Date;
  * @Desc
  */
 @Data
-public class ExpressOrderVO extends ExpressOrder {
+public class ExpressOrderVO {
     public String neederName;
     public String providerName;
     public String neederPhone;
