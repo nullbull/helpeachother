@@ -1,7 +1,6 @@
 package com.heo.service;
 
 import com.heo.entity.dto.ExpressMessageDTO;
-import com.heo.entity.mapper.ExpressOrder;
 import com.heo.entity.vo.ExpressOrderQueryVO;
 import com.heo.entity.vo.ReturnData;
 

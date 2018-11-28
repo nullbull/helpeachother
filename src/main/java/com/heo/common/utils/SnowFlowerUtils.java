@@ -8,25 +8,6 @@ package com.heo.common.utils;
 public class SnowFlowerUtils {
     private static SnowFlower DEFALUT_INSTANCE = new SnowFlower(1, 2);
 
-//    private static class Factory {
-//
-//
-//        private int machineBitNum;
-//
-//        private int idcIdBitNum;
-//        {
-//            this.machineBitNum = DEFAULT_MACHINE_BIT_NUM;
-//            this.idcIdBitNum = DEFAULT_IDC_BIT_NUM;
-//        }
-//        public Factory() {}
-//        public Factory(int machineNum, int centerNum) {
-//            this.machineBitNum = machineNum;
-//            this.idcIdBitNum = centerNum;
-//        }
-//        public SnowFlower create(long idcId, long machineId) {
-//            return new SnowFlower(idcIdBitNum, machineBitNum, idcId, machineId);
-//        }
-//    }
     private static class SnowFlower {
 
         private final static int DEFAULT_MACHINE_BIT_NUM = 5;
@@ -36,7 +17,6 @@ public class SnowFlowerUtils {
          * 开始时间 2018/11/14/ 18:07:07
          */
         private final static long START_STAMP = 1542189739L;
-
         /**
          * 剩余字节数
          */
@@ -82,37 +62,64 @@ public class SnowFlowerUtils {
          */
         private int maxSequenceValue;
 
+        private int idcIdBitNum;
+
+        private int machineBitNum;
+
         private SnowFlower(long idcId, long machineId) {
-            new SnowFlower(DEFAULT_IDC_BIT_NUM, DEFAULT_IDC_BIT_NUM, idcId, machineId);
+            new SnowFlower(DEFAULT_IDC_BIT_NUM, DEFAULT_MACHINE_BIT_NUM, idcId, machineId);
         }
 
         private SnowFlower(int idcIdBitNum, int machineBitNum, long idcId, long machineId) {
-            int sequenceBitNum = REMAIN_BIT_NUM - idcIdBitNum - machineBitNum;
 
-            if (idcIdBitNum <= 0 || machineBitNum <= 0 || sequenceBitNum <= 0) {
-                throw new IllegalArgumentException("error bit number");
-            }
-            this.maxSequenceValue = ~(-1 << sequenceBitNum);
+            this.idcIdBitNum = idcIdBitNum;
 
-            machineBitLeftOffset = sequenceBitNum;
-            idcBitLeftOffset = idcIdBitNum + sequenceBitNum;
-
-            timestampBitLeftOffset = idcIdBitNum + machineBitNum + sequenceBitNum;
+            this.machineBitNum = machineBitNum;
 
             this.idcId = idcId;
 
             this.machineId = machineId;
+
+            init();
         }
-        public synchronized long nextId() {
-            long currentStamp = System.currentTimeMillis();
-            if (currentStamp < lastStamp) {
-                throw new RuntimeException(String.format("Clock moved backwards. Refusing to generate id for %d milliseconds", lastStamp - currentStamp));
-            } else {
-                sequence = 0L;
+
+        private void init() {
+            int sequenceBitNum = REMAIN_BIT_NUM - idcIdBitNum - machineBitNum;
+            if (idcIdBitNum <= 0 || machineBitNum <= 0 || sequenceBitNum <= 0) {
+                throw new IllegalArgumentException("error bit number");
             }
-            lastStamp = currentStamp;
-            return (currentStamp - START_STAMP) << timestampBitLeftOffset | idcId << idcBitLeftOffset | machineId << machineBitLeftOffset | sequence;
+            this.maxSequenceValue = ~(-1 << sequenceBitNum);
+            this.machineBitLeftOffset = sequenceBitNum;
+            this.idcBitLeftOffset = idcIdBitNum + sequenceBitNum;
+            this.timestampBitLeftOffset = idcIdBitNum + machineBitNum + sequenceBitNum;
         }
+
+        private void setIdcId(long idcId) {
+            this.idcId = idcId;
+        }
+
+        private void setMachineId(long machineId) {
+            this.machineId = machineId;
+        }
+
+        private void setIdcIdBitNum(int idcIdBitNum) {
+            this.idcIdBitNum = idcIdBitNum;
+        }
+
+        private void setMachineBitNum(int machineBitNum) {
+            this.machineBitNum = machineBitNum;
+        }
+
+        public synchronized long nextId() {
+                long currentStamp = System.currentTimeMillis();
+                if (currentStamp < lastStamp) {
+                    throw new RuntimeException(String.format("Clock moved backwards. Refusing to generate id for %d milliseconds", lastStamp - currentStamp));
+                } else {
+                    sequence = 0L;
+                }
+                lastStamp = currentStamp;
+                return (currentStamp - START_STAMP) << timestampBitLeftOffset | idcId << idcBitLeftOffset | machineId << machineBitLeftOffset | sequence;
+            }
 
     }
 
@@ -120,9 +127,31 @@ public class SnowFlowerUtils {
         return DEFALUT_INSTANCE.nextId();
     }
 
-    public static long createId(long idcId, long mechineId) {
-        SnowFlower sn = new SnowFlower(idcId, mechineId);
-        return sn.nextId();
+    /**
+     * 更改ID
+     * @param idcId
+     * @param mechineId
+     * @return
+     */
+    public static synchronized long createId(long idcId, long mechineId) {
+        DEFALUT_INSTANCE.setIdcId(idcId);
+        DEFALUT_INSTANCE.setMachineId(mechineId);
+        return DEFALUT_INSTANCE.nextId();
+    }
+
+    public static synchronized long createId(int idcIdBitNum, int machineBitNum, long idcId, long machineId) {
+        DEFALUT_INSTANCE.setIdcIdBitNum(idcIdBitNum);
+        DEFALUT_INSTANCE.setMachineBitNum(machineBitNum);
+        DEFALUT_INSTANCE.setIdcId(idcId);
+        DEFALUT_INSTANCE.setMachineId(machineId);
+        DEFALUT_INSTANCE.init();
+        return DEFALUT_INSTANCE.nextId();
+    }
+
+    public static void main(String[] args) {
+        System.out.println(createId());
+        System.out.println(createId(100, 1000));
+        System.out.printf("%s %n", "zwt");
     }
 
 
